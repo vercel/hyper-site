@@ -8,5 +8,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^0.4.0"
   }
 }
