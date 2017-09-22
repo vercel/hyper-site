@@ -50,8 +50,6 @@ export default () => (
       body {
         background: black;
         color: white;
-        padding-left: 40px;
-        padding-right: 40px;
       }
 
       a { color: white; }
