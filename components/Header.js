@@ -1,5 +1,6 @@
 import Logo from './Logo'
 import Link from 'next/link'
+import ActiveLink from './ActiveLink'
 
 export default () => (
   <header>
@@ -10,8 +11,8 @@ export default () => (
     </Link>
 
     <nav>
-      <a href="#">Plugins</a>
-      <a href="#">Themes</a>
+      <ActiveLink href="/plugins">Plugins</ActiveLink>
+      <ActiveLink href="/themes">Themes</ActiveLink>
     </nav>
 
     <span>Search...</span>
@@ -30,10 +31,6 @@ export default () => (
         left: 50%;
         transform: translateX(-50%);
         line-height: 2.3rem;
-      }
-
-      nav a:not(:last-of-type) {
-        margin-right: 24px;
       }
     `}</style>
   </header>
