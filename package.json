@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "next": "^3.2.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
