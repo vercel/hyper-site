@@ -1,6 +1,7 @@
 import Logo from './Logo'
 import Link from 'next/link'
 import ActiveLink from './ActiveLink'
+import Search from './Search'
 
 export default () => (
   <header>
@@ -14,8 +15,8 @@ export default () => (
       <ActiveLink href="/plugins">Plugins</ActiveLink>
       <ActiveLink href="/themes">Themes</ActiveLink>
     </nav>
-
-    <span>Search...</span>
+    
+    <Search/>
 
     <style jsx>{`
       header {
