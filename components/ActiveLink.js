@@ -17,7 +17,7 @@ const ActiveLink = ({ children, router, href }) => {
       <style jsx>{`
         a {
           font-size: 14px;
-          font-size: 1.4rem;
+          font-size: 1.8rem;
         }
         a:not(:last-of-type) { margin-right: 24px; }
       `}</style>
