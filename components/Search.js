@@ -5,11 +5,12 @@ export default () => (
         background: transparent;
         border: none;
         color: white;
-        font-size: 18px;
+        font-size: 14px;
         font-size: 1.4rem;
         font-weight: 400;
-        width: 6rem;
-        margin-top: 1px;
+        transform: translateX(50%);
+        line-height: 2.3rem;
+        left: 52%;
       }
     `}</style>
 
