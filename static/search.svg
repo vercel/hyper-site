@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Search Icon Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Hyper2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Hyper---Plugins" transform="translate(-1031.000000, -285.000000)" fill="#FFFFFF">
+            <g id="Search" transform="translate(971.000000, 285.000000)">
+                <g id="Search-Icon" transform="translate(60.000000, 0.000000)">
+                    <path d="M10.2464594,9.4297584 L14,13.183299 L13.183299,14 L9.4297584,10.2464594 C8.43423203,11.0611253 7.1616696,11.5498969 5.77494844,11.5498969 C2.58553249,11.5498969 0,8.96436439 0,5.77494844 C0,2.58553249 2.58553249,0 5.77494844,0 C8.96436439,0 11.5498969,2.58553249 11.5498969,5.77494844 C11.5498969,7.1616696 11.0611253,8.43423203 10.2464594,9.4297584 Z M5.77494844,10.3949072 C8.3264812,10.3949072 10.3949072,8.3264812 10.3949072,5.77494844 C10.3949072,3.22341568 8.3264812,1.15498969 5.77494844,1.15498969 C3.22341568,1.15498969 1.15498969,3.22341568 1.15498969,5.77494844 C1.15498969,8.3264812 3.22341568,10.3949072 5.77494844,10.3949072 Z" id="Search-Icon-Copy"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
