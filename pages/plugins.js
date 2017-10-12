@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout'
-import Plugins from '../components/Plugins'
+import PluginsList from '../components/PluginsList'
 import getPlugins from '../lib/get-plugins'
 
 export default class extends React.Component {
@@ -12,7 +12,7 @@ export default class extends React.Component {
   render () {
     const plugins = this.props.plugins.results
     return <Layout>
-      <Plugins plugins={plugins} />
+      <PluginsList plugins={plugins} />
     </Layout>
   }
 }
