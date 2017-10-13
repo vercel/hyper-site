@@ -1,7 +1,6 @@
 import IconSearch from '../static/search.svg'
-import PropTypes from 'prop-types'
 
-const Search = () => (
+const Search = ({ handleSubmit, handleInput, inputValue }) => (
   <div>
     <style jsx>{`
       .search {
@@ -30,12 +29,14 @@ const Search = () => (
         display: inline;
       }
     `}</style>
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <input
         className="search"
         type="text"
         placeholder="Search..."
-        maxLength="30"
+        maxLength="45"
+        onChange={handleInput}
+        value={inputValue}
       />
     </form>
 
