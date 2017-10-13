@@ -1,12 +1,12 @@
 import React from 'react'
+import escapeHtml from 'escape-html'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
-import { search } from '../containers/Search'
 import searchResult from '../lib/search-result'
 
 export default class extends React.Component {
-  static async getInitialProps() {
-    const plugins = await searchResult(search)
+  static async getInitialProps({ query: { q: search } }) {
+    const plugins = await searchResult(escapeHtml(search))
     return { plugins }
   }
   render() {
