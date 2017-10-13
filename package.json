@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "babel-plugin-inline-react-svg": "^0.4.0",
+    "escape-html": "^1.0.3",
     "isomorphic-fetch": "^2.2.1",
     "next": "^4.0.3",
     "react": "^16.0.0",
