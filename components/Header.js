@@ -1,7 +1,7 @@
 import Logo from './Logo'
 import Link from 'next/link'
 import ActiveLink from './ActiveLink'
-import Search from './Search'
+import Search from '../containers/Search'
 
 export default () => (
   <header>
