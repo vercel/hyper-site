@@ -5,7 +5,7 @@ const ActiveLink = ({ children, router, href }) => {
     color: router.pathname === href ? 'white' : '#999999'
   }
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     event.preventDefault()
     router.push(href)
   }
@@ -19,7 +19,9 @@ const ActiveLink = ({ children, router, href }) => {
           font-size: 14px;
           font-size: 1.4rem;
         }
-        a:not(:last-of-type) { margin-right: 24px; }
+        a:not(:last-of-type) {
+          margin-right: 24px;
+        }
       `}</style>
     </a>
   )

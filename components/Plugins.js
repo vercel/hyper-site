@@ -2,13 +2,11 @@ import Plugin from './Plugin'
 
 export default ({ plugins }) => (
   <div className="plugins-list">
-    {
-      plugins.map((plugin, i) => (
-        <div key={ plugin.package.name } className="plugin">
-          <Plugin {...plugin.package} />
-        </div>
-      ))
-    }
+    {plugins.map((plugin, i) => (
+      <div key={plugin.package.name} className="plugin">
+        <Plugin {...plugin.package} />
+      </div>
+    ))}
 
     <style jsx>{`
       .plugins-list {

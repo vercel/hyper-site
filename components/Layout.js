@@ -1,14 +1,12 @@
 import Meta from './Meta'
 import Header from './Header'
 
-export default ({children}) => (
+export default ({ children }) => (
   <div className="main">
     <Meta />
     <Header />
 
-    <div className="page">
-      { children }
-    </div>
+    <div className="page">{children}</div>
 
     <style jsx>{`
       .main {

@@ -33,14 +33,14 @@ const Search = () => (
     <form className="form">
       <input
         className="search"
-        type="text" 
-        placeholder="Search..." 
+        type="text"
+        placeholder="Search..."
         maxLength="30"
       />
     </form>
-    
+
     <button className="icon">
-     <IconSearch/>
+      <IconSearch />
     </button>
   </div>
 )

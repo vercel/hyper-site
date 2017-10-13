@@ -1,16 +1,23 @@
 import Link from 'next/link'
 
-export default ({ name, description, version, keywords, links, publisher, maintainers }) => (
+export default ({
+  name,
+  description,
+  version,
+  keywords,
+  links,
+  publisher,
+  maintainers
+}) => (
   <div className="plugin">
     <div className="plugin__content">
-      <a href={ links.homepage } target="_blank">
-        <h4 className="plugin__name">{ name }</h4>
+      <a href={links.homepage} target="_blank">
+        <h4 className="plugin__name">{name}</h4>
       </a>
-      <p className="plugin__description">{ description }</p>
+      <p className="plugin__description">{description}</p>
     </div>
 
-    <div className="plugin__options">
-    </div>
+    <div className="plugin__options" />
 
     <style jsx>{`
       .plugin {

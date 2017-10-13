@@ -10,7 +10,76 @@ export default () => (
       /*
         CSS Reset via github/wulkano/eightpoint modified for this usecase
       */
-      html, body, div,  span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header, footer, section, article, nav, canvas, aside, figcaption, figure, hgroup, menuitem, summary, time, mark, audio, video {
+      html,
+      body,
+      div,
+      span,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      address,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strong,
+      sub,
+      sup,
+      var,
+      b,
+      i,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      header,
+      footer,
+      section,
+      article,
+      nav,
+      canvas,
+      aside,
+      figcaption,
+      figure,
+      hgroup,
+      menuitem,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
         margin: 0;
         padding: 0;
         border: 0;
@@ -24,21 +93,33 @@ export default () => (
 
       *,
       *::before,
-      *::after { box-sizing: inherit; }
+      *::after {
+        box-sizing: inherit;
+      }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Oxygen-Sans, 'Fira Sans', 'Droid Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Oxygen-Sans, 'Fira Sans', 'Droid Sans', Ubuntu, Cantarell,
+          'Helvetica Neue', sans-serif;
         font-size: 16px;
         font-size: 1.6rem;
         line-height: 1.5em;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale
+        -moz-osx-font-smoothing: grayscale;
       }
 
-      a { text-decoration: none; }
-      :focus { outline: 0; }
+      a {
+        text-decoration: none;
+      }
+      :focus {
+        outline: 0;
+      }
 
-      pre, code, kbd, samp, tt {
+      pre,
+      code,
+      kbd,
+      samp,
+      tt {
         font-family: 'Courier New', Courier, monospace;
         font-size: 1em;
       }
@@ -52,9 +133,12 @@ export default () => (
         color: white;
       }
 
-      a { color: white; }
-      a:hover { text-decoration: underline; }
-
+      a {
+        color: white;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
     `}</style>
   </div>
 )

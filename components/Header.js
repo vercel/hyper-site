@@ -15,8 +15,8 @@ export default () => (
       <ActiveLink href="/plugins">Plugins</ActiveLink>
       <ActiveLink href="/themes">Themes</ActiveLink>
     </nav>
-    
-    <Search/>
+
+    <Search />
 
     <style jsx>{`
       header {
