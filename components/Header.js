@@ -1,7 +1,7 @@
 import Logo from './Logo'
 import Link from 'next/link'
 import ActiveLink from './ActiveLink'
-import Search from '../containers/Search'
+import InputSearch from '../containers/Search'
 
 export default () => (
   <header>
@@ -16,7 +16,7 @@ export default () => (
       <ActiveLink href="/themes">Themes</ActiveLink>
     </nav>
 
-    <Search />
+    <InputSearch />
 
     <style jsx>{`
       header {
