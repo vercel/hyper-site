@@ -2,10 +2,8 @@ import React from 'react'
 import Router from 'next/router'
 import InputSearch from '../components/InputSearch'
 
-export let search = null
-
-// The variable "let search" will be sent to the "pages/search",
-// so that it receives the data that the user wrote.
+// The value of "this.state.inputValue" will be sent to the "page/search",
+// so you can use the value that the user entered in the search box :)
 
 export default class extends React.Component {
   constructor(props) {
@@ -13,7 +11,6 @@ export default class extends React.Component {
     this.state = { inputValue: '' }
     this.handleInput = this.handleInput.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.data = null
   }
 
   handleInput = e => {
@@ -23,9 +20,8 @@ export default class extends React.Component {
   }
 
   handleSubmit = e => {
-    search = this.state.inputValue
     e.preventDefault()
-    Router.push('/search')
+    Router.push(`/search?q=${this.state.inputValue}`)
   }
 
   render() {
