@@ -3,7 +3,7 @@ import IconSearch from '../static/search.svg'
 const Search = ({ handleSubmit, handleInput, inputValue }) => (
   <div>
     <style jsx>{`
-      .search {
+      .input {
         background: transparent;
         border: none;
         color: white;
@@ -15,6 +15,10 @@ const Search = ({ handleSubmit, handleInput, inputValue }) => (
         left: 40%;
         width: 70px;
         padding-left: 5px;
+      }
+
+      .input:focus {
+        color: #50e3c2;
       }
 
       .icon {
@@ -31,7 +35,7 @@ const Search = ({ handleSubmit, handleInput, inputValue }) => (
     `}</style>
     <form className="form" onSubmit={handleSubmit}>
       <input
-        className="search"
+        className="input"
         type="text"
         placeholder="Search..."
         maxLength="45"
