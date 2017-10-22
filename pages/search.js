@@ -30,8 +30,7 @@ export default class extends React.Component {
           <PluginsList plugins={plugins} />
         </Layout>
       )
-    } else {
-      return <SearchNotFound inputValue={inputValue} />
     }
+    return <SearchNotFound inputValue={inputValue} />
   }
 }
