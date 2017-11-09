@@ -139,6 +139,17 @@ export default () => (
       a:hover {
         text-decoration: underline;
       }
+
+      ::selection {
+        background-color: #f81ce5;
+        color: #fff;
+      }
+
+      ::-moz-selection {
+        /* Code for Firefox */
+        background: #f81ce5;
+        color: #fff;
+      }
     `}</style>
   </div>
 )
