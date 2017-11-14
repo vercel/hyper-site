@@ -18,7 +18,7 @@ const Search = ({ handleSubmit, handleInput, inputValue }) => (
       }
 
       .input:focus {
-        color: #50e3c2;
+        color: #fff;
       }
 
       .icon {
