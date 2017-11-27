@@ -5,6 +5,8 @@ export default class extends React.Component {
   constructor(props) {
     super(props)
     this.state = { focus: null }
+    this.onFocus = this.onFocus.bind(this)
+    this.onBlur = this.onBlur.bind(this)
   }
 
   onFocus() {
@@ -54,8 +56,8 @@ export default class extends React.Component {
         `}</style>
         <form className="search-form" onSubmit={this.props.handleSubmit}>
           <input
-            onFocus={this.onFocus.bind(this)}
-            onBlur={this.onBlur.bind(this)}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
             className="search-field"
             type="text"
             placeholder="Search..."
