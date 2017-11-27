@@ -1,53 +1,73 @@
+import React from 'react'
 import IconSearch from '../static/search.svg'
 
-const Search = ({ handleSubmit, handleInput, inputValue }) => (
-  <div>
-    <style jsx>{`
-      .input {
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 14px;
-        font-size: 1.4rem;
-        font-weight: 400;
-        transform: translateX(40%);
-        line-height: 2.3rem;
-        left: 40%;
-        width: 70px;
-        padding-left: 5px;
-      }
+export default class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { focus: null }
+  }
 
-      .input:focus {
-        color: #50e3c2;
-      }
+  onFocus() {
+    this.setState({ focus: true })
+  }
 
-      .icon {
-        display: inline;
-        background: transparent;
-        border: none;
-        margin-left: 22px;
-        width: 0px;
-      }
+  onBlur() {
+    this.setState({ focus: false })
+  }
+  render() {
+    return (
+      <div className={this.state.focus ? 'focus' : null}>
+        <style jsx>{`
+          .search-form {
+            display: inline;
+          }
 
-      .form {
-        display: inline;
-      }
-    `}</style>
-    <form className="form" onSubmit={handleSubmit}>
-      <input
-        className="input"
-        type="text"
-        placeholder="Search..."
-        maxLength="45"
-        onChange={handleInput}
-        value={inputValue}
-      />
-    </form>
+          .search-field {
+            background: transparent;
+            border: none;
+            color: #999999;
+            font-size: 14px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            transform: translateX(40%);
+            line-height: 2.3rem;
+            left: 40%;
+            width: 70px;
+            padding-left: 5px;
+          }
 
-    <button className="icon">
-      <IconSearch />
-    </button>
-  </div>
-)
+          .search-field :focus {
+            color: #fff;
+          }
 
-export default Search
+          .search-icon {
+            cursor: pointer;
+            display: inline;
+            border: none;
+            margin-left: 28px;
+            width: 0px;
+          }
+
+          .focus .search-icons :global(path) {
+            opacity: 5;
+          }
+        `}</style>
+        <form className="search-form" onSubmit={this.props.handleSubmit}>
+          <input
+            onFocus={this.onFocus.bind(this)}
+            onBlur={this.onBlur.bind(this)}
+            className="search-field"
+            type="text"
+            placeholder="Search..."
+            maxLength="45"
+            onChange={this.props.handleInput}
+            value={this.props.inputValue}
+          />
+          <span onClick={this.props.handleSubmit} className="search-icon">
+            <IconSearch />
+          </span>
+        </form>
+      </div>
+    )
+  }
+}
