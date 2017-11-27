@@ -1,6 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
-import InputSearch from '../components/InputSearch'
+import InputSearch from './InputSearch'
 
 // The value of "this.state.inputValue" will be sent to the "page/search",
 // so you can use the value that the user entered in the search box :)

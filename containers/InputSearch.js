@@ -48,8 +48,8 @@ export default class extends React.Component {
             width: 0px;
           }
 
-          .focus .search-icons :global(path) {
-            opacity: 5;
+          .focus .search-icon :global(path) {
+            opacity: 1;
           }
         `}</style>
         <form className="search-form" onSubmit={this.props.handleSubmit}>
