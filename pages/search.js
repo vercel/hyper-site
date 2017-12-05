@@ -1,5 +1,5 @@
 import React from 'react'
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-unfetch'
 import escapeHtml from 'escape-html'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
