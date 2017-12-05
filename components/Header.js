@@ -1,7 +1,7 @@
 import Logo from './Logo'
 import Link from 'next/link'
 import ActiveLink from './ActiveLink'
-import InputSearch from '../containers/Search'
+import SearchInput from './Search'
 
 export default () => (
   <header>
@@ -16,7 +16,7 @@ export default () => (
       <ActiveLink href="/themes">Themes</ActiveLink>
     </nav>
 
-    <InputSearch />
+    <SearchInput />
 
     <style jsx>{`
       header {
@@ -25,6 +25,7 @@ export default () => (
         display: flex;
         justify-content: space-between;
         position: relative;
+        align-items: center;
       }
 
       nav {
@@ -32,6 +33,10 @@ export default () => (
         left: 50%;
         transform: translateX(-50%);
         line-height: 2.3rem;
+      }
+
+      .logo {
+        display: flex;
       }
     `}</style>
   </header>
