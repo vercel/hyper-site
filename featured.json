@@ -1,0 +1,11 @@
+
+{
+  "plugins": [
+    "hyper-mac-controls"
+  ],
+  "themes": [
+    "hyper-pokemon",
+    "hyper-snazzy",
+    "hyper-solarized-dark"
+  ]
+}
