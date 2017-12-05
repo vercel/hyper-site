@@ -41,18 +41,43 @@ export default class extends React.Component {
       <div className="plugins-list">
         {plugins.map((plugin, i) => (
           <div key={plugin.package.name} className="plugin">
-            <Plugin {...plugin.package} />
+            <div className="plugin-contents">
+              <Plugin {...plugin.package} />
+            </div>
           </div>
         ))}
 
         <style jsx>{`
           .plugins-list {
             padding-top: 48px;
+            margin-left: -40px;
+            margin-right: -40px;
           }
 
-          .plugin:not(:last-of-type) {
-            border-bottom: 1px solid #333333;
-            margin-bottom: 16px;
+          .plugin {
+            padding: 0 40px;
+            padding-bottom: 16px;
+            cursor: pointer;
+          }
+
+          .plugin:hover {
+            background: #121212;
+          }
+
+          .plugin-contents {
+            padding-top: 16px;
+          }
+
+          .plugin:not(:first-of-type) .plugin-contents {
+            border-top: 1px solid #333333;
+          }
+
+          .plugin:hover .plugin-contents {
+            border-color: transparent;
+          }
+
+          .plugin:hover + .plugin .plugin-contents {
+            border-color: transparent;
           }
         `}</style>
       </div>
