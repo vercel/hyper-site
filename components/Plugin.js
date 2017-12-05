@@ -21,19 +21,16 @@ export default ({
 
     <style jsx>{`
       .plugin {
-        padding-bottom: 16px;
         display: flex;
       }
 
       .plugin__name {
-        font-size: 16px;
         font-size: 1.6rem;
         font-weight: 400;
         margin-bottom: 4px;
       }
 
       .plugin__description {
-        font-size: 12px;
         font-size: 1.2rem;
         color: #999999;
       }
