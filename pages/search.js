@@ -3,13 +3,9 @@ import fetch from 'isomorphic-unfetch'
 import escapeHtml from 'escape-html'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
-import SearchNotFound from '../components/SearchNotFound'
-
-// The variable "inputValue" will have the input value.
-// This variable will be used in case the search is not successful.
 
 const searchResult = async (search = null) => {
-  const url = `https://api.npms.io/v2/search?q=keywords:hyper+${search}`
+  const url = `https://api.npms.io/v2/search?q=${search}+keywords:hyper-plugin,hyper-theme`
   const response = await fetch(url)
   return await response.json()
 }
@@ -17,13 +13,15 @@ const searchResult = async (search = null) => {
 export default class extends React.Component {
   static async getInitialProps({ query: { q: search } }) {
     const plugins = await searchResult(escapeHtml(search))
-    const inputValue = search
-    return { plugins, inputValue }
+    const searchTerm = search
+    return { plugins, searchTerm }
   }
   render() {
     const plugins = this.props.plugins.results
     const totalResults = this.props.plugins.total
-    const inputValue = this.props.inputValue
+    const { searchTerm } = this.props
+
+    // In the case of search results, render the plugins list
     if (totalResults > 0) {
       return (
         <Layout>
@@ -31,6 +29,31 @@ export default class extends React.Component {
         </Layout>
       )
     }
-    return <SearchNotFound inputValue={inputValue} />
+
+    // In the case of no search results, return this
+    return (
+      <Layout>
+        <div className="search__error">
+          <p>
+            Your search for "<b>{searchTerm}</b>" did not match any plugins or
+            themes 😱 <br />
+            Make sure the search term is spelled correctly.
+          </p>
+        </div>
+
+        <style jsx>{`
+          .search__error {
+            width: 100%;
+            text-align: center;
+            height: calc(100vh - 122px);
+            min-height: 124px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+          }
+        `}</style>
+      </Layout>
+    )
   }
 }
