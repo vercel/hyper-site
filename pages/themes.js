@@ -1,19 +1,40 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
+import Filter from '../components/Filter.js'
 import getPlugins from '../lib/get-plugins'
 
 export default class extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      filter: 'featured'
+    }
+
+    this.handleFilterChange = this.handleFilterChange.bind(this)
+  }
+
   static async getInitialProps() {
-    const plugins = await getPlugins('themes')
-    return { plugins }
+    const themes = await getPlugins('themes')
+    return { themes }
+  }
+
+  handleFilterChange(filter) {
+    this.setState({
+      filter
+    })
   }
 
   render() {
-    const plugins = this.props.plugins.results
+    const themes = this.props.themes.results
     return (
       <Layout>
-        <PluginsList plugins={plugins} />
+        <Filter
+          handleFilterChange={this.handleFilterChange}
+          currentFilter={this.state.filter}
+        />
+        <PluginsList plugins={themes} filteredBy={this.state.filter} />
       </Layout>
     )
   }
