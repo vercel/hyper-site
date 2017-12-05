@@ -19,7 +19,7 @@ export default class extends React.Component {
   render() {
     const plugins = this.props.plugins.results
     const totalResults = this.props.plugins.total
-    const searchTerm = this.props.searchTerm
+    const { searchTerm } = this.props
 
     // In the case of search results, render the plugins list
     if (totalResults > 0) {
