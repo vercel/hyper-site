@@ -1,4 +1,21 @@
 {
+  "name": "hyper-plugins",
+  "version": "1.0.0",
+  "description": "A directory of Hyper plugins and themes",
+  "repository": "git@github.com:zeit/hyper-plugins.git",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "babel-plugin-inline-react-svg": "^0.4.0",
     "escape-html": "^1.0.3",
@@ -7,21 +24,9 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "precommit": "lint-staged"
-  },
   "devDependencies": {
     "husky": "^0.14.3",
     "lint-staged": "^4.2.3",
     "prettier": "^1.7.4"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --single-quote --no-semi --write",
-      "git add"
-    ]
   }
 }
