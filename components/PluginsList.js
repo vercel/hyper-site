@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Plugin from './Plugin'
 import {
   plugins as featuredPlugins,
@@ -40,11 +41,16 @@ export default class extends React.Component {
     return (
       <div className="plugins-list">
         {plugins.map((plugin, i) => (
-          <div key={plugin.package.name} className="plugin">
-            <div className="plugin-contents">
-              <Plugin {...plugin.package} />
+          <Link
+            key={plugin.package.name}
+            href={{ pathname: '/plugin', query: { name: plugin.package.name } }}
+          >
+            <div className="plugin">
+              <div className="plugin-contents">
+                <Plugin {...plugin.package} />
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
 
         <style jsx>{`
