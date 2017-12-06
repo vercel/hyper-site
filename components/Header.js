@@ -6,7 +6,7 @@ import SearchInput from './Search'
 export default () => (
   <header>
     <Link prefetch href="/">
-      <a>
+      <a className="logo">
         <Logo />
       </a>
     </Link>
