@@ -20,7 +20,7 @@ export default class extends React.Component {
           placeholder="Search..."
           onKeyPress={this.handleSearch}
         />
-        <SearchIcon />
+        <SearchIcon className="search__icon" />
 
         <style jsx>{`
           .search-input {
@@ -47,6 +47,13 @@ export default class extends React.Component {
           }
           input::-ms-input-placeholder {
             color: #999999;
+          }
+          :global(.search__icon) {
+            opacity: 0.5;
+            transition: opacity 0.12s ease-in-out;
+          }
+          input:focus + :global(.search__icon) {
+            opacity: 1;
           }
         `}</style>
       </div>
