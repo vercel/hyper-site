@@ -172,8 +172,8 @@ export default () => (
         color: #bd10e0;
       }
 
-      .plugin__readme *:not(pre) > code:before,
-      .plugin__readme *:not(pre) > code:after {
+      :not(pre) > code:before,
+      :not(pre) > code:after {
         content: '\u0060';
         margin: 0 2px;
       }
