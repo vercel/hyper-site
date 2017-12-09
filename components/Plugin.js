@@ -11,9 +11,9 @@ export default ({
 }) => (
   <div className="plugin">
     <div className="plugin__content">
-      <a href={links.homepage} target="_blank">
+      <Link href={`/plugins/${name}`}>
         <h4 className="plugin__name">{name}</h4>
-      </a>
+      </Link>
       <p className="plugin__description">{description}</p>
     </div>
 
