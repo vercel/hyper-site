@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default ({ name, description }) => (
   <div className="plugin">
     <div className="plugin__content">

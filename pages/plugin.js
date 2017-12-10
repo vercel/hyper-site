@@ -5,8 +5,8 @@ import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
 
 export default class extends React.Component {
-  static async getInitialProps({ query }) {
-    const result = await fetch(`https://api.npms.io/v2/package/${query.name}`)
+  static async getInitialProps({ query: { id } }) {
+    const result = await fetch(`https://api.npms.io/v2/package/${id}`)
     const json = await result.json()
     return { plugin: json.collected }
   }
