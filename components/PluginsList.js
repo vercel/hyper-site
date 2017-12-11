@@ -43,7 +43,8 @@ export default class extends React.Component {
         {plugins.map((plugin, i) => (
           <Link
             key={plugin.package.name}
-            href={`/plugins/${plugin.package.name}`}
+            href={`/plugin?id=${plugin.package.name}`}
+            as={`/plugins/${plugin.package.name}`}
           >
             <div className="plugin">
               <div className="plugin-contents">
