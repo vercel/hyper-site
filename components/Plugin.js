@@ -22,6 +22,11 @@ export default ({ name, description }) => (
         font-size: 1.2rem;
         color: #999999;
       }
+
+      h4,
+      p {
+        margin: 0;
+      }
     `}</style>
   </div>
 )
