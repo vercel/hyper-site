@@ -1,8 +1,8 @@
 import React from 'react'
 import fetch from 'isomorphic-unfetch'
-import Markdown from 'react-markdown'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
+import getPluginInfo from '../lib/get-plugin.js'
 
 export default class extends React.Component {
   static async getInitialProps({ query: { id } }) {
@@ -11,25 +11,42 @@ export default class extends React.Component {
     return { plugin: json.collected }
   }
 
+  async componentDidMount() {
+    console.log(this.props)
+    if (
+      !window.__HYPER_PLUGINS__ ||
+      !window.__HYPER_PLUGINS__[this.props.url.query.id]
+    ) {
+      this.setState({
+        plugin: await getPluginInfo(this.props.url.query.id)
+      })
+    } else {
+      this.setState({
+        plugin: window.__HYPER_PLUGINS__[this.props.url.query.id]
+      })
+    }
+    console.log(this.state)
+  }
+
   render() {
+    const pluginInfo =
+      this.state && this.state.plugin && this.state.plugin.plugin
+        ? this.state.plugin.plugin
+        : null
     return (
       <Layout>
         <div className="plugin">
-          <Markdown
-            className="plugin-readme"
-            source={this.props.plugin.metadata.readme}
-            escapeHtml={false}
-          />
-
-          <div className="plugin-installation" id="installation">
-            <h3>Installation</h3>
-            <p>
-              To install {this.props.plugin.metadata.name}, simply copy and
-              paste the following line to your terminal, then hit <b>"Enter"</b>{' '}
-              to install!
-            </p>
-            <code>hyper install {this.props.plugin.metadata.name}</code>
-          </div>
+          <h1>
+            {pluginInfo ? pluginInfo.title : this.props.plugin.metadata.name}
+          </h1>
+          <p>
+            {pluginInfo
+              ? pluginInfo.caption
+              : this.props.plugin.metadata.description}
+          </p>
+          {pluginInfo ? (
+            <img src={pluginInfo.preview} alt={`${pluginInfo.title} preview`} />
+          ) : null}
 
           <PluginInfo plugin={this.props.plugin} />
         </div>
@@ -37,6 +54,9 @@ export default class extends React.Component {
         <style jsx>{`
           .plugin {
             padding-bottom: 64px;
+            max-width: 764px;
+            margin: 0 auto;
+            text-align: center;
           }
 
           .plugin-installation {
@@ -45,20 +65,19 @@ export default class extends React.Component {
             padding: 16px 32px 32px;
             margin-bottom: 64px;
           }
-        `}</style>
 
-        <style jsx global>{`
           /* Readme Heading */
-          .plugin-readme h1:first-of-type {
+          .plugin h1 {
             font-size: 1.6rem;
             font-weight: 400;
             text-align: center;
             display: block;
             margin-bottom: 16px;
+            margin-top: 40px;
           }
 
           /* Readme subheading */
-          .plugin-readme h1:first-of-type + h2:first-of-type {
+          .plugin p:first-of-type {
             color: #999999;
             text-align: center;
             max-width: 40rem;
@@ -68,16 +87,18 @@ export default class extends React.Component {
             font-weight: 400;
           }
 
+          .plugin img {
+            max-width: 100%;
+            width: 600px;
+            margin-bottom: 40px;
+          }
+        `}</style>
+
+        <style jsx global>{`
           /* Readme image container */
           .plugin-readme h1:first-of-type + h2:first-of-type + p {
             text-align: center;
             width: 100%;
-          }
-
-          .plugin-readme h1:first-of-type + h2:first-of-type + p img {
-            max-width: 100%;
-            width: 600px;
-            margin-bottom: 40px;
           }
         `}</style>
       </Layout>
