@@ -1,4 +1,5 @@
 import React from 'react'
+import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
@@ -7,7 +8,21 @@ import getPluginInfo from '../lib/get-plugin'
 export default class extends React.Component {
   static async getInitialProps({ query: { id } }) {
     const result = await fetch(`https://api.npms.io/v2/package/${id}`)
+
+    if (result.status === 404) {
+      return {}
+    }
+
     const json = await result.json()
+    const keywords = json.collected.metadata.keywords || []
+
+    if (
+      !keywords.includes('hyper-plugin') &&
+      !keywords.includes('hyper-theme')
+    ) {
+      return {}
+    }
+
     return { plugin: json.collected }
   }
 
@@ -27,10 +42,32 @@ export default class extends React.Component {
   }
 
   render() {
+    if (!this.props.plugin) {
+      return (
+        <Layout>
+          <div className="plugin__notfound">
+            <span>
+              Couldn't find plugin <b>{this.props.url.query.id}</b>
+            </span>
+
+            <style jsx>{`
+              .plugin__notfound {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            `}</style>
+          </div>
+        </Layout>
+      )
+    }
+
     const pluginInfo =
       this.state && this.state.plugin && this.state.plugin.plugin
         ? this.state.plugin.plugin
         : null
+
     return (
       <Layout>
         <div className="plugin">
