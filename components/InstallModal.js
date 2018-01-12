@@ -36,7 +36,8 @@ export default class extends React.Component {
 
           .modal-container {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
+            overflow-y: auto;
             position: absolute;
             top: 0;
             bottom: 0;
