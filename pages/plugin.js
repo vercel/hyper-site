@@ -2,7 +2,7 @@ import React from 'react'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
-import getPluginInfo from '../lib/get-plugin.js'
+import getPluginInfo from '../lib/get-plugin'
 
 export default class extends React.Component {
   static async getInitialProps({ query: { id } }) {
@@ -12,7 +12,6 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
-    console.log(this.props)
     if (
       !window.__HYPER_PLUGINS__ ||
       !window.__HYPER_PLUGINS__[this.props.url.query.id]
@@ -25,7 +24,6 @@ export default class extends React.Component {
         plugin: window.__HYPER_PLUGINS__[this.props.url.query.id]
       })
     }
-    console.log(this.state)
   }
 
   render() {
