@@ -144,58 +144,10 @@ export default () => (
         color: #fff;
       }
 
-      /* Lists */
-      ul,
-      ol {
-        font-size: 1.2rem;
-        margin: 0;
-      }
-
       /* Paragraphs */
       p {
         margin-bottom: 16px;
         font-size: 1.2rem;
-      }
-
-      /* Code blocks */
-      pre {
-        background: #111111;
-        padding: 16px 32px;
-        margin: 16px 0;
-      }
-
-      code {
-        font-size: 1.2rem;
-        font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
-          'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New',
-          monospace, serif;
-        color: #bd10e0;
-      }
-
-      :not(pre) > code:before,
-      :not(pre) > code:after {
-        content: '\u0060';
-        margin: 0 2px;
-      }
-
-      /* Tables */
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-bottom: 32px;
-      }
-
-      table th,
-      table td {
-        font-size: 1.2rem;
-        text-align: left;
-        font-weight: 400;
-        border: 1px solid #444444;
-        padding: 8px;
-      }
-
-      table th {
-        color: #999999;
       }
 
       /* Helper Classes */
