@@ -1,5 +1,9 @@
 export default class extends React.Component {
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    if (prevProps.isOpen === this.props.isOpen) {
+      return
+    }
+
     const body = window.document.body
 
     if (this.props.isOpen === true) {
