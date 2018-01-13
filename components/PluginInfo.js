@@ -17,8 +17,6 @@ export default class extends React.Component {
     this.setState({
       isModalOpen: true
     })
-
-    console.log(this.props)
   }
 
   closeInstallModal() {
