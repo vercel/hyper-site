@@ -16,12 +16,6 @@ export default () => (
       span,
       object,
       iframe,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
       p,
       blockquote,
       pre,
@@ -49,8 +43,6 @@ export default () => (
       dl,
       dt,
       dd,
-      ol,
-      ul,
       li,
       fieldset,
       form,
@@ -120,7 +112,7 @@ export default () => (
       kbd,
       samp,
       tt {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Menlo, 'Courier New', Courier, monospace;
         font-size: 1em;
       }
 
@@ -134,8 +126,10 @@ export default () => (
       }
 
       a {
-        color: white;
+        color: #50e3c2;
+        cursor: pointer;
       }
+
       a:hover {
         text-decoration: underline;
       }
@@ -149,6 +143,17 @@ export default () => (
         /* Code for Firefox */
         background: #f81ce5;
         color: #fff;
+      }
+
+      /* Paragraphs */
+      p {
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+      }
+
+      /* Helper Classes */
+      .text-uppercase {
+        text-transform: uppercase;
       }
     `}</style>
   </div>

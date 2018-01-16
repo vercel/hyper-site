@@ -5,7 +5,7 @@
   "repository": "git@github.com:zeit/hyper-plugins.git",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start",
     "precommit": "lint-staged"
@@ -19,10 +19,13 @@
   "dependencies": {
     "babel-plugin-inline-react-svg": "^0.4.0",
     "escape-html": "^1.0.3",
+    "express": "^4.16.2",
     "isomorphic-unfetch": "^2.0.0",
+    "lscache": "^1.1.0",
     "next": "^4.2.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-gravatar": "^2.6.3"
   },
   "devDependencies": {
     "husky": "^0.14.3",
