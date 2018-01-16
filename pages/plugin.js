@@ -16,6 +16,10 @@ export default class extends React.Component {
       console.error(err)
     }
 
+    if (plugin.code && plugin.code === 'NOT_FOUND') {
+      return {}
+    }
+
     const keywords = plugin.collected.metadata.keywords || []
 
     if (
