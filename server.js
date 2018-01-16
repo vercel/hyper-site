@@ -13,6 +13,10 @@ nextApp.prepare().then(() => {
     return nextApp.render(req, res, '/plugin', { id: req.params.id })
   })
 
+  server.get('/plugins/:id/source', (req, res) => {
+    return nextApp.render(req, res, '/source', { id: req.params.id })
+  })
+
   server.get('*', (req, res) => {
     return nextHandler(req, res)
   })

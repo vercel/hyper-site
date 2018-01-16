@@ -1,13 +1,12 @@
 import React from 'react'
-import fetch from 'isomorphic-unfetch'
+import cachedFetch from '../lib/cached-json-fetch'
 import escapeHtml from 'escape-html'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
 
 const searchResult = async (search = null) => {
   const url = `https://api.npms.io/v2/search?q=${search}+keywords:hyper-plugin,hyper-theme`
-  const response = await fetch(url)
-  return await response.json()
+  return await cachedFetch(url)
 }
 
 export default class extends React.Component {

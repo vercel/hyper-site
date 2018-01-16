@@ -1,20 +1,22 @@
-import React from 'react'
+import react from 'react'
 import Router from 'next/router'
-import fetch from 'isomorphic-unfetch'
+import cachedFetch from '../lib/cached-json-fetch'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
 import getPluginInfo from '../lib/get-plugin'
 
 export default class extends React.Component {
   static async getInitialProps({ query: { id } }) {
-    const result = await fetch(`https://api.npms.io/v2/package/${id}`)
+    let plugin, pluginPackage
 
-    if (result.status === 404) {
-      return {}
+    try {
+      plugin = await cachedFetch(`https://api.npms.io/v2/package/${id}`)
+      pluginPackage = await cachedFetch(`https://npmjs.now.sh/${id}/latest`)
+    } catch (err) {
+      console.error(err)
     }
 
-    const json = await result.json()
-    const keywords = json.collected.metadata.keywords || []
+    const keywords = plugin.collected.metadata.keywords || []
 
     if (
       !keywords.includes('hyper-plugin') &&
@@ -23,22 +25,7 @@ export default class extends React.Component {
       return {}
     }
 
-    return { plugin: json.collected }
-  }
-
-  async componentDidMount() {
-    if (
-      !window.__HYPER_PLUGINS__ ||
-      !window.__HYPER_PLUGINS__[this.props.url.query.id]
-    ) {
-      this.setState({
-        plugin: await getPluginInfo(this.props.url.query.id)
-      })
-    } else {
-      this.setState({
-        plugin: window.__HYPER_PLUGINS__[this.props.url.query.id]
-      })
-    }
+    return { plugin: plugin.collected, pluginPackage }
   }
 
   render() {
@@ -64,8 +51,8 @@ export default class extends React.Component {
     }
 
     const pluginInfo =
-      this.state && this.state.plugin && this.state.plugin.plugin
-        ? this.state.plugin.plugin
+      this.props.pluginPackage && this.props.pluginPackage.plugin
+        ? this.props.pluginPackage.plugin
         : null
 
     return (

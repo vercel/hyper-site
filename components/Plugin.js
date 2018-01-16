@@ -2,28 +2,17 @@ import React from 'react'
 import getPluginInfo from '../lib/get-plugin'
 
 export default class extends React.Component {
-  async componentDidMount() {
+  async componentWillMount() {
     const plugin = await getPluginInfo(this.props.name)
-    if (
-      !window.__HYPER_PLUGINS__ ||
-      !window.__HYPER_PLUGINS__[this.props.name]
-    ) {
-      // If package information doesn't exist, get it from npm
-      this.setState({
-        plugin
-      })
 
-      window.__HYPER_PLUGINS__ = window.__HYPER_PLUGINS__ || {}
-      window.__HYPER_PLUGINS__[this.props.name] = { ...this.state.plugin }
-    } else {
-      // If the package exists, re-assign it to the state for use in the UI
-      this.setState({
-        plugin: window.__HYPER_PLUGINS__[this.props.name]
-      })
-    }
+    this.setState({
+      plugin
+    })
 
     // Preload image from plugin source ready for page transition
-    new Image().src = plugin.plugin.preview
+    if (plugin.plugin) {
+      new Image().src = plugin.plugin.preview
+    }
   }
 
   render() {
@@ -40,7 +29,11 @@ export default class extends React.Component {
           this.state.plugin.plugin.colors ? (
             <div className="plugin__colors">
               {this.state.plugin.plugin.colors.map((color, i) => (
-                <div className="plugin__color" style={{ background: color }} />
+                <div
+                  className="plugin__color"
+                  style={{ background: color }}
+                  key={i}
+                />
               ))}
             </div>
           ) : null}

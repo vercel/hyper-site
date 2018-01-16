@@ -1,5 +1,7 @@
 import Gravatar from 'react-gravatar'
+import Link from 'next/link'
 import InstallModal from './InstallModal'
+import GithubIcon from '../static/github-icon.svg'
 
 export default class extends React.Component {
   constructor() {
@@ -50,13 +52,22 @@ export default class extends React.Component {
             last month
           </span>
 
-          <a
-            className="plugin-info__link"
-            href={plugin.metadata.links.repository}
-            target="_blank"
+          {plugin.metadata.links.repository && (
+            <a
+              className="plugin-info__github-link"
+              target="_blank"
+              href={plugin.metadata.links.repository}
+            >
+              <GithubIcon />
+            </a>
+          )}
+
+          <Link
+            href={`/source?id=${plugin.metadata.name}`}
+            as={`/plugins/${plugin.metadata.name}/source`}
           >
-            View source code
-          </a>
+            <a className="plugin-info__link">View source code</a>
+          </Link>
 
           <div className="plugin-info__version border-followed">
             Version {plugin.metadata.version}
@@ -113,6 +124,15 @@ export default class extends React.Component {
               margin-right: 8px;
               padding-right: 8px;
               border-right: 1px solid #333333;
+            }
+
+            .plugin-info__github-link {
+              display: flex;
+              margin-right: 24px;
+            }
+
+            .plugin-info__github-link:hover :global(svg) {
+              fill: white;
             }
           `}</style>
         </div>

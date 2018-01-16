@@ -112,7 +112,7 @@ export default () => (
       kbd,
       samp,
       tt {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Menlo, 'Courier New', Courier, monospace;
         font-size: 1em;
       }
 
@@ -127,6 +127,7 @@ export default () => (
 
       a {
         color: #50e3c2;
+        cursor: pointer;
       }
 
       a:hover {
