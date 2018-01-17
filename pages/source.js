@@ -52,15 +52,29 @@ export default class extends React.Component {
   }
 
   componentWillMount() {
-    const initialFile = this.props.pluginPackage.main
-      ? `/${this.props.pluginPackage.main}`
-      : this.props.pluginContents.files[0].path
+    let initialFile
+    const requestedFile = this.readFileFromURL()
+
+    if (requestedFile) {
+      initialFile = `/${requestedFile}`
+    } else {
+      initialFile = this.props.pluginPackage.main
+        ? `/${this.props.pluginPackage.main}`
+        : this.props.pluginContents.files[0].path
+    }
 
     // Get Initial File
     this.updateActiveFile(initialFile)
 
     // Get Initial File Contents
     this.fetchFileContents(initialFile)
+  }
+
+  componentDidMount() {
+    const requestedFile = this.readFileFromURL()
+    if (this.state.activeFile && !requestedFile) {
+      this.updateURL(this.state.activeFile)
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -86,6 +100,27 @@ export default class extends React.Component {
     })
   }
 
+  formatFileName(file) {
+    return file.replace(/^\/+|\/+$/g, '')
+  }
+
+  readFileFromURL() {
+    return (
+      Object.keys(this.props.url.query)[1] ||
+      this.props.url.asPath.split('?')[1]
+    )
+  }
+
+  updateURL(file) {
+    const { url } = this.props
+    const formattedFile = this.formatFileName(file)
+    Router.push(
+      `/source?id=${this.props.id}&${formattedFile}`,
+      `source?${formattedFile}`,
+      { shallow: true }
+    )
+  }
+
   async fetchFileContents(file) {
     const contents = await this.getFileContents(file)
 
@@ -109,7 +144,10 @@ export default class extends React.Component {
                     ? 'source__file--is-active'
                     : ''
                 }`}
-                onClick={() => this.updateActiveFile(file.path)}
+                onClick={() => {
+                  this.updateURL(file.path)
+                  this.updateActiveFile(file.path)
+                }}
               >
                 <FileIcon className="source__file-icon" />
                 {file.path
