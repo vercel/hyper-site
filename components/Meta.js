@@ -130,10 +130,6 @@ export default () => (
         cursor: pointer;
       }
 
-      a:hover {
-        text-decoration: underline;
-      }
-
       ::selection {
         background-color: #f81ce5;
         color: #fff;
