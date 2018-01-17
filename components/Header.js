@@ -4,7 +4,7 @@ import ActiveLink from './ActiveLink'
 import SearchInput from './Search'
 
 export default () => (
-  <header>
+  <header className="container">
     <Link prefetch href="/">
       <a className="logo">
         <Logo />

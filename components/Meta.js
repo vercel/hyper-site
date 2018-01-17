@@ -151,6 +151,12 @@ export default () => (
       .text-uppercase {
         text-transform: uppercase;
       }
+
+      /* Helps maintain consistent width */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
     `}</style>
   </div>
 )

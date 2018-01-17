@@ -62,7 +62,6 @@ export default class extends React.Component {
           }
 
           .plugin {
-            padding: 0 40px;
             padding-bottom: 16px;
             cursor: pointer;
           }
@@ -73,6 +72,8 @@ export default class extends React.Component {
 
           .plugin-contents {
             padding-top: 16px;
+            padding-left: 40px;
+            padding-right: 40px;
           }
 
           .plugin:not(:first-of-type) .plugin-contents {

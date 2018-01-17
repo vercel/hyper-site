@@ -193,7 +193,7 @@ export default class extends React.Component {
   render() {
     return (
       <Layout>
-        <header>
+        <header className="container">
           <Link
             href={`/plugin?id=${this.props.id}`}
             as={`/plugins/${this.props.id}`}
@@ -208,7 +208,7 @@ export default class extends React.Component {
               : this.props.plugin.metadata.name}
           </h1>
         </header>
-        <div className="source">
+        <div className="source container">
           {this.renderFileTree(this.props.pluginContents.files)}
 
           <div className="source__contents">

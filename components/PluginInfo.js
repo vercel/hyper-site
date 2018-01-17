@@ -81,7 +81,9 @@ export default class extends React.Component {
             .plugin-info {
               position: fixed;
               bottom: 0;
-              left: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              max-width: 980px;
               width: 100%;
               background: black;
               height: 6.4rem;

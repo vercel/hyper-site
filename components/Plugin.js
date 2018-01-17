@@ -18,7 +18,7 @@ export default class extends React.Component {
   render() {
     return (
       <div className="plugin">
-        <div className="plugin__content">
+        <div className="plugin__content container">
           <div className="plugin__left">
             <h4 className="plugin__name">{this.props.name}</h4>
             <p className="plugin__description">{this.props.description}</p>
