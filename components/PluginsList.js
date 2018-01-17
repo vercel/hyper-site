@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
 import Plugin from './Plugin'
 import {
   plugins as featuredPlugins,
@@ -46,7 +47,15 @@ export default class extends React.Component {
             href={`/plugin?id=${plugin.package.name}`}
             as={`/plugins/${plugin.package.name}`}
           >
-            <div className="plugin">
+            <div
+              className="plugin"
+              onMouseEnter={() => {
+                Router.prefetch(
+                  `/plugin?id=${plugin.package.name}`,
+                  `/plugins/${plugin.package.name}`
+                )
+              }}
+            >
               <div className="plugin-contents">
                 <Plugin {...plugin.package} />
               </div>
