@@ -1,4 +1,5 @@
 import React from 'react'
+import Router from 'next/router'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
 import Filter from '../components/Filter'
@@ -20,10 +21,39 @@ export default class extends React.Component {
     return { plugins }
   }
 
-  handleFilterChange(filter) {
+  componentWillMount() {
+    const requestedFilter = this.readFilterFromURL()
+    if (requestedFilter && this.state.filter !== requestedFilter) {
+      this.setState({
+        filter: requestedFilter
+      })
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.url.asPath !== this.props.url.asPath) {
+      const newFilter = this.readFilterFromURL()
+      this.handleFilterChange(newFilter)
+    }
+  }
+
+  handleFilterChange(newFilter) {
+    if (newFilter) {
+      this.updateFilterURL(newFilter)
+    }
+
     this.setState({
-      filter
+      filter: newFilter || 'featured'
     })
+  }
+
+  readFilterFromURL() {
+    return this.props.url.asPath.split('?')[1]
+  }
+
+  updateFilterURL(newFilter) {
+    const href = `/plugins?${newFilter}`
+    Router.push(href, href, { shallow: true })
   }
 
   render() {
