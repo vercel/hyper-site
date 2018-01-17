@@ -1,4 +1,18 @@
 import Head from 'next/head'
+import NProgress from 'nprogress'
+import debounce from 'lodash.debounce'
+import RouterEvents from '../lib/router-events'
+
+const start = debounce(NProgress.start, 200)
+RouterEvents.on('routeChangeStart', start)
+RouterEvents.on('routeChangeComplete', () => {
+  start.cancel()
+  NProgress.done()
+})
+RouterEvents.on('routeChangeError', () => {
+  start.cancel()
+  NProgress.done()
+})
 
 export default () => (
   <div>
@@ -145,6 +159,21 @@ export default () => (
       p {
         margin-bottom: 16px;
         font-size: 1.2rem;
+      }
+
+      /* nprogress */
+      #nprogress {
+        pointer-events: none;
+      }
+
+      #nprogress .bar {
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: white;
       }
 
       /* Helper Classes */
