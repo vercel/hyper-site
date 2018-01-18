@@ -34,7 +34,7 @@ export default class extends React.Component {
             font-size: 1.2rem;
             padding-right: 8px;
             width: 78px;
-            transition: width 0.12s ease-in-out;
+            transition: width 0.2s ease;
           }
           input:focus {
             width: 128px;
@@ -50,7 +50,7 @@ export default class extends React.Component {
           }
           :global(.search__icon) {
             opacity: 0.5;
-            transition: opacity 0.12s ease-in-out;
+            transition: opacity 0.2s ease;
           }
           input:focus + :global(.search__icon) {
             opacity: 1;

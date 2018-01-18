@@ -186,7 +186,7 @@ export default class extends React.Component {
             font-size: 1.2rem;
             display: flex;
             align-items: center;
-            transition: color 0.12s ease-in-out;
+            transition: color 0.2s ease;
             cursor: pointer;
           }
 
@@ -204,7 +204,7 @@ export default class extends React.Component {
           :global(.source__file-icon) {
             margin-right: 12px;
             fill: #999;
-            transition: fill 0.12s ease-in-out;
+            transition: fill 0.2s ease;
             min-width: 11px;
           }
 

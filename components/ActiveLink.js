@@ -10,7 +10,7 @@ const ActiveLink = ({ children, router, href }) => (
         a {
           font-size: 14px;
           font-size: 1.4rem;
-          transition: color 0.12s ease-in-out;
+          transition: color 0.2s ease;
           color: ${router.pathname === href ? 'white' : '#999999'};
         }
 
