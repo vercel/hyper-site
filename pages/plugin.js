@@ -11,7 +11,7 @@ export default class extends React.Component {
 
     try {
       plugin = await cachedFetch(`https://api.npms.io/v2/package/${id}`)
-      pluginPackage = await cachedFetch(`https://npmjs.now.sh/${id}/latest`)
+      pluginPackage = await getPluginInfo(id)
     } catch (err) {
       console.error(err)
     }

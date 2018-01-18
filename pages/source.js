@@ -24,11 +24,7 @@ export default class extends React.Component {
         {},
         'json'
       )
-      pluginPackage = await cachedFetch(
-        `https://npmjs.now.sh/${id}/latest`,
-        {},
-        'json'
-      )
+      pluginPackage = await getPackageInfo(id)
     } catch (err) {
       console.error(err)
       res.redirect(`/plugins/${id}`)
