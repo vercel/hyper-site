@@ -70,13 +70,6 @@ export default class extends React.Component {
     this.fetchFileContents(initialFile)
   }
 
-  componentDidMount() {
-    const requestedFile = this.readFileFromURL()
-    if (this.state.activeFile && !requestedFile) {
-      this.updateURL(this.state.activeFile)
-    }
-  }
-
   componentDidUpdate(prevProps, prevState) {
     if (prevState.activeFile === this.state.activeFile) {
       return
