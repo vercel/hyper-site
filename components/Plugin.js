@@ -70,6 +70,7 @@ export default class extends React.Component {
             width: 12px;
             height: 12px;
             border-radius: 50%;
+            border: 1px solid #333333;
           }
 
           .plugin__color:not(:last-child) {
