@@ -283,6 +283,14 @@ export default class extends React.Component {
             width: 24px;
           }
 
+          .plugin__back-link :global(svg) {
+            transition: fill 0.2s ease;
+          }
+
+          .plugin__back-link:hover :global(svg) {
+            fill: white;
+          }
+
           .source {
             display: flex;
             overflow-x: hidden;
