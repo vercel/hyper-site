@@ -69,7 +69,7 @@ export default class extends React.Component {
             <a className="plugin-info__link">View source code</a>
           </Link>
 
-          <div className="plugin-info__version border-followed">
+          <div className="plugin-info__version">
             Version {plugin.metadata.version}
           </div>
 
@@ -117,9 +117,10 @@ export default class extends React.Component {
             .plugin-info__install {
               cursor: pointer;
               border-radius: 2px;
-              background: #50e3c2;
+              background: white;
               color: black;
               padding: 0 16px;
+              margin-left: 16px;
             }
 
             .border-followed {
