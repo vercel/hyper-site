@@ -121,6 +121,12 @@ export default class extends React.Component {
               color: black;
               padding: 0 16px;
               margin-left: 16px;
+              opacity: 1;
+              transition: opacity 0.2s ease;
+            }
+
+            .plugin-info__install:hover {
+              opacity: 0.9;
             }
 
             .border-followed {
