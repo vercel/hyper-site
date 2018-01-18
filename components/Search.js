@@ -3,6 +3,11 @@ import Router from 'next/router'
 import SearchIcon from '../static/search.svg'
 
 export default class extends React.Component {
+  constructor() {
+    super()
+
+    this.focusSearchInput = this.focusSearchInput.bind(this)
+  }
   handleSearch(event) {
     if (event.key === 'Enter') {
       Router.push({
@@ -12,6 +17,10 @@ export default class extends React.Component {
     }
   }
 
+  focusSearchInput() {
+    this.searchInput.focus()
+  }
+
   render() {
     return (
       <div className="search-input">
@@ -19,8 +28,11 @@ export default class extends React.Component {
           type="text"
           placeholder="Search..."
           onKeyPress={this.handleSearch}
+          ref={input => {
+            this.searchInput = input
+          }}
         />
-        <SearchIcon className="search__icon" />
+        <SearchIcon className="search__icon" onClick={this.focusSearchInput} />
 
         <style jsx>{`
           .search-input {
