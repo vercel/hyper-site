@@ -88,6 +88,14 @@ export default class extends React.Component {
           .plugin:not(:first-of-type) .plugin-contents {
             border-top: 1px solid #333333;
           }
+
+          .plugin:hover .plugin-contents {
+            border-color: transparent;
+          }
+
+          .plugin:hover + .plugin .plugin-contents {
+            border-color: transparent;
+          }
         `}</style>
       </div>
     )
