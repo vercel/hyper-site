@@ -73,7 +73,7 @@ export default class extends React.Component {
           .plugin {
             padding-bottom: 16px;
             cursor: pointer;
-            transition: background 0.12s ease-in-out;
+            transition: background 0.2s ease;
           }
 
           .plugin:hover {
@@ -88,7 +88,7 @@ export default class extends React.Component {
 
           .plugin:not(:first-of-type) .plugin-contents {
             border-top: 1px solid #333333;
-            transition: border-color 0.12s ease-in-out;
+            transition: border 0.2s ease;
           }
 
           .plugin:hover .plugin-contents {
