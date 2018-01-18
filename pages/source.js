@@ -177,6 +177,10 @@ export default class extends React.Component {
         ))}
 
         <style jsx>{`
+          .source__files {
+            padding-right: 20px;
+          }
+
           .source__file {
             color: #999999;
             font-size: 1.2rem;
@@ -279,12 +283,6 @@ export default class extends React.Component {
             display: flex;
             overflow-x: hidden;
             padding-bottom: 64px;
-          }
-
-          .source__files {
-            display: flex;
-            flex-direction: column;
-            min-width: 140px;
           }
 
           .source__contents {
