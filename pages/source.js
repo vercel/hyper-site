@@ -251,7 +251,9 @@ export default class extends React.Component {
             this.state.fileContents[this.state.activeFile] ? (
               <pre>{this.state.fileContents[this.state.activeFile]}</pre>
             ) : (
-              `Contents loading`
+              <span className="source__contents-loading">
+                Contents loading...
+              </span>
             )}
           </div>
         </div>
@@ -277,6 +279,8 @@ export default class extends React.Component {
           .plugin__back-link {
             position: absolute;
             left: 0;
+            height: 24px;
+            width: 24px;
           }
 
           .source {
@@ -289,6 +293,10 @@ export default class extends React.Component {
             font-size: 1.2rem;
             padding: 0 20px;
             overflow-x: auto;
+          }
+
+          .source__contents-loading {
+            color: #999999;
           }
         `}</style>
       </Layout>
