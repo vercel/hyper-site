@@ -85,6 +85,8 @@ export default class extends React.Component {
             border: 1px solid #eaeaea;
             color: #bd10e0;
             padding: 12px 0;
+            font-size: 1.2rem;
+            white-space: pre-wrap;
           }
 
           .modal pre::before {
