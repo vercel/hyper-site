@@ -1,5 +1,6 @@
 import React from 'react'
 import getPluginInfo from '../lib/get-plugin'
+import Highlighter from 'react-highlighter'
 
 export default class extends React.Component {
   async componentWillMount() {
@@ -20,8 +21,24 @@ export default class extends React.Component {
       <div className="plugin">
         <div className="plugin__content container">
           <div className="plugin__left">
-            <h4 className="plugin__name">{this.props.name}</h4>
-            <p className="plugin__description">{this.props.description}</p>
+            <h4 className="plugin__name">
+              {this.props.query ? (
+                <Highlighter search={this.props.query}>
+                  {this.props.name}
+                </Highlighter>
+              ) : (
+                <span>{this.props.name}</span>
+              )}
+            </h4>
+            <p className="plugin__description">
+              {this.props.query ? (
+                <Highlighter search={this.props.query}>
+                  {this.props.description}
+                </Highlighter>
+              ) : (
+                this.props.description
+              )}
+            </p>
           </div>
           {this.state &&
           this.state.plugin &&
@@ -48,6 +65,14 @@ export default class extends React.Component {
             display: flex;
             align-items: center;
             width: 100%;
+          }
+
+          .plugin__content :global(.highlight) {
+            background: yellow;
+            color: #000000;
+            padding-left: 4px;
+            padding-right: 4px;
+            font-weight: 400;
           }
 
           .plugin__name {

@@ -17,7 +17,7 @@ export default class extends React.Component {
   }
 
   static async getInitialProps() {
-    const plugins = await getPlugins('plugins')
+    const plugins = await getPlugins({ type: 'plugins' })
     return { plugins }
   }
 

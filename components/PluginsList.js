@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
+import Highlighter from 'react-highlighter'
 import Plugin from './Plugin'
 import {
   plugins as featuredPlugins,
@@ -57,7 +58,7 @@ export default class extends React.Component {
               }}
             >
               <div className="plugin-contents">
-                <Plugin {...plugin.package} />
+                <Plugin {...plugin.package} query={this.props.query} />
               </div>
             </div>
           </Link>

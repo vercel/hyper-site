@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ActiveLink from './ActiveLink'
 import SearchInput from './Search'
 
-export default () => (
+export default ({ handleSearch }) => (
   <header className="container">
     <Link prefetch href="/">
       <a className="logo">
@@ -16,7 +16,7 @@ export default () => (
       <ActiveLink href="/themes">Themes</ActiveLink>
     </nav>
 
-    <SearchInput />
+    <SearchInput handleSearch={handleSearch} />
 
     <style jsx>{`
       header {

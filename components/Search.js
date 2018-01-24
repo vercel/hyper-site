@@ -6,15 +6,12 @@ export default class extends React.Component {
   constructor() {
     super()
 
+    this.handleSearch = this.handleSearch.bind(this)
     this.focusSearchInput = this.focusSearchInput.bind(this)
   }
+
   handleSearch(event) {
-    if (event.key === 'Enter') {
-      Router.push({
-        pathname: '/search',
-        query: { q: event.target.value }
-      })
-    }
+    this.props.handleSearch(event.target.value)
   }
 
   focusSearchInput() {
@@ -27,7 +24,7 @@ export default class extends React.Component {
         <input
           type="text"
           placeholder="Search..."
-          onKeyPress={this.handleSearch}
+          onKeyUp={this.handleSearch}
           ref={input => {
             this.searchInput = input
           }}

@@ -28,7 +28,8 @@
     "nprogress": "^0.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-gravatar": "^2.6.3"
+    "react-gravatar": "^2.6.3",
+    "react-highlighter": "^0.4.2"
   },
   "devDependencies": {
     "husky": "^0.14.3",
