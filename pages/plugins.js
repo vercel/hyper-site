@@ -17,7 +17,7 @@ export default class extends React.Component {
   }
 
   static async getInitialProps() {
-    const plugins = await getPlugins({ type: 'plugins' })
+    const plugins = await getPlugins({ type: 'plugin' })
     return { plugins }
   }
 
@@ -57,7 +57,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const plugins = this.props.plugins.results
+    const plugins = this.props.plugins
     return (
       <Layout>
         <Filter

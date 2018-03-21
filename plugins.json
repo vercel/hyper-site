@@ -1,0 +1,62 @@
+[
+  {
+    "name": "hyper-native",
+    "description": "Make Hyper adapt to the macOS UI",
+    "type": "theme",
+    "preview": "http://i.imgur.com/eeRssvz.png",
+    "colors": [
+      "#000000",
+      "#FFFFFF"
+    ],
+    "dateAdded": "1521644449784",
+    "featured": true
+  },
+  {
+    "name": "hyperpower",
+    "description": "Extension for Hyper that turns on power mode, with bonus wow mode",
+    "type": "plugin",
+    "preview": "https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif",
+    "dateAdded": "1521644449784",
+    "featured": true
+  },
+  {
+    "name": "hyper-snazzy",
+    "description": "Elegant Hyper theme with bright colors",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-snazzy.png",
+    "colors": [
+      "#eff0eb",
+      "#282a36"
+    ],
+    "dateAdded": "1521644449784",
+    "featured": true
+  },
+  {
+    "name": "hyperline",
+    "description": "Extension for Hyper that turns on power mode, with bonus wow mode",
+    "type": "plugin",
+    "preview": "https://raw.github.com/Hyperline/hyperline/54c76af872709e444e49687762b72c2790141ec6/screenshot.png",
+    "dateAdded": "1521644449784",
+    "featured": true
+  },
+  {
+    "name": "hyper-dracula",
+    "description": "A dark theme for Hyper",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-dracula.png",
+    "colors": [
+      "#f8f8f2",
+      "#282a36"
+    ],
+    "dateAdded": "1521644449784",
+    "featured": false
+  },
+  {
+    "name": "hyper-pane",
+    "description": "A dark theme for Hyper",
+    "type": "plugin",
+    "preview": "https://cloud.githubusercontent.com/assets/4137761/22717106/844a9c5c-ed99-11e6-8e88-8c71a8cbbd5a.gif",
+    "dateAdded": "1521644449784",
+    "featured": true
+  }
+]

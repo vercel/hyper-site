@@ -11,39 +11,24 @@ import BackArrow from '../static/back-arrow.svg'
 
 export default class extends React.Component {
   static async getInitialProps({ query: { id }, res }) {
-    let plugin, pluginContents, pluginPackage
+    let plugin, pluginContents
 
     try {
-      plugin = await cachedFetch(
-        `https://api.npms.io/v2/package/${id}`,
-        {},
-        'json'
-      )
+      plugin = await getPackageInfo(id)
       pluginContents = await cachedFetch(
         `https://unpkg.com/${id}@latest/?meta`,
         {},
         'json'
       )
-      pluginPackage = await getPackageInfo(id)
     } catch (err) {
       console.error(err)
-      res.redirect(`/plugins/${id}`)
-    }
-
-    const keywords = (await plugin.collected.metadata.keywords) || []
-
-    if (
-      !keywords.includes('hyper-plugin') &&
-      !keywords.includes('hyper-theme')
-    ) {
       res.redirect(`/plugins/${id}`)
     }
 
     return {
       pluginContents,
       id,
-      plugin: plugin.collected,
-      pluginPackage
+      plugin
     }
   }
 
@@ -54,9 +39,9 @@ export default class extends React.Component {
     if (requestedFile) {
       initialFile = `/${requestedFile}`
     } else {
-      initialFile = this.props.pluginPackage.main
-        ? `/${this.props.pluginPackage.main}`
-        : this.props.pluginContents.files[0].path
+      initialFile = this.props.pluginContents.files.find(
+        file => file.type === 'file'
+      ).path
     }
 
     // Get Initial File
@@ -233,11 +218,7 @@ export default class extends React.Component {
               <BackArrow width="7" height="14" />
             </a>
           </Link>
-          <h1>
-            {this.props.pluginPackage.plugin
-              ? this.props.pluginPackage.plugin.title
-              : this.props.plugin.metadata.name}
-          </h1>
+          <h1>{this.props.plugin.meta.name}</h1>
         </header>
         <div className="source container">
           {this.renderFileTree(this.props.pluginContents.files)}

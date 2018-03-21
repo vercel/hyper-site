@@ -7,11 +7,10 @@ import getPluginInfo from '../lib/get-plugin'
 
 export default class extends React.Component {
   static async getInitialProps({ query: { id } }) {
-    let plugin, pluginPackage
+    let plugin
 
     try {
-      plugin = await cachedFetch(`https://api.npms.io/v2/package/${id}`)
-      pluginPackage = await getPluginInfo(id)
+      plugin = await getPluginInfo(id)
     } catch (err) {
       console.error(err)
     }
@@ -20,16 +19,7 @@ export default class extends React.Component {
       return {}
     }
 
-    const keywords = plugin.collected.metadata.keywords || []
-
-    if (
-      !keywords.includes('hyper-plugin') &&
-      !keywords.includes('hyper-theme')
-    ) {
-      return {}
-    }
-
-    return { plugin: plugin.collected, pluginPackage }
+    return { plugin }
   }
 
   render() {
@@ -55,20 +45,22 @@ export default class extends React.Component {
     }
 
     const pluginInfo =
-      this.props.pluginPackage && this.props.pluginPackage.plugin
-        ? this.props.pluginPackage.plugin
+      this.props.plugin && this.props.plugin.meta
+        ? this.props.plugin.meta
         : null
 
     return (
       <Layout>
         <div className="plugin">
           <h1>
-            {pluginInfo ? pluginInfo.title : this.props.plugin.metadata.name}
+            {pluginInfo
+              ? pluginInfo.name
+              : this.props.plugin.collected.metadata.name}
           </h1>
           <p>
             {pluginInfo
-              ? pluginInfo.caption
-              : this.props.plugin.metadata.description}
+              ? pluginInfo.description
+              : this.props.plugin.collected.metadata.description}
           </p>
           {pluginInfo ? (
             <img src={pluginInfo.preview} alt={`${pluginInfo.title} preview`} />

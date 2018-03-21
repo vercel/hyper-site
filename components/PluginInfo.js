@@ -33,7 +33,7 @@ export default class extends React.Component {
     return (
       <div>
         <InstallModal
-          name={plugin.metadata.name}
+          name={plugin.meta.name}
           isOpen={this.state.isModalOpen}
           closeModal={this.closeInstallModal}
         />
@@ -42,35 +42,35 @@ export default class extends React.Component {
           <div className="plugin-info__author border-followed">
             <Gravatar
               className="plugin-info__avatar"
-              email={plugin.metadata.publisher.email}
+              email={plugin.collected.metadata.publisher.email}
             />
-            <span>{plugin.metadata.publisher.username}</span>
+            <span>{plugin.collected.metadata.publisher.username}</span>
           </div>
 
           <span className="border-followed">
-            {plugin.npm.downloads[2].count.toLocaleString()} downloads in the
-            last month
+            {plugin.collected.npm.downloads[2].count.toLocaleString()} downloads
+            in the last month
           </span>
 
-          {plugin.metadata.links.repository && (
+          {plugin.collected.metadata.links.repository && (
             <a
               className="plugin-info__github-link"
               target="_blank"
-              href={plugin.metadata.links.repository}
+              href={plugin.collected.metadata.links.repository}
             >
               <GithubIcon />
             </a>
           )}
 
           <Link
-            href={`/source?id=${plugin.metadata.name}`}
-            as={`/plugins/${plugin.metadata.name}/source`}
+            href={`/source?id=${plugin.collected.metadata.name}`}
+            as={`/plugins/${plugin.collected.metadata.name}/source`}
           >
             <a className="plugin-info__link">View source code</a>
           </Link>
 
           <div className="plugin-info__version">
-            Version {plugin.metadata.version}
+            Version {plugin.collected.metadata.version}
           </div>
 
           <a className="plugin-info__install" onClick={this.openInstallModal}>

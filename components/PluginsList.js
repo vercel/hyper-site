@@ -16,25 +16,21 @@ export default class extends React.Component {
   }
 
   orderPlugins(plugins, orderBy) {
-    let sortedPlugins
+    let sortedPlugins = [...plugins]
 
     if (orderBy === 'newest') {
-      const copy = [...plugins]
+      const copy = [...sortedPlugins]
 
       sortedPlugins = copy.sort((objA, objB) => {
-        if (objA.package.date < objB.package.date) return 1
-        if (objA.package.date > objB.package.date) return -1
+        if (objA.dateAdded < objB.dateAdded) return 1
+        if (objA.dateAdded > objB.dateAdded) return -1
         return 0
       })
     } else if (orderBy === 'featured') {
-      sortedPlugins = plugins.filter(
-        plugin =>
-          featuredPlugins.includes(plugin.package.name) ||
-          featuredThemes.includes(plugin.package.name)
-      )
+      sortedPlugins = sortedPlugins.filter(plugin => plugin.featured === true)
     }
 
-    return sortedPlugins || plugins
+    return sortedPlugins
   }
 
   render() {
@@ -44,21 +40,21 @@ export default class extends React.Component {
       <div className="plugins-list">
         {plugins.map((plugin, i) => (
           <Link
-            key={plugin.package.name}
-            href={`/plugin?id=${plugin.package.name}`}
-            as={`/plugins/${plugin.package.name}`}
+            key={plugin.name}
+            href={`/plugin?id=${plugin.name}`}
+            as={`/plugins/${plugin.name}`}
           >
             <div
               className="plugin"
               onMouseEnter={() => {
                 Router.prefetch(
-                  `/plugin?id=${plugin.package.name}`,
-                  `/plugins/${plugin.package.name}`
+                  `/plugin?id=${plugin.name}`,
+                  `/plugins/${plugin.name}`
                 )
               }}
             >
               <div className="plugin-contents">
-                <Plugin {...plugin.package} query={this.props.query} />
+                <Plugin {...plugin} query={this.props.query} />
               </div>
             </div>
           </Link>

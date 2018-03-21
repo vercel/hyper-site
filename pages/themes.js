@@ -17,7 +17,7 @@ export default class extends React.Component {
   }
 
   static async getInitialProps() {
-    const themes = await getPlugins({ type: 'themes' })
+    const themes = await getPlugins({ type: 'theme' })
     return { themes }
   }
 
@@ -57,7 +57,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const themes = this.props.themes.results
+    const themes = this.props.themes
     return (
       <Layout>
         <Filter

@@ -11,8 +11,8 @@ export default class extends React.Component {
     })
 
     // Preload image from plugin source ready for page transition
-    if (plugin.plugin) {
-      new Image().src = plugin.plugin.preview
+    if (plugin) {
+      new Image().src = plugin.meta.preview
     }
   }
 
@@ -40,12 +40,9 @@ export default class extends React.Component {
               )}
             </p>
           </div>
-          {this.state &&
-          this.state.plugin &&
-          this.state.plugin.plugin &&
-          this.state.plugin.plugin.colors ? (
+          {this.state && this.state.plugin.meta.colors ? (
             <div className="plugin__colors">
-              {this.state.plugin.plugin.colors.map((color, i) => (
+              {this.state.plugin.meta.colors.map((color, i) => (
                 <div
                   className="plugin__color"
                   style={{ background: color }}

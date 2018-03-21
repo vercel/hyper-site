@@ -44,8 +44,8 @@ export default class extends React.Component {
     // Make sure plugins have loaded
     if (!this.state) return null
 
-    const plugins = this.state.plugins.results
-    const totalResults = this.state.plugins.total
+    const plugins = this.state.plugins
+    const totalResults = this.state.plugins.length
     const { searchTerm } = this.state
 
     if (!searchTerm) {
