@@ -23,10 +23,18 @@ export default class extends React.Component {
         <div className="modal">
           <h3>Install {this.props.name}</h3>
           <p>
-            Use hyper-cli to install {this.props.name} by entering the following
-            into Hyper.app:
+            Use the <code>hyper</code> command, bundled with your Hyper app, to
+            install {this.props.name} by entering the following into Hyper:
           </p>
-          <pre>hyper install {this.props.name}</pre>
+          <pre>hyper i {this.props.name}</pre>
+          <a
+            href="https://github.com/zeit/hyper-plugins/wiki/Security-and-Hyper-plugins"
+            target="_blank"
+            rel="noopener"
+            className="security"
+          >
+            Security Notice
+          </a>
         </div>
         <div
           className="modal-backdrop"
@@ -60,7 +68,7 @@ export default class extends React.Component {
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.45);
           }
 
           .modal {
@@ -70,10 +78,7 @@ export default class extends React.Component {
             position: relative;
             z-index: 1200;
             max-width: 100%;
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
+            width: 480px;
           }
 
           .modal h3 {
@@ -92,6 +97,12 @@ export default class extends React.Component {
           .modal pre::before {
             content: '$';
             margin-right: 12px;
+          }
+
+          .security {
+            margin-top: 24px;
+            font-size: 1.4rem;
+            display: inline-block;
           }
         `}</style>
       </div>

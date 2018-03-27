@@ -35,6 +35,7 @@ export default class extends React.Component {
           .search-input {
             display: flex;
             justify-content: center;
+            align-items: center;
           }
           input {
             background: transparent;

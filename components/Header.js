@@ -16,7 +16,17 @@ export default ({ handleSearch }) => (
       <ActiveLink href="/themes">Themes</ActiveLink>
     </nav>
 
-    <SearchInput handleSearch={handleSearch} />
+    <div className="header__right">
+      <SearchInput handleSearch={handleSearch} />
+      <a
+        href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
+        target="_blank"
+        rel="noopener"
+        className="submit"
+      >
+        Submit
+      </a>
+    </div>
 
     <style jsx>{`
       header {
@@ -35,8 +45,21 @@ export default ({ handleSearch }) => (
         line-height: 2.3rem;
       }
 
+      a {
+        font-size: 1.4rem;
+      }
+
       .logo {
         display: flex;
+      }
+
+      .header__right {
+        display: flex;
+        align-items: center;
+      }
+
+      .submit {
+        margin-left: 24px;
       }
     `}</style>
   </header>
