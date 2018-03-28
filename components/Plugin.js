@@ -17,6 +17,48 @@ export default class extends React.Component {
   }
 
   render() {
+    if (this.props.featured) {
+      return (
+        <div className="plugin">
+          <div className="plugin__content">
+            <h4 className="plugin__name">{this.props.name}</h4>
+            <p>{this.props.description}</p>
+          </div>
+
+          <style jsx>{`
+            .plugin {
+              height: 200px;
+              background: url('${
+                this.props.preview
+              }') top center/cover no-repeat;
+              position: relative;
+            }
+
+            .plugin__content {
+              position: absolute;
+              bottom: 0;
+              padding: 48px 16px 16px;
+              background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+              width: 100%;
+            }
+
+            .plugin__content h4 {
+              margin-top: 0;
+              margin-bottom: 4px;
+              font-size: 1.6rem;
+              font-weight: 400;
+            }
+
+            .plugin__content p {
+              margin-bottom: 0;
+              font-size: 1.2rem;
+              color: #999999;
+            }
+          `}</style>
+        </div>
+      )
+    }
+
     return (
       <div className="plugin">
         <div className="plugin__content container">

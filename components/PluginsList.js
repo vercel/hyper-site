@@ -32,6 +32,81 @@ export default class extends React.Component {
   render() {
     const plugins = this.orderPlugins(this.props.plugins, this.props.filteredBy)
 
+    // Featured boxes UI
+    if (this.props.filteredBy == 'featured') {
+      return (
+        <div className="plugins-list container">
+          {plugins.map((plugin, i) => (
+            <div
+              className="plugin"
+              onMouseEnter={() => {
+                Router.prefetch(
+                  `/plugin?id=${plugin.name}`,
+                  `/plugins/${plugin.name}`
+                )
+              }}
+            >
+              <Link
+                key={plugin.name}
+                href={`/plugin?id=${plugin.name}`}
+                as={`/plugins/${plugin.name}`}
+              >
+                <div className="plugin-contents">
+                  <Plugin
+                    {...plugin}
+                    query={this.props.query}
+                    featured={true}
+                  />
+                </div>
+              </Link>
+            </div>
+          ))}
+
+          <style jsx>{`
+            .plugins-list {
+              padding-top: 48px;
+              display: flex;
+              flex-flow: row wrap;
+            }
+
+            .plugin {
+              width: 50%;
+            }
+
+            .plugin:nth-child(odd) {
+              padding-right: 16px;
+            }
+
+            .plugin:nth-child(even) {
+              padding-left: 16px;
+            }
+
+            .plugin-contents {
+              cursor: pointer;
+              border: 1px solid #333;
+              transition: border 0.2s ease;
+            }
+
+            .plugin:hover .plugin-contents {
+              border-color: white;
+            }
+
+            @media (max-width: 48em) {
+              .plugin {
+                width: 100%;
+                margin-bottom: 16px;
+              }
+
+              .plugin:nth-child(odd),
+              .plugin:nth-child(even) {
+                padding: 0;
+              }
+            }
+          `}</style>
+        </div>
+      )
+    }
+
     return (
       <div className="plugins-list">
         {plugins.map((plugin, i) => (
@@ -50,7 +125,7 @@ export default class extends React.Component {
               }}
             >
               <div className="plugin-contents">
-                <Plugin {...plugin} query={this.props.query} />
+                <Plugin {...plugin} query={this.props.query} featured={false} />
               </div>
             </div>
           </Link>

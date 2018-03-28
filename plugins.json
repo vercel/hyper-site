@@ -5,8 +5,8 @@
     "type": "theme",
     "preview": "http://i.imgur.com/eeRssvz.png",
     "colors": [
-      "#000000",
-      "#FFFFFF"
+      "#FFFFFF",
+      "#000000"
     ],
     "dateAdded": "1521644449784",
     "featured": true
@@ -25,17 +25,10 @@
     "type": "theme",
     "preview": "https://hyper-plugin-screenshots.now.sh/hyper-snazzy.png",
     "colors": [
+      "#282a36",
       "#eff0eb",
-      "#282a36"
+      "#97979b"
     ],
-    "dateAdded": "1521644449784",
-    "featured": true
-  },
-  {
-    "name": "hyperline",
-    "description": "Extension for Hyper that turns on power mode, with bonus wow mode",
-    "type": "plugin",
-    "preview": "https://raw.github.com/Hyperline/hyperline/54c76af872709e444e49687762b72c2790141ec6/screenshot.png",
     "dateAdded": "1521644449784",
     "featured": true
   },
@@ -45,18 +38,130 @@
     "type": "theme",
     "preview": "https://hyper-plugin-screenshots.now.sh/hyper-dracula.png",
     "colors": [
+      "#282a36",
       "#f8f8f2",
-      "#282a36"
+      "#999999"
     ],
-    "dateAdded": "1521644449784",
-    "featured": false
+    "dateAdded": "1521644449784"
   },
   {
     "name": "hyper-pane",
     "description": "A dark theme for Hyper",
     "type": "plugin",
-    "preview": "https://cloud.githubusercontent.com/assets/4137761/22717106/844a9c5c-ed99-11e6-8e88-8c71a8cbbd5a.gif",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-pane.gif",
     "dateAdded": "1521644449784",
     "featured": true
+  },
+  {
+    "name": "hypercwd",
+    "description": "Opens new tabs with the same directory as the current tab in Hyper for OS X, Linux, and Windows.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/hharnisc/hypercwd/master/newTabs.gif",
+    "dateAdded": "1522253281560"
+  },
+  {
+    "name": "hyper-search",
+    "description": "Extension for Hyper that allows you to search text in your terminal.",
+    "type": "plugin",
+    "preview": "https://media.giphy.com/media/xUA7aXl1VWN460yCju/giphy.gif",
+    "dateAdded": "1522253872987"
+  },
+  {
+    "name": "hyper-material-theme",
+    "description": "Material theme for Hyper!",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-material-theme.png",
+    "colors": [
+      "rgb(38, 50, 56)",
+      "#ECEFF1",
+      "#FFCC00"
+    ],
+    "dateAdded": "1522254564295"
+  },
+  {
+    "name": "verminal",
+    "description": "A beautiful theme for Hyper and other developer tools",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/verminal.png",
+    "colors": [
+      "rgba(0, 0, 0, 0.65)",
+      "#FFFFFF",
+      "#0095FF"
+    ],
+    "dateAdded": "1522254728721"
+  },
+  {
+    "name": "hyper-chesterish",
+    "description": "Chesterish Theme for Hyper based on Jupyter schemes",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-chesterish.png",
+    "colors": [
+      "#293340",
+      "#CDD2E9",
+      "#2C85F7"
+    ],
+    "dateAdded": "1522254985394"
+  },
+  {
+    "name": "hyper-tabs-enhanced",
+    "description": "Enhanced Tabs Plugin for Hyper. Matches any theme.",
+    "type": "plugin",
+    "preview": "https://cloud.githubusercontent.com/assets/1430576/22143133/35d9a170-def9-11e6-8d0f-047fb1c64e97.png",
+    "dateAdded": "1522256706135"
+  },
+  {
+    "name": "hyper-solarized-dark",
+    "description": "A port of the Solarized Dark theme for Hyper.app",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-solarized-dark.png",
+    "colors": [
+      "#002b36",
+      "#839496",
+      "rgba(181, 137, 0, 0.6)"
+    ],
+    "dateAdded": "1522257368300"
+  },
+  {
+    "name": "hyper-solarized-light",
+    "description": "A port of the Solarized Light theme for Hyper.app",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-solarized-light.png",
+    "colors": [
+      "#fdf6e3",
+      "#839496",
+      "rgba(211, 54, 130, 0.6)"
+    ],
+    "dateAdded": "1522257538694"
+  },
+  {
+    "name": "hyper-one-dark",
+    "description": "Hyper.app theme based on the Atom One Dark theme.",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-one-dark.png",
+    "colors": [
+      "#282c34",
+      "#abb2bf",
+      "#528bff"
+    ],
+    "dateAdded": "1522257801910"
+  },
+  {
+    "name": "hyper-one-light",
+    "description": "Atom One Light theme for Hyper",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-one-light.png",
+    "colors": [
+      "#fafafa",
+      "#383a42",
+      "#526eff"
+    ],
+    "dateAdded": "1522257801910"
+  },
+  {
+    "name": "hyper-broadcast",
+    "description": "Extension for Hyper.app to broadcast user inputs to multiple terms.",
+    "type": "plugin",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-broadcast.gif",
+    "dateAdded": "1522261645153"
   }
 ]
