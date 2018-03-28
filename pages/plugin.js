@@ -111,14 +111,6 @@ export default class extends React.Component {
             margin-bottom: 40px;
           }
         `}</style>
-
-        <style jsx global>{`
-          /* Readme image container */
-          .plugin-readme h1:first-of-type + h2:first-of-type + p {
-            text-align: center;
-            width: 100%;
-          }
-        `}</style>
       </Layout>
     )
   }

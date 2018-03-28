@@ -31,7 +31,7 @@ export default class extends React.Component {
     const { plugin } = this.props
 
     return (
-      <div>
+      <React.Fragment>
         <InstallModal
           name={plugin.meta.name}
           isOpen={this.state.isModalOpen}
@@ -143,9 +143,61 @@ export default class extends React.Component {
             .plugin-info__github-link:hover :global(svg) {
               fill: white;
             }
+
+            @media (max-width: 660px) {
+              .plugin-info {
+                position: relative;
+                transform: translateX(0);
+                left: auto;
+                flex-direction: column;
+                align-items: center;
+                font-size: 1.4rem;
+                height: auto;
+                padding-bottom: 64px;
+              }
+
+              .plugin-info__author {
+                margin-bottom: 24px;
+                flex: 1 0 auto;
+              }
+
+              .plugin-info__github-link {
+                margin-right: 0;
+                margin-top: 16px;
+                flex: 1 0 auto;
+              }
+
+              .plugin-info__github-link :global(svg) {
+                height: 32px;
+                width: 32px;
+              }
+
+              .plugin-info__link {
+                font-size: 1.4rem;
+                margin: 16px 0 28px;
+              }
+
+              .plugin-info__version {
+                margin-left: 0;
+              }
+
+              .border-followed {
+                margin-right: 0;
+                padding-right: 0;
+                border-right: none;
+                margin-bottom: 16px;
+              }
+
+              .plugin-info__install {
+                margin-left: 0;
+                margin-top: 16px;
+                font-size: 1.6rem;
+                padding: 8px 28px;
+              }
+            }
           `}</style>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }

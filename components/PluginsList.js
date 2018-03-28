@@ -38,6 +38,7 @@ export default class extends React.Component {
         <div className="plugins-list container">
           {plugins.map((plugin, i) => (
             <div
+              key={plugin.name}
               className="plugin"
               onMouseEnter={() => {
                 Router.prefetch(
@@ -47,7 +48,6 @@ export default class extends React.Component {
               }}
             >
               <Link
-                key={plugin.name}
                 href={`/plugin?id=${plugin.name}`}
                 as={`/plugins/${plugin.name}`}
               >
