@@ -85,6 +85,8 @@ export default class extends React.Component {
               cursor: pointer;
               border: 1px solid #333;
               transition: border 0.2s ease;
+              border-radius: 5px;
+              overflow: hidden;
             }
 
             .plugin:hover .plugin-contents {
