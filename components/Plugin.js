@@ -23,6 +23,17 @@ export default class extends React.Component {
           <div className="plugin__content">
             <h4 className="plugin__name">{this.props.name}</h4>
             <p>{this.props.description}</p>
+            {this.props.colors ? (
+              <div className="plugin__colors">
+                {this.props.colors.map((color, i) => (
+                  <div
+                    className="plugin__color"
+                    style={{ background: color }}
+                    key={i}
+                  />
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <style jsx>{`
@@ -54,6 +65,23 @@ export default class extends React.Component {
               font-size: 1.2rem;
               color: #999999;
             }
+
+            .plugin__colors {
+              margin-top: 4px;
+              display: flex;
+              margin-left: auto;
+            }
+
+            .plugin__color {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              border: 1px solid #333333;
+            }
+
+            .plugin__color:not(:last-child) {
+              margin-right: 4px;
+            }
           `}</style>
         </div>
       )
@@ -82,9 +110,9 @@ export default class extends React.Component {
               )}
             </p>
           </div>
-          {this.state && this.state.plugin.meta.colors ? (
+          {this.props.colors ? (
             <div className="plugin__colors">
-              {this.state.plugin.meta.colors.map((color, i) => (
+              {this.props.colors.map((color, i) => (
                 <div
                   className="plugin__color"
                   style={{ background: color }}

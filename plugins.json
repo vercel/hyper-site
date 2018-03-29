@@ -46,7 +46,7 @@
   },
   {
     "name": "hyper-pane",
-    "description": "A dark theme for Hyper",
+    "description": "Extension for Hyper.app to enhance pane navigation. Navigate through panes with arrows, jump directly to a specific pane with digit, change focus on mouse hover or temporarily maximize a pane.",
     "type": "plugin",
     "preview": "https://hyper-plugin-screenshots.now.sh/hyper-pane.gif",
     "dateAdded": "1521644449784",
