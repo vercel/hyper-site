@@ -50,7 +50,7 @@ export default class extends React.Component {
             width: 100%;
             min-height: 100%;
             overflow-y: auto;
-            position: absolute;
+            position: fixed;
             top: 0;
             bottom: 0;
             left: 0;

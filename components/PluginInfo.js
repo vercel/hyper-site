@@ -144,7 +144,7 @@ export default class extends React.Component {
               fill: white;
             }
 
-            @media (max-width: 660px) {
+            @media (max-width: 716px) {
               .plugin-info {
                 position: relative;
                 transform: translateX(0);
