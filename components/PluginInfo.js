@@ -47,7 +47,7 @@ export default class extends React.Component {
             <span>{plugin.collected.metadata.publisher.username}</span>
           </div>
 
-          <span className="border-followed">
+          <span className="plugin-info__downloads border-followed">
             {plugin.collected.npm.downloads[2].count.toLocaleString()} downloads
             in the last month
           </span>
@@ -151,7 +151,6 @@ export default class extends React.Component {
                 left: auto;
                 flex-direction: column;
                 align-items: center;
-                font-size: 1.4rem;
                 height: auto;
                 padding-bottom: 64px;
               }
@@ -159,26 +158,36 @@ export default class extends React.Component {
               .plugin-info__author {
                 margin-bottom: 24px;
                 flex: 1 0 auto;
+                order: 1;
+              }
+
+              .plugin-info__downloads {
+                order: 2;
               }
 
               .plugin-info__github-link {
                 margin-right: 0;
                 margin-top: 16px;
                 flex: 1 0 auto;
+                order: 5;
               }
 
               .plugin-info__github-link :global(svg) {
-                height: 32px;
-                width: 32px;
+                height: 24px;
+                width: 24px;
+                fill: white;
               }
 
               .plugin-info__link {
-                font-size: 1.4rem;
                 margin: 16px 0 28px;
+                order: 6;
+                font-weight: 600;
               }
 
               .plugin-info__version {
                 margin-left: 0;
+                margin-bottom: 16px;
+                order: 4;
               }
 
               .border-followed {
@@ -190,9 +199,9 @@ export default class extends React.Component {
 
               .plugin-info__install {
                 margin-left: 0;
-                margin-top: 16px;
-                font-size: 1.6rem;
+                margin-bottom: 16px;
                 padding: 8px 28px;
+                order: 3;
               }
             }
           `}</style>
