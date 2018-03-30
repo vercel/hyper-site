@@ -1,5 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
 import Filter from '../components/Filter'
@@ -60,6 +61,9 @@ export default class extends React.Component {
     const plugins = this.props.plugins
     return (
       <Layout>
+        <Head>
+          <title>Hyper Store - Plugins</title>
+        </Head>
         <Filter
           handleFilterChange={this.handleFilterChange}
           currentFilter={this.state.filter}

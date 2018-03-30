@@ -1,5 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
 import Filter from '../components/Filter.js'
@@ -60,6 +61,9 @@ export default class extends React.Component {
     const themes = this.props.themes
     return (
       <Layout>
+        <Head>
+          <title>Hyper Store - Themes</title>
+        </Head>
         <Filter
           handleFilterChange={this.handleFilterChange}
           currentFilter={this.state.filter}

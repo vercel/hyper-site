@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import Router from 'next/router'
 import cachedFetch, { overrideCache } from '../lib/cached-json-fetch'
@@ -209,6 +210,16 @@ export default class extends React.Component {
   render() {
     return (
       <Layout>
+        <Head>
+          {this.state.activeFile ? (
+            <title>
+              Hyper Store - "{this.formatFileName(this.state.activeFile)}" of{' '}
+              {this.props.plugin.meta.name}
+            </title>
+          ) : (
+            <title>Hyper Store - Source of {this.props.plugin.meta.name}</title>
+          )}
+        </Head>
         <header className="container">
           <Link
             href={`/plugin?id=${this.props.id}`}
