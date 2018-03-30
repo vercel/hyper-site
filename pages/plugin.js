@@ -16,7 +16,7 @@ export default class extends React.Component {
       console.error(err)
     }
 
-    if (plugin.code && plugin.code === 'NOT_FOUND') {
+    if (!plugin.meta || (plugin.code && plugin.code === 'NOT_FOUND')) {
       return {}
     }
 
@@ -53,10 +53,10 @@ export default class extends React.Component {
     return (
       <Layout>
         <Head>
-          <title>Hyper Store - {this.props.plugin.meta.name}</title>
+          <title>Hyper Store - {pluginInfo.name}</title>
           <meta
             property="og:title"
-            content={`Hyper Store - ${this.props.plugin.meta.name}`}
+            content={`Hyper Store - ${pluginInfo.name}`}
           />
           <meta property="og:type" content="website" />
           {typeof window === 'object' ? (
