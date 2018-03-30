@@ -31,7 +31,7 @@ export default class extends React.Component {
             href="https://github.com/zeit/hyper-plugins/wiki/Security-and-Hyper-plugins"
             target="_blank"
             rel="noopener"
-            className="security"
+            className="security dark"
           >
             Security Notice
           </a>
@@ -84,6 +84,11 @@ export default class extends React.Component {
           .modal h3 {
             margin-top: 0;
             font-weight: 400;
+          }
+
+          .modal p {
+            font-size: 1.4rem;
+            line-height: 2.8rem;
           }
 
           .modal pre {

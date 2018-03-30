@@ -199,6 +199,15 @@ export default () => (
         color: #3afacf;
       }
 
+      a.dark {
+        color: #999999;
+        text-decoration: underline;
+      }
+
+      a.dark:hover {
+        color: #666666;
+      }
+
       ::selection {
         background-color: #f81ce5;
         color: #fff;
