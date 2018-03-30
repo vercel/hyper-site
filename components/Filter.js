@@ -41,6 +41,7 @@ export default class extends React.Component {
             padding: 0 10px;
             color: #999999;
             cursor: pointer;
+            transition: color 0.2s ease;
           }
           .filters a:hover,
           .filters a.active {
