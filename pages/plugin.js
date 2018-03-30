@@ -1,5 +1,6 @@
 import react from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 import cachedFetch from '../lib/cached-json-fetch'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
@@ -51,6 +52,23 @@ export default class extends React.Component {
 
     return (
       <Layout>
+        <Head>
+          <title>Hyper Store - {this.props.plugin.meta.name}</title>
+          <meta
+            property="og:title"
+            content={`Hyper Store - ${this.props.plugin.meta.name}`}
+          />
+          <meta property="og:type" content="website" />
+          {typeof window === 'object' ? (
+            <meta property="og:url" content={window.location.href} />
+          ) : null}
+          <meta property="og:image" content={this.props.plugin.meta.preview} />
+          <meta
+            property="og:description"
+            content={this.props.plugin.meta.description}
+          />
+          <meta property="og:site_name" content="Hyper Store" />
+        </Head>
         <div className="plugin">
           <h1>
             {pluginInfo
