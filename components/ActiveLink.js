@@ -2,7 +2,7 @@ import { withRouter } from 'next/router'
 import Link from 'next/link'
 
 const ActiveLink = ({ children, router, href }) => (
-  <Link href={href}>
+  <Link href={href} prefetch>
     <a>
       {children}
 
@@ -12,10 +12,6 @@ const ActiveLink = ({ children, router, href }) => (
           font-size: 1.4rem;
           transition: color 0.2s ease;
           color: ${router.pathname === href ? 'white' : '#999999'};
-        }
-
-        a:not(:last-of-type) {
-          margin-right: 24px;
         }
 
         a:hover {
