@@ -166,6 +166,7 @@ export default () => (
       a {
         text-decoration: none;
       }
+
       :focus {
         outline: 0;
       }
@@ -191,6 +192,11 @@ export default () => (
       a {
         color: #50e3c2;
         cursor: pointer;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: #3afacf;
       }
 
       ::selection {
