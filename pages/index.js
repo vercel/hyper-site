@@ -1793,9 +1793,6 @@ export default class Index extends React.Component {
               </code>
             </code>
           </div>
-          <code>
-            <code />
-          </code>
         </div>
 
         <style jsx>{`
