@@ -93,20 +93,33 @@ export default class extends React.Component {
             width: 100%;
             position: relative;
             z-index: 10000;
-            padding: 0 24px;
             background: #111;
             display: flex;
             align-items: center;
           }
 
           .info-bar__contents {
-            width: 100%;
             display: flex;
+          }
+
+          .info-bar a {
+            color: #999;
+          }
+
+          .info-bar a:hover {
+            color: #ff2e88;
           }
 
           .info-bar__contents nav {
             margin-left: auto;
             display: flex;
+          }
+
+          .info-bar nav a {
+            text-decoration: none;
+            height: 16px;
+            margin-left: 6px;
+            margin-right: 4px;
           }
 
           .info-bar__contents nav > * {
@@ -115,24 +128,8 @@ export default class extends React.Component {
 
           .info-bar span {
             color: #999;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-              'Helvetica Neue', sans-serif;
             display: flex;
             align-items: center;
-            margin-right: 10px;
-          }
-
-          .info-bar a {
-            color: #999;
-            text-decoration: none;
-            height: 16px;
-            margin-left: 6px;
-            margin-right: 4px;
-          }
-
-          .info-bar a:hover {
-            color: #ff2e88;
           }
 
           .info-bar :global(svg) {

@@ -250,8 +250,15 @@ export default () => (
 
       /* Helps maintain consistent width */
       .container {
-        max-width: 900px;
+        width: 900px;
+        max-width: 100%;
         margin: 0 auto;
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 40px;
+        }
       }
     `}</style>
   </Fragment>
