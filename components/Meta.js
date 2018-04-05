@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Head from 'next/head'
 import NProgress from 'nprogress'
 import debounce from 'lodash.debounce'
@@ -15,7 +16,7 @@ RouterEvents.on('routeChangeError', () => {
 })
 
 export default () => (
-  <div>
+  <Fragment>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
@@ -253,5 +254,5 @@ export default () => (
         margin: 0 auto;
       }
     `}</style>
-  </div>
+  </Fragment>
 )
