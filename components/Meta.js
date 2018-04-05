@@ -68,6 +68,7 @@ export default () => (
         name="msapplication-TileImage"
         content="/static/mstile-144x144.png"
       />
+      <meta name="theme-color" content="#000000" />
     </Head>
     <style jsx global>{`
       /*
@@ -187,6 +188,7 @@ export default () => (
       body {
         background: black;
         color: white;
+        font-size: 1.4rem;
       }
 
       a {
