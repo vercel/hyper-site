@@ -23,7 +23,7 @@ export default class extends React.Component {
       <div className="search-input">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search plugins..."
           onKeyUp={this.handleSearch}
           ref={input => {
             this.searchInput = input
