@@ -3,6 +3,9 @@ import Router from 'next/router'
 import Meta from './Meta'
 import Header from './Header'
 import SearchList from './SearchList'
+import AppleLogo from '../static/apple-logo.svg'
+import LinuxLogo from '../static/linux-logo.svg'
+import WindowsLogo from '../static/windows-logo.svg'
 
 export default class extends React.Component {
   constructor() {
@@ -38,6 +41,38 @@ export default class extends React.Component {
     return (
       <div className="main">
         <Meta />
+
+        <div className="info-bar">
+          <div className="info-bar__contents container">
+            <a className="zeit-logo" target="_blank" href="https://zeit.co">
+              ▲
+            </a>
+            <nav>
+              <a target="_blank" href="https://github.com/zeit/hyper/releases">
+                Changelog
+              </a>
+              <a target="_blank" href="https://github.com/zeit/hyper">
+                GitHub
+              </a>
+              <span>
+                License:&nbsp;<b>MIT</b>
+              </span>
+              <span>
+                <span id="download-for">Download for:</span>
+                <a href="/#installation" className="download-link">
+                  <AppleLogo />
+                </a>
+                <a href="/#installation" className="download-link">
+                  <WindowsLogo />
+                </a>
+                <a href="/#installation" className="download-link">
+                  <LinuxLogo />
+                </a>
+              </span>
+            </nav>
+          </div>
+        </div>
+
         <Header handleSearch={this.handleSearch} />
 
         {(this.state && this.state.searchQuery) || this.props.query ? (
@@ -53,9 +88,56 @@ export default class extends React.Component {
         )}
 
         <style jsx>{`
-          .main {
-            padding-left: 40px;
-            padding-right: 40px;
+          .info-bar {
+            height: 3.2rem;
+            width: 100%;
+            position: relative;
+            z-index: 10000;
+            padding: 0 24px;
+            background: #111;
+            display: flex;
+            align-items: center;
+          }
+
+          .info-bar__contents {
+            width: 100%;
+            display: flex;
+          }
+
+          .info-bar__contents nav {
+            margin-left: auto;
+            display: flex;
+          }
+
+          .info-bar__contents nav > * {
+            margin-left: 12px;
+          }
+
+          .info-bar span {
+            color: #999;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', sans-serif;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+          }
+
+          .info-bar a {
+            color: #999;
+            text-decoration: none;
+            height: 16px;
+            margin-left: 6px;
+            margin-right: 4px;
+          }
+
+          .info-bar a:hover {
+            color: #ff2e88;
+          }
+
+          .info-bar :global(svg) {
+            fill: currentColor;
+            height: 16px;
           }
         `}</style>
       </div>
