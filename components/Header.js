@@ -10,7 +10,7 @@ export default class Header extends React.Component {
     super()
 
     this.state = {
-      mobileNavShown: true
+      mobileNavShown: false
     }
 
     this.toggleMobileNav = this.toggleMobileNav.bind(this)
@@ -77,6 +77,7 @@ export default class Header extends React.Component {
             justify-content: space-between;
             position: relative;
             align-items: center;
+            z-index: 2000;
           }
 
           nav {
