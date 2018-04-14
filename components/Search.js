@@ -43,7 +43,7 @@ export default class extends React.Component {
             color: white;
             font-size: 1.2rem;
             padding-right: 8px;
-            width: 78px;
+            width: 112px;
             transition: width 0.2s ease;
           }
           input:focus {

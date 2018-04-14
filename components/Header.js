@@ -56,7 +56,7 @@ export default class Header extends React.Component {
           </a>
         </header>
 
-        <nav className="header__mobile-nav">
+        <nav className="header__mobile-nav container">
           <ActiveLink href="/plugins">Plugins</ActiveLink>
           <ActiveLink href="/themes">Themes</ActiveLink>
           <a

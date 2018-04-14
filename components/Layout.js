@@ -96,6 +96,7 @@ export default class extends React.Component {
             background: #111;
             display: flex;
             align-items: center;
+            font-size: 1.2rem;
           }
 
           .info-bar__contents {

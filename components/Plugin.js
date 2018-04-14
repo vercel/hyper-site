@@ -11,7 +11,7 @@ export default class extends React.Component {
     })
 
     // Preload image from plugin source ready for page transition
-    if (plugin) {
+    if (plugin && typeof window !== 'undefined') {
       new Image().src = plugin.meta.preview
     }
   }
@@ -88,7 +88,7 @@ export default class extends React.Component {
     }
 
     return (
-      <div className="plugin">
+      <div className="plugin container">
         <div className="plugin__content container">
           <div className="plugin__left">
             <h4 className="plugin__name">
