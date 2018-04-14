@@ -554,7 +554,7 @@ export default class Index extends React.Component {
                   <td>"defaultSSHApp"</td>
                   <td>true</td>
                   <td>
-                    If true, hyper will be set as the default protocol client
+                    If true, Hyper will be set as the default protocol client
                     for SSH
                   </td>
                 </tr>
@@ -571,7 +571,7 @@ export default class Index extends React.Component {
                 </tr>
                 <tr>
                   <td>"showHamburgerMenu"</td>
-                  <td>""</td>
+                  <td>true on Linux/Windows, false on macOS</td>
                   <td>
                     Change the visibility of the hamburger menu. Available
                     options are: true, false
@@ -579,7 +579,7 @@ export default class Index extends React.Component {
                 </tr>
                 <tr>
                   <td>"showWindowControls"</td>
-                  <td>true on Linux/Windows, false on macOS</td>
+                  <td>""</td>
                   <td>
                     Change the position/visibility of the window controls.
                     Available options are: true, false, "left"
@@ -611,7 +611,7 @@ export default class Index extends React.Component {
               libraries.
             </p>
             <p>
-              You can found additionnal details about plugin development{' '}
+              You can find additional details about plugin development{' '}
               <a href="https://github.com/zeit/hyper/blob/master/PLUGINS.md">
                 here
               </a>
@@ -1319,7 +1319,7 @@ export default class Index extends React.Component {
                   instance.
                 </p>
                 <p>
-                  Your Term higher order component can supply a{' '}
+                  Your Term higher order component can supply an{' '}
                   <code>onCursorMove</code>
                   handler property that be called when cursor has moved with an
                   object parameter representing its relative position to Term
@@ -1331,37 +1331,37 @@ export default class Index extends React.Component {
                       <td>
                         <code>x</code>
                       </td>
-                      <td>Horizontal position in pixel</td>
+                      <td>Horizontal position in pixels</td>
                     </tr>
                     <tr>
                       <td>
                         <code>y</code>
                       </td>
-                      <td>Vertical position in pixel</td>
+                      <td>Vertical position in pixels</td>
                     </tr>
                     <tr>
                       <td>
                         <code>width</code>
                       </td>
-                      <td>Cursor width in pixel</td>
+                      <td>Cursor width in pixels</td>
                     </tr>
                     <tr>
                       <td>
                         <code>height</code>
                       </td>
-                      <td>Cursor height in pixel</td>
+                      <td>Cursor height in pixels</td>
                     </tr>
                     <tr>
                       <td>
                         <code>col</code>
                       </td>
-                      <td>Horizontal position in column</td>
+                      <td>Horizontal position in columns</td>
                     </tr>
                     <tr>
                       <td>
                         <code>row</code>
                       </td>
-                      <td>Vertical position in row</td>
+                      <td>Vertical position in rows</td>
                     </tr>
                   </tbody>
                 </table>
