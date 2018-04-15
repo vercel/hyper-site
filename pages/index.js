@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout.js'
+import Footer from '../components/Footer.js'
 import Head from 'next/head'
 import AppleLogo from '../static/apple-logo.svg'
 import WindowsLogo from '../static/windows-logo.svg'
@@ -1822,6 +1823,8 @@ export default class Index extends React.Component {
             </code>
           </div>
         </div>
+
+        <Footer />
 
         <style jsx>{`
           :global(body) {
