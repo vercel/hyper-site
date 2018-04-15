@@ -42,37 +42,6 @@ export default class extends React.Component {
       <div className="main">
         <Meta />
 
-        <div className="info-bar">
-          <div className="info-bar__contents container">
-            <a className="zeit-logo" target="_blank" href="https://zeit.co">
-              ▲
-            </a>
-            <nav>
-              <a target="_blank" href="https://github.com/zeit/hyper/releases">
-                Changelog
-              </a>
-              <a target="_blank" href="https://github.com/zeit/hyper">
-                GitHub
-              </a>
-              <span>
-                License:&nbsp;<b>MIT</b>
-              </span>
-              <span>
-                <span id="download-for">Download for:</span>
-                <a href="/#installation" className="download-link">
-                  <AppleLogo />
-                </a>
-                <a href="/#installation" className="download-link">
-                  <WindowsLogo />
-                </a>
-                <a href="/#installation" className="download-link">
-                  <LinuxLogo />
-                </a>
-              </span>
-            </nav>
-          </div>
-        </div>
-
         <Header handleSearch={this.handleSearch} />
 
         {(this.state && this.state.searchQuery) || this.props.query ? (
@@ -86,58 +55,6 @@ export default class extends React.Component {
         ) : (
           <div className="page">{this.props.children}</div>
         )}
-
-        <style jsx>{`
-          .info-bar {
-            height: 3.2rem;
-            width: 100%;
-            position: relative;
-            z-index: 10000;
-            background: #111;
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-          }
-
-          .info-bar__contents {
-            display: flex;
-          }
-
-          .info-bar a {
-            color: #999;
-          }
-
-          .info-bar a:hover {
-            color: #ff2e88;
-          }
-
-          .info-bar__contents nav {
-            margin-left: auto;
-            display: flex;
-          }
-
-          .info-bar nav a {
-            text-decoration: none;
-            height: 16px;
-            margin-left: 6px;
-            margin-right: 4px;
-          }
-
-          .info-bar__contents nav > * {
-            margin-left: 12px;
-          }
-
-          .info-bar span {
-            color: #999;
-            display: flex;
-            align-items: center;
-          }
-
-          .info-bar :global(svg) {
-            fill: currentColor;
-            height: 16px;
-          }
-        `}</style>
       </div>
     )
   }

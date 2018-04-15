@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout.js'
+import Footer from '../components/Footer.js'
 import Head from 'next/head'
 import AppleLogo from '../static/apple-logo.svg'
 import WindowsLogo from '../static/windows-logo.svg'
@@ -71,8 +72,9 @@ const DownloadButton = ({ os }) => (
 
     <style jsx>{`
       .download-button {
-        background: #50e3c2;
-        color: #494949;
+        background: #fff;
+        border-radius: 5px;
+        color: #000;
         height: 48px;
         display: flex;
         align-items: center;
@@ -83,11 +85,11 @@ const DownloadButton = ({ os }) => (
       }
 
       .download-button:hover {
-        background: #72ebd0;
+        background: #e5e5e5;
       }
 
       .download-button :global(svg) {
-        fill: #2eaa8f;
+        fill: #000;
         margin-right: 12px;
         height: 16px;
       }
@@ -213,7 +215,7 @@ export default class Index extends React.Component {
                     colSpan={2}
                   >
                     <a href="https://releases.hyper.is/download/mac">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -226,7 +228,7 @@ export default class Index extends React.Component {
                     className={this.props.OS === 'windows' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/win">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -239,7 +241,7 @@ export default class Index extends React.Component {
                     className={this.props.OS === 'ubuntu' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/deb">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -252,7 +254,7 @@ export default class Index extends React.Component {
                     className={this.props.OS === 'fedora' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/rpm">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -266,25 +268,22 @@ export default class Index extends React.Component {
                     colSpan={2}
                   >
                     <a href="https://releases.hyper.is/download/AppImage">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
               </tbody>
             </table>
             <h2 id="hashtag-goals">
-              <a href="#hashtag-goals">Project goals</a>
+              <a href="#hashtag-goals">Project Goals</a>
             </h2>
             <p>
               {' '}
               The goal of the project is to create a beautiful and extensible
               experience for command-line interface users, built on open web
-              standards.
-            </p>
-            <p>
-              In the beginning, our focus will be primarily around speed,
-              stability and the development of the correct API for extension
-              authors.
+              standards. In the beginning, our focus will be primarily around
+              speed, stability and the development of the correct API for
+              extension authors.
             </p>
             <p>
               In the future, we anticipate the community will come up with
@@ -596,9 +595,9 @@ export default class Index extends React.Component {
               and the renderer process.
             </p>
             <p>
-              The extension system is designed around <b>composition</b>
-              of the APIs we use to build the terminal: <code>React</code>
-              components and <code>Redux</code> actions.
+              The extension system is designed around <b>composition</b> of the
+              APIs we use to build the terminal: <code>React</code> components
+              and <code>Redux</code> actions.
             </p>
             <p>
               Instead of exposing a custom API method or parameter for every
@@ -1820,60 +1819,12 @@ export default class Index extends React.Component {
                     {'}'}
                   </code>
                 </pre>
-                <h2 id="credits">
-                  <a href="#credits">Credits</a>
-                </h2>
-                <p>
-                  Authored by <b>Guillermo Rauch</b> -{' '}
-                  <a href="https://twitter.com/rauchg" target="_blank">
-                    @rauchg
-                  </a>.<br />
-                  Brought to you by{' '}
-                  <a href="https://zeit.co">
-                    <span style={{ fontSize: 16 }}>▲</span>ZEIT
-                  </a>. Hosted on{' '}
-                  <a target="_blank" href="https://zeit.co/now">
-                    now
-                  </a>.
-                </p>
-                <p>Special thanks to the following people:</p>
-                <ul>
-                  <li>
-                    Jeff Haynies for his work on polish for general terminal
-                    behavior.
-                  </li>
-                  <li>
-                    Nuno Campos for his work on zooming and configuration.
-                  </li>
-                  <li>
-                    Leo Lamprecht and Johan Brook for their excellent UI
-                    improvements.
-                  </li>
-                  <li>Harrison Harnisch for our nice default color palette.</li>
-                  <li>Fernando Montoya for his feedback and patches.</li>
-                  <li>Matias Tucci for his work on the auto updater.</li>
-                  <li>
-                    Sebastian Markbage for his insight on the higher-order
-                    component extensibility API.
-                  </li>
-                  <li>
-                    Joel Besada for his editor particles{' '}
-                    <a
-                      target="_blank"
-                      href="https://github.com/codeinthedark/editor/pull/1"
-                    >
-                      idea
-                    </a>{' '}
-                    and Zero Cho for his reference implementation.
-                  </li>
-                  <li>
-                    Our awesome community for their feedback and their help.
-                  </li>
-                </ul>
               </code>
             </code>
           </div>
         </div>
+
+        <Footer />
 
         <style jsx>{`
           :global(body) {
@@ -1881,6 +1832,7 @@ export default class Index extends React.Component {
           }
 
           #logo {
+            margin-top: 10px;
             position: absolute;
             left: 0;
             right: 0;
@@ -1996,57 +1948,59 @@ export default class Index extends React.Component {
           }
 
           #content {
-            max-width: 800px;
+            max-width: 700px;
             margin: auto;
           }
 
           #content a,
           .other-downloads a {
-            color: #ff2e88;
+            color: #fff;
             text-decoration: none;
-            border-bottom: 1px solid #ff2e88;
+            transition: 0.2s ease all;
           }
 
           #content a:hover,
           .other-downloads a:hover {
-            background: #ff2e88;
-            color: #fff;
+            border-bottom: 1px solid #fff;
           }
 
-          #content h2,
-          #content h3 {
-            font-size: 12px;
-            font-weight: bold;
-            color: #ccc;
-            margin: 0 0 30px 0;
+          #content h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            margin: 100px 0 30px 0;
             padding-top: 30px;
+          }
+
+          #content h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', sans-serif;
+            font-size: 16px;
+            color: #fff;
+            margin: 0 0 20px 0;
+            padding-top: 20px;
           }
 
           #content h2 a,
           #content h3 a {
-            color: #ccc;
+            color: #fff;
             border-bottom-width: 0;
           }
 
           #content p {
+            font-size: 14px;
+            line-height: 24px;
             margin: 0 0 20px;
-            line-height: 18px;
-          }
-
-          #content h2:before {
-            content: '## ';
-          }
-
-          #content h3:before {
-            content: '### ';
-          }
-
-          #content h4:before {
-            content: '#### ';
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', sans-serif;
           }
 
           #content code {
-            font: 12px Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
+            font: 13px Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
           }
 
           #content p code,
@@ -2072,7 +2026,8 @@ export default class Index extends React.Component {
 
           #content table thead td {
             color: #999;
-            font-size: 10px;
+            font-size: 12px;
+            text-transform: uppercase;
           }
 
           #content table {
@@ -2088,7 +2043,6 @@ export default class Index extends React.Component {
           #content table td {
             vertical-align: top;
             border: 1px solid #444;
-            line-height: 15px;
             position: relative;
           }
 
@@ -2125,7 +2079,7 @@ export default class Index extends React.Component {
           }
 
           #content #installation-table td:not(.highlighted) img {
-            opacity: 0;
+            opacity: 0.5;
             transition: opacity 0.3s ease;
           }
 
