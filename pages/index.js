@@ -71,9 +71,9 @@ const DownloadButton = ({ os }) => (
 
     <style jsx>{`
       .download-button {
-        background: #50e3c2;
+        background: #fff;
         border-radius: 5px;
-        color: #494949;
+        color: #000;
         height: 48px;
         display: flex;
         align-items: center;
@@ -84,11 +84,11 @@ const DownloadButton = ({ os }) => (
       }
 
       .download-button:hover {
-        background: #72ebd0;
+        background: #e5e5e5;
       }
 
       .download-button :global(svg) {
-        fill: #2eaa8f;
+        fill: #000;
         margin-right: 12px;
         height: 16px;
       }
@@ -214,7 +214,7 @@ export default class Index extends React.Component {
                     colSpan={2}
                   >
                     <a href="https://releases.hyper.is/download/mac">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -227,7 +227,7 @@ export default class Index extends React.Component {
                     className={this.props.OS === 'windows' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/win">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -240,7 +240,7 @@ export default class Index extends React.Component {
                     className={this.props.OS === 'ubuntu' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/deb">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -253,7 +253,7 @@ export default class Index extends React.Component {
                     className={this.props.OS === 'fedora' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/rpm">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
@@ -267,22 +267,20 @@ export default class Index extends React.Component {
                     colSpan={2}
                   >
                     <a href="https://releases.hyper.is/download/AppImage">
-                      DOWNLOAD <img src="static/download-icon.svg" />
+                      <img src="static/download-icon.svg" />
                     </a>
                   </td>
                 </tr>
               </tbody>
             </table>
             <h2 id="hashtag-goals">
-              <a href="#hashtag-goals">Project goals</a>
+              <a href="#hashtag-goals">Project Goals</a>
             </h2>
             <p>
               {' '}
               The goal of the project is to create a beautiful and extensible
               experience for command-line interface users, built on open web
-              standards.
-            </p>
-            <p>
+              standards.<br />
               In the beginning, our focus will be primarily around speed,
               stability and the development of the correct API for extension
               authors.
@@ -597,9 +595,9 @@ export default class Index extends React.Component {
               and the renderer process.
             </p>
             <p>
-              The extension system is designed around <b>composition</b>
-              of the APIs we use to build the terminal: <code>React</code>
-              components and <code>Redux</code> actions.
+              The extension system is designed around <b>composition</b> of the
+              APIs we use to build the terminal: <code>React</code> components
+              and <code>Redux</code> actions.
             </p>
             <p>
               Instead of exposing a custom API method or parameter for every
@@ -1954,15 +1952,14 @@ export default class Index extends React.Component {
 
           #content a,
           .other-downloads a {
-            color: #ff2e88;
+            color: #fff;
             text-decoration: none;
-            border-bottom: 1px solid #ff2e88;
+            transition: 0.2s ease all;
           }
 
           #content a:hover,
           .other-downloads a:hover {
-            background: #ff2e88;
-            color: #fff;
+            border-bottom: 1px solid #fff;
           }
 
           #content h2 {
@@ -1971,7 +1968,7 @@ export default class Index extends React.Component {
               'Helvetica Neue', sans-serif;
             font-size: 20px;
             color: #fff;
-            margin: 0 0 30px 0;
+            margin: 100px 0 30px 0;
             padding-top: 30px;
           }
 
@@ -1995,6 +1992,9 @@ export default class Index extends React.Component {
             font-size: 14px;
             line-height: 24px;
             margin: 0 0 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', sans-serif;
           }
 
           #content code {
@@ -2076,7 +2076,7 @@ export default class Index extends React.Component {
           }
 
           #content #installation-table td:not(.highlighted) img {
-            opacity: 0;
+            opacity: 0.5;
             transition: opacity 0.3s ease;
           }
 

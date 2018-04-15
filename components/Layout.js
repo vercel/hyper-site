@@ -44,9 +44,6 @@ export default class extends React.Component {
 
         <div className="info-bar">
           <div className="info-bar__contents container">
-            <a className="zeit-logo" target="_blank" href="https://zeit.co">
-              ▲
-            </a>
             <nav>
               <a target="_blank" href="https://github.com/zeit/hyper/releases">
                 Changelog
@@ -70,6 +67,9 @@ export default class extends React.Component {
                 </a>
               </span>
             </nav>
+            <a className="zeit-logo" target="_blank" href="https://zeit.co">
+              <b>△</b>
+            </a>
           </div>
         </div>
 
@@ -93,7 +93,6 @@ export default class extends React.Component {
             width: 100%;
             position: relative;
             z-index: 10000;
-            background: #111;
             display: flex;
             align-items: center;
             font-size: 1.2rem;
@@ -108,11 +107,11 @@ export default class extends React.Component {
           }
 
           .info-bar a:hover {
-            color: #ff2e88;
+            color: #fff;
           }
 
           .info-bar__contents nav {
-            margin-left: auto;
+            margin-right: auto;
             display: flex;
           }
 
@@ -121,6 +120,10 @@ export default class extends React.Component {
             height: 16px;
             margin-left: 6px;
             margin-right: 4px;
+          }
+
+          .info-bar nav a:first-child {
+            margin-left: 0;
           }
 
           .info-bar__contents nav > * {
@@ -136,6 +139,10 @@ export default class extends React.Component {
           .info-bar :global(svg) {
             fill: currentColor;
             height: 16px;
+          }
+
+          .zeit-logo {
+            font-size: 16px;
           }
         `}</style>
       </div>
