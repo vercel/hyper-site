@@ -55,8 +55,6 @@ export default class extends React.Component {
         ) : (
           <div className="page">{this.props.children}</div>
         )}
-
-        <style jsx>{``}</style>
       </div>
     )
   }

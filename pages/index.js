@@ -2026,7 +2026,8 @@ export default class Index extends React.Component {
 
           #content table thead td {
             color: #999;
-            font-size: 10px;
+            font-size: 12px;
+            text-transform: uppercase;
           }
 
           #content table {
