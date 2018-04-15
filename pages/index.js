@@ -159,20 +159,6 @@ export default class Index extends React.Component {
                 alt="Hyper"
                 src="../static/hyper-logo.gif"
               />
-
-              <div className="title">
-                <b>Hyper</b>™{' '}
-                <span
-                  style={{
-                    fontSize: 12,
-                    display: 'block',
-                    marginTop: 6,
-                    color: '#999'
-                  }}
-                >
-                  JS/HTML/CSS Terminal
-                </span>
-              </div>
             </div>
 
             <div id="video">
