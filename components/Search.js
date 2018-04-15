@@ -41,7 +41,7 @@ export default class extends React.Component {
             background: transparent;
             border: none;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             padding-right: 8px;
             width: 112px;
             transition: width 0.2s ease;
