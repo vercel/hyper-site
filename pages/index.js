@@ -72,6 +72,7 @@ const DownloadButton = ({ os }) => (
     <style jsx>{`
       .download-button {
         background: #50e3c2;
+        border-radius: 5px;
         color: #494949;
         height: 48px;
         display: flex;
@@ -1881,6 +1882,7 @@ export default class Index extends React.Component {
           }
 
           #logo {
+            margin-top: 10px;
             position: absolute;
             left: 0;
             right: 0;
@@ -1996,7 +1998,7 @@ export default class Index extends React.Component {
           }
 
           #content {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
           }
 
@@ -2015,38 +2017,26 @@ export default class Index extends React.Component {
 
           #content h2,
           #content h3 {
-            font-size: 12px;
-            font-weight: bold;
-            color: #ccc;
+            font-size: 20px;
+            color: #fff;
             margin: 0 0 30px 0;
             padding-top: 30px;
           }
 
           #content h2 a,
           #content h3 a {
-            color: #ccc;
+            color: #fff;
             border-bottom-width: 0;
           }
 
           #content p {
+            font-size: 14px;
+            line-height: 24px;
             margin: 0 0 20px;
-            line-height: 18px;
-          }
-
-          #content h2:before {
-            content: '## ';
-          }
-
-          #content h3:before {
-            content: '### ';
-          }
-
-          #content h4:before {
-            content: '#### ';
           }
 
           #content code {
-            font: 12px Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
+            font: 13px Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
           }
 
           #content p code,
@@ -2088,7 +2078,7 @@ export default class Index extends React.Component {
           #content table td {
             vertical-align: top;
             border: 1px solid #444;
-            line-height: 15px;
+            line-height: 24px;
             position: relative;
           }
 
