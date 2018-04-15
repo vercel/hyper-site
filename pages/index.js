@@ -326,11 +326,6 @@ export default class Index extends React.Component {
               <code>Hyper</code> will show a notification when your modules are
               installed to <code>~/.hyper_plugins</code>.
             </p>
-            <p>
-              You can also take a look at{' '}
-              <a href="https://github.com/bnb/awesome-hyper">Awesome Hyper</a>{' '}
-              for a curated list of plugins and resources.
-            </p>
             <h2 id="keymaps">
               <a href="#keymaps">Keymaps</a>
             </h2>
@@ -439,8 +434,13 @@ export default class Index extends React.Component {
                 </tr>
                 <tr>
                   <td>"cursorColor"</td>
-                  <td>"#F81CE5"</td>
+                  <td>"rgba(248,28,229,0.8)"</td>
                   <td>The color of the caret in the terminal</td>
+                </tr>
+                <tr>
+                  <td>"cursorAccentColor"</td>
+                  <td>"#000"</td>
+                  <td>The text color under BLOCK cursor</td>
                 </tr>
                 <tr>
                   <td>"cursorShape"</td>
@@ -469,6 +469,14 @@ export default class Index extends React.Component {
                   </td>
                 </tr>
                 <tr>
+                  <td>"selectionColor"</td>
+                  <td>"rgba(248,28,229,0.3)"</td>
+                  <td>
+                    The background color/opacity of the text selection in
+                    terminal
+                  </td>
+                </tr>
+                <tr>
                   <td>"borderColor"</td>
                   <td>"#333"</td>
                   <td>The color of the main window border and tab bar</td>
@@ -477,11 +485,6 @@ export default class Index extends React.Component {
                   <td>"css"</td>
                   <td>""</td>
                   <td>Custom CSS to include in the main window</td>
-                </tr>
-                <tr>
-                  <td>"termCSS"</td>
-                  <td>""</td>
-                  <td>Custom CSS to include in the terminal window</td>
                 </tr>
                 <tr>
                   <td>"padding"</td>
@@ -496,7 +499,7 @@ export default class Index extends React.Component {
                   <td>
                     A list of overrides for the color palette. The names of the
                     keys represent the "ANSI 16", which can all be seen{' '}
-                    <a href="https://github.com/zeit/hyper/blob/aaed99abac97a3d6b1766f194522a69e8a994bcb/lib/utils/colors.js">
+                    <a href="https://github.com/zeit/hyper/blob/master/app/utils/colors.js">
                       in the default config
                     </a>.
                   </td>
@@ -510,19 +513,25 @@ export default class Index extends React.Component {
                   </td>
                 </tr>
                 <tr>
-                  <td>"npmRegistry"</td>
-                  <td>npm get registry</td>
+                  <td>"shellArgs"</td>
+                  <td>"['--login']"</td>
+                  <td>An array of shell arguments</td>
+                </tr>
+                <tr>
+                  <td>"env"</td>
                   <td>
-                    Override the npm registry URL to use when installing plugins
+                    {'{'}
+                    {'}'}
+                  </td>
+                  <td>
+                    An object of environment variables to set before launching
+                    shell
                   </td>
                 </tr>
                 <tr>
                   <td>"windowSize"</td>
-                  <td>null</td>
-                  <td>
-                    The default width/height in pixels of a new window e.g.
-                    [540, 380]
-                  </td>
+                  <td>[540, 380]</td>
+                  <td>The default width/height in pixels of a new window</td>
                 </tr>
                 <tr>
                   <td>"copyOnSelect"</td>
@@ -542,26 +551,18 @@ export default class Index extends React.Component {
                   </td>
                 </tr>
                 <tr>
-                  <td>"bell"</td>
-                  <td>"SOUND"</td>
+                  <td>"defaultSSHApp"</td>
+                  <td>true</td>
                   <td>
-                    System bell configuration. Available options are: "SOUND",
-                    false
-                  </td>
-                </tr>
-                <tr>
-                  <td>"bellSoundURL"</td>
-                  <td>"lib-resource:hterm/audio/bell"</td>
-                  <td>
-                    The URL of the bell sound to use, used only if "bell" is set
-                    to "SOUND"
+                    If true, Hyper will be set as the default protocol client
+                    for SSH
                   </td>
                 </tr>
                 <tr>
                   <td>"modifierKeys"</td>
                   <td>
                     {'{'}
-                    cmdIsMeta: false, altIsMeta: false
+                    altIsMeta: false
                     {'}'}
                   </td>
                   <td>
@@ -570,7 +571,7 @@ export default class Index extends React.Component {
                 </tr>
                 <tr>
                   <td>"showHamburgerMenu"</td>
-                  <td>""</td>
+                  <td>true on Linux/Windows, false on macOS</td>
                   <td>
                     Change the visibility of the hamburger menu. Available
                     options are: true, false
@@ -608,6 +609,12 @@ export default class Index extends React.Component {
               The only knowledge that is therefore required to successfully
               extend <code>Hyper</code> is that of its underlying open source
               libraries.
+            </p>
+            <p>
+              You can find additional details about plugin development{' '}
+              <a href="https://github.com/zeit/hyper/blob/master/PLUGINS.md">
+                here
+              </a>
             </p>
             <p>Your module has to expose at least one of these methods:</p>
             <table className="api">
@@ -764,6 +771,32 @@ export default class Index extends React.Component {
                 </tr>
                 <tr>
                   <td>
+                    <code>decorateBrowserOptions</code>
+                  </td>
+                  <td>Electron</td>
+                  <td>
+                    <p>
+                      Allows you to decorate Electron's{' '}
+                      <code>BrowserWindow</code> options when a new window is
+                      created.
+                    </p>
+                    <p>Parameters:</p>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <code>options</code>
+                          </td>
+                          <td>
+                            The <code>BrowserWindow</code> options object.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <code>onRendererWindow</code>
                   </td>
                   <td>Renderer</td>
@@ -837,6 +870,76 @@ export default class Index extends React.Component {
                 </tr>
                 <tr>
                   <td>
+                    <code>getTabsProps</code>
+                  </td>
+                  <td>Renderer</td>
+                  <td>
+                    <p>
+                      Passes down props from <code>&lt;Tabs&gt;</code>
+                      to the <code>&lt;Header&gt;</code> component. Must return
+                      the composed props object.
+                    </p>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <code>parentProps</code>
+                          </td>
+                          <td>Props form the parent component.</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>props</code>
+                          </td>
+                          <td>
+                            The existing properties that will be passed to the
+                            component.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>getTabProps</code>
+                  </td>
+                  <td>Renderer</td>
+                  <td>
+                    <p>
+                      Passes down props from <code>&lt;Tab&gt;</code>
+                      to the <code>&lt;Tabs&gt;</code> component. Must return
+                      the composed props object.
+                    </p>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <code>uid</code>
+                          </td>
+                          <td>Tab / Term uid</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>parentProps</code>
+                          </td>
+                          <td>Props form the parent component.</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>props</code>
+                          </td>
+                          <td>
+                            The existing properties that will be passed to the
+                            component.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <code>getTermGroupProps</code>
                   </td>
                   <td>Renderer</td>
@@ -891,76 +994,6 @@ export default class Index extends React.Component {
                             <code>uid</code>
                           </td>
                           <td>Term uid</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>parentProps</code>
-                          </td>
-                          <td>Props form the parent component.</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>props</code>
-                          </td>
-                          <td>
-                            The existing properties that will be passed to the
-                            component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>getTabsProps</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Passes down props from <code>&lt;Tabs&gt;</code>
-                      to the <code>&lt;Header&gt;</code> component. Must return
-                      the composed props object.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>parentProps</code>
-                          </td>
-                          <td>Props form the parent component.</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>props</code>
-                          </td>
-                          <td>
-                            The existing properties that will be passed to the
-                            component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>getTabProps</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Passes down props from <code>&lt;Tab&gt;</code>
-                      to the <code>&lt;Tabs&gt;</code> component. Must return
-                      the composed props object.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>uid</code>
-                          </td>
-                          <td>Tab / Term uid</td>
                         </tr>
                         <tr>
                           <td>
@@ -1286,6 +1319,53 @@ export default class Index extends React.Component {
                   instance.
                 </p>
                 <p>
+                  Your Term higher order component can supply an{' '}
+                  <code>onCursorMove</code>
+                  handler property that be called when cursor has moved with an
+                  object parameter representing its relative position to Term
+                  origin:
+                </p>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <code>x</code>
+                      </td>
+                      <td>Horizontal position in pixels</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>y</code>
+                      </td>
+                      <td>Vertical position in pixels</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>width</code>
+                      </td>
+                      <td>Cursor width in pixels</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>height</code>
+                      </td>
+                      <td>Cursor height in pixels</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>col</code>
+                      </td>
+                      <td>Horizontal position in columns</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>row</code>
+                      </td>
+                      <td>Vertical position in rows</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
                   We encourage you to maintain compatibility with other
                   decorators. Since many can be set, don't assume that yours is
                   the only one.
@@ -1393,24 +1473,18 @@ export default class Index extends React.Component {
                     {'}'}
                   </code>
                 </pre>
-                <h3 id="hterm">
-                  <a href="#hterm">The underlying terminal</a>
+                <h3 id="xtermjs">
+                  <a href="#xtermjs">The underlying terminal</a>
                 </h3>
                 <p>
                   <code>Hyper</code> achieves a lot of its speed and
                   functionality thanks to the power of{' '}
                   <a
                     target="_blank"
-                    href="https://chromium.googlesource.com/apps/libapps/+/master/hterm"
+                    href="https://github.com/xtermjs/xterm.js/"
                   >
-                    hterm
-                  </a>{' '}
-                  underneath, the terminal emulator of the Chromium project.
-                </p>
-                <p>
-                  To access the terminal object, you can supply a{' '}
-                  <code>onTerminal</code> property to the{' '}
-                  <code>&lt;Term&gt;</code> component.
+                    xterm.js
+                  </a>
                 </p>
                 <h3 id="additional-apis">
                   <a href="#additional-apis">Additional APIs</a>
@@ -1721,14 +1795,16 @@ export default class Index extends React.Component {
                 <p>
                   The extension then{' '}
                   <a
-                    href="https://github.com/zeit/hyperpower/blob/82a09148e176584458829fdd8877fbc003fbb5b4/index.js#L51"
+                    href="https://github.com/zeit/hyperpower/blob/master/index.js#L51"
                     target="_blank"
                   >
                     returns
                   </a>{' '}
                   a higher order component to wrap <code>&lt;Term&gt;</code>.
-                  Notice we pass the <code>onTerminal</code>
-                  property to access the underlying hterm object:
+                  Notice we pass the <code>onDecorated</code>
+                  property to access the base Term component and its DOM ref,
+                  and the <code>onCursorMove</code> property to use Hyper cursor
+                  API:
                 </p>
                 <pre>
                   <code>
@@ -1737,7 +1813,8 @@ export default class Index extends React.Component {
                     {'  '}return React.createElement(Term, Object.assign({'{'}
                     {'}'}, this.props, {'{'}
                     {'\n'}
-                    {'    '}onTerminal: this._onTerminal{'\n'}
+                    {'    '}onDecorated: this._onDecorated{'\n'},
+                    {'    '}onCursorMove: this._onCursorMove{'\n'}
                     {'  '}
                     {'}'}));{'\n'}
                     {'}'}
@@ -1788,6 +1865,9 @@ export default class Index extends React.Component {
                       idea
                     </a>{' '}
                     and Zero Cho for his reference implementation.
+                  </li>
+                  <li>
+                    Our awesome community for their feedback and their help.
                   </li>
                 </ul>
               </code>
