@@ -196,84 +196,92 @@ export default class Index extends React.Component {
             <h2 id="installation">
               <a href="#installation">Installation</a>
             </h2>
-            <table id="installation-table" className="offset-header">
-              <tbody>
-                <tr>
-                  <td
-                    style={{ width: '33.333%' }}
-                    className="invisible-top-left"
-                  />
-                  <td style={{ width: '33.333%' }}>64-bit</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>macOS</b> (.app)
-                  </td>
-                  <td
-                    id="td-mac-os"
-                    className={this.props.OS === 'mac' ? 'highlighted' : ''}
-                    colSpan={2}
-                  >
-                    <a href="https://releases.hyper.is/download/mac">
-                      <img src="static/download-icon.svg" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Windows</b> (.exe)
-                  </td>
-                  <td
-                    id="td-win"
-                    className={this.props.OS === 'windows' ? 'highlighted' : ''}
-                  >
-                    <a href="https://releases.hyper.is/download/win">
-                      <img src="static/download-icon.svg" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Debian</b> (.deb)
-                  </td>
-                  <td
-                    id="td-debian"
-                    className={this.props.OS === 'ubuntu' ? 'highlighted' : ''}
-                  >
-                    <a href="https://releases.hyper.is/download/deb">
-                      <img src="static/download-icon.svg" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Fedora</b> (.rpm)
-                  </td>
-                  <td
-                    id="td-fedora"
-                    className={this.props.OS === 'fedora' ? 'highlighted' : ''}
-                  >
-                    <a href="https://releases.hyper.is/download/rpm">
-                      <img src="static/download-icon.svg" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Other Linux distros</b> (.AppImage)
-                  </td>
-                  <td
-                    id="td-appimage"
-                    className={this.props.OS === 'linux' ? 'highlighted' : ''}
-                    colSpan={2}
-                  >
-                    <a href="https://releases.hyper.is/download/AppImage">
-                      <img src="static/download-icon.svg" />
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table">
+              <table id="installation-table" className="offset-header">
+                <tbody>
+                  <tr>
+                    <td
+                      style={{ width: '33.333%' }}
+                      className="invisible-top-left"
+                    />
+                    <td style={{ width: '33.333%' }}>64-bit</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>macOS</b> (.app)
+                    </td>
+                    <td
+                      id="td-mac-os"
+                      className={this.props.OS === 'mac' ? 'highlighted' : ''}
+                      colSpan={2}
+                    >
+                      <a href="https://releases.hyper.is/download/mac">
+                        <img src="static/download-icon.svg" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Windows</b> (.exe)
+                    </td>
+                    <td
+                      id="td-win"
+                      className={
+                        this.props.OS === 'windows' ? 'highlighted' : ''
+                      }
+                    >
+                      <a href="https://releases.hyper.is/download/win">
+                        <img src="static/download-icon.svg" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Debian</b> (.deb)
+                    </td>
+                    <td
+                      id="td-debian"
+                      className={
+                        this.props.OS === 'ubuntu' ? 'highlighted' : ''
+                      }
+                    >
+                      <a href="https://releases.hyper.is/download/deb">
+                        <img src="static/download-icon.svg" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Fedora</b> (.rpm)
+                    </td>
+                    <td
+                      id="td-fedora"
+                      className={
+                        this.props.OS === 'fedora' ? 'highlighted' : ''
+                      }
+                    >
+                      <a href="https://releases.hyper.is/download/rpm">
+                        <img src="static/download-icon.svg" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Other Linux distros</b> (.AppImage)
+                    </td>
+                    <td
+                      id="td-appimage"
+                      className={this.props.OS === 'linux' ? 'highlighted' : ''}
+                      colSpan={2}
+                    >
+                      <a href="https://releases.hyper.is/download/AppImage">
+                        <img src="static/download-icon.svg" />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <h2 id="hashtag-goals">
               <a href="#hashtag-goals">Project Goals</a>
             </h2>
@@ -357,27 +365,29 @@ export default class Index extends React.Component {
               </code>
             </pre>
             <p>Default keymaps: </p>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/win32.json">
-                      Windows
-                    </a>
-                  </td>
-                  <td>
-                    <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/linux.json">
-                      Linux
-                    </a>
-                  </td>
-                  <td>
-                    <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/darwin.json">
-                      macOS
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/win32.json">
+                        Windows
+                      </a>
+                    </td>
+                    <td>
+                      <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/linux.json">
+                        Linux
+                      </a>
+                    </td>
+                    <td>
+                      <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/darwin.json">
+                        macOS
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <h2 id="cfg">
               <a href="#cfg">Configuration</a>
             </h2>
@@ -386,206 +396,210 @@ export default class Index extends React.Component {
               <code>~/.hyper.js</code>
               admits the following
             </p>
-            <table className="config">
-              <thead>
-                <tr>
-                  <td>Property</td>
-                  <td>Default</td>
-                  <td>Description</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>"updateChannel"</td>
-                  <td>"stable"</td>
-                  <td>The update channel to receive updates from</td>
-                </tr>
-                <tr>
-                  <td>"fontSize"</td>
-                  <td>12</td>
-                  <td>The default size in pixels for the terminal</td>
-                </tr>
-                <tr>
-                  <td>"fontFamily"</td>
-                  <td>"Menlo, DejaVu Sans Mono, Lucida Console, monospace"</td>
-                  <td>The font family to use with optional fallbacks</td>
-                </tr>
-                <tr>
-                  <td>"uiFontFamily"</td>
-                  <td>
-                    "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, ..."
-                  </td>
-                  <td>
-                    The font family to use for the UI with optional fallbacks
-                  </td>
-                </tr>
-                <tr>
-                  <td>"fontWeight"</td>
-                  <td>"normal"</td>
-                  <td>The default font weight: "normal" or "bold"</td>
-                </tr>
-                <tr>
-                  <td>"fontWeightBold"</td>
-                  <td>"bold"</td>
-                  <td>
-                    The font weight for bold characters: "normal" or "bold"
-                  </td>
-                </tr>
-                <tr>
-                  <td>"cursorColor"</td>
-                  <td>"rgba(248,28,229,0.8)"</td>
-                  <td>The color of the caret in the terminal</td>
-                </tr>
-                <tr>
-                  <td>"cursorAccentColor"</td>
-                  <td>"#000"</td>
-                  <td>The text color under BLOCK cursor</td>
-                </tr>
-                <tr>
-                  <td>"cursorShape"</td>
-                  <td>"BLOCK"</td>
-                  <td>
-                    The shape of the caret in the terminal. Available options
-                    are: 'BEAM', 'UNDERLINE', 'BLOCK'
-                  </td>
-                </tr>
-                <tr>
-                  <td>"cursorBlink"</td>
-                  <td>"false"</td>
-                  <td>If true, cursor will blink</td>
-                </tr>
-                <tr>
-                  <td>"foregroundColor"</td>
-                  <td>"#fff"</td>
-                  <td>The color of the main text of the terminal</td>
-                </tr>
-                <tr>
-                  <td>"backgroundColor"</td>
-                  <td>"#000"</td>
-                  <td>
-                    The color and opacity of the window and main terminal
-                    background
-                  </td>
-                </tr>
-                <tr>
-                  <td>"selectionColor"</td>
-                  <td>"rgba(248,28,229,0.3)"</td>
-                  <td>
-                    The background color/opacity of the text selection in
-                    terminal
-                  </td>
-                </tr>
-                <tr>
-                  <td>"borderColor"</td>
-                  <td>"#333"</td>
-                  <td>The color of the main window border and tab bar</td>
-                </tr>
-                <tr>
-                  <td>"css"</td>
-                  <td>""</td>
-                  <td>Custom CSS to include in the main window</td>
-                </tr>
-                <tr>
-                  <td>"padding"</td>
-                  <td>"12px 14px"</td>
-                  <td>CSS padding values for the space around each term</td>
-                </tr>
-                <tr>
-                  <td>"colors"</td>
-                  <td>
-                    {'{'} black: "#000000", red: "#ff0000", ... {'}'}
-                  </td>
-                  <td>
-                    A list of overrides for the color palette. The names of the
-                    keys represent the "ANSI 16", which can all be seen{' '}
-                    <a href="https://github.com/zeit/hyper/blob/master/app/utils/colors.js">
-                      in the default config
-                    </a>.
-                  </td>
-                </tr>
-                <tr>
-                  <td>"shell"</td>
-                  <td>""</td>
-                  <td>
-                    A path to a custom shell to run when Hyper starts a new
-                    session
-                  </td>
-                </tr>
-                <tr>
-                  <td>"shellArgs"</td>
-                  <td>"['--login']"</td>
-                  <td>An array of shell arguments</td>
-                </tr>
-                <tr>
-                  <td>"env"</td>
-                  <td>
-                    {'{'}
-                    {'}'}
-                  </td>
-                  <td>
-                    An object of environment variables to set before launching
-                    shell
-                  </td>
-                </tr>
-                <tr>
-                  <td>"windowSize"</td>
-                  <td>[540, 380]</td>
-                  <td>The default width/height in pixels of a new window</td>
-                </tr>
-                <tr>
-                  <td>"copyOnSelect"</td>
-                  <td>false</td>
-                  <td>
-                    If true, selected text will automatically be copied to the
-                    clipboard
-                  </td>
-                </tr>
-                <tr>
-                  <td>"quickEdit"</td>
-                  <td>false</td>
-                  <td>
-                    If true, on right click selected text will be copied or
-                    pasted if no selection is present (true by default on
-                    Windows)
-                  </td>
-                </tr>
-                <tr>
-                  <td>"defaultSSHApp"</td>
-                  <td>true</td>
-                  <td>
-                    If true, Hyper will be set as the default protocol client
-                    for SSH
-                  </td>
-                </tr>
-                <tr>
-                  <td>"modifierKeys"</td>
-                  <td>
-                    {'{'}
-                    altIsMeta: false
-                    {'}'}
-                  </td>
-                  <td>
-                    Change the behaviour of modifier keys to act as meta key
-                  </td>
-                </tr>
-                <tr>
-                  <td>"showHamburgerMenu"</td>
-                  <td>true on Linux/Windows, false on macOS</td>
-                  <td>
-                    Change the visibility of the hamburger menu. Available
-                    options are: true, false
-                  </td>
-                </tr>
-                <tr>
-                  <td>"showWindowControls"</td>
-                  <td>""</td>
-                  <td>
-                    Change the position/visibility of the window controls.
-                    Available options are: true, false, "left"
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table">
+              <table className="config">
+                <thead>
+                  <tr>
+                    <td>Property</td>
+                    <td>Default</td>
+                    <td>Description</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>"updateChannel"</td>
+                    <td>"stable"</td>
+                    <td>The update channel to receive updates from</td>
+                  </tr>
+                  <tr>
+                    <td>"fontSize"</td>
+                    <td>12</td>
+                    <td>The default size in pixels for the terminal</td>
+                  </tr>
+                  <tr>
+                    <td>"fontFamily"</td>
+                    <td>
+                      "Menlo, DejaVu Sans Mono, Lucida Console, monospace"
+                    </td>
+                    <td>The font family to use with optional fallbacks</td>
+                  </tr>
+                  <tr>
+                    <td>"uiFontFamily"</td>
+                    <td>
+                      "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, ..."
+                    </td>
+                    <td>
+                      The font family to use for the UI with optional fallbacks
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"fontWeight"</td>
+                    <td>"normal"</td>
+                    <td>The default font weight: "normal" or "bold"</td>
+                  </tr>
+                  <tr>
+                    <td>"fontWeightBold"</td>
+                    <td>"bold"</td>
+                    <td>
+                      The font weight for bold characters: "normal" or "bold"
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"cursorColor"</td>
+                    <td>"rgba(248,28,229,0.8)"</td>
+                    <td>The color of the caret in the terminal</td>
+                  </tr>
+                  <tr>
+                    <td>"cursorAccentColor"</td>
+                    <td>"#000"</td>
+                    <td>The text color under BLOCK cursor</td>
+                  </tr>
+                  <tr>
+                    <td>"cursorShape"</td>
+                    <td>"BLOCK"</td>
+                    <td>
+                      The shape of the caret in the terminal. Available options
+                      are: 'BEAM', 'UNDERLINE', 'BLOCK'
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"cursorBlink"</td>
+                    <td>"false"</td>
+                    <td>If true, cursor will blink</td>
+                  </tr>
+                  <tr>
+                    <td>"foregroundColor"</td>
+                    <td>"#fff"</td>
+                    <td>The color of the main text of the terminal</td>
+                  </tr>
+                  <tr>
+                    <td>"backgroundColor"</td>
+                    <td>"#000"</td>
+                    <td>
+                      The color and opacity of the window and main terminal
+                      background
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"selectionColor"</td>
+                    <td>"rgba(248,28,229,0.3)"</td>
+                    <td>
+                      The background color/opacity of the text selection in
+                      terminal
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"borderColor"</td>
+                    <td>"#333"</td>
+                    <td>The color of the main window border and tab bar</td>
+                  </tr>
+                  <tr>
+                    <td>"css"</td>
+                    <td>""</td>
+                    <td>Custom CSS to include in the main window</td>
+                  </tr>
+                  <tr>
+                    <td>"padding"</td>
+                    <td>"12px 14px"</td>
+                    <td>CSS padding values for the space around each term</td>
+                  </tr>
+                  <tr>
+                    <td>"colors"</td>
+                    <td>
+                      {'{'} black: "#000000", red: "#ff0000", ... {'}'}
+                    </td>
+                    <td>
+                      A list of overrides for the color palette. The names of
+                      the keys represent the "ANSI 16", which can all be seen{' '}
+                      <a href="https://github.com/zeit/hyper/blob/master/app/utils/colors.js">
+                        in the default config
+                      </a>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"shell"</td>
+                    <td>""</td>
+                    <td>
+                      A path to a custom shell to run when Hyper starts a new
+                      session
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"shellArgs"</td>
+                    <td>"['--login']"</td>
+                    <td>An array of shell arguments</td>
+                  </tr>
+                  <tr>
+                    <td>"env"</td>
+                    <td>
+                      {'{'}
+                      {'}'}
+                    </td>
+                    <td>
+                      An object of environment variables to set before launching
+                      shell
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"windowSize"</td>
+                    <td>[540, 380]</td>
+                    <td>The default width/height in pixels of a new window</td>
+                  </tr>
+                  <tr>
+                    <td>"copyOnSelect"</td>
+                    <td>false</td>
+                    <td>
+                      If true, selected text will automatically be copied to the
+                      clipboard
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"quickEdit"</td>
+                    <td>false</td>
+                    <td>
+                      If true, on right click selected text will be copied or
+                      pasted if no selection is present (true by default on
+                      Windows)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"defaultSSHApp"</td>
+                    <td>true</td>
+                    <td>
+                      If true, Hyper will be set as the default protocol client
+                      for SSH
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"modifierKeys"</td>
+                    <td>
+                      {'{'}
+                      altIsMeta: false
+                      {'}'}
+                    </td>
+                    <td>
+                      Change the behaviour of modifier keys to act as meta key
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"showHamburgerMenu"</td>
+                    <td>true on Linux/Windows, false on macOS</td>
+                    <td>
+                      Change the visibility of the hamburger menu. Available
+                      options are: true, false
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>"showWindowControls"</td>
+                    <td>""</td>
+                    <td>
+                      Change the position/visibility of the window controls.
+                      Available options are: true, false, "left"
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <span className="table-note" />
             <h2 id="extensions-api">
               <a href="#extensions-api">Extensions API</a>
@@ -616,543 +630,547 @@ export default class Index extends React.Component {
               </a>
             </p>
             <p>Your module has to expose at least one of these methods:</p>
-            <table className="api">
-              <thead>
-                <tr>
-                  <td>Method</td>
-                  <td>Invoked from</td>
-                  <td>Description</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <code>onApp</code>
-                  </td>
-                  <td>Electron</td>
-                  <td>
-                    <p>
-                      Invoked when the app first loads. If a plugin reloads,
-                      it's invoked again with the existing app.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>app</code>
-                          </td>
-                          <td>The electron app.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>onWindow</code>
-                  </td>
-                  <td>Electron</td>
-                  <td>
-                    <p>
-                      Invoked when each window is created. If a plugin reloads,
-                      it's invoked again with the existing windows.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>window</code>
-                          </td>
-                          <td>
-                            An electron <code>BrowserWindow</code>.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>onUnload</code>
-                  </td>
-                  <td>Electron</td>
-                  <td>
-                    <p>Invoked when a plugin is removed by the user.</p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>app</code>
-                          </td>
-                          <td>The electron app.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>decorateConfig</code>
-                  </td>
-                  <td>Electron / Renderer</td>
-                  <td>
-                    <p>
-                      <b>v0.5.0+</b>. Allows you to decorate the user's
-                      configuration.<br />
-                      Useful for themeing or custom parameters for your plugin.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>config</code>
-                          </td>
-                          <td>
-                            The <code>config</code> object
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>decorateEnv</code>
-                  </td>
-                  <td>Electron</td>
-                  <td>
-                    <p>
-                      <b>v0.7.0+</b>. Allows you to decorate the user's
-                      environment by returning a modified environment object.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>environment</code>
-                          </td>
-                          <td>
-                            The <code>environment</code> object
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>decorateMenu</code>
-                  </td>
-                  <td>Electron</td>
-                  <td>
-                    <p>
-                      Invoked with the Electron's <code>Menu</code> template. If
-                      a plugin reloads, it's called again and the menu is
-                      refreshed.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>menu</code>
-                          </td>
-                          <td>The menu template object</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>decorateBrowserOptions</code>
-                  </td>
-                  <td>Electron</td>
-                  <td>
-                    <p>
-                      Allows you to decorate Electron's{' '}
-                      <code>BrowserWindow</code> options when a new window is
-                      created.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>options</code>
-                          </td>
-                          <td>
-                            The <code>BrowserWindow</code> options object.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>onRendererWindow</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Invoked when a plugin is first loaded or subsequently
-                      reloaded in each window.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr />
-                      </tbody>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>window</code>
-                          </td>
-                          <td>The window object</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>middleware</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      A custom Redux middleware that can intercept any action.
-                      Subsequently we invoke the <code>thunk</code>
-                      middleware, which means your middleware can
-                      <code>next</code> thunks.
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>reduceUI</code>
-                    <br />
-                    <code>reduceSessions</code>
-                    <br />
-                    <code>reduceTermGroups</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      A custom reducer for the <code>ui</code>,{' '}
-                      <code>sessions</code> or <code>termgroups</code> state
-                      shape.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>state</code>
-                          </td>
-                          <td>The Redux state object</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>action</code>
-                          </td>
-                          <td>The action object</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>getTabsProps</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Passes down props from <code>&lt;Tabs&gt;</code>
-                      to the <code>&lt;Header&gt;</code> component. Must return
-                      the composed props object.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>parentProps</code>
-                          </td>
-                          <td>Props form the parent component.</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>props</code>
-                          </td>
-                          <td>
-                            The existing properties that will be passed to the
-                            component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>getTabProps</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Passes down props from <code>&lt;Tab&gt;</code>
-                      to the <code>&lt;Tabs&gt;</code> component. Must return
-                      the composed props object.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>uid</code>
-                          </td>
-                          <td>Tab / Term uid</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>parentProps</code>
-                          </td>
-                          <td>Props form the parent component.</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>props</code>
-                          </td>
-                          <td>
-                            The existing properties that will be passed to the
-                            component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>getTermGroupProps</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Passes down props from <code>&lt;Terms&gt;</code>
-                      to the <code>&lt;TermGroup&gt;</code> component. Must
-                      return the composed props object.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>uid</code>
-                          </td>
-                          <td>TermGroup uid</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>parentProps</code>
-                          </td>
-                          <td>Props form the parent component.</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>props</code>
-                          </td>
-                          <td>
-                            The existing properties that will be passed to the
-                            component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>getTermProps</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Passes down props from <code>&lt;TermGroup&gt;</code>
-                      to the <code>&lt;Term&gt;</code> component. Must return
-                      the composed props object.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>uid</code>
-                          </td>
-                          <td>Term uid</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>parentProps</code>
-                          </td>
-                          <td>Props form the parent component.</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>props</code>
-                          </td>
-                          <td>
-                            The existing properties that will be passed to the
-                            component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>mapHyperState</code>
-                    <br />
-                    <code>mapTermsState</code>
-                    <br />
-                    <code>mapHeaderState</code>
-                    <br />
-                    <code>mapNotificationsState</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      A custom mapper for the state properties that{' '}
-                      <a
-                        href="https://github.com/zeit/hyper/tree/master/lib/containers"
-                        target="_blank"
-                      >
-                        container components
-                      </a>{' '}
-                      receive. Note that for children components to get these
-                      properties, you have to pass them down using the
-                      corresponding methods (like <code>getTermProps</code>).
-                    </p>
-                    <p>Must return an extended object of the map passed.</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>state</code>
-                          </td>
-                          <td>
-                            The <code>Redux</code> global state
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>map</code>
-                          </td>
-                          <td>
-                            The existing map of properties that will be passed
-                            to the component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>mapHyperDispatch</code>
-                    <br />
-                    <code>mapTermsDispatch</code>
-                    <br />
-                    <code>mapHeaderDispatch</code>
-                    <br />
-                    <code>mapNotificationsDispatch</code>
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      A custom mapper for the dispatch properties. Must return
-                      an extended object of the map passed.
-                    </p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>dispatch</code>
-                          </td>
-                          <td>The Redux dispatch function</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>map</code>
-                          </td>
-                          <td>
-                            The existing map of properties that will be passed
-                            to the component.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>decorateHyper</code>
-                    <br />
-                    <code>decorateNotifications</code>
-                    <br />
-                    <code>decorateNotification</code>
-                    <code>decorateHeader</code>
-                    <br />
-                    <code>decorateTabs</code>
-                    <br />
-                    <code>decorateTab</code>
-                    <code>decorateTerms</code>
-                    <br />
-                    <code>decorateTermGroup</code>
-                    <br />
-                    <code>decorateSplitPane</code>
-                    <br />
-                    <code>decorateTerm</code>
-                    <br />
-                  </td>
-                  <td>Renderer</td>
-                  <td>
-                    <p>
-                      Invoked with the <code>React</code> <code>Component</code>
-                      to decorate. Must return a Higher Order Component.
-                    </p>
-                    <p>Parameters:</p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <code>Hyper</code>
-                          </td>
-                          <td>
-                            The <code>React</code> <code>Component</code>
-                            constructor.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <code>env</code>
-                          </td>
-                          <td>
-                            A collection of useful module references for
-                            building components.{' '}
-                            <a href="#decorating-components">See below</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table">
+              <table className="api">
+                <thead>
+                  <tr>
+                    <td>Method</td>
+                    <td>Invoked from</td>
+                    <td>Description</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>onApp</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>
+                        Invoked when the app first loads. If a plugin reloads,
+                        it's invoked again with the existing app.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>app</code>
+                            </td>
+                            <td>The electron app.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>onWindow</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>
+                        Invoked when each window is created. If a plugin
+                        reloads, it's invoked again with the existing windows.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>window</code>
+                            </td>
+                            <td>
+                              An electron <code>BrowserWindow</code>.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>onUnload</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>Invoked when a plugin is removed by the user.</p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>app</code>
+                            </td>
+                            <td>The electron app.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>decorateConfig</code>
+                    </td>
+                    <td>Electron / Renderer</td>
+                    <td>
+                      <p>
+                        <b>v0.5.0+</b>. Allows you to decorate the user's
+                        configuration.<br />
+                        Useful for themeing or custom parameters for your
+                        plugin.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>config</code>
+                            </td>
+                            <td>
+                              The <code>config</code> object
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>decorateEnv</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>
+                        <b>v0.7.0+</b>. Allows you to decorate the user's
+                        environment by returning a modified environment object.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>environment</code>
+                            </td>
+                            <td>
+                              The <code>environment</code> object
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>decorateMenu</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>
+                        Invoked with the Electron's <code>Menu</code> template.
+                        If a plugin reloads, it's called again and the menu is
+                        refreshed.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>menu</code>
+                            </td>
+                            <td>The menu template object</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>decorateBrowserOptions</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>
+                        Allows you to decorate Electron's{' '}
+                        <code>BrowserWindow</code> options when a new window is
+                        created.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>options</code>
+                            </td>
+                            <td>
+                              The <code>BrowserWindow</code> options object.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>onRendererWindow</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        Invoked when a plugin is first loaded or subsequently
+                        reloaded in each window.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr />
+                        </tbody>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>window</code>
+                            </td>
+                            <td>The window object</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>middleware</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        A custom Redux middleware that can intercept any action.
+                        Subsequently we invoke the <code>thunk</code>
+                        middleware, which means your middleware can
+                        <code>next</code> thunks.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>reduceUI</code>
+                      <br />
+                      <code>reduceSessions</code>
+                      <br />
+                      <code>reduceTermGroups</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        A custom reducer for the <code>ui</code>,{' '}
+                        <code>sessions</code> or <code>termgroups</code> state
+                        shape.
+                      </p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>state</code>
+                            </td>
+                            <td>The Redux state object</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>action</code>
+                            </td>
+                            <td>The action object</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>getTabsProps</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        Passes down props from <code>&lt;Tabs&gt;</code>
+                        to the <code>&lt;Header&gt;</code> component. Must
+                        return the composed props object.
+                      </p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>parentProps</code>
+                            </td>
+                            <td>Props form the parent component.</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>props</code>
+                            </td>
+                            <td>
+                              The existing properties that will be passed to the
+                              component.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>getTabProps</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        Passes down props from <code>&lt;Tab&gt;</code>
+                        to the <code>&lt;Tabs&gt;</code> component. Must return
+                        the composed props object.
+                      </p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>uid</code>
+                            </td>
+                            <td>Tab / Term uid</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>parentProps</code>
+                            </td>
+                            <td>Props form the parent component.</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>props</code>
+                            </td>
+                            <td>
+                              The existing properties that will be passed to the
+                              component.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>getTermGroupProps</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        Passes down props from <code>&lt;Terms&gt;</code>
+                        to the <code>&lt;TermGroup&gt;</code> component. Must
+                        return the composed props object.
+                      </p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>uid</code>
+                            </td>
+                            <td>TermGroup uid</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>parentProps</code>
+                            </td>
+                            <td>Props form the parent component.</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>props</code>
+                            </td>
+                            <td>
+                              The existing properties that will be passed to the
+                              component.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>getTermProps</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        Passes down props from <code>&lt;TermGroup&gt;</code>
+                        to the <code>&lt;Term&gt;</code> component. Must return
+                        the composed props object.
+                      </p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>uid</code>
+                            </td>
+                            <td>Term uid</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>parentProps</code>
+                            </td>
+                            <td>Props form the parent component.</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>props</code>
+                            </td>
+                            <td>
+                              The existing properties that will be passed to the
+                              component.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>mapHyperState</code>
+                      <br />
+                      <code>mapTermsState</code>
+                      <br />
+                      <code>mapHeaderState</code>
+                      <br />
+                      <code>mapNotificationsState</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        A custom mapper for the state properties that{' '}
+                        <a
+                          href="https://github.com/zeit/hyper/tree/master/lib/containers"
+                          target="_blank"
+                        >
+                          container components
+                        </a>{' '}
+                        receive. Note that for children components to get these
+                        properties, you have to pass them down using the
+                        corresponding methods (like <code>getTermProps</code>).
+                      </p>
+                      <p>Must return an extended object of the map passed.</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>state</code>
+                            </td>
+                            <td>
+                              The <code>Redux</code> global state
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>map</code>
+                            </td>
+                            <td>
+                              The existing map of properties that will be passed
+                              to the component.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>mapHyperDispatch</code>
+                      <br />
+                      <code>mapTermsDispatch</code>
+                      <br />
+                      <code>mapHeaderDispatch</code>
+                      <br />
+                      <code>mapNotificationsDispatch</code>
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        A custom mapper for the dispatch properties. Must return
+                        an extended object of the map passed.
+                      </p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>dispatch</code>
+                            </td>
+                            <td>The Redux dispatch function</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>map</code>
+                            </td>
+                            <td>
+                              The existing map of properties that will be passed
+                              to the component.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>decorateHyper</code>
+                      <br />
+                      <code>decorateNotifications</code>
+                      <br />
+                      <code>decorateNotification</code>
+                      <code>decorateHeader</code>
+                      <br />
+                      <code>decorateTabs</code>
+                      <br />
+                      <code>decorateTab</code>
+                      <code>decorateTerms</code>
+                      <br />
+                      <code>decorateTermGroup</code>
+                      <br />
+                      <code>decorateSplitPane</code>
+                      <br />
+                      <code>decorateTerm</code>
+                      <br />
+                    </td>
+                    <td>Renderer</td>
+                    <td>
+                      <p>
+                        Invoked with the <code>React</code>{' '}
+                        <code>Component</code>
+                        to decorate. Must return a Higher Order Component.
+                      </p>
+                      <p>Parameters:</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>Hyper</code>
+                            </td>
+                            <td>
+                              The <code>React</code> <code>Component</code>
+                              constructor.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>env</code>
+                            </td>
+                            <td>
+                              A collection of useful module references for
+                              building components.{' '}
+                              <a href="#decorating-components">See below</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <span className="table-note" />
             <h3 id="extensions-module-loading">
               <a href="#extensions-module-loading">Module loading</a>
@@ -1255,62 +1273,66 @@ export default class Index extends React.Component {
                   All the <code>decorate*</code> methods receive the following
                   references in an object passed as the second parameter:
                 </p>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <code>React</code>
-                      </td>
-                      <td>The entire React namespace.</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>notify</code>
-                      </td>
-                      <td>
-                        A helper function that shows a desktop notification. The
-                        first parameter is the title and the second is the
-                        optional body of the notification.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>Notification</code>
-                      </td>
-                      <td>
-                        The <code>Notification</code> component in case you want
-                        to re-use it.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="table">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <code>React</code>
+                        </td>
+                        <td>The entire React namespace.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>notify</code>
+                        </td>
+                        <td>
+                          A helper function that shows a desktop notification.
+                          The first parameter is the title and the second is the
+                          optional body of the notification.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>Notification</code>
+                        </td>
+                        <td>
+                          The <code>Notification</code> component in case you
+                          want to re-use it.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>
                   All the components accept the following two properties to
                   extend their markup:
                 </p>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <code>customChildren</code>
-                      </td>
-                      <td>
-                        An array of <code>Element</code> or a single
-                        <code>Element</code> to insert at the bottom of the
-                        component.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>customChildrenBefore</code>
-                      </td>
-                      <td>
-                        The same as the above property, but inserted as the
-                        first child element(s) of the component.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="table">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <code>customChildren</code>
+                        </td>
+                        <td>
+                          An array of <code>Element</code> or a single
+                          <code>Element</code> to insert at the bottom of the
+                          component.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>customChildrenBefore</code>
+                        </td>
+                        <td>
+                          The same as the above property, but inserted as the
+                          first child element(s) of the component.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>
                   Your higher order component can supply a{' '}
                   <code>onDecorated</code>
@@ -1324,46 +1346,48 @@ export default class Index extends React.Component {
                   object parameter representing its relative position to Term
                   origin:
                 </p>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <code>x</code>
-                      </td>
-                      <td>Horizontal position in pixels</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>y</code>
-                      </td>
-                      <td>Vertical position in pixels</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>width</code>
-                      </td>
-                      <td>Cursor width in pixels</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>height</code>
-                      </td>
-                      <td>Cursor height in pixels</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>col</code>
-                      </td>
-                      <td>Horizontal position in columns</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>row</code>
-                      </td>
-                      <td>Vertical position in rows</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="table">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <code>x</code>
+                        </td>
+                        <td>Horizontal position in pixels</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>y</code>
+                        </td>
+                        <td>Vertical position in pixels</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>width</code>
+                        </td>
+                        <td>Cursor width in pixels</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>height</code>
+                        </td>
+                        <td>Cursor height in pixels</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>col</code>
+                        </td>
+                        <td>Horizontal position in columns</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>row</code>
+                        </td>
+                        <td>Vertical position in rows</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>
                   We encourage you to maintain compatibility with other
                   decorators. Since many can be set, don't assume that yours is
@@ -1492,97 +1516,103 @@ export default class Index extends React.Component {
                   The Electron <code>app</code> objects are extended with the
                   following properties:
                 </p>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <code>config</code>
-                      </td>
-                      <td>
-                        An <code>Object</code> with the <code>config</code>{' '}
-                        block from <code>~/.hyper.js</code>.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>plugins</code>
-                      </td>
-                      <td>
-                        An <code>Object</code> with helpers for plugins.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>getWindows</code>
-                      </td>
-                      <td>
-                        A <code>Function</code> that returns an <code>Set</code>{' '}
-                        of all the open windows.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>createWindow</code>
-                      </td>
-                      <td>
-                        A <code>Function</code> that will create a new window.
-                        Accepts an optional <code>callback</code> that will be
-                        passed as the new window's <code>init</code> callback.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="table">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <code>config</code>
+                        </td>
+                        <td>
+                          An <code>Object</code> with the <code>config</code>{' '}
+                          block from <code>~/.hyper.js</code>.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>plugins</code>
+                        </td>
+                        <td>
+                          An <code>Object</code> with helpers for plugins.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>getWindows</code>
+                        </td>
+                        <td>
+                          A <code>Function</code> that returns an{' '}
+                          <code>Set</code> of all the open windows.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>createWindow</code>
+                        </td>
+                        <td>
+                          A <code>Function</code> that will create a new window.
+                          Accepts an optional <code>callback</code> that will be
+                          passed as the new window's <code>init</code> callback.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>
                   Electron <code>BrowserWindow</code> objects are extended with
                   the following parameters:
                 </p>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <code>rpc</code>
-                      </td>
-                      <td>
-                        An <code>EventEmitter</code> that allows for
-                        communication with the window process.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>sessions</code>
-                      </td>
-                      <td>
-                        A <code>Map</code> of <code>Session</code>
-                        objects which hold the communication with each term's
-                        pty..
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="table">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <code>rpc</code>
+                        </td>
+                        <td>
+                          An <code>EventEmitter</code> that allows for
+                          communication with the window process.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>sessions</code>
+                        </td>
+                        <td>
+                          A <code>Map</code> of <code>Session</code>
+                          objects which hold the communication with each term's
+                          pty..
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>Renderer windows are similarly extended with:</p>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <code>rpc</code>
-                      </td>
-                      <td>
-                        An <code>EventEmitter</code> that allows for
-                        communication with the window process.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <code>store</code>
-                      </td>
-                      <td>
-                        The Redux <code>Store</code> object. This allows access
-                        to <code>dispatch</code> actions or read the global
-                        state with <code>getState</code>.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="table">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <code>rpc</code>
+                        </td>
+                        <td>
+                          An <code>EventEmitter</code> that allows for
+                          communication with the window process.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>store</code>
+                        </td>
+                        <td>
+                          The Redux <code>Store</code> object. This allows
+                          access to <code>dispatch</code> actions or read the
+                          global state with <code>getState</code>.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>
                   The <code>rpc</code> object is symmetrical between browser and
                   renderer process. The API is the same as Node.js, with the
@@ -1829,6 +1859,10 @@ export default class Index extends React.Component {
         <style jsx>{`
           :global(body) {
             color: #ccc;
+          }
+
+          :global(.table) {
+            overflow-x: auto;
           }
 
           #logo {
