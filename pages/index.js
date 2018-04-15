@@ -133,14 +133,20 @@ export default class Index extends React.Component {
       <Layout>
         <Head>
           <title>Hyper™</title>
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@zeithq" />
-          <meta name="og:title" content="Hyper™" />
-          <meta name="og:url" content="https://hyper.is" />
-          <meta name="description" content="Hyper™: HTML/JS/CSS terminal" />
-          <meta name="og:description" content="Hyper™: HTML/JS/CSS terminal" />
-          <meta name="og:image" content="https://hyper.is/static/hyper.png" />
-          <link rel="dns-prefetch" href="https://cdn.zeit.co" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:site" content="@zeithq" />
+          <meta property="og:title" content="Hyper™" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://hyper.is" />
+          <meta property="description" content="Hyper™: HTML/JS/CSS terminal" />
+          <meta
+            property="og:description"
+            content="Hyper™: HTML/JS/CSS terminal"
+          />
+          <meta
+            property="og:image"
+            content="https://hyper.is/static/hyper.png"
+          />
         </Head>
 
         <div id="main">
