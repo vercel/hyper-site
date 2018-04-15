@@ -1821,56 +1821,6 @@ export default class Index extends React.Component {
                     {'}'}
                   </code>
                 </pre>
-                <h2 id="credits">
-                  <a href="#credits">Credits</a>
-                </h2>
-                <p>
-                  Authored by <b>Guillermo Rauch</b> -{' '}
-                  <a href="https://twitter.com/rauchg" target="_blank">
-                    @rauchg
-                  </a>.<br />
-                  Brought to you by{' '}
-                  <a href="https://zeit.co">
-                    <span style={{ fontSize: 16 }}>▲</span>ZEIT
-                  </a>. Hosted on{' '}
-                  <a target="_blank" href="https://zeit.co/now">
-                    now
-                  </a>.
-                </p>
-                <p>Special thanks to the following people:</p>
-                <ul>
-                  <li>
-                    Jeff Haynies for his work on polish for general terminal
-                    behavior.
-                  </li>
-                  <li>
-                    Nuno Campos for his work on zooming and configuration.
-                  </li>
-                  <li>
-                    Leo Lamprecht and Johan Brook for their excellent UI
-                    improvements.
-                  </li>
-                  <li>Harrison Harnisch for our nice default color palette.</li>
-                  <li>Fernando Montoya for his feedback and patches.</li>
-                  <li>Matias Tucci for his work on the auto updater.</li>
-                  <li>
-                    Sebastian Markbage for his insight on the higher-order
-                    component extensibility API.
-                  </li>
-                  <li>
-                    Joel Besada for his editor particles{' '}
-                    <a
-                      target="_blank"
-                      href="https://github.com/codeinthedark/editor/pull/1"
-                    >
-                      idea
-                    </a>{' '}
-                    and Zero Cho for his reference implementation.
-                  </li>
-                  <li>
-                    Our awesome community for their feedback and their help.
-                  </li>
-                </ul>
               </code>
             </code>
           </div>
@@ -2015,12 +1965,24 @@ export default class Index extends React.Component {
             color: #fff;
           }
 
-          #content h2,
-          #content h3 {
+          #content h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', sans-serif;
             font-size: 20px;
             color: #fff;
             margin: 0 0 30px 0;
             padding-top: 30px;
+          }
+
+          #content h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', sans-serif;
+            font-size: 16px;
+            color: #fff;
+            margin: 0 0 20px 0;
+            padding-top: 20px;
           }
 
           #content h2 a,
@@ -2078,7 +2040,6 @@ export default class Index extends React.Component {
           #content table td {
             vertical-align: top;
             border: 1px solid #444;
-            line-height: 24px;
             position: relative;
           }
 
