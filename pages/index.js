@@ -280,10 +280,9 @@ export default class Index extends React.Component {
               {' '}
               The goal of the project is to create a beautiful and extensible
               experience for command-line interface users, built on open web
-              standards.<br />
-              In the beginning, our focus will be primarily around speed,
-              stability and the development of the correct API for extension
-              authors.
+              standards. In the beginning, our focus will be primarily around
+              speed, stability and the development of the correct API for
+              extension authors.
             </p>
             <p>
               In the future, we anticipate the community will come up with
@@ -1946,7 +1945,7 @@ export default class Index extends React.Component {
           }
 
           #content {
-            max-width: 900px;
+            max-width: 700px;
             margin: auto;
           }
 
