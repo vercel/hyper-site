@@ -37,6 +37,14 @@ export default class Header extends React.Component {
               Plugins
             </ActiveLink>
             <ActiveLink href="/themes">Themes</ActiveLink>
+            <a
+              href="https://github.com/zeit/hyper"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+            <a href="/#installation">Download</a>
           </nav>
 
           <div className="header__right">
@@ -90,6 +98,11 @@ export default class Header extends React.Component {
 
           a {
             font-size: 1.4rem;
+            color: #999999;
+            transition: color 0.2s ease;
+          }
+
+          a:hover {
             color: white;
           }
 
@@ -124,6 +137,7 @@ export default class Header extends React.Component {
 
           .zeit-logo {
             font-size: 1.8rem;
+            color: white;
           }
 
           @media (max-width: 768px) {
