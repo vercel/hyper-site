@@ -7,10 +7,11 @@ import AppleLogo from '../static/apple-logo.svg'
 import LinuxLogo from '../static/linux-logo.svg'
 import WindowsLogo from '../static/windows-logo.svg'
 import * as gtag from '../lib/gtag'
+import RouterEvents from '../lib/router-events'
 
-Router.onRouteChangeComplete = url => {
+RouterEvents.on('routeChangeComplete', url => {
   gtag.pageview(url)
-}
+})
 
 export default class extends React.Component {
   constructor() {
