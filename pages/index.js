@@ -1931,7 +1931,7 @@ export default class Index extends React.Component {
           }
 
           #logo {
-            margin-top: 10px;
+            margin-top: 48px;
             position: absolute;
             left: 0;
             right: 0;
@@ -1964,7 +1964,7 @@ export default class Index extends React.Component {
           }
 
           #top {
-            height: calc(100vh - 104px);
+            height: calc(100vh - 72px);
             width: 100vw;
             position: relative;
             text-align: center;
@@ -1973,15 +1973,10 @@ export default class Index extends React.Component {
 
           #top .top-content {
             position: absolute;
-            bottom: 20px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0;
-            animation-name: arrow-appear;
-            animation-delay: 2s;
-            animation-duration: 500ms;
-            animation-timing-function: ease;
-            animation-fill-mode: forwards;
+            opacity: 1;
           }
 
           .top-download {
@@ -1999,19 +1994,10 @@ export default class Index extends React.Component {
             bottom: 20px;
           }
 
-          @keyframes arrow-appear {
-            from {
-              opacity: 0;
-            }
-            to {
-              bottom: 0;
-              opacity: 1;
-            }
-          }
-
           #video {
-            height: 95vh;
-            bottom: 0;
+            height: 50vh;
+            top: 50%;
+            transform: translateY(-50%);
             width: 100%;
             position: absolute;
           }
@@ -2312,6 +2298,14 @@ export default class Index extends React.Component {
             .title span {
               display: none !important;
             }
+
+            #logo {
+              display: none;
+            }
+
+            #video {
+              top: 0 !important;
+            }
           }
 
           @media screen and (max-height: 650px) {
@@ -2321,11 +2315,14 @@ export default class Index extends React.Component {
               padding: 0;
               margin-top: 0;
             }
-          }
 
-          @media screen and (max-height: 700px) {
+            #video {
+              top: 48px;
+              transform: translateY(0);
+            }
+
             #logo {
-              padding: 30px 0 0;
+              margin-top: 0;
             }
           }
 
