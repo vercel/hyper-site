@@ -1916,7 +1916,7 @@ export default class Index extends React.Component {
           }
 
           .table > table {
-            min-width: 600px;
+            min-width: 500px;
           }
 
           .table.large {
