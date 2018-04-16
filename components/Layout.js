@@ -28,13 +28,13 @@ export default class extends React.Component {
   handleSearch(query) {
     if (query) {
       const url = `/search?q=${query}`
-      window.history.pushState(
+      window.history.replaceState(
         query,
         `Hyper Store - Searching for ${query}`,
         url
       )
     } else {
-      window.history.pushState({}, 'Hyper Store', this.state.originalURL)
+      window.history.replaceState({}, 'Hyper Store', this.state.originalURL)
     }
 
     this.setState({
