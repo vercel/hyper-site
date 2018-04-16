@@ -1,9 +1,9 @@
 {
   "name": "hyper-site",
   "private": true,
-  "version": "1.0.0",
-  "description": "A directory of Hyper plugins and themes",
-  "repository": "git@github.com:zeit/hyper-plugins.git",
+  "version": "0.1.0",
+  "description": "The official website for the Hyper terminal",
+  "repository": "zeit/hyper-site",
   "license": "MIT",
   "scripts": {
     "dev": "node server.js",
