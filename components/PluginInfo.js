@@ -2,6 +2,7 @@ import Gravatar from 'react-gravatar'
 import Link from 'next/link'
 import InstallModal from './InstallModal'
 import GithubIcon from '../static/github-icon.svg'
+import * as gtag from '../lib/gtag'
 
 export default class extends React.Component {
   constructor() {
@@ -16,6 +17,13 @@ export default class extends React.Component {
   }
 
   openInstallModal() {
+    gtag.event({
+      action: 'Opened install modal',
+      category: 'plugin',
+      label: 'open_install_modal',
+      value: this.props.plugin.meta.name
+    })
+
     this.setState({
       isModalOpen: true
     })
