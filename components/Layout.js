@@ -21,6 +21,16 @@ class Layout extends React.Component {
     this.handleSearch = this.handleSearch.bind(this)
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { router } = nextProps
+    if (!/^\/search/.exec(router.asPath)) {
+      this.setState({
+        searchQuery: null,
+        originalURL: router.asPath
+      })
+    }
+  }
+
   componentDidMount() {
     const { router } = this.props
     this.setState({
