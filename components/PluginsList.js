@@ -136,8 +136,6 @@ export default class extends React.Component {
         <style jsx>{`
           .plugins-list {
             padding-top: 48px;
-            margin-left: -40px;
-            margin-right: -40px;
           }
 
           .plugin {
