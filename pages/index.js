@@ -2059,15 +2059,26 @@ export default class Index extends React.Component {
             table-layout: fixed;
           }
 
+          #content table p {
+            margin-bottom: 0;
+          }
+
+          #content table p:not(:last-child) {
+            margin-bottom: 32px;
+          }
+
           #content table table.params {
             display: flex;
           }
 
           #content table table.params tr {
-            margin-bottom: 16px;
             display: flex;
             flex-direction: column;
             width: 100%;
+          }
+
+          #content table table.params tr:not(:last-child) {
+            margin-bottom: 32px;
           }
 
           #content table table.params tbody td {
@@ -2085,6 +2096,7 @@ export default class Index extends React.Component {
             vertical-align: top;
             border: 1px solid #444;
             position: relative;
+            word-break: break-word;
           }
 
           #content table td.highlighted:after {
