@@ -405,7 +405,7 @@ export default class Index extends React.Component {
               <code>~/.hyper.js</code>
               admits the following
             </p>
-            <div className="table">
+            <div className="table large">
               <table className="config">
                 <thead>
                   <tr>
@@ -642,7 +642,7 @@ export default class Index extends React.Component {
               </a>
             </p>
             <p>Your module has to expose at least one of these methods:</p>
-            <div className="table">
+            <div className="table large">
               <table className="api">
                 <thead>
                   <tr>
@@ -1277,7 +1277,7 @@ export default class Index extends React.Component {
               All the <code>decorate*</code> methods receive the following
               references in an object passed as the second parameter:
             </p>
-            <div className="table">
+            <div className="table large">
               <table>
                 <tbody>
                   <tr>
@@ -1312,7 +1312,7 @@ export default class Index extends React.Component {
               All the components accept the following two properties to extend
               their markup:
             </p>
-            <div className="table">
+            <div className="table large">
               <table>
                 <tbody>
                   <tr>
@@ -1349,7 +1349,7 @@ export default class Index extends React.Component {
               object parameter representing its relative position to Term
               origin:
             </p>
-            <div className="table">
+            <div className="table large">
               <table>
                 <tbody>
                   <tr>
@@ -1513,7 +1513,7 @@ export default class Index extends React.Component {
               The Electron <code>app</code> objects are extended with the
               following properties:
             </p>
-            <div className="table">
+            <div className="table large">
               <table>
                 <tbody>
                   <tr>
@@ -1559,7 +1559,7 @@ export default class Index extends React.Component {
               Electron <code>BrowserWindow</code> objects are extended with the
               following parameters:
             </p>
-            <div className="table">
+            <div className="table large">
               <table>
                 <tbody>
                   <tr>
@@ -1585,7 +1585,7 @@ export default class Index extends React.Component {
               </table>
             </div>
             <p>Renderer windows are similarly extended with:</p>
-            <div className="table">
+            <div className="table large">
               <table>
                 <tbody>
                   <tr>
@@ -1853,8 +1853,27 @@ export default class Index extends React.Component {
             color: #ccc;
           }
 
-          :global(.table) {
+          .table {
             overflow-x: auto;
+          }
+
+          .table:not(:last-child) > table {
+            margin: 48px 0;
+          }
+
+          .table > table {
+            min-width: 600px;
+          }
+
+          .table.large {
+            width: 900px;
+            max-width: 100vw;
+            margin-left: -100px;
+          }
+
+          .table.large > table {
+            width: 900px;
+            max-width: 100%;
           }
 
           #logo {
@@ -2006,7 +2025,7 @@ export default class Index extends React.Component {
               'Helvetica Neue', sans-serif;
             font-size: 16px;
             color: #fff;
-            margin: 0 0 20px 0;
+            margin: 48px 0 20px 0;
             padding-top: 20px;
           }
 
@@ -2155,6 +2174,7 @@ export default class Index extends React.Component {
 
           #content #installation-table {
             color: #fff;
+            margin-top: 0;
           }
 
           #content #installation-table td[id^='td'] {
@@ -2252,6 +2272,14 @@ export default class Index extends React.Component {
           @media screen and (max-height: 700px) {
             #logo {
               padding: 30px 0 0;
+            }
+          }
+
+          @media screen and (max-width: 900px) {
+            .table.large {
+              width: 100%;
+              max-width: 100%;
+              margin-left: 0;
             }
           }
 
