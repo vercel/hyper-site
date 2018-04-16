@@ -170,6 +170,7 @@ export default class Index extends React.Component {
                 muted
               />
             </div>
+
             <div className="top-content">
               <div className="top-download">
                 <DownloadButton os={this.props.OS} />
@@ -184,7 +185,11 @@ export default class Index extends React.Component {
               </div>
             </div>
           </div>
+
           <div id="content">
+            {/*
+                Installation
+            */}
             <h2 id="installation">
               <a href="#installation">Installation</a>
             </h2>
@@ -274,11 +279,14 @@ export default class Index extends React.Component {
                 </tbody>
               </table>
             </div>
+
+            {/*
+              Project Goals
+            */}
             <h2 id="hashtag-goals">
               <a href="#hashtag-goals">Project Goals</a>
             </h2>
             <p>
-              {' '}
               The goal of the project is to create a beautiful and extensible
               experience for command-line interface users, built on open web
               standards. In the beginning, our focus will be primarily around
@@ -290,6 +298,10 @@ export default class Index extends React.Component {
               innovative additions to enhance what could be the simplest, most
               powerful and well-tested interface for productivity.
             </p>
+
+            {/*
+              Extensions
+            */}
             <h2 id="extensions">
               <a href="#extensions">Extensions</a>
             </h2>
@@ -325,21 +337,23 @@ export default class Index extends React.Component {
               <code>Hyper</code> will show a notification when your modules are
               installed to <code>~/.hyper_plugins</code>.
             </p>
+
+            {/*
+              Keymaps
+            */}
             <h2 id="keymaps">
               <a href="#keymaps">Keymaps</a>
             </h2>
             <p>
-              {' '}
               All command keys can be changed. In order to change them, edit{' '}
               <code>~/.hyper.js</code> and add your desired change to{' '}
               <code>keymaps</code>.
             </p>
             <p> Then Hyper will change the default with your custom change.</p>
             <p>
-              {' '}
               Example: <code>'window:devtools': 'Cmd+Alt+O'</code>{' '}
             </p>
-            <p />
+
             <pre>
               <code>
                 module.exports = {'{'}
@@ -356,7 +370,8 @@ export default class Index extends React.Component {
                 {'}'};
               </code>
             </pre>
-            <p>Default keymaps: </p>
+
+            <h4>Default keymaps: </h4>
             <div className="table">
               <table>
                 <tbody>
@@ -380,6 +395,10 @@ export default class Index extends React.Component {
                 </tbody>
               </table>
             </div>
+
+            {/*
+              Configuration
+            */}
             <h2 id="cfg">
               <a href="#cfg">Configuration</a>
             </h2>
@@ -592,7 +611,10 @@ export default class Index extends React.Component {
                 </tbody>
               </table>
             </div>
-            <span className="table-note" />
+
+            {/*
+              Extensions API
+            */}
             <h2 id="extensions-api">
               <a href="#extensions-api">Extensions API</a>
             </h2>
@@ -814,9 +836,6 @@ export default class Index extends React.Component {
                       </p>
                       <p>Parameters:</p>
                       <table>
-                        <tbody>
-                          <tr />
-                        </tbody>
                         <tbody>
                           <tr>
                             <td>
@@ -1163,7 +1182,7 @@ export default class Index extends React.Component {
                 </tbody>
               </table>
             </div>
-            <span className="table-note" />
+
             <h3 id="extensions-module-loading">
               <a href="#extensions-module-loading">Module loading</a>
             </h3>
@@ -1214,635 +1233,618 @@ export default class Index extends React.Component {
                   </code>
                 </code>
               </li>
-              <code>
-                <code />
-              </code>
             </ul>
-            <code>
+            <p>
+              Note: on the main process, plugins are registered as soon as
+              possible (we fire <code>onLoad</code>). On the browser, it's up to
+              the user to trigger their load by pressing command+R. We put the
+              user in control of the loading in this way to prevent them from
+              losing critical work by extensions that reset state or don't
+              preserve it correctly.
+            </p>
+            <h3 id="decorating-components">
+              <a href="#decorating-components">Decorating components</a>
+            </h3>
+            <p>
+              We give you the ability to provide a higher order component for
+              every piece of the <code>Hyper</code> UI.<br /> Its structure is
+              as follows:
+            </p>
+            <pre>
               <code>
-                <p>
-                  Note: on the main process, plugins are registered as soon as
-                  possible (we fire <code>onLoad</code>). On the browser, it's
-                  up to the user to trigger their load by pressing command+R. We
-                  put the user in control of the loading in this way to prevent
-                  them from losing critical work by extensions that reset state
-                  or don't preserve it correctly.
-                </p>
-                <h3 id="decorating-components">
-                  <a href="#decorating-components">Decorating components</a>
-                </h3>
-                <p>
-                  We give you the ability to provide a higher order component
-                  for every piece of the <code>Hyper</code> UI.<br /> Its
-                  structure is as follows:
-                </p>
-                <pre>
-                  <code>
-                    &lt;Hyper&gt;{'\n'}
-                    {'  '}&lt;Header&gt;{'\n'}
-                    {'    '}&lt;Tabs&gt;{'\n'}
-                    {'      '}&lt;Tab /&gt; ...{'\n'}
-                    {'    '}&lt;/Tabs&gt;{'\n'}
-                    {'  '}&lt;/Header&gt;{'\n'}
-                    {'  '}&lt;Terms&gt;{'\n'}
-                    {'    '}&lt;TermGroup&gt;{'\n'}
-                    {'      '}&lt;SplitPane&gt;{'\n'}
-                    {'        '}&lt;TermGroup&gt;{'\n'}
-                    {'          '}&lt;Term /&gt; ...{'\n'}
-                    {'        '}&lt;/TermGroup&gt;{'\n'}
-                    {'        '}&lt;TermGroup&gt;{'\n'}
-                    {'          '}&lt;Term /&gt; ...{'\n'}
-                    {'        '}&lt;/TermGroup&gt;{'\n'}
-                    {'      '}&lt;/SplitPane&gt;{'\n'}
-                    {'    '}&lt;/TermGroup&gt;{'\n'}
-                    {'  '}&lt;/Terms&gt;{'\n'}
-                    {'  '}&lt;Notifications&gt;{'\n'}
-                    {'    '}&lt;Notification /&gt; ...{'\n'}
-                    {'  '}&lt;/Notifications&gt;{'\n'}&lt;/Hyper&gt;
-                  </code>
-                </pre>
-                <p>
-                  All the <code>decorate*</code> methods receive the following
-                  references in an object passed as the second parameter:
-                </p>
-                <div className="table">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>React</code>
-                        </td>
-                        <td>The entire React namespace.</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>notify</code>
-                        </td>
-                        <td>
-                          A helper function that shows a desktop notification.
-                          The first parameter is the title and the second is the
-                          optional body of the notification.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>Notification</code>
-                        </td>
-                        <td>
-                          The <code>Notification</code> component in case you
-                          want to re-use it.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p>
-                  All the components accept the following two properties to
-                  extend their markup:
-                </p>
-                <div className="table">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>customChildren</code>
-                        </td>
-                        <td>
-                          An array of <code>Element</code> or a single
-                          <code>Element</code> to insert at the bottom of the
-                          component.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>customChildrenBefore</code>
-                        </td>
-                        <td>
-                          The same as the above property, but inserted as the
-                          first child element(s) of the component.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p>
-                  Your higher order component can supply a{' '}
-                  <code>onDecorated</code>
-                  property to the decorated component to get a reference to its
-                  instance.
-                </p>
-                <p>
-                  Your Term higher order component can supply an{' '}
-                  <code>onCursorMove</code>
-                  handler property that be called when cursor has moved with an
-                  object parameter representing its relative position to Term
-                  origin:
-                </p>
-                <div className="table">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>x</code>
-                        </td>
-                        <td>Horizontal position in pixels</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>y</code>
-                        </td>
-                        <td>Vertical position in pixels</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>width</code>
-                        </td>
-                        <td>Cursor width in pixels</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>height</code>
-                        </td>
-                        <td>Cursor height in pixels</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>col</code>
-                        </td>
-                        <td>Horizontal position in columns</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>row</code>
-                        </td>
-                        <td>Vertical position in rows</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p>
-                  We encourage you to maintain compatibility with other
-                  decorators. Since many can be set, don't assume that yours is
-                  the only one.
-                </p>
-                <p />
-                <p>
-                  For example, if you're passing children, compose potential
-                  existing values:
-                </p>
-                <pre>
-                  <code>
-                    render () {'{'}
-                    {'\n'}
-                    {'  '}const customChildren =
-                    Array.from(this.props.customChildren){'\n'}
-                    {'    '}.concat(&lt;p&gt;My new child&lt;/p&gt;);{'\n'}
-                    {'  '}return &lt;Tab {'{'}...this.props{'}'} customChildren={
-                      '{'
-                    }customChildren{'}'} /&gt;{'\n'}
-                    {'}'}
-                  </code>
-                </pre>
-                <p>
-                  Or if you use <code>onDecorated</code> property
-                </p>
-                <pre>
-                  <code>
-                    onDecorated (term) {'{'}
-                    {'\n'}
-                    {'  '}this.term = term;{'\n'}
-                    {'  '}if (this.props.onDecorated) {'{'}
-                    {'\n'}
-                    {'    '}this.props.onDecorated(term);{'\n'}
-                    {'  '}
-                    {'}'}
-                    {'\n'}
-                    {'}'}
-                  </code>
-                </pre>
-                <h3 id="actions-and-effects">
-                  <a href="#actions-and-effects">Actions and Effects</a>
-                </h3>
-                <p>
-                  All the{' '}
-                  <a
-                    href="https://github.com/zeit/hyper/tree/master/lib/actions"
-                    target="_blank"
-                  >
-                    Redux actions
-                  </a>{' '}
-                  are available for you to handle through your middleware and
-                  reducers. For an example, refer to the{' '}
-                  <a href="#hyperpower">Hyperpower</a> reference plugin.
-                </p>
-                <p>Side effects occur in two fundamental forms:</p>
-                <ul>
-                  <li>Some actions dispatch other actions based on state.</li>
-                  <li>
-                    Some actions do async work by communicating over the RPC
-                    channel to the main process
-                  </li>
-                </ul>
-                <p>
-                  In all cases, the side effect is passed as the{' '}
-                  <code>effect</code> key in the action and later handled by our
-                  middleware.
-                </p>
-                <p>
-                  This means that you can override, compose or completely
-                  eliminate effects! In other words, this is how you can change
-                  the default functionality or behavior of the app.
-                </p>
-                <p>
-                  As an example, consider the action we use to increase the font
-                  size when you press <code>Command+=</code>:
-                </p>
-                <pre>
-                  <code>
-                    export function increaseFontSize () {'{'}
-                    {'\n'}
-                    {'  '}return (dispatch, getState) =&gt; {'{'}
-                    {'\n'}
-                    {'    '}dispatch({'{'}
-                    {'\n'}
-                    {'      '}type: UI_FONT_SIZE_INCR,{'\n'}
-                    {'      '}effect () {'{'}
-                    {'\n'}
-                    {'        '}const state = getState();{'\n'}
-                    {'        '}const old = state.ui.fontSizeOverride ||
-                    state.ui.fontSize;{'\n'}
-                    {'        '}const value = old + 1;{'\n'}
-                    {'        '}dispatch({'{'}
-                    {'\n'}
-                    {'          '}type: UI_FONT_SIZE_SET,{'\n'}
-                    {'          '}value{'\n'}
-                    {'        '}
-                    {'}'});{'\n'}
-                    {'      '}
-                    {'}'}
-                    {'\n'}
-                    {'    '}
-                    {'}'});{'\n'}
-                    {'  '}
-                    {'}'};{'\n'}
-                    {'}'}
-                  </code>
-                </pre>
-                <h3 id="xtermjs">
-                  <a href="#xtermjs">The underlying terminal</a>
-                </h3>
-                <p>
-                  <code>Hyper</code> achieves a lot of its speed and
-                  functionality thanks to the power of{' '}
-                  <a
-                    target="_blank"
-                    href="https://github.com/xtermjs/xterm.js/"
-                  >
-                    xterm.js
-                  </a>
-                </p>
-                <h3 id="additional-apis">
-                  <a href="#additional-apis">Additional APIs</a>
-                </h3>
-                <p>
-                  The Electron <code>app</code> objects are extended with the
-                  following properties:
-                </p>
-                <div className="table">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>config</code>
-                        </td>
-                        <td>
-                          An <code>Object</code> with the <code>config</code>{' '}
-                          block from <code>~/.hyper.js</code>.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>plugins</code>
-                        </td>
-                        <td>
-                          An <code>Object</code> with helpers for plugins.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>getWindows</code>
-                        </td>
-                        <td>
-                          A <code>Function</code> that returns an{' '}
-                          <code>Set</code> of all the open windows.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>createWindow</code>
-                        </td>
-                        <td>
-                          A <code>Function</code> that will create a new window.
-                          Accepts an optional <code>callback</code> that will be
-                          passed as the new window's <code>init</code> callback.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p>
-                  Electron <code>BrowserWindow</code> objects are extended with
-                  the following parameters:
-                </p>
-                <div className="table">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>rpc</code>
-                        </td>
-                        <td>
-                          An <code>EventEmitter</code> that allows for
-                          communication with the window process.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>sessions</code>
-                        </td>
-                        <td>
-                          A <code>Map</code> of <code>Session</code>
-                          objects which hold the communication with each term's
-                          pty..
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p>Renderer windows are similarly extended with:</p>
-                <div className="table">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>rpc</code>
-                        </td>
-                        <td>
-                          An <code>EventEmitter</code> that allows for
-                          communication with the window process.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>store</code>
-                        </td>
-                        <td>
-                          The Redux <code>Store</code> object. This allows
-                          access to <code>dispatch</code> actions or read the
-                          global state with <code>getState</code>.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p>
-                  The <code>rpc</code> object is symmetrical between browser and
-                  renderer process. The API is the same as Node.js, with the
-                  exception that it only admits a single object as its
-                  parameters only:
-                </p>
-                <pre>
-                  <code>
-                    window.rpc.emit('hi there', {'{'}
-                    {'\n'}
-                    {'  '}some: 'payload',{'\n'}
-                    {'  '}any: [{'\n'}
-                    {'    '}'object',{'\n'}
-                    {'    '}'here'{'\n'}
-                    {'  '}]{'\n'}
-                    {'}'});
-                  </code>
-                </pre>
-                <h3 id="hyperyellow">
-                  <a href="#hyperyellow">Example theme: Hyperyellow</a>
-                </h3>
-                <p>
-                  The following extension simply alters the config to add CSS
-                  and yellow colors! Here's the{' '}
-                  <a
-                    target="_blank"
-                    href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
-                  >
-                    code
-                  </a>.
-                </p>
-                <p style={{ textAlign: 'center' }}>
-                  <img src="static/hyperyellow.gif" width={446} height={333} />
-                </p>
-                <p>
-                  Themes are simply plugins! Only one hook,{' '}
-                  <code>decorateConfig</code>
-                  is needed:
-                </p>
-                <pre>
-                  <code>
-                    exports.decorateConfig = (config) =&gt; {'{'}
-                    {'\n'}
-                    {'  '}return Object.assign({'{'}
-                    {'}'}, config, {'{'}
-                    {'\n'}
-                    {'    '}borderColor: 'yellow',{'\n'}
-                    {'    '}cursorColor: 'yellow',{'\n'}
-                    {'    '}css: `{'\n'}
-                    {'      '}${'{'}config.css || ''{'}'}
-                    {'\n'}
-                    {'      '}.tabs_nav .tabs_list .tab_text {'{'}
-                    {'\n'}
-                    {'        '}color: yellow;{'\n'}
-                    {'      '}
-                    {'}'}
-                    {'\n'}
-                    {'      '}.tabs_nav .tabs_title {'{'}
-                    {'\n'}
-                    {'        '}color: yellow;{'\n'}
-                    {'      '}
-                    {'}'}
-                    {'\n'}
-                    {'    '}`{'\n'}
-                    {'  '}
-                    {'}'});{'\n'}
-                    {'}'}
-                  </code>
-                </pre>
-                <p>
-                  I grabbed the class names by inspecting the term with
-                  Devtools, which you can trigger from{' '}
-                  <code>View -&gt; Toggle Developer Tools</code>. When you do
-                  so, notice that some classes are automatically generated and
-                  followed by a random nonce (e.g.: <code>term_13hv8io</code>).
-                  Ignore those: they change with every new window!
-                </p>
-                <p>
-                  Notice the emphasis on playing nice with other extensions.
-                  Specifically, we create a new object, extend only the keys we
-                  are interested in, and we <b>compose</b> the CSS to preserve
-                  the user's setting and that of other authors':
-                </p>
-                <pre>
-                  <code>
-                    return Object.assign({'{'}
-                    {'}'}, config, {'{'}
-                    {'\n'}
-                    {'  '}css: `{'\n'}
-                    {'    '}${'{'}config.css || ''{'}'}
-                    {'\n'}
-                    {'    '}/* your css here */{'\n'}
-                    {'  '}`{'\n'}
-                    {'}'});
-                  </code>
-                </pre>
-                <h3 id="hyperpower">
-                  <a href="#hyperpower">Example extension: Hyperpower</a>
-                </h3>
-                <p>
-                  The following extension renders particles as the caret moves:
-                </p>
-                <p style={{ textAlign: 'center' }}>
-                  <img
-                    src="https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif"
-                    width={457}
-                    height={340}
-                  />
-                </p>
-                <p>
-                  Let's walk through{' '}
-                  <a
-                    target="_blank"
-                    href="https://github.com/zeit/hyperpower/blob/master/index.js"
-                  >
-                    its code
-                  </a>.
-                  <br />First, we intercept the Redux action{' '}
-                  <code>SESSION_ADD_DATA</code>. See the whole list of them{' '}
-                  <a
-                    target="_blank"
-                    href="https://github.com/zeit/hyper/tree/master/lib/actions"
-                  >
-                    here
-                  </a>.
-                </p>
-                <pre>
-                  <code>
-                    exports.middleware = (store) =&gt; (next) =&gt; (action)
-                    =&gt; {'{'}
-                    {'\n'}
-                    {'  '}if ('SESSION_ADD_DATA' === action.type) {'{'}
-                    {'\n'}
-                    {'    '}const {'{'} data {'}'} = action;{'\n'}
-                    {'    '}if (/bash: wow: command not found/.test(data)) {'{'}
-                    {'\n'}
-                    {'      '}store.dispatch({'{'}
-                    {'\n'}
-                    {'        '}type: 'WOW_MODE_TOGGLE'{'\n'}
-                    {'      '}
-                    {'}'});{'\n'}
-                    {'    '}
-                    {'}'} else {'{'}
-                    {'\n'}
-                    {'      '}next(action);{'\n'}
-                    {'    '}
-                    {'}'}
-                    {'\n'}
-                    {'  '}
-                    {'}'} else {'{'}
-                    {'\n'}
-                    {'    '}next(action);{'\n'}
-                    {'  '}
-                    {'}'}
-                    {'\n'}
-                    {'}'};
-                  </code>
-                </pre>
-                <p>
-                  Notice that we don't re-dispatch the action, which means we
-                  never render the output of the command to the terminal.
-                  Instead, we dispatch an action of our own, which we grab in
-                  the <code>uiReducer</code>and later map:
-                </p>
-                <pre>
-                  <code>
-                    exports.reduceUI = (state, action) =&gt; {'{'}
-                    {'\n'}
-                    {'  '}switch (action.type) {'{'}
-                    {'\n'}
-                    {'    '}case 'WOW_MODE_TOGGLE':{'\n'}
-                    {'      '}return state.set('wowMode', !state.wowMode);{'\n'}
-                    {'  '}
-                    {'}'}
-                    {'\n'}
-                    {'  '}return state;{'\n'}
-                    {'}'};{'\n'}
-                    {'\n'}exports.mapTermsState = (state, map) =&gt; {'{'}
-                    {'\n'}
-                    {'  '}return Object.assign(map, {'{'}
-                    {'\n'}
-                    {'    '}wowMode: state.ui.wowMode{'\n'}
-                    {'  '}
-                    {'}'});{'\n'}
-                    {'}'};
-                  </code>
-                </pre>
-                <p>
-                  We then want to decorate the <code>&lt;Term&gt;</code>{' '}
-                  component so that we can access the underlying caret.
-                </p>
-                <p>
-                  However, <code>&lt;Term&gt;</code> is not a container that we
-                  can map props to. So we use <code>getTermProps</code> to pass
-                  the property further down:
-                </p>
-                <pre>
-                  <code>
-                    exports.getTermProps = (uid, parentProps, props) =&gt; {'{'}
-                    {'\n'}
-                    {'  '}return Object.assign(props, {'{'}
-                    {'\n'}
-                    {'    '}wowMode: parentProps.wowMode{'\n'}
-                    {'  '}
-                    {'}'});{'\n'}
-                    {'}'}
-                  </code>
-                </pre>
-                <p>
-                  The extension then{' '}
-                  <a
-                    href="https://github.com/zeit/hyperpower/blob/master/index.js#L51"
-                    target="_blank"
-                  >
-                    returns
-                  </a>{' '}
-                  a higher order component to wrap <code>&lt;Term&gt;</code>.
-                  Notice we pass the <code>onDecorated</code>
-                  property to access the base Term component and its DOM ref,
-                  and the <code>onCursorMove</code> property to use Hyper cursor
-                  API:
-                </p>
-                <pre>
-                  <code>
-                    render () {'{'}
-                    {'\n'}
-                    {'  '}return React.createElement(Term, Object.assign({'{'}
-                    {'}'}, this.props, {'{'}
-                    {'\n'}
-                    {'    '}onDecorated: this._onDecorated{'\n'},
-                    {'    '}onCursorMove: this._onCursorMove{'\n'}
-                    {'  '}
-                    {'}'}));{'\n'}
-                    {'}'}
-                  </code>
-                </pre>
+                &lt;Hyper&gt;{'\n'}
+                {'  '}&lt;Header&gt;{'\n'}
+                {'    '}&lt;Tabs&gt;{'\n'}
+                {'      '}&lt;Tab /&gt; ...{'\n'}
+                {'    '}&lt;/Tabs&gt;{'\n'}
+                {'  '}&lt;/Header&gt;{'\n'}
+                {'  '}&lt;Terms&gt;{'\n'}
+                {'    '}&lt;TermGroup&gt;{'\n'}
+                {'      '}&lt;SplitPane&gt;{'\n'}
+                {'        '}&lt;TermGroup&gt;{'\n'}
+                {'          '}&lt;Term /&gt; ...{'\n'}
+                {'        '}&lt;/TermGroup&gt;{'\n'}
+                {'        '}&lt;TermGroup&gt;{'\n'}
+                {'          '}&lt;Term /&gt; ...{'\n'}
+                {'        '}&lt;/TermGroup&gt;{'\n'}
+                {'      '}&lt;/SplitPane&gt;{'\n'}
+                {'    '}&lt;/TermGroup&gt;{'\n'}
+                {'  '}&lt;/Terms&gt;{'\n'}
+                {'  '}&lt;Notifications&gt;{'\n'}
+                {'    '}&lt;Notification /&gt; ...{'\n'}
+                {'  '}&lt;/Notifications&gt;{'\n'}&lt;/Hyper&gt;
               </code>
-            </code>
+            </pre>
+            <p>
+              All the <code>decorate*</code> methods receive the following
+              references in an object passed as the second parameter:
+            </p>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>React</code>
+                    </td>
+                    <td>The entire React namespace.</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>notify</code>
+                    </td>
+                    <td>
+                      A helper function that shows a desktop notification. The
+                      first parameter is the title and the second is the
+                      optional body of the notification.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Notification</code>
+                    </td>
+                    <td>
+                      The <code>Notification</code> component in case you want
+                      to re-use it.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              All the components accept the following two properties to extend
+              their markup:
+            </p>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>customChildren</code>
+                    </td>
+                    <td>
+                      An array of <code>Element</code> or a single
+                      <code>Element</code> to insert at the bottom of the
+                      component.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>customChildrenBefore</code>
+                    </td>
+                    <td>
+                      The same as the above property, but inserted as the first
+                      child element(s) of the component.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Your higher order component can supply a <code>onDecorated</code>
+              property to the decorated component to get a reference to its
+              instance.
+            </p>
+            <p>
+              Your Term higher order component can supply an{' '}
+              <code>onCursorMove</code>
+              handler property that be called when cursor has moved with an
+              object parameter representing its relative position to Term
+              origin:
+            </p>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>x</code>
+                    </td>
+                    <td>Horizontal position in pixels</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>y</code>
+                    </td>
+                    <td>Vertical position in pixels</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>width</code>
+                    </td>
+                    <td>Cursor width in pixels</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>height</code>
+                    </td>
+                    <td>Cursor height in pixels</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>col</code>
+                    </td>
+                    <td>Horizontal position in columns</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>row</code>
+                    </td>
+                    <td>Vertical position in rows</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              We encourage you to maintain compatibility with other decorators.
+              Since many can be set, don't assume that yours is the only one.
+            </p>
+            <p>
+              For example, if you're passing children, compose potential
+              existing values:
+            </p>
+            <pre>
+              <code>
+                render () {'{'}
+                {'\n'}
+                {'  '}const customChildren =
+                Array.from(this.props.customChildren){'\n'}
+                {'    '}.concat(&lt;p&gt;My new child&lt;/p&gt;);{'\n'}
+                {'  '}return &lt;Tab {'{'}...this.props{'}'} customChildren={
+                  '{'
+                }customChildren{'}'} /&gt;{'\n'}
+                {'}'}
+              </code>
+            </pre>
+            <p>
+              Or if you use <code>onDecorated</code> property
+            </p>
+            <pre>
+              <code>
+                onDecorated (term) {'{'}
+                {'\n'}
+                {'  '}this.term = term;{'\n'}
+                {'  '}if (this.props.onDecorated) {'{'}
+                {'\n'}
+                {'    '}this.props.onDecorated(term);{'\n'}
+                {'  '}
+                {'}'}
+                {'\n'}
+                {'}'}
+              </code>
+            </pre>
+            <h3 id="actions-and-effects">
+              <a href="#actions-and-effects">Actions and Effects</a>
+            </h3>
+            <p>
+              All the{' '}
+              <a
+                href="https://github.com/zeit/hyper/tree/master/lib/actions"
+                target="_blank"
+              >
+                Redux actions
+              </a>{' '}
+              are available for you to handle through your middleware and
+              reducers. For an example, refer to the{' '}
+              <a href="#hyperpower">Hyperpower</a> reference plugin.
+            </p>
+            <p>Side effects occur in two fundamental forms:</p>
+            <ul>
+              <li>Some actions dispatch other actions based on state.</li>
+              <li>
+                Some actions do async work by communicating over the RPC channel
+                to the main process
+              </li>
+            </ul>
+            <p>
+              In all cases, the side effect is passed as the <code>effect</code>{' '}
+              key in the action and later handled by our middleware.
+            </p>
+            <p>
+              This means that you can override, compose or completely eliminate
+              effects! In other words, this is how you can change the default
+              functionality or behavior of the app.
+            </p>
+            <p>
+              As an example, consider the action we use to increase the font
+              size when you press <code>Command+=</code>:
+            </p>
+            <pre>
+              <code>
+                export function increaseFontSize () {'{'}
+                {'\n'}
+                {'  '}return (dispatch, getState) =&gt; {'{'}
+                {'\n'}
+                {'    '}dispatch({'{'}
+                {'\n'}
+                {'      '}type: UI_FONT_SIZE_INCR,{'\n'}
+                {'      '}effect () {'{'}
+                {'\n'}
+                {'        '}const state = getState();{'\n'}
+                {'        '}const old = state.ui.fontSizeOverride ||
+                state.ui.fontSize;{'\n'}
+                {'        '}const value = old + 1;{'\n'}
+                {'        '}dispatch({'{'}
+                {'\n'}
+                {'          '}type: UI_FONT_SIZE_SET,{'\n'}
+                {'          '}value{'\n'}
+                {'        '}
+                {'}'});{'\n'}
+                {'      '}
+                {'}'}
+                {'\n'}
+                {'    '}
+                {'}'});{'\n'}
+                {'  '}
+                {'}'};{'\n'}
+                {'}'}
+              </code>
+            </pre>
+            <h3 id="xtermjs">
+              <a href="#xtermjs">The underlying terminal</a>
+            </h3>
+            <p>
+              <code>Hyper</code> achieves a lot of its speed and functionality
+              thanks to the power of{' '}
+              <a target="_blank" href="https://github.com/xtermjs/xterm.js/">
+                xterm.js
+              </a>
+            </p>
+            <h3 id="additional-apis">
+              <a href="#additional-apis">Additional APIs</a>
+            </h3>
+            <p>
+              The Electron <code>app</code> objects are extended with the
+              following properties:
+            </p>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>config</code>
+                    </td>
+                    <td>
+                      An <code>Object</code> with the <code>config</code> block
+                      from <code>~/.hyper.js</code>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>plugins</code>
+                    </td>
+                    <td>
+                      An <code>Object</code> with helpers for plugins.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>getWindows</code>
+                    </td>
+                    <td>
+                      A <code>Function</code> that returns an <code>Set</code>{' '}
+                      of all the open windows.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>createWindow</code>
+                    </td>
+                    <td>
+                      A <code>Function</code> that will create a new window.
+                      Accepts an optional <code>callback</code> that will be
+                      passed as the new window's <code>init</code> callback.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Electron <code>BrowserWindow</code> objects are extended with the
+              following parameters:
+            </p>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>rpc</code>
+                    </td>
+                    <td>
+                      An <code>EventEmitter</code> that allows for communication
+                      with the window process.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>sessions</code>
+                    </td>
+                    <td>
+                      A <code>Map</code> of <code>Session</code>
+                      objects which hold the communication with each term's
+                      pty..
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Renderer windows are similarly extended with:</p>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>rpc</code>
+                    </td>
+                    <td>
+                      An <code>EventEmitter</code> that allows for communication
+                      with the window process.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>store</code>
+                    </td>
+                    <td>
+                      The Redux <code>Store</code> object. This allows access to{' '}
+                      <code>dispatch</code> actions or read the global state
+                      with <code>getState</code>.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              The <code>rpc</code> object is symmetrical between browser and
+              renderer process. The API is the same as Node.js, with the
+              exception that it only admits a single object as its parameters
+              only:
+            </p>
+            <pre>
+              <code>
+                window.rpc.emit('hi there', {'{'}
+                {'\n'}
+                {'  '}some: 'payload',{'\n'}
+                {'  '}any: [{'\n'}
+                {'    '}'object',{'\n'}
+                {'    '}'here'{'\n'}
+                {'  '}]{'\n'}
+                {'}'});
+              </code>
+            </pre>
+            <h3 id="hyperyellow">
+              <a href="#hyperyellow">Example theme: Hyperyellow</a>
+            </h3>
+            <p>
+              The following extension simply alters the config to add CSS and
+              yellow colors! Here's the{' '}
+              <a
+                target="_blank"
+                href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
+              >
+                code
+              </a>.
+            </p>
+            <p style={{ textAlign: 'center' }}>
+              <img src="static/hyperyellow.gif" width={446} height={333} />
+            </p>
+            <p>
+              Themes are simply plugins! Only one hook,{' '}
+              <code>decorateConfig</code>
+              is needed:
+            </p>
+            <pre>
+              <code>
+                exports.decorateConfig = (config) =&gt; {'{'}
+                {'\n'}
+                {'  '}return Object.assign({'{'}
+                {'}'}, config, {'{'}
+                {'\n'}
+                {'    '}borderColor: 'yellow',{'\n'}
+                {'    '}cursorColor: 'yellow',{'\n'}
+                {'    '}css: `{'\n'}
+                {'      '}${'{'}config.css || ''{'}'}
+                {'\n'}
+                {'      '}.tabs_nav .tabs_list .tab_text {'{'}
+                {'\n'}
+                {'        '}color: yellow;{'\n'}
+                {'      '}
+                {'}'}
+                {'\n'}
+                {'      '}.tabs_nav .tabs_title {'{'}
+                {'\n'}
+                {'        '}color: yellow;{'\n'}
+                {'      '}
+                {'}'}
+                {'\n'}
+                {'    '}`{'\n'}
+                {'  '}
+                {'}'});{'\n'}
+                {'}'}
+              </code>
+            </pre>
+            <p>
+              I grabbed the class names by inspecting the term with Devtools,
+              which you can trigger from{' '}
+              <code>View -&gt; Toggle Developer Tools</code>. When you do so,
+              notice that some classes are automatically generated and followed
+              by a random nonce (e.g.: <code>term_13hv8io</code>). Ignore those:
+              they change with every new window!
+            </p>
+            <p>
+              Notice the emphasis on playing nice with other extensions.
+              Specifically, we create a new object, extend only the keys we are
+              interested in, and we <b>compose</b> the CSS to preserve the
+              user's setting and that of other authors':
+            </p>
+            <pre>
+              <code>
+                return Object.assign({'{'}
+                {'}'}, config, {'{'}
+                {'\n'}
+                {'  '}css: `{'\n'}
+                {'    '}${'{'}config.css || ''{'}'}
+                {'\n'}
+                {'    '}/* your css here */{'\n'}
+                {'  '}`{'\n'}
+                {'}'});
+              </code>
+            </pre>
+            <h3 id="hyperpower">
+              <a href="#hyperpower">Example extension: Hyperpower</a>
+            </h3>
+            <p>The following extension renders particles as the caret moves:</p>
+            <p style={{ textAlign: 'center' }}>
+              <img
+                src="https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif"
+                width={457}
+                height={340}
+              />
+            </p>
+            <p>
+              Let's walk through{' '}
+              <a
+                target="_blank"
+                href="https://github.com/zeit/hyperpower/blob/master/index.js"
+              >
+                its code
+              </a>.
+              <br />First, we intercept the Redux action{' '}
+              <code>SESSION_ADD_DATA</code>. See the whole list of them{' '}
+              <a
+                target="_blank"
+                href="https://github.com/zeit/hyper/tree/master/lib/actions"
+              >
+                here
+              </a>.
+            </p>
+            <pre>
+              <code>
+                exports.middleware = (store) =&gt; (next) =&gt; (action) =&gt;{' '}
+                {'{'}
+                {'\n'}
+                {'  '}if ('SESSION_ADD_DATA' === action.type) {'{'}
+                {'\n'}
+                {'    '}const {'{'} data {'}'} = action;{'\n'}
+                {'    '}if (/bash: wow: command not found/.test(data)) {'{'}
+                {'\n'}
+                {'      '}store.dispatch({'{'}
+                {'\n'}
+                {'        '}type: 'WOW_MODE_TOGGLE'{'\n'}
+                {'      '}
+                {'}'});{'\n'}
+                {'    '}
+                {'}'} else {'{'}
+                {'\n'}
+                {'      '}next(action);{'\n'}
+                {'    '}
+                {'}'}
+                {'\n'}
+                {'  '}
+                {'}'} else {'{'}
+                {'\n'}
+                {'    '}next(action);{'\n'}
+                {'  '}
+                {'}'}
+                {'\n'}
+                {'}'};
+              </code>
+            </pre>
+            <p>
+              Notice that we don't re-dispatch the action, which means we never
+              render the output of the command to the terminal. Instead, we
+              dispatch an action of our own, which we grab in the{' '}
+              <code>uiReducer</code>and later map:
+            </p>
+            <pre>
+              <code>
+                exports.reduceUI = (state, action) =&gt; {'{'}
+                {'\n'}
+                {'  '}switch (action.type) {'{'}
+                {'\n'}
+                {'    '}case 'WOW_MODE_TOGGLE':{'\n'}
+                {'      '}return state.set('wowMode', !state.wowMode);{'\n'}
+                {'  '}
+                {'}'}
+                {'\n'}
+                {'  '}return state;{'\n'}
+                {'}'};{'\n'}
+                {'\n'}exports.mapTermsState = (state, map) =&gt; {'{'}
+                {'\n'}
+                {'  '}return Object.assign(map, {'{'}
+                {'\n'}
+                {'    '}wowMode: state.ui.wowMode{'\n'}
+                {'  '}
+                {'}'});{'\n'}
+                {'}'};
+              </code>
+            </pre>
+            <p>
+              We then want to decorate the <code>&lt;Term&gt;</code> component
+              so that we can access the underlying caret.
+            </p>
+            <p>
+              However, <code>&lt;Term&gt;</code> is not a container that we can
+              map props to. So we use <code>getTermProps</code> to pass the
+              property further down:
+            </p>
+            <pre>
+              <code>
+                exports.getTermProps = (uid, parentProps, props) =&gt; {'{'}
+                {'\n'}
+                {'  '}return Object.assign(props, {'{'}
+                {'\n'}
+                {'    '}wowMode: parentProps.wowMode{'\n'}
+                {'  '}
+                {'}'});{'\n'}
+                {'}'}
+              </code>
+            </pre>
+            <p>
+              The extension then{' '}
+              <a
+                href="https://github.com/zeit/hyperpower/blob/master/index.js#L51"
+                target="_blank"
+              >
+                returns
+              </a>{' '}
+              a higher order component to wrap <code>&lt;Term&gt;</code>. Notice
+              we pass the <code>onDecorated</code>
+              property to access the base Term component and its DOM ref, and
+              the <code>onCursorMove</code> property to use Hyper cursor API:
+            </p>
+            <pre>
+              <code>
+                render () {'{'}
+                {'\n'}
+                {'  '}return React.createElement(Term, Object.assign({'{'}
+                {'}'}, this.props, {'{'}
+                {'\n'}
+                {'    '}onDecorated: this._onDecorated{'\n'},
+                {'    '}onCursorMove: this._onCursorMove{'\n'}
+                {'  '}
+                {'}'}));{'\n'}
+                {'}'}
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -2023,10 +2025,6 @@ export default class Index extends React.Component {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
               'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
               'Helvetica Neue', sans-serif;
-          }
-
-          #content code {
-            font: 13px Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
           }
 
           #content p code,
