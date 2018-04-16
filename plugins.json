@@ -167,5 +167,17 @@
     "type": "plugin",
     "preview": "https://hyper-plugin-screenshots.now.sh/hyper-broadcast.gif",
     "dateAdded": "1522261645153"
+  },
+  {
+    "name": "hyper-flat",
+    "description": "A flat theme for Hyper",
+    "type": "theme",
+    "preview": "https://rawgit.com/Kikobeats/hyper-flat/master/demo.png",
+    "colors": [
+      "#2d3e4f",
+      "#dadfdd",
+      "#cc74b1"
+    ],
+    "dateAdded": "1523900385213"
   }
 ]
