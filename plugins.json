@@ -167,5 +167,12 @@
     "type": "plugin",
     "preview": "https://hyper-plugin-screenshots.now.sh/hyper-broadcast.gif",
     "dateAdded": "1522261645153"
+  },
+  {
+    "name": "hyper-arc-dark-controls",
+    "description": "Arc-themed window controls for Hyper",
+    "type": "plugin",
+    "preview": "https://dev.moso.io/hyper/hyper-arc-dark-controls/screenshot.png",
+    "dateAdded": "1523913625"
   }
 ]
