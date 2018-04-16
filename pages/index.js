@@ -2131,6 +2131,10 @@ export default class Index extends React.Component {
             color: #50e3c2;
           }
 
+          #content #installation-table td {
+            padding: 10px;
+          }
+
           #content #installation-table td:not(:first-child) {
             text-align: center;
           }
