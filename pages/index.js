@@ -2064,7 +2064,7 @@ export default class Index extends React.Component {
           }
 
           #content table p:not(:last-child) {
-            margin-bottom: 32px;
+            margin-bottom: 16px;
           }
 
           #content table table.params {
@@ -2078,7 +2078,7 @@ export default class Index extends React.Component {
           }
 
           #content table table.params tr:not(:last-child) {
-            margin-bottom: 32px;
+            margin-bottom: 16px;
           }
 
           #content table table.params tbody td {
@@ -2086,6 +2086,10 @@ export default class Index extends React.Component {
             border-color: transparent;
             padding: 0;
             color: #999;
+          }
+
+          #content table td > * + table.params {
+            margin-top: 24px;
           }
 
           #content td > table {
