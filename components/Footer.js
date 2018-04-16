@@ -90,7 +90,37 @@ const Footer = ({}) => (
       }
 
       .zeit-logo {
-        font-size: 16px;
+        font-size: 1.6rem;
+      }
+
+      @media (max-width: 496px) {
+        .info-bar {
+          margin-top: 64px;
+        }
+
+        .info-bar__contents {
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 64px;
+        }
+
+        .info-bar__contents nav {
+          flex-direction: column;
+          align-items: center;
+          margin-right: 0;
+          margin-bottom: 24px;
+        }
+
+        .info-bar__contents nav > a,
+        .info-bar__contents nav > span {
+          height: auto;
+          margin: 0;
+          margin-bottom: 8px;
+        }
+
+        .info-bar__contents nav a:first-child {
+          margin-right: 0;
+        }
       }
     `}</style>
   </div>

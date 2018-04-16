@@ -2058,6 +2058,18 @@ export default class Index extends React.Component {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            table-layout: fixed;
+          }
+
+          #content table table {
+            display: flex;
+          }
+
+          #content table table tr {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
           }
 
           #content td > table {
