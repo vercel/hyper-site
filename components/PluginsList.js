@@ -29,6 +29,11 @@ export default class extends React.Component {
     return sortedPlugins
   }
 
+  componentDidMount() {
+    // Optimization
+    Router.prefetch('/plugin')
+  }
+
   render() {
     const plugins = this.orderPlugins(this.props.plugins, this.props.filteredBy)
 
@@ -37,16 +42,7 @@ export default class extends React.Component {
       return (
         <div className="plugins-list container">
           {plugins.map((plugin, i) => (
-            <div
-              key={plugin.name}
-              className="plugin"
-              onMouseEnter={() => {
-                Router.prefetch(
-                  `/plugin?id=${plugin.name}`,
-                  `/plugins/${plugin.name}`
-                )
-              }}
-            >
+            <div key={plugin.name} className="plugin">
               <Link
                 href={`/plugin?id=${plugin.name}`}
                 as={`/plugins/${plugin.name}`}
