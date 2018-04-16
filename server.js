@@ -1,28 +1,41 @@
-const express = require('express')
+const { parse } = require('url')
 const next = require('next')
+const router = require('path-match')()
+
+const routes = [
+  {
+    page: '/plugin',
+    match: router('/plugins/:id'),
+    query: params => ({ id: params.id })
+  },
+  {
+    page: '/source',
+    match: router('/plugins/:id/source'),
+    query: params => ({ id: params.id })
+  }
+]
 
 const dev = process.env.NODE_ENV !== 'production'
-const port = parseInt(process.env.PORT, 10) || 3000
-const nextApp = next({ dev })
-const nextHandler = nextApp.getRequestHandler()
 
-nextApp.prepare().then(() => {
-  const server = express()
+const app = next({ dev })
+const handle = app.getRequestHandler()
 
-  server.get('/plugins/:id', (req, res) => {
-    return nextApp.render(req, res, '/plugin', { id: req.params.id })
-  })
+async function main(req, res) {
+  const parsedUrl = parse(req.url, true)
 
-  server.get('/plugins/:id/source', (req, res) => {
-    return nextApp.render(req, res, '/source', { id: req.params.id })
-  })
+  for (const route of routes) {
+    const params = route.match(parsedUrl.pathname)
+    if (params) {
+      return app.render(req, res, route.page, route.query(params))
+    }
+  }
 
-  server.get('*', (req, res) => {
-    return nextHandler(req, res)
-  })
+  return handle(req, res, parsedUrl)
+}
 
-  server.listen(port, err => {
-    if (err) throw err
-    console.log(`▲ Ready On http://localhost:${port}`)
-  })
-})
+async function setup(handler) {
+  await app.prepare()
+  return handler
+}
+
+module.exports = setup(main)
