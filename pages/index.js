@@ -2142,6 +2142,7 @@ export default class Index extends React.Component {
           #content #installation-table td:not(.highlighted) img {
             opacity: 0.5;
             transition: opacity 0.3s ease;
+            -webkit-backface-visibility: hidden;
           }
 
           #content #installation-table td a:hover img {
