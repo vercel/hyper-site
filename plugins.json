@@ -1,13 +1,25 @@
 [
   {
-    "name": "hyper-native",
-    "description": "Make Hyper adapt to the macOS UI",
-    "type": "theme",
-    "preview": "http://i.imgur.com/eeRssvz.png",
-    "colors": [
-      "#FFFFFF",
-      "#000000"
-    ],
+    "name": "hypercwd",
+    "description": "Opens new tabs with the same directory as the current tab in Hyper for OS X, Linux, and Windows.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/hharnisc/hypercwd/master/newTabs.gif",
+    "dateAdded": "1522253281560",
+    "featured": true
+  },
+  {
+    "name": "hyper-search",
+    "description": "Extension for Hyper that allows you to search text in your terminal.",
+    "type": "plugin",
+    "preview": "https://media.giphy.com/media/xUA7aXl1VWN460yCju/giphy.gif",
+    "dateAdded": "1522253872987",
+    "featured": true
+  },
+  {
+    "name": "hyper-pane",
+    "description": "Extension for Hyper.app to enhance pane navigation. Navigate through panes with arrows, jump directly to a specific pane with digit, change focus on mouse hover or temporarily maximize a pane.",
+    "type": "plugin",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-pane.gif",
     "dateAdded": "1521644449784",
     "featured": true
   },
@@ -16,6 +28,18 @@
     "description": "Extension for Hyper that turns on power mode, with bonus wow mode",
     "type": "plugin",
     "preview": "https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif",
+    "dateAdded": "1521644449784",
+    "featured": true
+  },
+  {
+    "name": "hyper-native",
+    "description": "Make Hyper adapt to the macOS UI",
+    "type": "theme",
+    "preview": "http://i.imgur.com/eeRssvz.png",
+    "colors": [
+      "#FFFFFF",
+      "#000000"
+    ],
     "dateAdded": "1521644449784",
     "featured": true
   },
@@ -33,38 +57,17 @@
     "featured": true
   },
   {
-    "name": "hyper-dracula",
-    "description": "A dark theme for Hyper",
+    "name": "verminal",
+    "description": "A beautiful theme for Hyper and other developer tools",
     "type": "theme",
-    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-dracula.png",
+    "preview": "https://hyper-plugin-screenshots.now.sh/verminal.png",
     "colors": [
-      "#282a36",
-      "#f8f8f2",
-      "#999999"
+      "rgba(0, 0, 0, 0.65)",
+      "#FFFFFF",
+      "#0095FF"
     ],
-    "dateAdded": "1521644449784"
-  },
-  {
-    "name": "hyper-pane",
-    "description": "Extension for Hyper.app to enhance pane navigation. Navigate through panes with arrows, jump directly to a specific pane with digit, change focus on mouse hover or temporarily maximize a pane.",
-    "type": "plugin",
-    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-pane.gif",
-    "dateAdded": "1521644449784",
+    "dateAdded": "1522254728721",
     "featured": true
-  },
-  {
-    "name": "hypercwd",
-    "description": "Opens new tabs with the same directory as the current tab in Hyper for OS X, Linux, and Windows.",
-    "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/hharnisc/hypercwd/master/newTabs.gif",
-    "dateAdded": "1522253281560"
-  },
-  {
-    "name": "hyper-search",
-    "description": "Extension for Hyper that allows you to search text in your terminal.",
-    "type": "plugin",
-    "preview": "https://media.giphy.com/media/xUA7aXl1VWN460yCju/giphy.gif",
-    "dateAdded": "1522253872987"
   },
   {
     "name": "hyper-material-theme",
@@ -76,19 +79,20 @@
       "#ECEFF1",
       "#FFCC00"
     ],
-    "dateAdded": "1522254564295"
+    "dateAdded": "1522254564295",
+    "featured": true
   },
   {
-    "name": "verminal",
-    "description": "A beautiful theme for Hyper and other developer tools",
+    "name": "hyper-dracula",
+    "description": "A dark theme for Hyper",
     "type": "theme",
-    "preview": "https://hyper-plugin-screenshots.now.sh/verminal.png",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-dracula.png",
     "colors": [
-      "rgba(0, 0, 0, 0.65)",
-      "#FFFFFF",
-      "#0095FF"
+      "#282a36",
+      "#f8f8f2",
+      "#999999"
     ],
-    "dateAdded": "1522254728721"
+    "dateAdded": "1521644449784"
   },
   {
     "name": "hyper-chesterish",

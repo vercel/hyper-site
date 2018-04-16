@@ -71,6 +71,7 @@ export default class extends React.Component {
 
             .plugin {
               width: 50%;
+              margin-bottom: 24px;
             }
 
             .plugin:nth-child(odd) {
