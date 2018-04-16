@@ -663,7 +663,7 @@ export default class Index extends React.Component {
                         it's invoked again with the existing app.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -686,7 +686,7 @@ export default class Index extends React.Component {
                         reloads, it's invoked again with the existing windows.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -708,7 +708,7 @@ export default class Index extends React.Component {
                     <td>
                       <p>Invoked when a plugin is removed by the user.</p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -733,7 +733,7 @@ export default class Index extends React.Component {
                         plugin.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -758,7 +758,7 @@ export default class Index extends React.Component {
                         environment by returning a modified environment object.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -784,7 +784,7 @@ export default class Index extends React.Component {
                         refreshed.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -808,7 +808,7 @@ export default class Index extends React.Component {
                         created.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -833,7 +833,7 @@ export default class Index extends React.Component {
                         reloaded in each window.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -874,7 +874,7 @@ export default class Index extends React.Component {
                         <code>sessions</code> or <code>termgroups</code> state
                         shape.
                       </p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -903,7 +903,7 @@ export default class Index extends React.Component {
                         to the <code>&lt;Header&gt;</code> component. Must
                         return the composed props object.
                       </p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -935,7 +935,7 @@ export default class Index extends React.Component {
                         to the <code>&lt;Tabs&gt;</code> component. Must return
                         the composed props object.
                       </p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -973,7 +973,7 @@ export default class Index extends React.Component {
                         to the <code>&lt;TermGroup&gt;</code> component. Must
                         return the composed props object.
                       </p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -1011,7 +1011,7 @@ export default class Index extends React.Component {
                         to the <code>&lt;Term&gt;</code> component. Must return
                         the composed props object.
                       </p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -1063,7 +1063,7 @@ export default class Index extends React.Component {
                         corresponding methods (like <code>getTermProps</code>).
                       </p>
                       <p>Must return an extended object of the map passed.</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -1102,7 +1102,7 @@ export default class Index extends React.Component {
                         A custom mapper for the dispatch properties. Must return
                         an extended object of the map passed.
                       </p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -1152,7 +1152,7 @@ export default class Index extends React.Component {
                         to decorate. Must return a Higher Order Component.
                       </p>
                       <p>Parameters:</p>
-                      <table>
+                      <table className="params">
                         <tbody>
                           <tr>
                             <td>
@@ -2059,15 +2059,22 @@ export default class Index extends React.Component {
             table-layout: fixed;
           }
 
-          #content table table {
+          #content table table.params {
             display: flex;
           }
 
-          #content table table tr {
+          #content table table.params tr {
             margin-bottom: 16px;
             display: flex;
             flex-direction: column;
             width: 100%;
+          }
+
+          #content table table.params tbody td {
+            width: 100%;
+            border-color: transparent;
+            padding: 0;
+            color: #999;
           }
 
           #content td > table {
@@ -2142,8 +2149,12 @@ export default class Index extends React.Component {
             color: #555;
           }
 
-          #content td {
-            padding: 10px;
+          #content thead td {
+            padding: 10px 24px;
+          }
+
+          #content tbody td {
+            padding: 24px;
           }
 
           #content table.config td:nth-child(2) {
@@ -2161,10 +2172,6 @@ export default class Index extends React.Component {
 
           #content table.api > tbody > tr > td:nth-child(2) {
             width: 13%;
-          }
-
-          #content table.api tbody tbody td:first-child {
-            width: 20%;
           }
 
           #content td > p:first-child {
