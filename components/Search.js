@@ -37,31 +37,39 @@ export default class extends React.Component {
             justify-content: center;
             align-items: center;
           }
+
           input {
             background: transparent;
             border: none;
             color: white;
             font-size: 1.4rem;
             padding-right: 8px;
-            width: 112px;
+            width: 120px;
             transition: width 0.2s ease;
           }
+
           input:focus {
-            width: 128px;
+            width: 136px;
           }
+
           input::placeholder {
             color: #999999;
           }
+
           input::-webkit-input-placeholder {
             color: #999999;
           }
+
           input::-ms-input-placeholder {
             color: #999999;
           }
+
           :global(.search__icon) {
             opacity: 0.5;
             transition: opacity 0.2s ease;
+            -webkit-backface-visibility: hidden;
           }
+
           input:focus + :global(.search__icon) {
             opacity: 1;
           }
