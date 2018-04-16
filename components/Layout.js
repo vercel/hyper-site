@@ -1,5 +1,5 @@
 import React from 'react'
-import Router from 'next/router'
+import { withRouter } from 'next/router'
 import Meta from './Meta'
 import Header from './Header'
 import SearchList from './SearchList'
@@ -8,12 +8,13 @@ import LinuxLogo from '../static/linux-logo.svg'
 import WindowsLogo from '../static/windows-logo.svg'
 import * as gtag from '../lib/gtag'
 import RouterEvents from '../lib/router-events'
+import { format } from 'url'
 
 RouterEvents.on('routeChangeComplete', url => {
   gtag.pageview(url)
 })
 
-export default class extends React.Component {
+class Layout extends React.Component {
   constructor() {
     super()
 
@@ -21,21 +22,25 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
+    const { router } = this.props
     this.setState({
-      originalURL: Router.asPath
+      originalURL: router.asPath
     })
   }
 
   handleSearch(query) {
+    const { router } = this.props
     if (query) {
-      const url = `/search?q=${query}`
-      window.history.replaceState(
-        query,
-        `Hyper Store - Searching for ${query}`,
-        url
-      )
+      // We construct the original href for shallow routing
+      const href = format({ pathname: router.pathname, query: router.query })
+      // asPath will be different depending on user input
+      const asPath = `/search?q=${query}`
+      router.replace(href, asPath, { shallow: true })
     } else {
-      window.history.replaceState({}, 'Hyper Store', this.state.originalURL)
+      // When query is empty we render the original url
+      router.replace(this.state.originalURL, this.state.originalURL, {
+        shallow: true
+      })
     }
 
     this.setState({
@@ -65,3 +70,5 @@ export default class extends React.Component {
     )
   }
 }
+
+export default withRouter(Layout)
