@@ -2355,17 +2355,6 @@ export default class Index extends React.Component {
               position: static;
             }
 
-            #video video {
-              display: none;
-            }
-
-            #video {
-              background: no-repeat center
-                url('https://cdn.zeit.co/hyper/hyperapp.gif');
-              background-size: 100%;
-              height: 100vh;
-            }
-
             #content {
               padding: 20px;
             }
