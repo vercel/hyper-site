@@ -30,7 +30,12 @@ const Footer = ({}) => (
           </a>
         </span>
       </nav>
-      <a className="zeit-logo" target="_blank" href="https://zeit.co">
+      <a
+        className="zeit-logo"
+        target="_blank"
+        href="https://zeit.co"
+        rel="noopener"
+      >
         <b>△</b>
       </a>
     </div>

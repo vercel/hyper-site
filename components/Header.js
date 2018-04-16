@@ -42,12 +42,12 @@ export default class Header extends React.Component {
           <div className="header__right">
             <SearchInput handleSearch={this.props.handleSearch} />
             <a
-              href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
+              className="zeit-logo"
               target="_blank"
+              href="https://zeit.co"
               rel="noopener"
-              className="submit"
             >
-              Submit
+              <b>△</b>
             </a>
           </div>
 
@@ -89,6 +89,7 @@ export default class Header extends React.Component {
 
           a {
             font-size: 1.4rem;
+            color: white;
           }
 
           nav :global(a):not(:last-child) {
@@ -102,6 +103,10 @@ export default class Header extends React.Component {
           .header__right {
             display: flex;
             align-items: center;
+          }
+
+          .header__right a:last-child {
+            margin-left: 24px;
           }
 
           .submit {
