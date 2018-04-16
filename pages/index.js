@@ -210,7 +210,6 @@ export default class Index extends React.Component {
                     <td
                       id="td-mac-os"
                       className={this.props.OS === 'mac' ? 'highlighted' : ''}
-                      colSpan={2}
                     >
                       <a href="https://releases.hyper.is/download/mac">
                         <img src="static/download-icon.svg" />
@@ -269,7 +268,6 @@ export default class Index extends React.Component {
                     <td
                       id="td-appimage"
                       className={this.props.OS === 'linux' ? 'highlighted' : ''}
-                      colSpan={2}
                     >
                       <a href="https://releases.hyper.is/download/AppImage">
                         <img src="static/download-icon.svg" />
