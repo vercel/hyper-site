@@ -53,8 +53,7 @@
       "#eff0eb",
       "#97979b"
     ],
-    "dateAdded": "1521644449784",
-    "featured": true
+    "dateAdded": "1521644449784"
   },
   {
     "name": "verminal",
@@ -135,7 +134,8 @@
       "#839496",
       "rgba(211, 54, 130, 0.6)"
     ],
-    "dateAdded": "1522257538694"
+    "dateAdded": "1522257538694",
+    "featured": true
   },
   {
     "name": "hyper-one-dark",
