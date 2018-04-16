@@ -2177,8 +2177,15 @@ export default class Index extends React.Component {
             padding: 24px;
           }
 
-          #content table.config td:nth-child(2) {
+          #content table.config td:nth-child(1),
+          #content table.api td:nth-child(1) {
             width: 30%;
+            color: #999;
+          }
+
+          #content table.config td:nth-child(2),
+          #content table.api td:nth-child(2) {
+            width: 23%;
             color: #999;
           }
 
