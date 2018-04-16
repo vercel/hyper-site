@@ -416,24 +416,32 @@ export default class Index extends React.Component {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>"updateChannel"</td>
+                    <td>
+                      <code>updateChannel</code>
+                    </td>
                     <td>"stable"</td>
                     <td>The update channel to receive updates from</td>
                   </tr>
                   <tr>
-                    <td>"fontSize"</td>
+                    <td>
+                      <code>fontSize</code>
+                    </td>
                     <td>12</td>
                     <td>The default size in pixels for the terminal</td>
                   </tr>
                   <tr>
-                    <td>"fontFamily"</td>
+                    <td>
+                      <code>fontFamily</code>
+                    </td>
                     <td>
                       "Menlo, DejaVu Sans Mono, Lucida Console, monospace"
                     </td>
                     <td>The font family to use with optional fallbacks</td>
                   </tr>
                   <tr>
-                    <td>"uiFontFamily"</td>
+                    <td>
+                      <code>uiFontFamily</code>
+                    </td>
                     <td>
                       "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, ..."
                     </td>
@@ -442,29 +450,39 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"fontWeight"</td>
+                    <td>
+                      <code>fontWeight</code>
+                    </td>
                     <td>"normal"</td>
                     <td>The default font weight: "normal" or "bold"</td>
                   </tr>
                   <tr>
-                    <td>"fontWeightBold"</td>
+                    <td>
+                      <code>fontWeightBold</code>
+                    </td>
                     <td>"bold"</td>
                     <td>
                       The font weight for bold characters: "normal" or "bold"
                     </td>
                   </tr>
                   <tr>
-                    <td>"cursorColor"</td>
+                    <td>
+                      <code>cursorColor</code>
+                    </td>
                     <td>"rgba(248,28,229,0.8)"</td>
                     <td>The color of the caret in the terminal</td>
                   </tr>
                   <tr>
-                    <td>"cursorAccentColor"</td>
+                    <td>
+                      <code>cursorAccentColor</code>
+                    </td>
                     <td>"#000"</td>
                     <td>The text color under BLOCK cursor</td>
                   </tr>
                   <tr>
-                    <td>"cursorShape"</td>
+                    <td>
+                      <code>cursorShape</code>
+                    </td>
                     <td>"BLOCK"</td>
                     <td>
                       The shape of the caret in the terminal. Available options
@@ -472,17 +490,23 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"cursorBlink"</td>
+                    <td>
+                      <code>cursorBlink</code>
+                    </td>
                     <td>"false"</td>
                     <td>If true, cursor will blink</td>
                   </tr>
                   <tr>
-                    <td>"foregroundColor"</td>
+                    <td>
+                      <code>foregroundColor</code>
+                    </td>
                     <td>"#fff"</td>
                     <td>The color of the main text of the terminal</td>
                   </tr>
                   <tr>
-                    <td>"backgroundColor"</td>
+                    <td>
+                      <code>backgroundColor</code>
+                    </td>
                     <td>"#000"</td>
                     <td>
                       The color and opacity of the window and main terminal
@@ -490,7 +514,9 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"selectionColor"</td>
+                    <td>
+                      <code>selectionColor</code>
+                    </td>
                     <td>"rgba(248,28,229,0.3)"</td>
                     <td>
                       The background color/opacity of the text selection in
@@ -498,22 +524,30 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"borderColor"</td>
+                    <td>
+                      <code>borderColor</code>
+                    </td>
                     <td>"#333"</td>
                     <td>The color of the main window border and tab bar</td>
                   </tr>
                   <tr>
-                    <td>"css"</td>
+                    <td>
+                      <code>css</code>
+                    </td>
                     <td>""</td>
                     <td>Custom CSS to include in the main window</td>
                   </tr>
                   <tr>
-                    <td>"padding"</td>
+                    <td>
+                      <code>padding</code>
+                    </td>
                     <td>"12px 14px"</td>
                     <td>CSS padding values for the space around each term</td>
                   </tr>
                   <tr>
-                    <td>"colors"</td>
+                    <td>
+                      <code>colors</code>
+                    </td>
                     <td>
                       {'{'} black: "#000000", red: "#ff0000", ... {'}'}
                     </td>
@@ -526,7 +560,9 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"shell"</td>
+                    <td>
+                      <code>shell</code>
+                    </td>
                     <td>""</td>
                     <td>
                       A path to a custom shell to run when Hyper starts a new
@@ -534,12 +570,16 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"shellArgs"</td>
+                    <td>
+                      <code>shellArgs</code>
+                    </td>
                     <td>"['--login']"</td>
                     <td>An array of shell arguments</td>
                   </tr>
                   <tr>
-                    <td>"env"</td>
+                    <td>
+                      <code>env</code>
+                    </td>
                     <td>
                       {'{'}
                       {'}'}
@@ -550,12 +590,16 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"windowSize"</td>
+                    <td>
+                      <code>windowSize</code>
+                    </td>
                     <td>[540, 380]</td>
                     <td>The default width/height in pixels of a new window</td>
                   </tr>
                   <tr>
-                    <td>"copyOnSelect"</td>
+                    <td>
+                      <code>copyOnSelect</code>
+                    </td>
                     <td>false</td>
                     <td>
                       If true, selected text will automatically be copied to the
@@ -563,7 +607,9 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"quickEdit"</td>
+                    <td>
+                      <code>quickEdit</code>
+                    </td>
                     <td>false</td>
                     <td>
                       If true, on right click selected text will be copied or
@@ -572,7 +618,9 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"defaultSSHApp"</td>
+                    <td>
+                      <code>defaultSSHApp</code>
+                    </td>
                     <td>true</td>
                     <td>
                       If true, Hyper will be set as the default protocol client
@@ -580,7 +628,9 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"modifierKeys"</td>
+                    <td>
+                      <code>modifierKeys</code>
+                    </td>
                     <td>
                       {'{'}
                       altIsMeta: false
@@ -591,7 +641,9 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"showHamburgerMenu"</td>
+                    <td>
+                      <code>showHamburgerMenu</code>
+                    </td>
                     <td>true on Linux/Windows, false on macOS</td>
                     <td>
                       Change the visibility of the hamburger menu. Available
@@ -599,7 +651,9 @@ export default class Index extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td>"showWindowControls"</td>
+                    <td>
+                      <code>showWindowControls</code>
+                    </td>
                     <td>""</td>
                     <td>
                       Change the position/visibility of the window controls.
