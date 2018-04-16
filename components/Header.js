@@ -63,6 +63,7 @@ export default class Header extends React.Component {
             href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
             target="_blank"
             rel="noopener"
+            className="zeit-logo"
           >
             Submit
           </a>
@@ -119,6 +120,10 @@ export default class Header extends React.Component {
 
           .header__mobile-toggle {
             display: none;
+          }
+
+          .zeit-logo {
+            font-size: 1.8rem;
           }
 
           @media (max-width: 768px) {
