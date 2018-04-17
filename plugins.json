@@ -248,5 +248,17 @@
       "#6af699"
     ],
     "dateAdded": "1523991462596"
+  },
+  {
+    "name": "hyper-whimsy",
+    "description": "A whimsical theme for Hyper",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/rod/hyper-whimsy/master/screenshot.png",
+    "colors": [
+      "#29283b",
+      "#b3b0d6",
+      "#b3b0d6"
+    ],
+    "dateAdded": "1524007869655"
   }
 ]
