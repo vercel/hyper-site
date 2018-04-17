@@ -186,5 +186,18 @@
     "type": "plugin",
     "preview": "https://dev.moso.io/hyper/hyper-arc-dark-controls/screenshot.png",
     "dateAdded": "1523950045916"
+  },
+    "name": "shades-of-purple-hyper",
+    "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
+    "type": "theme",
+    "preview": "https://on.ahmda.ws/qvUU/c",
+    "colors": [
+      "#2D2B55",
+      "#6943ff",
+      "#FAD000",
+      "#ff2c70",
+      "#b362ff"
+    ],
+    "dateAdded": "1523965034087"
   }
 ]
