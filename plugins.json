@@ -169,10 +169,22 @@
     "dateAdded": "1522261645153"
   },
   {
+    "name": "hyper-flat",
+    "description": "A flat theme for Hyper",
+    "type": "theme",
+    "preview": "https://rawgit.com/Kikobeats/hyper-flat/master/demo.png",
+    "colors": [
+      "#2d3e4f",
+      "#dadfdd",
+      "#cc74b1"
+    ],
+    "dateAdded": "1523900385213"
+  },
+  {
     "name": "hyper-arc-dark-controls",
     "description": "Arc-themed window controls for Hyper",
     "type": "plugin",
     "preview": "https://dev.moso.io/hyper/hyper-arc-dark-controls/screenshot.png",
-    "dateAdded": "1523913625"
+    "dateAdded": "1523950045916"
   }
 ]
