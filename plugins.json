@@ -179,5 +179,19 @@
       "#cc74b1"
     ],
     "dateAdded": "1523900385213"
-  }
+  },
+  {
+    "name": "shades-of-purple-hyper",
+    "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
+    "type": "theme",
+    "preview": "https://on.ahmda.ws/qvUU/c",
+    "colors": [,
+      "#2D2B55",
+      "#6943ff",
+      "#FAD000",
+      "#ff2c70",
+      "#b362ff"
+    ],
+    "dateAdded": "1523965034087"
+}
 ]
