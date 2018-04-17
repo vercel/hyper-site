@@ -185,7 +185,7 @@
     "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
     "type": "theme",
     "preview": "https://on.ahmda.ws/qvUU/c",
-    "colors": [,
+    "colors": [
       "#2D2B55",
       "#6943ff",
       "#FAD000",
@@ -193,5 +193,5 @@
       "#b362ff"
     ],
     "dateAdded": "1523965034087"
-}
+  }
 ]
