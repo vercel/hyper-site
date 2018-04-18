@@ -248,5 +248,12 @@
       "#6af699"
     ],
     "dateAdded": "1523991462596"
+  },
+  {
+    "name": "hyper-dark-scrollbar",
+    "description": "Dark and sleek scrollbar for Hyper",
+    "type": "plugin",
+    "preview": "https://dev.moso.io/hyper/hyper-dark-scrollbar/demo.png",
+    "dateAdded": "1524043008207"
   }
 ]
