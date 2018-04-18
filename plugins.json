@@ -187,6 +187,7 @@
     "preview": "https://dev.moso.io/hyper/hyper-arc-dark-controls/screenshot.png",
     "dateAdded": "1523950045916"
   },
+  {
     "name": "shades-of-purple-hyper",
     "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
     "type": "theme",
@@ -199,5 +200,52 @@
       "#b362ff"
     ],
     "dateAdded": "1523965034087"
-  }
+  },
+  {
+    "name": "hyper-electron-highlighter",
+    "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/7cf67de97e841fc57ae1f3b2cce98e35b899b12f/screenshot.png",
+    "colors": [
+      "#212836",
+      "#6af699",
+      "#71b1fe"
+    ],
+    "dateAdded": "1523991462599"
+  },
+  {
+    "name": "hyper-website-theme",
+    "description": "A theme for Hyper based on the project website",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-website-theme/259a039e597e24059266584abaefcde42fecac85/screenshot.png",
+    "colors": [
+      "#000000",
+      "#50e3c2",
+      "#ff2e88"
+    ],
+    "dateAdded": "1523991462598"
+  },
+  {
+    "name": "hyper-firefox-devtools",
+    "description": "A theme for Hyper based on the Firefox devtools colors",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-firefox-devtools/16104778ff9240a58f066427fb2628745ea66548/screenshot.png",
+    "colors": [
+      "#0c0c0d",
+      "#75bfff",
+      "#b98eff"
+    ],
+    "dateAdded": "1523991462597"
+  },
+  {
+    "name": "hyper-mono-christmas",
+    "description": "A monochrome theme for Hyper with red and green",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-mono-christmas/9176e250/screenshot.png",
+    "colors": [
+      "#181818",
+      "#ff5869",
+      "#6af699"
+    ],
+    "dateAdded": "1523991462596"
 ]
