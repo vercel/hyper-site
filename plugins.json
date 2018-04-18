@@ -253,7 +253,7 @@
     "name": "hyper-opacity",
     "description": "Set the opacity of your Hyper window.",
     "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/lucleray/hyper-opacity/master/demo.gif",
-    "dateAdded": "1524045754442"
+    "preview": "https://raw.githubusercontent.com/lucleray/hyper-opacity/master/demo-big.gif",
+    "dateAdded": "1524057572112"
   }
 ]
