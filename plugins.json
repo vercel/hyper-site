@@ -250,10 +250,17 @@
     "dateAdded": "1523991462596"
   },
   {
+    "name": "hyper-opacity",
+    "description": "Set the opacity of your Hyper window.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/lucleray/hyper-opacity/master/demo-big.gif",
+    "dateAdded": "1524057572112"
+  },
+  {
     "name": "hyper-whimsy",
     "description": "A whimsical theme for Hyper",
     "type": "theme",
-    "preview": "https://files-fyulmjyygi.now.sh/whimsy@2x.png",
+    "preview": "https://hyper-whimsy.now.sh/",
     "colors": [
       "#29283b",
       "#b3b0d6"
