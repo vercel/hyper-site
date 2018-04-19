@@ -23,9 +23,14 @@ class Layout extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { router } = nextProps
+    console.log(router.asPath)
     if (!/^\/search/.exec(router.asPath)) {
       this.setState({
         searchQuery: null,
+        originalURL: router.asPath
+      })
+    } else {
+      this.setState({
         originalURL: router.asPath
       })
     }
@@ -59,13 +64,20 @@ class Layout extends React.Component {
   }
 
   render() {
+    console.log(
+      this.state && this.state.searchQuery,
+      this.props.query,
+      this.props.router
+    )
     return (
       <div className="main">
         <Meta />
 
         <Header handleSearch={this.handleSearch} />
 
-        {(this.state && this.state.searchQuery) || this.props.query ? (
+        {(this.state && this.state.searchQuery) ||
+        this.props.query ||
+        this.props.router.query.q ? (
           <SearchList
             query={
               this.state && this.state.searchQuery
