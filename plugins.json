@@ -266,5 +266,16 @@
       "#b3b0d6"
     ],
     "dateAdded": "1524007869655"
+  },
+  {
+    "name": "hyper-atom-dark-transparent",
+    "description": "The atom text editor with transparency",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/16321843/39066287-d2ede93e-44d4-11e8-80a5-512fc7442e29.png",
+    "colors": [
+      "#e06c75",
+      "#56b6c2"
+    ],
+    "dateAdded": "1524247004984"
   }
 ]
