@@ -266,5 +266,12 @@
       "#b3b0d6"
     ],
     "dateAdded": "1524007869655"
+  },
+  {
+    "name": "hyperfull",
+    "description": "Open hyper in fullscreen",
+    "type": "plugin",
+    "preview": "https://user-images.githubusercontent.com/16321843/39065601-9d360e18-44d2-11e8-9e14-0bb57a7cf980.png",
+    "dateAdded": "1524246141528"
   }
 ]
