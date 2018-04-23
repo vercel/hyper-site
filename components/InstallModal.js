@@ -1,3 +1,5 @@
+import Selecting from './Selecting'
+
 export default class extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.isOpen === this.props.isOpen) {
@@ -26,7 +28,7 @@ export default class extends React.Component {
             Use the <code>hyper</code> command, bundled with your Hyper app, to
             install {this.props.name} by entering the following into Hyper:
           </p>
-          <pre>hyper i {this.props.name}</pre>
+          <Selecting><pre>hyper i {this.props.name}</pre></Selecting>
           <a
             href="https://github.com/zeit/hyper-plugins/wiki/Security-and-Hyper-plugins"
             target="_blank"
