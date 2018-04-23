@@ -266,5 +266,20 @@
       "#b3b0d6"
     ],
     "dateAdded": "1524007869655"
+  },
+  {
+    "name": "hyper-oceanic-next",
+    "description": "Oceanic Next theme for Hyper",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/2156395/39155663-d2a2c972-474a-11e8-9dc4-59e52ab0365f.png",
+    "colors": [
+      "#ec5f67",
+      "#99c794",
+      "#fac863",
+      "#6699cc",
+      "#c594c5",
+      "#5fb3b3"
+    ],
+    "dateAdded": "1524521526149"
   }
 ]
