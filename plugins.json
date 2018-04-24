@@ -268,10 +268,10 @@
     "dateAdded": "1524007869655"
   },
   {
-    "name": "hyper-relaxed-afterglow",
-    "description": "A relaxed adaption of the Afterglow theme",
+    "name": "hyper-relaxed",
+    "description": "A theme to take a more relaxed view of things.",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mischah/Relaxed-Afterglow/5a50ac4a/hyper.png",
+    "preview": "https://gitcdn.xyz/repo/mischah/Relaxed/master/hyper.png",
     "colors": [
       "#bc5653",
       "#909d63",
