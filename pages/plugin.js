@@ -62,11 +62,8 @@ export default class extends React.Component {
           {typeof window === 'object' ? (
             <meta property="og:url" content={window.location.href} />
           ) : null}
-          <meta property="og:image" content={this.props.plugin.meta.preview} />
-          <meta
-            property="og:description"
-            content={this.props.plugin.meta.description}
-          />
+          <meta property="og:image" content={pluginInfo.preview} />
+          <meta property="og:description" content={pluginInfo.description} />
           <meta property="og:site_name" content="Hyper Store" />
         </Head>
         <div className="plugin">

@@ -4,7 +4,30 @@ import InstallModal from './InstallModal'
 import GithubIcon from '../static/github-icon.svg'
 import * as gtag from '../lib/gtag'
 
-export default class extends React.Component {
+export const PluginInfoBar = ({ children }) => (
+  <div className="plugin-info">
+    {children}
+
+    <style jsx>{`
+      .plugin-info {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 980px;
+        width: 100%;
+        background: black;
+        height: 6.4rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        padding: 0 40px;
+      }
+    `}</style>
+  </div>
+)
+
+export default class PluginInfo extends React.Component {
   constructor() {
     super()
 
@@ -38,6 +61,51 @@ export default class extends React.Component {
   render() {
     const { plugin } = this.props
 
+    if (plugin && !plugin.collected) {
+      return (
+        <React.Fragment>
+          <InstallModal
+            name={plugin.meta.name}
+            isOpen={this.state.isModalOpen}
+            closeModal={this.closeInstallModal}
+          />
+
+          <PluginInfoBar>
+            <span>
+              We can't currently find information for this extension 😰
+            </span>
+            &nbsp;
+            <Link
+              href={`/source?id=${plugin.meta.name}`}
+              as={`/plugins/${plugin.meta.name}/source`}
+            >
+              <a className="plugin-info__link">View source code</a>
+            </Link>
+            <a className="plugin-info__install" onClick={this.openInstallModal}>
+              Install
+            </a>
+          </PluginInfoBar>
+
+          <style jsx>{`
+            .plugin-info__install {
+              cursor: pointer;
+              border-radius: 2px;
+              background: white;
+              color: black;
+              padding: 0 16px;
+              margin-left: auto;
+              opacity: 1;
+              transition: opacity 0.2s ease;
+            }
+
+            .plugin-info__install:hover {
+              opacity: 0.9;
+            }
+          `}</style>
+        </React.Fragment>
+      )
+    }
+
     return (
       <React.Fragment>
         <InstallModal
@@ -46,7 +114,7 @@ export default class extends React.Component {
           closeModal={this.closeInstallModal}
         />
 
-        <div className="plugin-info">
+        <PluginInfoBar>
           <div className="plugin-info__author border-followed">
             <Gravatar
               className="plugin-info__avatar"
@@ -86,21 +154,6 @@ export default class extends React.Component {
           </a>
 
           <style jsx>{`
-            .plugin-info {
-              position: fixed;
-              bottom: 0;
-              left: 50%;
-              transform: translateX(-50%);
-              max-width: 980px;
-              width: 100%;
-              background: black;
-              height: 6.4rem;
-              display: flex;
-              align-items: center;
-              font-size: 1.2rem;
-              padding: 0 40px;
-            }
-
             .plugin-info__author {
               display: flex;
               align-items: center;
@@ -213,7 +266,7 @@ export default class extends React.Component {
               }
             }
           `}</style>
-        </div>
+        </PluginInfoBar>
       </React.Fragment>
     )
   }
