@@ -1,3 +1,5 @@
+import selectText from '../lib/select-text'
+
 export default class extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.isOpen === this.props.isOpen) {
@@ -8,6 +10,7 @@ export default class extends React.Component {
 
     if (this.props.isOpen === true) {
       body.classList.add('has-modal-open')
+      selectText(this.installCode)
     } else {
       body.classList.remove('has-modal-open')
     }
@@ -26,7 +29,13 @@ export default class extends React.Component {
             Use the <code>hyper</code> command, bundled with your Hyper app, to
             install {this.props.name} by entering the following into Hyper:
           </p>
-          <pre>hyper i {this.props.name}</pre>
+          <pre
+            ref={pre => {
+              this.installCode = pre
+            }}
+          >
+            hyper i {this.props.name}
+          </pre>
           <a
             href="https://github.com/zeit/hyper-plugins/wiki/Security-and-Hyper-plugins"
             target="_blank"
