@@ -10,17 +10,13 @@ export default class extends React.Component {
   static async getInitialProps({ query: { id } }) {
     let plugin
 
-    try {
-      plugin = await getPluginInfo(id)
-    } catch (err) {
-      console.error(err)
-    }
+    plugin = await getPluginInfo(id, { meta: true })
 
-    if (!plugin.meta || (plugin.code && plugin.code === 'NOT_FOUND')) {
+    if (!plugin.meta) {
       return {}
     }
 
-    return { plugin }
+    return { plugin: plugin.meta }
   }
 
   render() {
@@ -45,10 +41,7 @@ export default class extends React.Component {
       )
     }
 
-    const pluginInfo =
-      this.props.plugin && this.props.plugin.meta
-        ? this.props.plugin.meta
-        : null
+    const pluginInfo = this.props.plugin
 
     return (
       <Layout>

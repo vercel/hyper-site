@@ -2,6 +2,7 @@ import Gravatar from 'react-gravatar'
 import Link from 'next/link'
 import InstallModal from './InstallModal'
 import GithubIcon from '../static/github-icon.svg'
+import getPluginInfo from '../lib/get-plugin.js'
 import * as gtag from '../lib/gtag'
 
 export const PluginInfoBar = ({ children }) => (
@@ -32,11 +33,26 @@ export default class PluginInfo extends React.Component {
     super()
 
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      isPluginLoading: true
     }
 
     this.openInstallModal = this.openInstallModal.bind(this)
     this.closeInstallModal = this.closeInstallModal.bind(this)
+  }
+
+  async componentDidMount() {
+    const plugin = await getPluginInfo(this.props.plugin.name)
+
+    if (plugin !== undefined) {
+      await this.setState({
+        plugin
+      })
+    }
+
+    this.setState({
+      isPluginLoading: false
+    })
   }
 
   openInstallModal() {
@@ -61,23 +77,27 @@ export default class PluginInfo extends React.Component {
   render() {
     const { plugin } = this.props
 
-    if (plugin && !plugin.collected) {
+    if (this.state && (!this.state.plugin || !this.state.plugin.collected)) {
       return (
         <React.Fragment>
           <InstallModal
-            name={plugin.meta.name}
+            name={plugin.name}
             isOpen={this.state.isModalOpen}
             closeModal={this.closeInstallModal}
           />
 
           <PluginInfoBar>
-            <span>
-              We can't currently find information for this extension 😰
-            </span>
+            {this.state.isPluginLoading ? (
+              <span>Loading plugin information...</span>
+            ) : (
+              <span>
+                We can't currently find information for this extension 😰
+              </span>
+            )}
             &nbsp;
             <Link
-              href={`/source?id=${plugin.meta.name}`}
-              as={`/plugins/${plugin.meta.name}/source`}
+              href={`/source?id=${plugin.name}`}
+              as={`/plugins/${plugin.name}/source`}
             >
               <a className="plugin-info__link">View source code</a>
             </Link>
@@ -118,35 +138,37 @@ export default class PluginInfo extends React.Component {
           <div className="plugin-info__author border-followed">
             <Gravatar
               className="plugin-info__avatar"
-              email={plugin.collected.metadata.publisher.email}
+              email={this.props.plugin.collected.metadata.publisher.email}
             />
-            <span>{plugin.collected.metadata.publisher.username}</span>
+            <span>
+              {this.props.plugin.collected.metadata.publisher.username}
+            </span>
           </div>
 
           <span className="plugin-info__downloads border-followed">
-            {plugin.collected.npm.downloads[2].count.toLocaleString()} downloads
-            in the last month
+            {this.props.plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
+            downloads in the last month
           </span>
 
-          {plugin.collected.metadata.links.repository && (
+          {this.props.plugin.collected.metadata.links.repository && (
             <a
               className="plugin-info__github-link"
               target="_blank"
-              href={plugin.collected.metadata.links.repository}
+              href={this.props.plugin.collected.metadata.links.repository}
             >
               <GithubIcon />
             </a>
           )}
 
           <Link
-            href={`/source?id=${plugin.collected.metadata.name}`}
-            as={`/plugins/${plugin.collected.metadata.name}/source`}
+            href={`/source?id=${this.props.plugin.collected.metadata.name}`}
+            as={`/plugins/${this.props.plugin.collected.metadata.name}/source`}
           >
             <a className="plugin-info__link">View source code</a>
           </Link>
 
           <div className="plugin-info__version">
-            Version {plugin.collected.metadata.version}
+            Version {this.props.plugin.collected.metadata.version}
           </div>
 
           <a className="plugin-info__install" onClick={this.openInstallModal}>
