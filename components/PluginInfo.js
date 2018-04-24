@@ -60,7 +60,7 @@ export default class PluginInfo extends React.Component {
       action: 'Opened install modal',
       category: 'plugin',
       label: 'open_install_modal',
-      value: this.props.plugin.meta.name
+      value: this.props.plugin.name
     })
 
     this.setState({
@@ -129,7 +129,7 @@ export default class PluginInfo extends React.Component {
     return (
       <React.Fragment>
         <InstallModal
-          name={plugin.meta.name}
+          name={plugin.name}
           isOpen={this.state.isModalOpen}
           closeModal={this.closeInstallModal}
         />
