@@ -181,10 +181,10 @@
     "dateAdded": "1523900385213"
   },
   {
-    "name": "hyperterm-savetext",
+    "name": "hyper-savetext",
     "description": "Save text from your Hyper terminal to a file",
     "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/neil-orans/hyperterm-savetext/master/screenshots/hyperstore-bg-image.jpg",
-    "dateAdded": "1523927933187"
+    "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
+    "dateAdded": "1524611024916"
   }
 ]
