@@ -288,5 +288,16 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
     "dateAdded": "1524611024916"
+  },
+  {
+    "name": "hyper-savetext",
+    "description": "Save text from your Hyper terminal to a file",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
+    "colors": [
+      "#252120",
+      "whitesmoke"
+    ],
+    "dateAdded": "1524611024916"
   }
 ]
