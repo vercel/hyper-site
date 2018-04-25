@@ -15,7 +15,7 @@ export default class extends React.Component {
     let plugin, pluginContents
 
     try {
-      plugin = await getPackageInfo(id)
+      plugin = await getPackageInfo(id, { meta: true })
       pluginContents = await cachedFetch(
         `https://unpkg.com/${id}@latest/?meta`,
         {},
