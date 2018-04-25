@@ -268,6 +268,28 @@
     "dateAdded": "1524007869655"
   },
   {
+    "name": "hyper-oceanic-next",
+    "description": "Oceanic Next theme for Hyper",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/2156395/39155663-d2a2c972-474a-11e8-9dc4-59e52ab0365f.png",
+    "colors": [
+      "#ec5f67",
+      "#99c794",
+      "#fac863",
+      "#6699cc",
+      "#c594c5",
+      "#5fb3b3"
+    ],
+    "dateAdded": "1524521526149"
+  },
+  {
+    "name": "hyper-savetext",
+    "description": "Save text from your Hyper terminal to a file",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
+    "dateAdded": "1524611024916"
+  },
+  {
     "name": "hyper-relaxed",
     "description": "A theme to take a more relaxed view of things.",
     "type": "theme",
