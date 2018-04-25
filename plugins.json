@@ -271,7 +271,7 @@
     "name": "hyper-relaxed",
     "description": "A theme to take a more relaxed view of things.",
     "type": "theme",
-    "preview": "https://gitcdn.xyz/repo/mischah/Relaxed/master/hyper.png",
+    "preview": "https://cdn.rawgit.com/mischah/Relaxed/82a6174b/hyper.png",
     "colors": [
       "#bc5653",
       "#909d63",
