@@ -138,37 +138,37 @@ export default class PluginInfo extends React.Component {
           <div className="plugin-info__author border-followed">
             <Gravatar
               className="plugin-info__avatar"
-              email={this.props.plugin.collected.metadata.publisher.email}
+              email={this.state.plugin.collected.metadata.publisher.email}
             />
             <span>
-              {this.props.plugin.collected.metadata.publisher.username}
+              {this.state.plugin.collected.metadata.publisher.username}
             </span>
           </div>
 
           <span className="plugin-info__downloads border-followed">
-            {this.props.plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
+            {this.state.plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
             downloads in the last month
           </span>
 
-          {this.props.plugin.collected.metadata.links.repository && (
+          {this.state.plugin.collected.metadata.links.repository && (
             <a
               className="plugin-info__github-link"
               target="_blank"
-              href={this.props.plugin.collected.metadata.links.repository}
+              href={this.state.plugin.collected.metadata.links.repository}
             >
               <GithubIcon />
             </a>
           )}
 
           <Link
-            href={`/source?id=${this.props.plugin.collected.metadata.name}`}
-            as={`/plugins/${this.props.plugin.collected.metadata.name}/source`}
+            href={`/source?id=${this.state.plugin.collected.metadata.name}`}
+            as={`/plugins/${this.state.plugin.collected.metadata.name}/source`}
           >
             <a className="plugin-info__link">View source code</a>
           </Link>
 
           <div className="plugin-info__version">
-            Version {this.props.plugin.collected.metadata.version}
+            Version {this.state.plugin.collected.metadata.version}
           </div>
 
           <a className="plugin-info__install" onClick={this.openInstallModal}>
