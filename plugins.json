@@ -290,14 +290,20 @@
     "dateAdded": "1524611024916"
   },
   {
-    "name": "hyper-savetext",
-    "description": "Save text from your Hyper terminal to a file",
-    "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
+    "name": "hyper-named-css-colors",
+    "description": "A Hyper theme based on named CSS colors.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/simonhaenisch/hyper-named-css-colors/master/screenshot.png",
     "colors": [
       "#252120",
-      "whitesmoke"
+      "whitesmoke",
+      "tomato",
+      "mediumseagreen",
+      "gold",
+      "steelblue",
+      "mediumvioletred",
+      "mediumturquoise"
     ],
-    "dateAdded": "1524611024916"
+    "dateAdded": "1524823985025"
   }
 ]
