@@ -293,10 +293,8 @@
     "name": "hyper-named-css-colors",
     "description": "A Hyper theme based on named CSS colors.",
     "type": "theme",
-    "preview": "https://raw.githubusercontent.com/simonhaenisch/hyper-named-css-colors/master/screenshot.png",
+    "preview": "https://file-ddlybblyep.now.sh",
     "colors": [
-      "#252120",
-      "whitesmoke",
       "tomato",
       "mediumseagreen",
       "gold",
