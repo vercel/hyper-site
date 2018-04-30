@@ -1345,9 +1345,18 @@ export default class Index extends React.Component {
                       <code>notify</code>
                     </td>
                     <td>
-                      A helper function that shows a desktop notification. The
-                      first parameter is the title and the second is the
-                      optional body of the notification.
+                      <p>
+                        A helper function that shows a desktop notification. The
+                        first parameter is the title, the second is the optional
+                        body of the notification, and the third is another
+                        optional parameter which can be used to log details to
+                        the development console.
+                      </p>
+                      <p>
+                        To pass these details, simply provide and object with an{' '}
+                        <code>error</code> property containing the information
+                        to log.
+                      </p>
                     </td>
                   </tr>
                   <tr>
