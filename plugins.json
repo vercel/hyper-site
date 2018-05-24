@@ -288,5 +288,12 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
     "dateAdded": "1524611024916"
+  },
+  {
+    "name": "hyper-window-size",
+    "description": "Always start your Hyper terminal with the size of your choice",
+    "type": "plugin",
+    "preview": "https://user-images.githubusercontent.com/13620579/39882075-1959f24c-5483-11e8-8722-851a2d4fb6d4.gif",
+    "dateAdded": "1527171435497"
   }
 ]
