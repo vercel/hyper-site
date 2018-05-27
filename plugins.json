@@ -359,5 +359,24 @@
       "#4C1803"
     ],
     "dateAdded": "1524699300332"
+  },
+  {
+    "name": "hyper-night-owl",
+    "description":
+      "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
+    "type": "theme",
+    "preview":
+      "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
+    "colors": [
+      "#011627",
+      "#EF5350",
+      "#22da6e",
+      "#addb67",
+      "#82aaff",
+      "#c792ea",
+      "#21c7a8",
+      "#ffffff"
+    ],
+    "dateAdded": "1527433775046"
   }
 ]
