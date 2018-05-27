@@ -205,7 +205,7 @@
     "name": "hyper-electron-highlighter",
     "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
     "type": "theme",
-    "preview": "https://raw.githubusercontent.com/mikemcbride/hyper-electron-highlighter/8e8db099/screenshot.png",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/997a6ba6/screenshot.png",
     "colors": [
       "#212836",
       "#6af699",
