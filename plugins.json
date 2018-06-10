@@ -288,5 +288,21 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
     "dateAdded": "1524611024916"
-  }
+  },
+  {
+    "name": "hyper-subliminal-theme",
+    "description": "Subliminal Hyper theme",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/13620579/41205658-cf2e4a50-6cf7-11e8-9776-1f791b3c3c11.png",
+    "colors": [
+      "#808080",
+      "#f1a5ab",
+      "#a9cfa4",
+      "#ffe2a9",
+      "#6699CC",
+      "#C594C5",
+      "#91c5d3"
+    ],
+    "dateAdded": "1528659686963"
+}
 ]
