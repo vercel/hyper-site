@@ -598,6 +598,16 @@ export default class Index extends React.Component {
                   </tr>
                   <tr>
                     <td>
+                      <code>scrollback</code>
+                    </td>
+                    <td>1000</td>
+                    <td>
+                      The number of rows to be persisted in terminal buffer for
+                      scrolling
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       <code>copyOnSelect</code>
                     </td>
                     <td>false</td>
