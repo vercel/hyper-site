@@ -205,11 +205,16 @@
     "name": "hyper-electron-highlighter",
     "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/7cf67de97e841fc57ae1f3b2cce98e35b899b12f/screenshot.png",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/997a6ba6/screenshot.png",
     "colors": [
       "#212836",
       "#6af699",
-      "#71b1fe"
+      "#ff5874",
+      "#fffa9e",
+      "#82aaff",
+      "#c792ea",
+      "#4ff2f8",
+      "#7992b4"
     ],
     "dateAdded": "1523991462599"
   },
@@ -255,6 +260,13 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/lucleray/hyper-opacity/master/demo-big.gif",
     "dateAdded": "1524057572112"
+  },
+  {
+    "name": "hyper-dark-scrollbar",
+    "description": "Dark and sleek scrollbar for Hyper",
+    "type": "plugin",
+    "preview": "https://dev.moso.io/hyper/hyper-dark-scrollbar/demo.png",
+    "dateAdded": "1524043008207"
   },
   {
     "name": "hyper-whimsy",
@@ -305,5 +317,17 @@
       "#737171"
     ],
     "dateAdded": "1521644449784"
+  },
+  {
+    "name": "hyper-pokemon",
+    "description": "Tailor-made Pokémon themes for your Hyper terminal",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyper-pokemon/356542cd/media/screen%402x.png",
+    "colors": [
+      "#F7DE82",
+      "#E28638",
+      "#4C1803"
+    ],
+    "dateAdded": "1524699300332"
   }
 ]
