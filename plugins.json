@@ -262,6 +262,13 @@
     "dateAdded": "1524057572112"
   },
   {
+    "name": "hyper-dark-scrollbar",
+    "description": "Dark and sleek scrollbar for Hyper",
+    "type": "plugin",
+    "preview": "https://dev.moso.io/hyper/hyper-dark-scrollbar/demo.png",
+    "dateAdded": "1524043008207"
+  },
+  {
     "name": "hyper-whimsy",
     "description": "A whimsical theme for Hyper",
     "type": "theme",
