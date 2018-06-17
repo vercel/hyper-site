@@ -302,6 +302,22 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-subliminal-theme",
+    "description": "Subliminal Hyper theme",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/13620579/41205658-cf2e4a50-6cf7-11e8-9776-1f791b3c3c11.png",
+    "colors": [
+      "#808080",
+      "#f1a5ab",
+      "#a9cfa4",
+      "#ffe2a9",
+      "#6699CC",
+      "#C594C5",
+      "#91c5d3"
+    ],
+    "dateAdded": "1528659686963"
+  },
+  {
     "name": "hyper-corubo",
     "description": "A dark (i.e. cool) theme for Hyper",
     "type": "theme",
