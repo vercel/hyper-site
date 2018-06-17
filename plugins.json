@@ -302,6 +302,23 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-corubo",
+    "description": "A dark (i.e. cool) theme for Hyper",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/958723/39779572-f74d3c8a-52df-11e8-8260-805cbb0f4d3b.png",
+    "colors": [
+      "#000",
+      "#ff4136",
+      "#3f0",
+      "#ff0",
+      "#06f",
+      "#f09",
+      "#0ff",
+      "#737171"
+    ],
+    "dateAdded": "1521644449784"
+  },
+  {
     "name": "hyper-pokemon",
     "description": "Tailor-made Pokémon themes for your Hyper terminal",
     "type": "theme",
