@@ -205,11 +205,16 @@
     "name": "hyper-electron-highlighter",
     "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/7cf67de97e841fc57ae1f3b2cce98e35b899b12f/screenshot.png",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/997a6ba6/screenshot.png",
     "colors": [
       "#212836",
       "#6af699",
-      "#71b1fe"
+      "#ff5874",
+      "#fffa9e",
+      "#82aaff",
+      "#c792ea",
+      "#4ff2f8",
+      "#7992b4"
     ],
     "dateAdded": "1523991462599"
   },
@@ -262,5 +267,38 @@
     "type": "plugin",
     "preview": "https://dev.moso.io/hyper/hyper-dark-scrollbar/demo.png",
     "dateAdded": "1524043008207"
+  },
+  {
+    "name": "hyper-whimsy",
+    "description": "A whimsical theme for Hyper",
+    "type": "theme",
+    "preview": "https://hyper-whimsy.now.sh/",
+    "colors": [
+      "#29283b",
+      "#b3b0d6"
+    ],
+    "dateAdded": "1524007869655"
+  },
+  {
+    "name": "hyper-oceanic-next",
+    "description": "Oceanic Next theme for Hyper",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/2156395/39155663-d2a2c972-474a-11e8-9dc4-59e52ab0365f.png",
+    "colors": [
+      "#ec5f67",
+      "#99c794",
+      "#fac863",
+      "#6699cc",
+      "#c594c5",
+      "#5fb3b3"
+    ],
+    "dateAdded": "1524521526149"
+  },
+  {
+    "name": "hyper-savetext",
+    "description": "Save text from your Hyper terminal to a file",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
+    "dateAdded": "1524611024916"
   }
 ]
