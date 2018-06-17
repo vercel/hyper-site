@@ -300,5 +300,17 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
     "dateAdded": "1524611024916"
+  },
+  {
+    "name": "hyper-pokemon",
+    "description": "Tailor-made Pokémon themes for your Hyper terminal",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyper-pokemon/356542cd/media/screen%402x.png",
+    "colors": [
+      "#F7DE82",
+      "#E28638",
+      "#4C1803"
+    ],
+    "dateAdded": "1524699300332"
   }
 ]
