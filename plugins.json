@@ -291,7 +291,7 @@
   },
   {
     "name": "hyper-single-instance",
-    "description": "open new tab instead of create a new app instance when click the system-context-menu or call to hyper.exe",
+    "description": "Open new tab instead of create a new app instance when click the system-context-menu or call to hyper.exe",
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/ivanwonder/hyper-single-instance/master/demo.gif",
     "dateAdded": "1525831601786"
