@@ -113,6 +113,20 @@
     "dateAdded": "1522256706135"
   },
   {
+    "name": "hyper-solarized",
+    "description": "Highly customizable Solarized theme for the Hyper terminal",
+    "type": "theme",
+    "preview": "https://i.imgur.com/JdT64Kc.gif",
+    "colors": [
+      "#fdf6e3",
+      "#e6dfcb",
+      "#002b36",
+      "#001f27",
+      "rgba(181, 137, 0, 0.6)"
+    ],
+    "dateAdded": "1529828592"
+  },
+  {
     "name": "hyper-solarized-dark",
     "description": "A port of the Solarized Dark theme for Hyper.app",
     "type": "theme",
