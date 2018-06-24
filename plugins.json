@@ -113,6 +113,20 @@
     "dateAdded": "1522256706135"
   },
   {
+    "name": "hyper-solarized",
+    "description": "Highly customizable Solarized theme for the Hyper terminal",
+    "type": "theme",
+    "preview": "https://i.imgur.com/JdT64Kc.gif",
+    "colors": [
+      "#fdf6e3",
+      "#e6dfcb",
+      "#002b36",
+      "#001f27",
+      "rgba(181, 137, 0, 0.6)"
+    ],
+    "dateAdded": "1529828592"
+  },
+  {
     "name": "hyper-solarized-dark",
     "description": "A port of the Solarized Dark theme for Hyper.app",
     "type": "theme",
@@ -205,11 +219,16 @@
     "name": "hyper-electron-highlighter",
     "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/7cf67de97e841fc57ae1f3b2cce98e35b899b12f/screenshot.png",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/997a6ba6/screenshot.png",
     "colors": [
       "#212836",
       "#6af699",
-      "#71b1fe"
+      "#ff5874",
+      "#fffa9e",
+      "#82aaff",
+      "#c792ea",
+      "#4ff2f8",
+      "#7992b4"
     ],
     "dateAdded": "1523991462599"
   },
@@ -257,6 +276,13 @@
     "dateAdded": "1524057572112"
   },
   {
+    "name": "hyper-dark-scrollbar",
+    "description": "Dark and sleek scrollbar for Hyper",
+    "type": "plugin",
+    "preview": "https://dev.moso.io/hyper/hyper-dark-scrollbar/demo.png",
+    "dateAdded": "1524043008207"
+  },
+  {
     "name": "hyper-whimsy",
     "description": "A whimsical theme for Hyper",
     "type": "theme",
@@ -288,6 +314,51 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/neil-orans/hyper-savetext/master/screenshots/hyperstore-bg-image.png",
     "dateAdded": "1524611024916"
+  },
+  {
+    "name": "hyper-subliminal-theme",
+    "description": "Subliminal Hyper theme",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/13620579/41205658-cf2e4a50-6cf7-11e8-9776-1f791b3c3c11.png",
+    "colors": [
+      "#808080",
+      "#f1a5ab",
+      "#a9cfa4",
+      "#ffe2a9",
+      "#6699CC",
+      "#C594C5",
+      "#91c5d3"
+    ],
+    "dateAdded": "1528659686963"
+  },
+  {
+    "name": "hyper-corubo",
+    "description": "A dark (i.e. cool) theme for Hyper",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/958723/39779572-f74d3c8a-52df-11e8-8260-805cbb0f4d3b.png",
+    "colors": [
+      "#000",
+      "#ff4136",
+      "#3f0",
+      "#ff0",
+      "#06f",
+      "#f09",
+      "#0ff",
+      "#737171"
+    ],
+    "dateAdded": "1521644449784"
+  },
+  {
+    "name": "hyper-pokemon",
+    "description": "Tailor-made Pokémon themes for your Hyper terminal",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyper-pokemon/356542cd/media/screen%402x.png",
+    "colors": [
+      "#F7DE82",
+      "#E28638",
+      "#4C1803"
+    ],
+    "dateAdded": "1524699300332"
   },
   {
     "name": "hyper-vivifyscrum",
