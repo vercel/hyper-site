@@ -378,5 +378,18 @@
       "#ffffff"
     ],
     "dateAdded": "1527433775046"
+  },
+  {
+    "name": "hyperocean",
+    "description": "Deep oceanic blue Hyper theme",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyperocean/master/media/screen.png",
+    "colors": [
+      "#0F111A",
+      "#3A75C4",
+      "#703FAF",
+      "#87D3F8"
+    ],
+    "dateAdded": "1530561835873"
   }
 ]
