@@ -366,5 +366,37 @@
     "type": "plugin",
     "preview": "https://s1.gifyu.com/images/hyper-vivifyscrum.gif",
     "dateAdded": "1526135338926"
+  },
+  {
+    "name": "hyper-night-owl",
+    "description":
+      "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
+    "type": "theme",
+    "preview":
+      "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
+    "colors": [
+      "#011627",
+      "#EF5350",
+      "#22da6e",
+      "#addb67",
+      "#82aaff",
+      "#c792ea",
+      "#21c7a8",
+      "#ffffff"
+    ],
+    "dateAdded": "1527433775046"
+  },
+  {
+    "name": "hyperocean",
+    "description": "Deep oceanic blue Hyper theme",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyperocean/master/media/screen.png",
+    "colors": [
+      "#0F111A",
+      "#3A75C4",
+      "#703FAF",
+      "#87D3F8"
+    ],
+    "dateAdded": "1530561835873"
   }
 ]
