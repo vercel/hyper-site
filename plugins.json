@@ -391,5 +391,13 @@
       "#87D3F8"
     ],
     "dateAdded": "1530561835873"
+  },
+  {
+    "name": "hyper-ink-badge",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyperocean/master/media/screen.png",
+    "description": "Hyper plugin: An ink badge of which colors indicate the session.",
+    "type": "plugin",
+    "preview": "https://github.com/vimyum/hyper-ink-badge/blob/master/screenshots/inkBadge600x400_low",
+    "dateAdded": "1532547181106"
   }
 ]
