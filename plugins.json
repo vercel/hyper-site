@@ -113,6 +113,20 @@
     "dateAdded": "1522256706135"
   },
   {
+    "name": "hyper-solarized",
+    "description": "Highly customizable Solarized theme for the Hyper terminal",
+    "type": "theme",
+    "preview": "https://i.imgur.com/JdT64Kc.gif",
+    "colors": [
+      "#fdf6e3",
+      "#e6dfcb",
+      "#002b36",
+      "#001f27",
+      "rgba(181, 137, 0, 0.6)"
+    ],
+    "dateAdded": "1529828592"
+  },
+  {
     "name": "hyper-solarized-dark",
     "description": "A port of the Solarized Dark theme for Hyper.app",
     "type": "theme",
@@ -367,5 +381,37 @@
       "#4C1803"
     ],
     "dateAdded": "1524699300332"
+  },
+  {
+    "name": "hyper-night-owl",
+    "description":
+      "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
+    "type": "theme",
+    "preview":
+      "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
+    "colors": [
+      "#011627",
+      "#EF5350",
+      "#22da6e",
+      "#addb67",
+      "#82aaff",
+      "#c792ea",
+      "#21c7a8",
+      "#ffffff"
+    ],
+    "dateAdded": "1527433775046"
+  },
+  {
+    "name": "hyperocean",
+    "description": "Deep oceanic blue Hyper theme",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyperocean/master/media/screen.png",
+    "colors": [
+      "#0F111A",
+      "#3A75C4",
+      "#703FAF",
+      "#87D3F8"
+    ],
+    "dateAdded": "1530561835873"
   }
 ]
