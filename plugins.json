@@ -316,6 +316,28 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-named-css-colors",
+    "description": "A Hyper theme based on named CSS colors.",
+    "type": "theme",
+    "preview": "https://file-qizqlimniq.now.sh/screenshot.png",
+    "colors": [
+      "tomato",
+      "mediumseagreen",
+      "gold",
+      "steelblue",
+      "mediumvioletred",
+      "mediumturquoise"
+    ],
+    "dateAdded": "1524823985025"
+  },
+  {
+    "name": "hyper-fading-scrollbar",
+    "description": "A hyper plugin that fades the scrollbar when not in use.",
+    "type": "plugin",
+    "preview": "https://file-ayhubmczmh.now.sh/kapture.gif",
+    "dateAdded": "1525123571071"
+  },
+  {
     "name": "hyper-subliminal-theme",
     "description": "Subliminal Hyper theme",
     "type": "theme",
