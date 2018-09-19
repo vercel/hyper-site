@@ -391,5 +391,20 @@
       "#87D3F8"
     ],
     "dateAdded": "1530561835873"
+  },
+  {
+    "name": "hyper-named-css-colors",
+    "description": "A Hyper theme based on named CSS colors.",
+    "type": "theme",
+    "preview": "https://file-euoceavftd.now.sh/screenshot.png",
+    "colors": [
+      "tomato",
+      "mediumseagreen",
+      "gold",
+      "steelblue",
+      "mediumvioletred",
+      "mediumturquoise"
+    ],
+    "dateAdded": "1537397951166"
   }
 ]
