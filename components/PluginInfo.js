@@ -42,7 +42,10 @@ export default class PluginInfo extends React.Component {
   }
 
   async componentDidMount() {
-    const plugin = await getPluginInfo(this.props.plugin.name)
+    let pluginName = !!this.props.plugin.meta
+      ? this.props.plugin.meta.name
+      : this.props.plugin.name
+    const plugin = await getPluginInfo(pluginName)
 
     if (plugin !== undefined) {
       await this.setState({
