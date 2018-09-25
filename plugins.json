@@ -391,5 +391,18 @@
       "#87D3F8"
     ],
     "dateAdded": "1530561835873"
+  },
+  {
+    "name": "xi-hyper",
+    "description": "Minimal monochrome theme for Hyper",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/pacocoursey/Xi-Hyper/master/assets/screenshot.png",
+    "colors": [
+      "#212529",
+      "#868e96",
+      "#ced4da",
+      "#ffffff"
+    ],
+    "dateAdded": "1537851176033"
   }
 ]
