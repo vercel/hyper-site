@@ -23,6 +23,7 @@ export default class Header extends React.Component {
   }
 
   render() {
+    const { mobileNavShown } = this.state
     return (
       <React.Fragment>
         <header className="container">
@@ -151,7 +152,7 @@ export default class Header extends React.Component {
             }
 
             .header__mobile-nav {
-              display: ${this.state.mobileNavShown ? 'flex' : 'none'};
+              display: ${mobileNavShown ? 'flex' : 'none'};
               width: 100%;
               flex-direction: column;
               align-items: center;

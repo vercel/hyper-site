@@ -1,3 +1,4 @@
+import React from 'react'
 import Gravatar from 'react-gravatar'
 import Link from 'next/link'
 import InstallModal from './InstallModal'
