@@ -28,10 +28,6 @@ class Layout extends React.Component {
         searchQuery: null,
         originalURL: router.asPath
       })
-    } else {
-      this.setState({
-        originalURL: router.asPath
-      })
     }
   }
 
