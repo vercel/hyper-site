@@ -94,6 +94,20 @@
     "dateAdded": "1521644449784"
   },
   {
+    "name": "shades-of-purple-hyper",
+    "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/ahmadawais/Shades-of-Purple-Hyper/master/images/Shades-of-Purple-Hyper.gif",
+    "colors": [
+      "#2D2B55",
+      "#6943ff",
+      "#FAD000",
+      "#ff2c70",
+      "#b362ff"
+    ],
+    "dateAdded": "1523965034087"
+  },
+  {
     "name": "hyper-chesterish",
     "description": "Chesterish Theme for Hyper based on Jupyter schemes",
     "type": "theme",
