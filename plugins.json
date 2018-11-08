@@ -391,5 +391,12 @@
       "#87D3F8"
     ],
     "dateAdded": "1530561835873"
-  }
+  },
+  {
+    "name": "hyper-init",
+    "description": "The ultimate and most complete extension to initialize commands before and after Hyper terminal starts",
+    "type": "plugin",
+    "preview": "https://media.giphy.com/media/2wSCpZrfWNpz7gNtD2/giphy.gif",
+    "dateAdded": "1541659140469"
+  }  
 ]
