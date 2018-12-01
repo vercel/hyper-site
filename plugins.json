@@ -391,5 +391,31 @@
       "#87D3F8"
     ],
     "dateAdded": "1530561835873"
+  },
+  {
+    "name": "hyper-afterglow",
+    "description": "The theme based on Afterglow Theme for Sublime Text.",
+    "type": "theme",
+    "preview": "https://github.com/andooown/hyper-afterglow/raw/images/screenshot.png",
+    "colors": [
+      "#202020",
+      "#151515",
+      "#ac4142",
+      "#7e8d50",
+      "#e5b567",
+      "#6c99ba",
+      "#9e4e85",
+      "#7dd5cf",
+      "#d0d0d0",
+      "#505050",
+      "#ac4142",
+      "#7e8d50",
+      "#e5b566",
+      "#6c99bb",
+      "#9e4e85",
+      "#7dd5cf",
+      "#f5f5f5"
+    ],
+    "dateAdded": "1543683658866"
   }
 ]
