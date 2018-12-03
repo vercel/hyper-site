@@ -1,19 +1,59 @@
+import React from 'react'
 import Gravatar from 'react-gravatar'
 import Link from 'next/link'
 import InstallModal from './InstallModal'
 import GithubIcon from '../static/github-icon.svg'
+import getPluginInfo from '../lib/get-plugin.js'
 import * as gtag from '../lib/gtag'
 
-export default class extends React.Component {
+export const PluginInfoBar = ({ children }) => (
+  <div className="plugin-info">
+    {children}
+
+    <style jsx>{`
+      .plugin-info {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 980px;
+        width: 100%;
+        background: black;
+        height: 6.4rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        padding: 0 40px;
+      }
+    `}</style>
+  </div>
+)
+
+export default class PluginInfo extends React.Component {
   constructor() {
     super()
 
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      isPluginLoading: true
     }
 
     this.openInstallModal = this.openInstallModal.bind(this)
     this.closeInstallModal = this.closeInstallModal.bind(this)
+  }
+
+  async componentDidMount() {
+    const plugin = await getPluginInfo(this.props.plugin.name)
+
+    if (plugin !== undefined) {
+      await this.setState({
+        plugin
+      })
+    }
+
+    this.setState({
+      isPluginLoading: false
+    })
   }
 
   openInstallModal() {
@@ -21,7 +61,7 @@ export default class extends React.Component {
       action: 'Opened install modal',
       category: 'plugin',
       label: 'open_install_modal',
-      value: this.props.plugin.meta.name
+      value: this.props.plugin.name
     })
 
     this.setState({
@@ -38,47 +78,98 @@ export default class extends React.Component {
   render() {
     const { plugin } = this.props
 
+    if (this.state && (!this.state.plugin || !this.state.plugin.collected)) {
+      return (
+        <React.Fragment>
+          <InstallModal
+            name={plugin.name}
+            isOpen={this.state.isModalOpen}
+            closeModal={this.closeInstallModal}
+          />
+
+          <PluginInfoBar>
+            {this.state.isPluginLoading ? (
+              <span>Loading plugin information...</span>
+            ) : (
+              <span>
+                We can't currently find information for this extension 😰
+              </span>
+            )}
+            &nbsp;
+            <Link
+              href={`/source?id=${plugin.name}`}
+              as={`/plugins/${plugin.name}/source`}
+            >
+              <a className="plugin-info__link">View source code</a>
+            </Link>
+            <a className="plugin-info__install" onClick={this.openInstallModal}>
+              Install
+            </a>
+          </PluginInfoBar>
+
+          <style jsx>{`
+            .plugin-info__install {
+              cursor: pointer;
+              border-radius: 2px;
+              background: white;
+              color: black;
+              padding: 0 16px;
+              margin-left: auto;
+              opacity: 1;
+              transition: opacity 0.2s ease;
+            }
+
+            .plugin-info__install:hover {
+              opacity: 0.9;
+            }
+          `}</style>
+        </React.Fragment>
+      )
+    }
+
     return (
       <React.Fragment>
         <InstallModal
-          name={plugin.meta.name}
+          name={plugin.name}
           isOpen={this.state.isModalOpen}
           closeModal={this.closeInstallModal}
         />
 
-        <div className="plugin-info">
+        <PluginInfoBar>
           <div className="plugin-info__author border-followed">
             <Gravatar
               className="plugin-info__avatar"
-              email={plugin.collected.metadata.publisher.email}
+              email={this.state.plugin.collected.metadata.publisher.email}
             />
-            <span>{plugin.collected.metadata.publisher.username}</span>
+            <span>
+              {this.state.plugin.collected.metadata.publisher.username}
+            </span>
           </div>
 
           <span className="plugin-info__downloads border-followed">
-            {plugin.collected.npm.downloads[2].count.toLocaleString()} downloads
-            in the last month
+            {this.state.plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
+            downloads in the last month
           </span>
 
-          {plugin.collected.metadata.links.repository && (
+          {this.state.plugin.collected.metadata.links.repository && (
             <a
               className="plugin-info__github-link"
               target="_blank"
-              href={plugin.collected.metadata.links.repository}
+              href={this.state.plugin.collected.metadata.links.repository}
             >
               <GithubIcon />
             </a>
           )}
 
           <Link
-            href={`/source?id=${plugin.collected.metadata.name}`}
-            as={`/plugins/${plugin.collected.metadata.name}/source`}
+            href={`/source?id=${this.state.plugin.collected.metadata.name}`}
+            as={`/plugins/${this.state.plugin.collected.metadata.name}/source`}
           >
             <a className="plugin-info__link">View source code</a>
           </Link>
 
           <div className="plugin-info__version">
-            Version {plugin.collected.metadata.version}
+            Version {this.state.plugin.collected.metadata.version}
           </div>
 
           <a className="plugin-info__install" onClick={this.openInstallModal}>
@@ -86,21 +177,6 @@ export default class extends React.Component {
           </a>
 
           <style jsx>{`
-            .plugin-info {
-              position: fixed;
-              bottom: 0;
-              left: 50%;
-              transform: translateX(-50%);
-              max-width: 980px;
-              width: 100%;
-              background: black;
-              height: 6.4rem;
-              display: flex;
-              align-items: center;
-              font-size: 1.2rem;
-              padding: 0 40px;
-            }
-
             .plugin-info__author {
               display: flex;
               align-items: center;
@@ -213,7 +289,7 @@ export default class extends React.Component {
               }
             }
           `}</style>
-        </div>
+        </PluginInfoBar>
       </React.Fragment>
     )
   }

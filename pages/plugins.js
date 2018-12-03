@@ -1,12 +1,12 @@
 import React from 'react'
-import Router from 'next/router'
+import { withRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
 import Filter from '../components/Filter'
 import getPlugins from '../lib/get-plugins'
 
-export default class extends React.Component {
+class Plugins extends React.Component {
   constructor() {
     super()
 
@@ -32,7 +32,7 @@ export default class extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.url.asPath !== this.props.url.asPath) {
+    if (prevProps.router.asPath !== this.props.router.asPath) {
       const newFilter = this.readFilterFromURL()
       this.handleFilterChange(newFilter)
     }
@@ -49,12 +49,12 @@ export default class extends React.Component {
   }
 
   readFilterFromURL() {
-    return this.props.url.asPath.split('?')[1]
+    return this.props.router.asPath.split('?')[1]
   }
 
   updateFilterURL(newFilter) {
     const href = `/plugins?${newFilter}`
-    Router.push(href, href, { shallow: true })
+    this.props.router.push(href, href, { shallow: true })
   }
 
   render() {
@@ -73,3 +73,5 @@ export default class extends React.Component {
     )
   }
 }
+
+export default withRouter(Plugins)

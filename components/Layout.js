@@ -28,6 +28,10 @@ class Layout extends React.Component {
         searchQuery: null,
         originalURL: router.asPath
       })
+    } else {
+      this.setState({
+        originalURL: router.asPath
+      })
     }
   }
 
@@ -65,7 +69,9 @@ class Layout extends React.Component {
 
         <Header handleSearch={this.handleSearch} />
 
-        {(this.state && this.state.searchQuery) || this.props.query ? (
+        {(this.state && this.state.searchQuery) ||
+        this.props.query ||
+        this.props.router.query.q ? (
           <SearchList
             query={
               this.state && this.state.searchQuery
