@@ -8,8 +8,12 @@
   "scripts": {
     "dev": "micro server.js",
     "build": "next build",
-    "start": "NODE_ENV=production micro server.js",
-    "precommit": "lint-staged"
+    "start": "NODE_ENV=production micro server.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
