@@ -328,6 +328,21 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-relaxed",
+    "description": "A theme to take a more relaxed view of things.",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mischah/Relaxed/82a6174b/hyper.png",
+    "colors": [
+      "#bc5653",
+      "#909d63",
+      "#ebc17a",
+      "#6a8799",
+      "#b06698",
+      "#c9dfff"
+    ],
+    "dateAdded": "1524192925000"
+  },
+  {
     "name": "hyper-subliminal-theme",
     "description": "Subliminal Hyper theme",
     "type": "theme",
