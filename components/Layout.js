@@ -15,40 +15,42 @@ RouterEvents.on('routeChangeComplete', url => {
 })
 
 class Layout extends React.Component {
+  state = {
+    searchQuery: null,
+    originalURL: null,
+    originalQuery: null
+  }
+
   constructor() {
     super()
 
     this.handleSearch = this.handleSearch.bind(this)
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { router } = nextProps
-    if (!/^\/search/.exec(router.asPath)) {
+  componentDidMount() {
+    const { router } = this.props
+    this.setState({
+      originalURL: router.asPath,
+      originalQuery: router.query.q || null
+    })
+
+    if (router.query.q) {
       this.setState({
-        searchQuery: null,
-        originalURL: router.asPath
-      })
-    } else {
-      this.setState({
-        originalURL: router.asPath
+        searchQuery: router.query.q
       })
     }
   }
 
-  componentDidMount() {
-    const { router } = this.props
-    this.setState({
-      originalURL: router.asPath
-    })
-  }
-
   handleSearch(query) {
     const { router } = this.props
-    if (query) {
+    const { originalQuery } = this.state
+    const newQuery = query || originalQuery
+
+    if (newQuery) {
       // We construct the original href for shallow routing
       const href = format({ pathname: router.pathname, query: router.query })
       // asPath will be different depending on user input
-      const asPath = `/search?q=${query}`
+      const asPath = `/search?q=${newQuery}`
       router.replace(href, asPath, { shallow: true })
     } else {
       // When query is empty we render the original url
@@ -58,7 +60,7 @@ class Layout extends React.Component {
     }
 
     this.setState({
-      searchQuery: query
+      searchQuery: newQuery
     })
   }
 

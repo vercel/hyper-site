@@ -269,6 +269,18 @@
     "dateAdded": "1523991462596"
   },
   {
+    "name": "an-old-hype",
+    "description": "Customizable Hyper theme inspired by a galaxy far far away...",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/erikmueller/an-old-hype/master/screen.png",
+    "colors": [
+      "#ef7c2a",
+      "#4fb4d8",
+      "#848794"
+    ],
+    "dateAdded": "1524048709796"
+  },
+  {
     "name": "hyper-opacity",
     "description": "Set the opacity of your Hyper window.",
     "type": "plugin",
@@ -316,6 +328,35 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-active-tab",
+    "description": "Add a symbol to the active tab in your Hyper.app terminal",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/lucleray/hyper-active-tab/master/demo/no-theme.png",
+    "dateAdded": "1525908495226"
+  },
+  {
+    "name": "hyper-single-instance",
+    "description": "Open a new tab instead of a new window instance when opening Hyper.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/ivanwonder/hyper-single-instance/master/demo.gif",
+    "dateAdded": "1525831601786"
+  },
+  {
+    "name": "hyper-relaxed",
+    "description": "A theme to take a more relaxed view of things.",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mischah/Relaxed/82a6174b/hyper.png",
+    "colors": [
+      "#bc5653",
+      "#909d63",
+      "#ebc17a",
+      "#6a8799",
+      "#b06698",
+      "#c9dfff"
+    ],
+    "dateAdded": "1524192925000"
+  },
+  {
     "name": "hyper-subliminal-theme",
     "description": "Subliminal Hyper theme",
     "type": "theme",
@@ -359,6 +400,13 @@
       "#4C1803"
     ],
     "dateAdded": "1524699300332"
+  },
+  {
+    "name": "hyper-vivifyscrum",
+    "description": "VivifyScrum Extension for Hyper that allows you to take a quick look to assigned Items...",
+    "type": "plugin",
+    "preview": "https://s1.gifyu.com/images/hyper-vivifyscrum.gif",
+    "dateAdded": "1526135338926"
   },
   {
     "name": "hyper-night-owl",
@@ -417,5 +465,40 @@
       "#f5f5f5"
     ],
     "dateAdded": "1543683658866"
+  },
+  {
+    "name": "hyper-init",
+    "description": "The ultimate and most complete extension to initialize commands before and after Hyper terminal starts",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
+    "dateAdded": "1541659140469"
+  },  
+  {
+    "name": "hyper-launch-menu",
+    "description": "Launch more than one kind of shell from the menu",
+    "type": "plugin",
+    "preview": "https://gitlab.com/zach-geek/hyper-launch-menu/raw/d74e04abac09dcd0fa20bbd66c6a44980a3dd210/screen.gif",
+    "dateAdded": "1541637233639"
+  },
+  {
+    "name": "xi-hyper",
+    "description": "Minimal monochrome theme for Hyper",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/pacocoursey/Xi-Hyper/master/assets/screenshot.png",
+    "colors": [
+      "#212529",
+      "#868e96",
+      "#ced4da",
+      "#ffffff"
+    ],
+    "dateAdded": "1537851176033"
+  },
+  {
+    "name": "hyper-yes",
+    "description": "Answers 'Terminate batch job (y/n)' with a resounding Y for you",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/albertjan/hyper-yes/master/hyper-yes.gif",
+    "dateAdded": "1537803681724",
+    "featured": false
   }
 ]
