@@ -3,8 +3,8 @@ import Router from 'next/router'
 import SearchIcon from '../static/search.svg'
 
 export default class extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.handleSearch = this.handleSearch.bind(this)
     this.focusSearchInput = this.focusSearchInput.bind(this)
