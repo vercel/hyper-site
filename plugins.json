@@ -439,5 +439,13 @@
       "#87D3F8"
     ],
     "dateAdded": "1530561835873"
+  },
+  {
+    "name": "hyper-yes",
+    "description": "Answers 'Terminate batch job (y/n)' with a resounding Y for you",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/albertjan/hyper-yes/master/hyper-yes.gif",
+    "dateAdded": "1537803681724",
+    "featured": false
   }
 ]
