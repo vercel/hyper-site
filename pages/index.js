@@ -101,6 +101,37 @@ const DownloadButton = ({ os }) => (
   </React.Fragment>
 )
 
+const Path = ({ os, path }) => (
+  <React.Fragment>
+    <code>
+      {(() => {
+        switch (os) {
+          case 'mac':
+            return '~/Library/Application Support/Hyper/'
+          case 'windows':
+            return '$Env:AppData/Hyper/'
+          case 'linux':
+            return '~/.config/Hyper/'
+          default:
+            return ''
+        }
+      })() + path}
+    </code>
+    <style jsx>{`
+      code:before,
+      code:after {
+        content: '\\0060';
+      }
+    `}</style>
+  </React.Fragment>
+)
+
+const PathLink = ({ os, path, type }) => (
+  <a href={`#${type}-location`}>
+    <Path os={os} path={path} />
+  </a>
+)
+
 export default class Index extends React.Component {
   static async getInitialProps({ req, res }) {
     const userAgent =
@@ -312,8 +343,9 @@ export default class Index extends React.Component {
               <code>$ npm search hyper</code>
             </pre>
             <p>
-              Then edit <code>~/.hyper.js</code> and add it to{' '}
-              <code>plugins</code>
+              Then edit{' '}
+              <PathLink os={this.props.OS} path=".hyper.js" type="config" /> and
+              add it to <code>plugins</code>
             </p>
             <pre>
               <code>
@@ -333,7 +365,12 @@ export default class Index extends React.Component {
             </pre>
             <p>
               <code>Hyper</code> will show a notification when your modules are
-              installed to <code>~/.hyper_plugins</code>.
+              installed to{' '}
+              <PathLink
+                os={this.props.OS}
+                path=".hyper_plugins"
+                type="plugins"
+              />.
             </p>
 
             {/*
@@ -344,8 +381,8 @@ export default class Index extends React.Component {
             </h2>
             <p>
               All command keys can be changed. In order to change them, edit{' '}
-              <code>~/.hyper.js</code> and add your desired change to{' '}
-              <code>keymaps</code>.
+              <PathLink os={this.props.OS} path=".hyper.js" type="config" /> and
+              add your desired change to <code>keymaps</code>.
             </p>
             <p> Then Hyper will change the default with your custom change.</p>
             <p>
@@ -400,10 +437,45 @@ export default class Index extends React.Component {
             <h2 id="cfg">
               <a href="#cfg">Configuration</a>
             </h2>
+            <h3 id="config-location">
+              <a href="#config-location">Config location</a>
+            </h3>
+            <div className="table">
+              <table id="config-paths-table" className="offset-header">
+                <tr>
+                  <td>
+                    <strong>macOS</strong>
+                  </td>
+                  <td>
+                    <Path os="mac" path=".hyper.js" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Windows</strong>
+                  </td>
+                  <td>
+                    <Path os="windows" path=".hyper.js" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Linux</strong>
+                  </td>
+                  <td>
+                    <Path os="linux" path=".hyper.js" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <p>
+              Note: config at <code>~/.hyper.js</code> still supported, but will
+              be ignored, if config in application directory present. Otherwise
+              it will be moved to the application directory at first run.
+            </p>
             <p>
               The <code>config</code> object seen above in{' '}
-              <code>~/.hyper.js</code>
-              admits the following
+              <PathLink path=".hyper.js" type="config" /> admits the following
             </p>
             <div className="table large">
               <table className="config">
@@ -595,6 +667,16 @@ export default class Index extends React.Component {
                     </td>
                     <td>[540, 380]</td>
                     <td>The default width/height in pixels of a new window</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>scrollback</code>
+                    </td>
+                    <td>1000</td>
+                    <td>
+                      The number of rows to be persisted in terminal buffer for
+                      scrolling
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -1250,10 +1332,14 @@ export default class Index extends React.Component {
             </p>
             <p>In the future we might do this automatically.</p>
             <p>
-              When developing, you can add your plugin to
-              <code>~/.hyper_plugins/local</code> and then specify it under the{' '}
-              <code>localPlugins</code> array in <code>~/.hyper.js</code>. We
-              load new plugins:
+              When developing, you can add your plugin to{' '}
+              <PathLink
+                os={this.props.OS}
+                path=".hyper_plugins/local"
+                type="plugins"
+              />{' '}
+              and then specify it under the <code>localPlugins</code> array in{' '}
+              <PathLink path=".hyper.js" type="config" />. We load new plugins:
             </p>
             <ul>
               <li>Periodically (every few hours)</li>
@@ -1268,24 +1354,55 @@ export default class Index extends React.Component {
             <p>The process of reloading involves</p>
             <ul>
               <li>
-                Running <code>npm prune</code> and <code>npm install</code>
-                in <code>~/.hyper_plugins</code>.
+                Running <code>npm prune</code> and <code>npm install</code> in{' '}
+                <PathLink path=".hyper_plugins" type="plugins" />.
               </li>
               <li>
                 Pruning the <code>require.cache</code> in both electron and the
                 renderer process
               </li>
               <li>
-                Invoking{' '}
-                <code>
-                  on*<code>
-                    {' '}
-                    methods on the existing instances and re-rendering
-                    components with the fresh decorations in place.
-                  </code>
-                </code>
+                Invoking <code>on*</code> methods on the existing instances and
+                re-rendering components with the fresh decorations in place.
               </li>
             </ul>
+            <h4 id="plugins-location">
+              <a href="#plugins-location">Plugins location</a>
+            </h4>
+            <div className="table">
+              <table id="plugins-paths-table" className="offset-header">
+                <tr>
+                  <td>
+                    <strong>macOS</strong>
+                  </td>
+                  <td>
+                    <Path os="mac" path=".hyper_plugins" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Windows</strong>
+                  </td>
+                  <td>
+                    <Path os="windows" path=".hyper_plugins" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Linux</strong>
+                  </td>
+                  <td>
+                    <Path os="linux" path=".hyper_plugins" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <p>
+              Note: plugins at <code>~/.hyper_plugins</code> still supported,
+              but will be ignored, if plugins in application directory present.
+              Otherwise they will be moved to the application directory at first
+              run.
+            </p>
             <p>
               Note: on the main process, plugins are registered as soon as
               possible (we fire <code>onLoad</code>). On the browser, it's up to
@@ -1345,9 +1462,18 @@ export default class Index extends React.Component {
                       <code>notify</code>
                     </td>
                     <td>
-                      A helper function that shows a desktop notification. The
-                      first parameter is the title and the second is the
-                      optional body of the notification.
+                      <p>
+                        A helper function that shows a desktop notification. The
+                        first parameter is the title, the second is the optional
+                        body of the notification, and the third is another
+                        optional parameter which can be used to log details to
+                        the development console.
+                      </p>
+                      <p>
+                        To pass these details, simply provide and object with an{' '}
+                        <code>error</code> property containing the information
+                        to log.
+                      </p>
                     </td>
                   </tr>
                   <tr>
@@ -1576,7 +1702,7 @@ export default class Index extends React.Component {
                     </td>
                     <td>
                       An <code>Object</code> with the <code>config</code> block
-                      from <code>~/.hyper.js</code>.
+                      from <PathLink path=".hyper.js" type="config" />.
                     </td>
                   </tr>
                   <tr>
@@ -2224,6 +2350,34 @@ export default class Index extends React.Component {
           #content #installation-table img {
             width: 17px;
             height: 13px;
+          }
+
+          #content #config-paths-table td {
+            padding: 10px;
+          }
+
+          #content #config-paths-table td:not(:first-child) {
+            text-align: center;
+            width: 66.67%;
+          }
+
+          #content #config-paths-table {
+            color: #fff;
+            margin-top: 0;
+          }
+
+          #content #plugins-paths-table td {
+            padding: 10px;
+          }
+
+          #content #plugins-paths-table td:not(:first-child) {
+            text-align: center;
+            width: 66.67%;
+          }
+
+          #content #plugins-paths-table {
+            color: #fff;
+            margin-top: 0;
           }
 
           #content td.soon {

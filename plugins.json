@@ -94,6 +94,20 @@
     "dateAdded": "1521644449784"
   },
   {
+    "name": "shades-of-purple-hyper",
+    "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/ahmadawais/Shades-of-Purple-Hyper/master/images/Shades-of-Purple-Hyper.gif",
+    "colors": [
+      "#2D2B55",
+      "#6943ff",
+      "#FAD000",
+      "#ff2c70",
+      "#b362ff"
+    ],
+    "dateAdded": "1523965034087"
+  },
+  {
     "name": "hyper-chesterish",
     "description": "Chesterish Theme for Hyper based on Jupyter schemes",
     "type": "theme",
@@ -111,6 +125,20 @@
     "type": "plugin",
     "preview": "https://cloud.githubusercontent.com/assets/1430576/22143133/35d9a170-def9-11e6-8d0f-047fb1c64e97.png",
     "dateAdded": "1522256706135"
+  },
+  {
+    "name": "hyper-solarized",
+    "description": "Highly customizable Solarized theme for the Hyper terminal",
+    "type": "theme",
+    "preview": "https://i.imgur.com/JdT64Kc.gif",
+    "colors": [
+      "#fdf6e3",
+      "#e6dfcb",
+      "#002b36",
+      "#001f27",
+      "rgba(181, 137, 0, 0.6)"
+    ],
+    "dateAdded": "1529828592"
   },
   {
     "name": "hyper-solarized-dark",
@@ -188,28 +216,19 @@
     "dateAdded": "1523950045916"
   },
   {
-    "name": "shades-of-purple-hyper",
-    "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
-    "type": "theme",
-    "preview": "https://on.ahmda.ws/qvUU/c",
-    "colors": [
-      "#2D2B55",
-      "#6943ff",
-      "#FAD000",
-      "#ff2c70",
-      "#b362ff"
-    ],
-    "dateAdded": "1523965034087"
-  },
-  {
     "name": "hyper-electron-highlighter",
     "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/7cf67de97e841fc57ae1f3b2cce98e35b899b12f/screenshot.png",
+    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/997a6ba6/screenshot.png",
     "colors": [
       "#212836",
       "#6af699",
-      "#71b1fe"
+      "#ff5874",
+      "#fffa9e",
+      "#82aaff",
+      "#c792ea",
+      "#4ff2f8",
+      "#7992b4"
     ],
     "dateAdded": "1523991462599"
   },
@@ -250,11 +269,30 @@
     "dateAdded": "1523991462596"
   },
   {
+    "name": "an-old-hype",
+    "description": "Customizable Hyper theme inspired by a galaxy far far away...",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/erikmueller/an-old-hype/master/screen.png",
+    "colors": [
+      "#ef7c2a",
+      "#4fb4d8",
+      "#848794"
+    ],
+    "dateAdded": "1524048709796"
+  },
+  {
     "name": "hyper-opacity",
     "description": "Set the opacity of your Hyper window.",
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/lucleray/hyper-opacity/master/demo-big.gif",
     "dateAdded": "1524057572112"
+  },
+  {
+    "name": "hyper-dark-scrollbar",
+    "description": "Dark and sleek scrollbar for Hyper",
+    "type": "plugin",
+    "preview": "https://dev.moso.io/hyper/hyper-dark-scrollbar/demo.png",
+    "dateAdded": "1524043008207"
   },
   {
     "name": "hyper-whimsy",
@@ -295,5 +333,97 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/ivanwonder/hyper-single-instance/master/demo.gif",
     "dateAdded": "1525831601786"
+  },
+  {
+    "name": "hyper-relaxed",
+    "description": "A theme to take a more relaxed view of things.",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mischah/Relaxed/82a6174b/hyper.png",
+    "colors": [
+      "#bc5653",
+      "#909d63",
+      "#ebc17a",
+      "#6a8799",
+      "#b06698",
+      "#c9dfff"
+    ],
+    "dateAdded": "1524192925000"
+  },
+  {
+    "name": "hyper-subliminal-theme",
+    "description": "Subliminal Hyper theme",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/13620579/41205658-cf2e4a50-6cf7-11e8-9776-1f791b3c3c11.png",
+    "colors": [
+      "#808080",
+      "#f1a5ab",
+      "#a9cfa4",
+      "#ffe2a9",
+      "#6699CC",
+      "#C594C5",
+      "#91c5d3"
+    ],
+    "dateAdded": "1528659686963"
+  },
+  {
+    "name": "hyper-corubo",
+    "description": "A dark (i.e. cool) theme for Hyper",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/958723/39779572-f74d3c8a-52df-11e8-8260-805cbb0f4d3b.png",
+    "colors": [
+      "#000",
+      "#ff4136",
+      "#3f0",
+      "#ff0",
+      "#06f",
+      "#f09",
+      "#0ff",
+      "#737171"
+    ],
+    "dateAdded": "1521644449784"
+  },
+  {
+    "name": "hyper-pokemon",
+    "description": "Tailor-made Pokémon themes for your Hyper terminal",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyper-pokemon/356542cd/media/screen%402x.png",
+    "colors": [
+      "#F7DE82",
+      "#E28638",
+      "#4C1803"
+    ],
+    "dateAdded": "1524699300332"
+  },
+  {
+    "name": "hyper-night-owl",
+    "description":
+      "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
+    "type": "theme",
+    "preview":
+      "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
+    "colors": [
+      "#011627",
+      "#EF5350",
+      "#22da6e",
+      "#addb67",
+      "#82aaff",
+      "#c792ea",
+      "#21c7a8",
+      "#ffffff"
+    ],
+    "dateAdded": "1527433775046"
+  },
+  {
+    "name": "hyperocean",
+    "description": "Deep oceanic blue Hyper theme",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/klauscfhq/hyperocean/master/media/screen.png",
+    "colors": [
+      "#0F111A",
+      "#3A75C4",
+      "#703FAF",
+      "#87D3F8"
+    ],
+    "dateAdded": "1530561835873"
   }
 ]

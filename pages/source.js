@@ -62,7 +62,7 @@ export default class extends React.Component {
 
   async getFileContents(file) {
     const response = await cachedFetch(
-      `https://unpkg.com/${this.props.id}@latest/${file}`,
+      `https://unpkg.com/${this.props.id}@latest${file}`,
       {},
       'text'
     )
