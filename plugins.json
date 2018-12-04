@@ -441,6 +441,13 @@
     "dateAdded": "1530561835873"
   },
   {
+    "name": "hyper-launch-menu",
+    "description": "Launch more than one kind of shell from the menu",
+    "type": "plugin",
+    "preview": "https://gitlab.com/zach-geek/hyper-launch-menu/raw/d74e04abac09dcd0fa20bbd66c6a44980a3dd210/screen.gif",
+    "dateAdded": "1541637233639"
+  },
+  {
     "name": "xi-hyper",
     "description": "Minimal monochrome theme for Hyper",
     "type": "theme",
