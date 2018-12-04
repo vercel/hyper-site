@@ -328,6 +328,13 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-active-tab",
+    "description": "Add a symbol to the active tab in your Hyper.app terminal",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/lucleray/hyper-active-tab/master/demo/no-theme.png",
+    "dateAdded": "1525908495226"
+  },
+  {
     "name": "hyper-single-instance",
     "description": "Open a new tab instead of a new window instance when opening Hyper.",
     "type": "plugin",
