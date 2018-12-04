@@ -329,7 +329,7 @@
   },
   {
     "name": "hyper-active-tab",
-    "description": "Add a symbol to the active tab in your hyper terminal",
+    "description": "Add a symbol to the active tab in your Hyper.app terminal",
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/lucleray/hyper-active-tab/master/demo/no-theme.png",
     "dateAdded": "1525908495226"
