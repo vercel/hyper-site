@@ -1,3 +1,4 @@
 {
-    "alias": ["hyper.is", "www.hyper.is"]
+  "version": 1,
+  "alias": ["hyper.is", "www.hyper.is"]
 }

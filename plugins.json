@@ -94,6 +94,20 @@
     "dateAdded": "1521644449784"
   },
   {
+    "name": "shades-of-purple-hyper",
+    "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/ahmadawais/Shades-of-Purple-Hyper/master/images/Shades-of-Purple-Hyper.gif",
+    "colors": [
+      "#2D2B55",
+      "#6943ff",
+      "#FAD000",
+      "#ff2c70",
+      "#b362ff"
+    ],
+    "dateAdded": "1523965034087"
+  },
+  {
     "name": "hyper-chesterish",
     "description": "Chesterish Theme for Hyper based on Jupyter schemes",
     "type": "theme",
@@ -202,20 +216,6 @@
     "dateAdded": "1523950045916"
   },
   {
-    "name": "shades-of-purple-hyper",
-    "description": "Professional Hyper™ Terminal theme with hand-picked & bold shades of purple 💜 to go along with your command line usage. Love purple, coz. purple can be genius.",
-    "type": "theme",
-    "preview": "https://on.ahmda.ws/qvUU/c",
-    "colors": [
-      "#2D2B55",
-      "#6943ff",
-      "#FAD000",
-      "#ff2c70",
-      "#b362ff"
-    ],
-    "dateAdded": "1523965034087"
-  },
-  {
     "name": "hyper-electron-highlighter",
     "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
     "type": "theme",
@@ -269,6 +269,18 @@
     "dateAdded": "1523991462596"
   },
   {
+    "name": "an-old-hype",
+    "description": "Customizable Hyper theme inspired by a galaxy far far away...",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/erikmueller/an-old-hype/master/screen.png",
+    "colors": [
+      "#ef7c2a",
+      "#4fb4d8",
+      "#848794"
+    ],
+    "dateAdded": "1524048709796"
+  },
+  {
     "name": "hyper-opacity",
     "description": "Set the opacity of your Hyper window.",
     "type": "plugin",
@@ -316,6 +328,35 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-active-tab",
+    "description": "Add a symbol to the active tab in your Hyper.app terminal",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/lucleray/hyper-active-tab/master/demo/no-theme.png",
+    "dateAdded": "1525908495226"
+  },
+  {
+    "name": "hyper-single-instance",
+    "description": "Open a new tab instead of a new window instance when opening Hyper.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/ivanwonder/hyper-single-instance/master/demo.gif",
+    "dateAdded": "1525831601786"
+  },
+  {
+    "name": "hyper-relaxed",
+    "description": "A theme to take a more relaxed view of things.",
+    "type": "theme",
+    "preview": "https://cdn.rawgit.com/mischah/Relaxed/82a6174b/hyper.png",
+    "colors": [
+      "#bc5653",
+      "#909d63",
+      "#ebc17a",
+      "#6a8799",
+      "#b06698",
+      "#c9dfff"
+    ],
+    "dateAdded": "1524192925000"
+  },
+  {
     "name": "hyper-subliminal-theme",
     "description": "Subliminal Hyper theme",
     "type": "theme",
@@ -361,6 +402,13 @@
     "dateAdded": "1524699300332"
   },
   {
+    "name": "hyper-vivifyscrum",
+    "description": "VivifyScrum Extension for Hyper that allows you to take a quick look to assigned Items...",
+    "type": "plugin",
+    "preview": "https://s1.gifyu.com/images/hyper-vivifyscrum.gif",
+    "dateAdded": "1526135338926"
+  },
+  {
     "name": "hyper-night-owl",
     "description":
       "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
@@ -404,5 +452,13 @@
       "#ffffff"
     ],
     "dateAdded": "1537851176033"
+  },
+  {
+    "name": "hyper-yes",
+    "description": "Answers 'Terminate batch job (y/n)' with a resounding Y for you",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/albertjan/hyper-yes/master/hyper-yes.gif",
+    "dateAdded": "1537803681724",
+    "featured": false
   }
 ]
