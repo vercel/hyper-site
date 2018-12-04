@@ -328,6 +328,13 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-single-instance",
+    "description": "Open a new tab instead of a new window instance when opening Hyper.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/ivanwonder/hyper-single-instance/master/demo.gif",
+    "dateAdded": "1525831601786"
+  },
+  {
     "name": "hyper-relaxed",
     "description": "A theme to take a more relaxed view of things.",
     "type": "theme",
