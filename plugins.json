@@ -441,6 +441,13 @@
     "dateAdded": "1530561835873"
   },
   {
+    "name": "hyper-init",
+    "description": "The ultimate and most complete extension to initialize commands before and after Hyper terminal starts",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
+    "dateAdded": "1541659140469"
+  },  
+  {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
     "type": "plugin",
