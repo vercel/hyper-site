@@ -17,15 +17,16 @@ export default class extends React.Component {
   }
 
   render() {
-    if (this.props.featured) {
+    const { featured, name, description, colors, preview, query } = this.props
+    if (featured) {
       return (
         <div className="plugin">
           <div className="plugin__content">
-            <h4 className="plugin__name">{this.props.name}</h4>
-            <p>{this.props.description}</p>
-            {this.props.colors ? (
+            <h4 className="plugin__name">{name}</h4>
+            <p>{description}</p>
+            {colors ? (
               <div className="plugin__colors">
-                {this.props.colors.map((color, i) => (
+                {colors.map((color, i) => (
                   <div
                     className="plugin__color"
                     style={{ background: color }}
@@ -39,9 +40,7 @@ export default class extends React.Component {
           <style jsx>{`
             .plugin {
               height: 200px;
-              background: url('${
-                this.props.preview
-              }') top center/cover no-repeat;
+              background: url('${preview}') top center/cover no-repeat;
               position: relative;
             }
 
@@ -92,27 +91,23 @@ export default class extends React.Component {
         <div className="plugin__content container">
           <div className="plugin__left">
             <h4 className="plugin__name">
-              {this.props.query ? (
-                <Highlighter search={this.props.query}>
-                  {this.props.name}
-                </Highlighter>
+              {query ? (
+                <Highlighter search={query}>{name}</Highlighter>
               ) : (
-                <span>{this.props.name}</span>
+                <span>{name}</span>
               )}
             </h4>
             <p className="plugin__description">
-              {this.props.query ? (
-                <Highlighter search={this.props.query}>
-                  {this.props.description}
-                </Highlighter>
+              {query ? (
+                <Highlighter search={query}>{description}</Highlighter>
               ) : (
-                this.props.description
+                description
               )}
             </p>
           </div>
-          {this.props.colors ? (
+          {colors ? (
             <div className="plugin__colors">
-              {this.props.colors.map((color, i) => (
+              {colors.map((color, i) => (
                 <div
                   className="plugin__color"
                   style={{ background: color }}
