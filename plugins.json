@@ -328,6 +328,13 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-final-say",
+    "type": "plugin",
+    "description": "Allow user-set settings in .hyper.js overrides any plugin or theme defaults.",
+    "preview": "https://hyper-final-say.now.sh",
+    "dateAdded": "1529237416938"
+  },
+  {
     "name": "hyper-active-tab",
     "description": "Add a symbol to the active tab in your Hyper.app terminal",
     "type": "plugin",
