@@ -500,5 +500,19 @@
     "preview": "https://raw.githubusercontent.com/albertjan/hyper-yes/master/hyper-yes.gif",
     "dateAdded": "1537803681724",
     "featured": false
-  }
+  },
+  {
+	"name": "hyper-npm-theme",
+	"description": "A smart hyper theme inspired by npm",
+	"type": "theme",
+	"preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot.png",
+	"colors": [
+		"#f3f3f3",
+    "#FFCD3A",
+    "#CB3837",
+    "#C836C3",
+    "#28008A"
+	],
+	"dateAdded": "1545314699015"
+}
 ]
