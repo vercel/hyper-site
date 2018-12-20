@@ -441,6 +441,13 @@
     "dateAdded": "1530561835873"
   },
   {
+    "name": "hyper-fading-scrollbar",
+    "description": "A hyper plugin that fades the scrollbar when not in use.",
+    "type": "plugin",
+    "preview": "https://file-ewlrgwalzv.now.sh/kapture.gif",
+    "dateAdded": "1537398459186"
+  },
+  {
     "name": "hyper-afterglow",
     "description": "The theme based on Afterglow Theme for Sublime Text.",
     "type": "theme",
@@ -502,17 +509,17 @@
     "featured": false
   },
   {
-	"name": "hyper-npm-theme",
-	"description": "A smart hyper theme inspired by npm",
-	"type": "theme",
-	"preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot.png",
-	"colors": [
-		"#f3f3f3",
-    "#FFCD3A",
-    "#CB3837",
-    "#C836C3",
-    "#28008A"
-	],
-	"dateAdded": "1545314699015"
-}
+	  "name": "hyper-npm-theme",
+	  "description": "A smart hyper theme inspired by npm",
+	  "type": "theme",
+	  "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot.png",
+	  "colors": [
+		  "#f3f3f3",
+      "#FFCD3A",
+      "#CB3837",
+      "#C836C3",
+      "#28008A"
+	  ],
+	  "dateAdded": "1545314699015"
+  }
 ]
