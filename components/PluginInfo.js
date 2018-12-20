@@ -1,3 +1,4 @@
+import React from 'react'
 import Gravatar from 'react-gravatar'
 import Link from 'next/link'
 import InstallModal from './InstallModal'
@@ -42,7 +43,7 @@ export default class PluginInfo extends React.Component {
   }
 
   async componentDidMount() {
-    const plugin = await getPluginInfo(this.props.plugin.name)
+    const plugin = await getPluginInfo(this.props.plugin.name || this.props.plugin.meta.name)
 
     if (plugin !== undefined) {
       await this.setState({
