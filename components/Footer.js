@@ -1,3 +1,4 @@
+import React from 'react'
 import { withRouter } from 'next/router'
 import Link from 'next/link'
 import AppleLogo from '../static/apple-logo.svg'

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
 import Filter from '../components/Filter.js'
+import SubmitButton from '../components/SubmitButton'
 import getPlugins from '../lib/get-plugins'
 
 class Themes extends React.Component {
@@ -64,11 +65,22 @@ class Themes extends React.Component {
         <Head>
           <title>Hyper Store - Themes</title>
         </Head>
-        <Filter
-          handleFilterChange={this.handleFilterChange}
-          currentFilter={this.state.filter}
-        />
+        <div className="plugins-heading container">
+          <Filter
+            handleFilterChange={this.handleFilterChange}
+            currentFilter={this.state.filter}
+          />
+          <SubmitButton href="https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store">
+            Submit a Theme
+          </SubmitButton>
+        </div>
         <PluginsList plugins={themes} filteredBy={this.state.filter} />
+
+        <style jsx>{`
+          .plugins-heading {
+            position: relative;
+          }
+        `}</style>
       </Layout>
     )
   }
