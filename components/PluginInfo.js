@@ -1,6 +1,7 @@
 import React from 'react'
 import Gravatar from 'react-gravatar'
 import Link from 'next/link'
+import giturl from 'giturl'
 import InstallModal from './InstallModal'
 import GithubIcon from '../static/github-icon.svg'
 import getPluginInfo from '../lib/get-plugin.js'
@@ -43,7 +44,9 @@ export default class PluginInfo extends React.Component {
   }
 
   async componentDidMount() {
-    const plugin = await getPluginInfo(this.props.plugin.name || this.props.plugin.meta.name)
+    const plugin = await getPluginInfo(
+      this.props.plugin.name || this.props.plugin.meta.name
+    )
 
     if (plugin !== undefined) {
       await this.setState({
@@ -78,7 +81,7 @@ export default class PluginInfo extends React.Component {
   render() {
     const { plugin } = this.props
 
-    if (this.state && (!this.state.plugin || !this.state.plugin.collected)) {
+    if (this.state && !this.state.plugin) {
       return (
         <React.Fragment>
           <InstallModal
@@ -139,37 +142,30 @@ export default class PluginInfo extends React.Component {
           <div className="plugin-info__author border-followed">
             <Gravatar
               className="plugin-info__avatar"
-              email={this.state.plugin.collected.metadata.publisher.email}
+              email={this.state.plugin._npmUser.email}
             />
-            <span>
-              {this.state.plugin.collected.metadata.publisher.username}
-            </span>
+            <span>{this.state.plugin._npmUser.name}</span>
           </div>
 
-          <span className="plugin-info__downloads border-followed">
-            {this.state.plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
-            downloads in the last month
-          </span>
-
-          {this.state.plugin.collected.metadata.links.repository && (
+          {this.state.plugin.repository.url && (
             <a
               className="plugin-info__github-link"
               target="_blank"
-              href={this.state.plugin.collected.metadata.links.repository}
+              href={giturl.parse(this.state.plugin.repository.url)}
             >
               <GithubIcon />
             </a>
           )}
 
           <Link
-            href={`/source?id=${this.state.plugin.collected.metadata.name}`}
-            as={`/plugins/${this.state.plugin.collected.metadata.name}/source`}
+            href={`/source?id=${this.state.plugin.name}`}
+            as={`/plugins/${this.state.plugin.name}/source`}
           >
             <a className="plugin-info__link">View source code</a>
           </Link>
 
           <div className="plugin-info__version">
-            Version {this.state.plugin.collected.metadata.version}
+            Version {this.state.plugin.version}
           </div>
 
           <a className="plugin-info__install" onClick={this.openInstallModal}>
