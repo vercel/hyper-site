@@ -543,5 +543,13 @@
       "#28008A"
 	  ],
 	  "dateAdded": "1545314699015"
+  },
+  {
+    "name": "hyper-letters",
+    "description": "Extension for Hyper that drops entered letters physically in your terminal.",
+    "type": "plugin",
+    "preview": "https://user-images.githubusercontent.com/5426590/50339456-f687ea80-0517-11e9-9103-bfcda5634186.gif",
+    "dateAdded": "1545390364689",
+    "featured": false
   }
 ]
