@@ -4,7 +4,7 @@ import Highlighter from 'react-highlighter'
 
 export default class extends React.Component {
   async componentWillMount() {
-    const plugin = await getPluginInfo(this.props.name)
+    const plugin = await getPluginInfo(this.props.name, { meta: false })
 
     this.setState({
       plugin

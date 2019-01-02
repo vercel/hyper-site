@@ -10,7 +10,7 @@ export default class extends React.Component {
   static async getInitialProps({ query: { id } }) {
     let plugin
 
-    plugin = await getPluginInfo(id, { meta: true })
+    plugin = await getPluginInfo(id, { meta: false })
 
     if (!plugin.meta) {
       return {}
