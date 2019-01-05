@@ -582,7 +582,7 @@
     "name": "hyper-highlight-active-pane",
     "description": "Highlight the currently active pane in Hyper",
     "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/yebrahim/hyper-highlight-active-pane/master/screenshot.gif",
+    "preview": "https://raw.githubusercontent.com/yebrahim/hyper-highlight-active-pane/39d3a1b8b264b067abd6bf1cfce2f2179f6ccf89/screenshot.gif",
     "dateAdded": "1546650712023"
   }
 ]
