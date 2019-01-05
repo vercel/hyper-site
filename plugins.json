@@ -340,6 +340,13 @@
     "dateAdded": "1524611024916"
   },
   {
+    "name": "hyper-quit",
+    "description": "Quit Hyper on macOS when the last window is closed",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/cblecker/hyper-quit/master/hyper-quit.gif",
+    "dateAdded": "1524261756961"
+  },
+  {
     "name": "hyper-final-say",
     "type": "plugin",
     "description": "Allow user-set settings in .hyper.js overrides any plugin or theme defaults.",
