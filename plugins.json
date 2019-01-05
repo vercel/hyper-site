@@ -166,6 +166,18 @@
     "featured": true
   },
   {
+    "name": "hyper-solarized-dark2",
+    "description": "Fixed version of hyper-solarized-dark. A port of the Solarized Dark theme for Hyper.app",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-solarized-dark.png",
+    "colors": [
+      "#002b36",
+      "#839496",
+      "rgba(181, 137, 0, 0.6)"
+    ],
+    "dateAdded": "1546383939297"
+  },
+  {
     "name": "hyper-one-dark",
     "description": "Hyper.app theme based on the Atom One Dark theme.",
     "type": "theme",
@@ -335,6 +347,27 @@
     "dateAdded": "1524261756961"
   },
   {
+    "name": "hyper-final-say",
+    "type": "plugin",
+    "description": "Allow user-set settings in .hyper.js overrides any plugin or theme defaults.",
+    "preview": "https://hyper-final-say.now.sh",
+    "dateAdded": "1529237416938"
+  },
+  {
+    "name": "hyper-active-tab",
+    "description": "Add a symbol to the active tab in your Hyper.app terminal",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/lucleray/hyper-active-tab/master/demo/no-theme.png",
+    "dateAdded": "1525908495226"
+  },
+  {
+    "name": "hyper-single-instance",
+    "description": "Open a new tab instead of a new window instance when opening Hyper.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/ivanwonder/hyper-single-instance/master/demo.gif",
+    "dateAdded": "1525831601786"
+  },
+  {
     "name": "hyper-relaxed",
     "description": "A theme to take a more relaxed view of things.",
     "type": "theme",
@@ -395,6 +428,13 @@
     "dateAdded": "1524699300332"
   },
   {
+    "name": "hyper-vivifyscrum",
+    "description": "VivifyScrum Extension for Hyper that allows you to take a quick look to assigned Items...",
+    "type": "plugin",
+    "preview": "https://s1.gifyu.com/images/hyper-vivifyscrum.gif",
+    "dateAdded": "1526135338926"
+  },
+  {
     "name": "hyper-night-owl",
     "description":
       "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
@@ -425,5 +465,117 @@
       "#87D3F8"
     ],
     "dateAdded": "1530561835873"
-  }
+  },
+  {
+    "name": "hyper-named-css-colors",
+    "description": "A Hyper theme based on named CSS colors.",
+    "type": "theme",
+    "preview": "https://file-euoceavftd.now.sh/screenshot.png",
+    "colors": [
+      "tomato",
+      "mediumseagreen",
+      "gold",
+      "steelblue",
+      "mediumvioletred",
+      "mediumturquoise"
+    ],
+    "dateAdded": "1537397951166"
+  },
+  {
+    "name": "hyper-fading-scrollbar",
+    "description": "A hyper plugin that fades the scrollbar when not in use.",
+    "type": "plugin",
+    "preview": "https://file-ewlrgwalzv.now.sh/kapture.gif",
+    "dateAdded": "1537398459186"
+  },
+  {
+    "name": "hyper-afterglow",
+    "description": "The theme based on Afterglow Theme for Sublime Text.",
+    "type": "theme",
+    "preview": "https://github.com/andooown/hyper-afterglow/raw/images/screenshot.png",
+    "colors": [
+      "#202020",
+      "#151515",
+      "#ac4142",
+      "#7e8d50",
+      "#e5b567",
+      "#6c99ba",
+      "#9e4e85",
+      "#7dd5cf",
+      "#d0d0d0",
+      "#505050",
+      "#ac4142",
+      "#7e8d50",
+      "#e5b566",
+      "#6c99bb",
+      "#9e4e85",
+      "#7dd5cf",
+      "#f5f5f5"
+    ],
+    "dateAdded": "1543683658866"
+  },
+  {
+    "name": "hyper-init",
+    "description": "The ultimate and most complete extension to initialize commands before and after Hyper terminal starts",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
+    "dateAdded": "1541659140469"
+  },  
+  {
+    "name": "hyper-launch-menu",
+    "description": "Launch more than one kind of shell from the menu",
+    "type": "plugin",
+    "preview": "https://gitlab.com/zach-geek/hyper-launch-menu/raw/d74e04abac09dcd0fa20bbd66c6a44980a3dd210/screen.gif",
+    "dateAdded": "1541637233639"
+  },
+  {
+    "name": "xi-hyper",
+    "description": "Minimal monochrome theme for Hyper",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/pacocoursey/Xi-Hyper/master/assets/screenshot.png",
+    "colors": [
+      "#212529",
+      "#868e96",
+      "#ced4da",
+      "#ffffff"
+    ],
+    "dateAdded": "1537851176033"
+  },
+  {
+    "name": "hyper-yes",
+    "description": "Answers 'Terminate batch job (y/n)' with a resounding Y for you",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/albertjan/hyper-yes/master/hyper-yes.gif",
+    "dateAdded": "1537803681724",
+    "featured": false
+  },
+  {
+	  "name": "hyper-npm-theme",
+	  "description": "A smart hyper theme inspired by npm",
+	  "type": "theme",
+	  "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
+	  "colors": [
+		  "#f3f3f3",
+      "#FFCD3A",
+      "#CB3837",
+      "#C836C3",
+      "#28008A"
+	  ],
+	  "dateAdded": "1545314699015"
+  },
+  {
+    "name": "hyper-letters",
+    "description": "Extension for Hyper that drops entered letters physically in your terminal.",
+    "type": "plugin",
+    "preview": "https://user-images.githubusercontent.com/5426590/50339456-f687ea80-0517-11e9-9103-bfcda5634186.gif",
+    "dateAdded": "1545390364689",
+    "featured": false
+  },
+  {
+    "name": "hyper-shellect",
+    "description": "A short and shweet shell shellection menu.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/joskore/hyper-shellect/master/shellect-preview.png",
+    "dateAdded": "1546573670459"
+}
 ]
