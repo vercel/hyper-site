@@ -580,7 +580,7 @@
   },
   {
     "name": "hyper-highlight-active-pane",
-    "description": "Highlight the currently active pane in hyperterm",
+    "description": "Highlight the currently active pane in Hyper",
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/yebrahim/hyper-highlight-active-pane/master/screenshot.gif",
     "dateAdded": "1546650712023"
