@@ -166,18 +166,6 @@
     "featured": true
   },
   {
-    "name": "hyper-solarized-dark2",
-    "description": "Fixed version of hyper-solarized-dark. A port of the Solarized Dark theme for Hyper.app",
-    "type": "theme",
-    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-solarized-dark.png",
-    "colors": [
-      "#002b36",
-      "#839496",
-      "rgba(181, 137, 0, 0.6)"
-    ],
-    "dateAdded": "1546383939297"
-  },
-  {
     "name": "hyper-one-dark",
     "description": "Hyper.app theme based on the Atom One Dark theme.",
     "type": "theme",
