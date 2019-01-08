@@ -575,7 +575,7 @@
     "name": "hyper-shellect",
     "description": "A short and shweet shell shellection menu.",
     "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/joskore/hyper-shellect/master/hyper-shellect.gif",
+    "preview": "https://raw.githubusercontent.com/joskore/hyper-shellect/ddcc8a379fb13d9a5af60f9f952e184c77328bcc/hyper-shellect.gif",
     "dateAdded": "1546573670459"
 }
 ]
