@@ -572,5 +572,12 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/yebrahim/hyper-highlight-active-pane/39d3a1b8b264b067abd6bf1cfce2f2179f6ccf89/screenshot.gif",
     "dateAdded": "1546650712023"
+  },
+  {
+    "name": "hyper-cyberpunk",
+    "description": "Punk up your terminal.",
+    "type": "plugin",
+    "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/master/cyberpunk.gif?raw=true",
+    "dateAdded": "1547219532507"
   }
 ]
