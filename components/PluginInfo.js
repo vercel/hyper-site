@@ -2,7 +2,7 @@ import React from 'react'
 import Gravatar from 'react-gravatar'
 import Link from 'next/link'
 import InstallModal from './InstallModal'
-import GithubIcon from '../static/github-icon.svg'
+import GithubIcon from '../components/icons/github-icon.svg'
 import getPluginInfo from '../lib/get-plugin.js'
 import * as gtag from '../lib/gtag'
 
