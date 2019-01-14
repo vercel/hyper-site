@@ -1,4 +1,5 @@
 {
   "version": 2,
+  "alias": ["hyper.is", "www.hyper.is"],
   "builds": [{"src": "package.json", "use": "@now/next"}]
 }
