@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './Logo'
-import MobileNavToggle from '../static/mobile-nav-arrow.svg'
+import MobileNavToggle from '../components/icons/mobile-nav-arrow.svg'
 import Link from 'next/link'
 import ActiveLink from './ActiveLink'
 import SearchInput from './Search'

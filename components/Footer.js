@@ -1,9 +1,9 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import Link from 'next/link'
-import AppleLogo from '../static/apple-logo.svg'
-import LinuxLogo from '../static/linux-logo.svg'
-import WindowsLogo from '../static/windows-logo.svg'
+import AppleLogo from '../components/icons/apple-logo.svg'
+import LinuxLogo from '../components/icons/linux-logo.svg'
+import WindowsLogo from '../components/icons/windows-logo.svg'
 
 const Footer = ({}) => (
   <div className="info-bar">
