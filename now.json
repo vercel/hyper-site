@@ -4,7 +4,7 @@
   "builds": [{"src": "package.json", "use": "@now/next"}],
   "routes": [
     {"src": "/plugins/(?<id>[^/]+)$", "dest": "/plugin?id=$id"},
-    {"src": "/plugins/(?<id>[^/]*)/source$", "dest": "/source?id=$id"},
+    {"src": "/plugins/(?<id>[^/]+)/source$", "dest": "/source?id=$id"},
     {"src": "(.*)", "dest": "$1"}
   ]
 }
