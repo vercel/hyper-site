@@ -6,9 +6,9 @@ import cachedFetch, { overrideCache } from '../lib/cached-json-fetch'
 import getPackageInfo from '../lib/get-plugin'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
-import FileIcon from '../static/file-icon.svg'
-import DirectoryIcon from '../static/directory-icon.svg'
-import BackArrow from '../static/back-arrow.svg'
+import FileIcon from '../components/icons/file-icon.svg'
+import DirectoryIcon from '../components/icons/directory-icon.svg'
+import BackArrow from '../components/icons/back-arrow.svg'
 
 export default class extends React.Component {
   static async getInitialProps({ query: { id }, res }) {

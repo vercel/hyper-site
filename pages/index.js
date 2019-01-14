@@ -2,10 +2,10 @@ import React from 'react'
 import Layout from '../components/Layout.js'
 import Footer from '../components/Footer.js'
 import Head from 'next/head'
-import AppleLogo from '../static/apple-logo.svg'
-import WindowsLogo from '../static/windows-logo.svg'
-import LinuxLogo from '../static/linux-logo.svg'
-import DownloadIcon from '../static/download-icon.svg'
+import AppleLogo from '../components/icons/apple-logo.svg'
+import WindowsLogo from '../components/icons/windows-logo.svg'
+import LinuxLogo from '../components/icons/linux-logo.svg'
+import DownloadIcon from '../components/icons/download-icon.svg'
 
 const DownloadButton = ({ os }) => (
   <React.Fragment>
@@ -370,7 +370,8 @@ export default class Index extends React.Component {
                 os={this.props.OS}
                 path=".hyper_plugins"
                 type="plugins"
-              />.
+              />
+              .
             </p>
 
             {/*
@@ -628,7 +629,8 @@ export default class Index extends React.Component {
                       the keys represent the "ANSI 16", which can all be seen{' '}
                       <a href="https://github.com/zeit/hyper/blob/master/app/utils/colors.js">
                         in the default config
-                      </a>.
+                      </a>
+                      .
                     </td>
                   </tr>
                   <tr>
@@ -864,7 +866,8 @@ export default class Index extends React.Component {
                     <td>
                       <p>
                         <b>v0.5.0+</b>. Allows you to decorate the user's
-                        configuration.<br />
+                        configuration.
+                        <br />
                         Useful for themeing or custom parameters for your
                         plugin.
                       </p>
@@ -1344,10 +1347,8 @@ export default class Index extends React.Component {
             <ul>
               <li>Periodically (every few hours)</li>
               <li>
-                When changes are made to the configuration file (<code>
-                  plugins
-                </code>{' '}
-                or <code>localPlugins</code>)
+                When changes are made to the configuration file (
+                <code>plugins</code> or <code>localPlugins</code>)
               </li>
               <li>When the user clicks Plugins &gt; Update all now</li>
             </ul>
@@ -1416,8 +1417,8 @@ export default class Index extends React.Component {
             </h3>
             <p>
               We give you the ability to provide a higher order component for
-              every piece of the <code>Hyper</code> UI.<br /> Its structure is
-              as follows:
+              every piece of the <code>Hyper</code> UI.
+              <br /> Its structure is as follows:
             </p>
             <pre>
               <code>
@@ -1586,9 +1587,8 @@ export default class Index extends React.Component {
                 {'  '}const customChildren =
                 Array.from(this.props.customChildren){'\n'}
                 {'    '}.concat(&lt;p&gt;My new child&lt;/p&gt;);{'\n'}
-                {'  '}return &lt;Tab {'{'}...this.props{'}'} customChildren={
-                  '{'
-                }customChildren{'}'} /&gt;{'\n'}
+                {'  '}return &lt;Tab {'{'}...this.props{'}'} customChildren=
+                {'{'}customChildren{'}'} /&gt;{'\n'}
                 {'}'}
               </code>
             </pre>
@@ -1819,7 +1819,8 @@ export default class Index extends React.Component {
                 href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
               >
                 code
-              </a>.
+              </a>
+              .
             </p>
             <p style={{ textAlign: 'center' }}>
               <img src="static/hyperyellow.gif" width={446} height={333} />
@@ -1904,15 +1905,18 @@ export default class Index extends React.Component {
                 href="https://github.com/zeit/hyperpower/blob/master/index.js"
               >
                 its code
-              </a>.
-              <br />First, we intercept the Redux action{' '}
-              <code>SESSION_ADD_DATA</code>. See the whole list of them{' '}
+              </a>
+              .
+              <br />
+              First, we intercept the Redux action <code>SESSION_ADD_DATA</code>
+              . See the whole list of them{' '}
               <a
                 target="_blank"
                 href="https://github.com/zeit/hyper/tree/master/lib/actions"
               >
                 here
-              </a>.
+              </a>
+              .
             </p>
             <pre>
               <code>
@@ -2016,8 +2020,8 @@ export default class Index extends React.Component {
                 {'  '}return React.createElement(Term, Object.assign({'{'}
                 {'}'}, this.props, {'{'}
                 {'\n'}
-                {'    '}onDecorated: this._onDecorated{'\n'},
-                {'    '}onCursorMove: this._onCursorMove{'\n'}
+                {'    '}onDecorated: this._onDecorated{'\n'},{'    '}
+                onCursorMove: this._onCursorMove{'\n'}
                 {'  '}
                 {'}'}));{'\n'}
                 {'}'}
