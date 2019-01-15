@@ -20,6 +20,9 @@ class Themes extends React.Component {
 
   static async getInitialProps() {
     const themes = await getPlugins({ type: 'theme' })
+    if (res) {
+      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
+    }
     return { themes }
   }
 

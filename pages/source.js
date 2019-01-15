@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Router from 'next/router'
-import cachedFetch, { overrideCache } from '../lib/cached-json-fetch'
+import cachedFetch from '../lib/cached-json-fetch'
 import getPackageInfo from '../lib/get-plugin'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
@@ -24,6 +24,10 @@ export default class extends React.Component {
     } catch (err) {
       console.error(err)
       res.redirect(`/plugins/${id}`)
+    }
+
+    if (res) {
+      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
     }
 
     return {
