@@ -576,7 +576,11 @@
   {
     "name": "hyper-cyberpunk",
     "description": "Punk up your terminal.",
-    "type": "plugin",
+    "type": "theme",
+    "colors": [
+      "#FFFFFF",
+      "#000000"
+    ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
   }
