@@ -2,104 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout.js'
 import Footer from '../components/Footer.js'
 import Head from 'next/head'
-import AppleLogo from '../static/apple-logo.svg'
-import WindowsLogo from '../static/windows-logo.svg'
-import LinuxLogo from '../static/linux-logo.svg'
-import DownloadIcon from '../static/download-icon.svg'
-
-const DownloadButton = ({ os }) => (
-  <React.Fragment>
-    {(() => {
-      if (os === 'mac') {
-        return (
-          <a
-            className="download-button"
-            href="https://releases.hyper.is/download/mac"
-          >
-            <AppleLogo />
-            <strong>Download Hyper for macOS</strong>
-          </a>
-        )
-      } else if (os === 'windows') {
-        return (
-          <a
-            className="download-button"
-            href="https://releases.hyper.is/download/win"
-          >
-            <WindowsLogo />
-            <strong>Download Hyper for Windows</strong>
-          </a>
-        )
-      } else if (os === 'fedora') {
-        return (
-          <a
-            className="download-button"
-            href="https://releases.hyper.is/download/rpm"
-          >
-            <LinuxLogo />
-            <strong>Download Hyper for Fedora</strong>
-          </a>
-        )
-      } else if (os === 'ubuntu') {
-        return (
-          <a
-            className="download-button"
-            href="https://releases.hyper.is/download/deb"
-          >
-            <LinuxLogo />
-            <strong>Download Hyper for Ubuntu</strong>
-          </a>
-        )
-      } else if (os === 'linux') {
-        return (
-          <a
-            className="download-button"
-            href="https://releases.hyper.is/download/AppImage"
-          >
-            <LinuxLogo />
-            <strong>Download Hyper for Linux</strong>
-          </a>
-        )
-      } else {
-        return (
-          <a href="#installation" className="download-button">
-            <DownloadIcon />
-            <strong>Download Hyper</strong>
-          </a>
-        )
-      }
-    })()}
-
-    <style jsx>{`
-      .download-button {
-        background: #fff;
-        border-radius: 5px;
-        color: #000;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        padding: 0 16px;
-        margin-bottom: 16px;
-        text-decoration: none;
-        transition: background 0.12s ease-in-out;
-      }
-
-      .download-button:hover {
-        background: #e5e5e5;
-      }
-
-      .download-button :global(svg) {
-        fill: #000;
-        margin-right: 12px;
-        height: 16px;
-      }
-
-      .download-button strong {
-        color: #000000;
-      }
-    `}</style>
-  </React.Fragment>
-)
+import DownloadButton from '../components/DownloadButton.js'
 
 const Path = ({ os, path }) => (
   <React.Fragment>
@@ -370,7 +273,8 @@ export default class Index extends React.Component {
                 os={this.props.OS}
                 path=".hyper_plugins"
                 type="plugins"
-              />.
+              />
+              .
             </p>
 
             {/*
@@ -628,7 +532,8 @@ export default class Index extends React.Component {
                       the keys represent the "ANSI 16", which can all be seen{' '}
                       <a href="https://github.com/zeit/hyper/blob/master/app/utils/colors.js">
                         in the default config
-                      </a>.
+                      </a>
+                      .
                     </td>
                   </tr>
                   <tr>
@@ -864,7 +769,8 @@ export default class Index extends React.Component {
                     <td>
                       <p>
                         <b>v0.5.0+</b>. Allows you to decorate the user's
-                        configuration.<br />
+                        configuration.
+                        <br />
                         Useful for themeing or custom parameters for your
                         plugin.
                       </p>
@@ -1344,10 +1250,8 @@ export default class Index extends React.Component {
             <ul>
               <li>Periodically (every few hours)</li>
               <li>
-                When changes are made to the configuration file (<code>
-                  plugins
-                </code>{' '}
-                or <code>localPlugins</code>)
+                When changes are made to the configuration file (
+                <code>plugins</code> or <code>localPlugins</code>)
               </li>
               <li>When the user clicks Plugins &gt; Update all now</li>
             </ul>
@@ -1416,8 +1320,8 @@ export default class Index extends React.Component {
             </h3>
             <p>
               We give you the ability to provide a higher order component for
-              every piece of the <code>Hyper</code> UI.<br /> Its structure is
-              as follows:
+              every piece of the <code>Hyper</code> UI.
+              <br /> Its structure is as follows:
             </p>
             <pre>
               <code>
@@ -1586,9 +1490,8 @@ export default class Index extends React.Component {
                 {'  '}const customChildren =
                 Array.from(this.props.customChildren){'\n'}
                 {'    '}.concat(&lt;p&gt;My new child&lt;/p&gt;);{'\n'}
-                {'  '}return &lt;Tab {'{'}...this.props{'}'} customChildren={
-                  '{'
-                }customChildren{'}'} /&gt;{'\n'}
+                {'  '}return &lt;Tab {'{'}...this.props{'}'} customChildren=
+                {'{'}customChildren{'}'} /&gt;{'\n'}
                 {'}'}
               </code>
             </pre>
@@ -1819,7 +1722,8 @@ export default class Index extends React.Component {
                 href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
               >
                 code
-              </a>.
+              </a>
+              .
             </p>
             <p style={{ textAlign: 'center' }}>
               <img src="static/hyperyellow.gif" width={446} height={333} />
@@ -1904,15 +1808,18 @@ export default class Index extends React.Component {
                 href="https://github.com/zeit/hyperpower/blob/master/index.js"
               >
                 its code
-              </a>.
-              <br />First, we intercept the Redux action{' '}
-              <code>SESSION_ADD_DATA</code>. See the whole list of them{' '}
+              </a>
+              .
+              <br />
+              First, we intercept the Redux action <code>SESSION_ADD_DATA</code>
+              . See the whole list of them{' '}
               <a
                 target="_blank"
                 href="https://github.com/zeit/hyper/tree/master/lib/actions"
               >
                 here
-              </a>.
+              </a>
+              .
             </p>
             <pre>
               <code>
@@ -2016,8 +1923,8 @@ export default class Index extends React.Component {
                 {'  '}return React.createElement(Term, Object.assign({'{'}
                 {'}'}, this.props, {'{'}
                 {'\n'}
-                {'    '}onDecorated: this._onDecorated{'\n'},
-                {'    '}onCursorMove: this._onCursorMove{'\n'}
+                {'    '}onDecorated: this._onDecorated{'\n'},{'    '}
+                onCursorMove: this._onCursorMove{'\n'}
                 {'  '}
                 {'}'}));{'\n'}
                 {'}'}

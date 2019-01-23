@@ -46,6 +46,7 @@ export default class Header extends React.Component {
               GitHub
             </a>
             <a href="/#installation">Download</a>
+            <ActiveLink href="/blog">Blog</ActiveLink>
           </nav>
 
           <div className="header__right">
