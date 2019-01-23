@@ -1,6 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
-import SearchIcon from '../static/search.svg'
+import SearchIcon from '../components/icons/search.svg'
 
 export default class extends React.Component {
   constructor(props) {

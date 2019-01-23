@@ -18,8 +18,11 @@ class Plugins extends React.Component {
     this.handleFilterChange = this.handleFilterChange.bind(this)
   }
 
-  static async getInitialProps() {
+  static async getInitialProps({ res }) {
     const plugins = await getPlugins({ type: 'plugin' })
+    if (res) {
+      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
+    }
     return { plugins }
   }
 

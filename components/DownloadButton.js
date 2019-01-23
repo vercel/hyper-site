@@ -1,8 +1,8 @@
 import React from 'react'
-import DownloadIcon from '../static/download-icon.svg'
-import AppleLogo from '../static/apple-logo.svg'
-import WindowsLogo from '../static/windows-logo.svg'
-import LinuxLogo from '../static/linux-logo.svg'
+import AppleLogo from './icons/apple-logo.svg'
+import WindowsLogo from './icons/windows-logo.svg'
+import LinuxLogo from './icons/linux-logo.svg'
+import DownloadIcon from './icons/download-icon.svg'
 
 export default ({ os }) => (
   <React.Fragment>
