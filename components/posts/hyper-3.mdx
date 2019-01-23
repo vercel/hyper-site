@@ -107,8 +107,8 @@ one side and decoded on the other. Not only that, receiving data through IPC is
 an async operation and thus queued in v8's event loop. Yielding back the to the
 event loop every time we're done processing one of these small messages was, of
 course, making things worse overall. This repeated IPC caused thrashing when
-many small messages were passed in a short period of time (see upper profile
-above)
+processing bursts of text, like running `cat` on a large file (see upper profile
+above).
 
 We mitigated this problem with a simple solution: batch data into larger chunks
 before sending them to the renderer process. IPC batching reduces the number of
