@@ -2,7 +2,7 @@ import DownloadButton from '../DownloadButton.js'
 
 # Hyper 3
 
-**Hyper 3 is finally out!** and the main theme for this release is:
+**Hyper 3 is finally out!** and the main theme for this release is
 **performance**. To try it out, download it below. Read on to learn what's in
 this release and how it was developed.
 
@@ -43,7 +43,7 @@ from "let's make it faster" to "Holy shell! that's pretty fast!". The most
 important tool we used to keep this process efficient was the DevTools profiler,
 perks of building on a web platform, tools are really good. 
 
-We continuously captured CPU profiles to find bottlenecks, and focused only on
+We continuously captured CPU profiles to find bottlenecks and focused only on
 those issues.  Let's take a tour around the changes we made to make Hyper 3 one
 of the fastest terminals out there.
 
@@ -59,14 +59,14 @@ possible to make it faster by rewriting the renderer using
 
 By a fortunate coincidence, as we were figuring out how to build such a thing,
 [@Tyriar](https://github.com/tyriar) (from xterm.js and VSCode), [was coming back from a "vacation" where he
-happened to be writing a shinny new WebGL
+happened to be writing a shiny new WebGL
 renderer](https://twitter.com/Tyriar/status/1064932797016489984)! (open source
 is amazing ❤). We promptly merged @Tyriar's branch onto a test fork, and well,
-it ran circles around Hyper 2. Thanks @Tyriar.
+it ran circles around Hyper 2. Thanks @Tyriar!
 
 At the moment, there are a few minor limitations with this renderer (i.e.
 selection is always black-and-white, and you can't have more than 16 terminals
-visible simultaneously) but we think the performance benefits vastly outweight
+visible simultaneously) but we think the performance benefits vastly outweigh
 these.
 
 The new renderer is still considered work-in-progress so expect more
@@ -91,10 +91,10 @@ In these profiles, it's easy to see the difference between v2 and v3.
     <img src="../../static/batching.svg"/>
 </div>
 
-The pink segments represents the time spent processing IPC, instead of parsing
+The pink segments represent the time spent processing IPC, instead of parsing
 or rendering.
 
-Electron, being based on Chromium, uses a multi-process architecture where each
+Electron, being Chromium based, uses a multi-process architecture where each
 window runs on its own separate process called a "renderer" process.
 Additionally, there's one Node.js-based "main" process that talks directly to
 the underlying OS. In order for terminal data to be rendered by Hyper, it must
@@ -133,13 +133,13 @@ tested Electron v4 (the latest and greatest) but a [regression in the Canvas
 API](https://bugs.chromium.org/p/chromium/issues/detail?id=683994#c35) forced us
 to stay on v3. This version brings along newer versions of V8 and Node.js and
 their corresponding bug fixes. We were hoping to see additional performance
-improvements simply by upgrading Electron (given that v8 is beign continuosly
+improvements simply by upgrading Electron (given that v8 is being continuously
 improved) but no luck there. At least not that we could measure with our
 benchmarks. 
 
 ### Faster Startup Time
 
-Hyper 3 improves startup time by creating the first pseudo terminal (pty) as
+Hyper 3 improves startup time by creating the first pseudoterminal (pty) as
 soon as possible. A pty is a facility that OSs provide to allow programs, such as
 Hyper, to emulate terminals.
 
@@ -195,7 +195,7 @@ We're excited to keep improving Hyper both in terms of performance and
 capabilities. There's a lot to do. Feel free to [swing
 by](https://github.com/zeit/hyper) and contribute to the future.
 
-## Acknowledgements
+## Acknowledgments
 
 I'd like to point out how amazing the open source community can be, not only the
 fact that we're building on top of the awesome set of open source libraries
