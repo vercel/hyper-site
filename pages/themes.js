@@ -18,7 +18,7 @@ class Themes extends React.Component {
     this.handleFilterChange = this.handleFilterChange.bind(this)
   }
 
-  static async getInitialProps() {
+  static async getInitialProps({ res }) {
     const themes = await getPlugins({ type: 'theme' })
     if (res) {
       res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
