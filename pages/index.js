@@ -7,6 +7,8 @@ import WindowsLogo from '../components/icons/windows-logo.svg'
 import LinuxLogo from '../components/icons/linux-logo.svg'
 import DownloadIcon from '../components/icons/download-icon.svg'
 
+import cachedFetch from '../lib/cached-json-fetch'
+
 const DownloadButton = ({ os }) => (
   <React.Fragment>
     {(() => {
@@ -156,10 +158,19 @@ export default class Index extends React.Component {
       OS = 'linux'
     }
 
-    return { OS }
+    const releases = await cachedFetch(
+      `https://api.github.com/repos/zeit/hyper/releases`,
+      {},
+      'json'
+    )
+
+    let stable = releases.find(release => !release.prerelease)
+
+    return { OS, stable }
   }
 
   render() {
+    const { stable } = this.props
     return (
       <Layout>
         <Head>
@@ -222,7 +233,12 @@ export default class Index extends React.Component {
                 Installation
             */}
             <h2 id="installation">
-              <a href="#installation">Installation</a>
+              <a href="#installation">
+                Installation <br />
+                <span className="latest-version-small">
+                  latest version: {stable.tag_name}
+                </span>
+              </a>
             </h2>
             <div className="table">
               <table id="installation-table" className="offset-header">
@@ -244,6 +260,9 @@ export default class Index extends React.Component {
                     >
                       <a href="https://releases.hyper.is/download/mac">
                         <img src="static/download-icon.svg" />
+                        <span className="latest-version">
+                          {stable.tag_name}
+                        </span>
                       </a>
                     </td>
                   </tr>
@@ -259,6 +278,9 @@ export default class Index extends React.Component {
                     >
                       <a href="https://releases.hyper.is/download/win">
                         <img src="static/download-icon.svg" />
+                        <span className="latest-version">
+                          {stable.tag_name}
+                        </span>
                       </a>
                     </td>
                   </tr>
@@ -274,6 +296,9 @@ export default class Index extends React.Component {
                     >
                       <a href="https://releases.hyper.is/download/deb">
                         <img src="static/download-icon.svg" />
+                        <span className="latest-version">
+                          {stable.tag_name}
+                        </span>
                       </a>
                     </td>
                   </tr>
@@ -289,6 +314,9 @@ export default class Index extends React.Component {
                     >
                       <a href="https://releases.hyper.is/download/rpm">
                         <img src="static/download-icon.svg" />
+                        <span className="latest-version">
+                          {stable.tag_name}
+                        </span>
                       </a>
                     </td>
                   </tr>
@@ -302,6 +330,9 @@ export default class Index extends React.Component {
                     >
                       <a href="https://releases.hyper.is/download/AppImage">
                         <img src="static/download-icon.svg" />
+                        <span className="latest-version">
+                          {stable.tag_name}
+                        </span>
                       </a>
                     </td>
                   </tr>
@@ -2308,6 +2339,10 @@ export default class Index extends React.Component {
             border-left: 0;
           }
 
+          #content #installation .latest-version-small {
+            font-size: 11px;
+          }
+
           #content #installation-table a {
             border-bottom: none;
             display: block;
@@ -2318,6 +2353,10 @@ export default class Index extends React.Component {
           #content #installation-table a:hover {
             background: none;
             color: #50e3c2;
+          }
+
+          #content #installation-table .latest-version {
+            padding-left: 5px;
           }
 
           #content #installation-table td {
