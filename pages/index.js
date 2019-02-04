@@ -2517,6 +2517,14 @@ export default class Index extends React.Component {
               padding: 20px;
             }
 
+            #content h2 {
+              margin-top: 0;
+            }
+
+            #content h2:first-child {
+              padding-top: 0;
+            }
+
             pre {
               white-space: pre-wrap;
               word-wrap: break-word;
