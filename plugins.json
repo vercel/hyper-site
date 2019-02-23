@@ -583,5 +583,13 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+	
+  {
+    "name": "hyper-orama",
+    "description": "Record and share your Hyper terminal sesson",
+   "type": "plugin",
+    "preview": "https://github.com/cwlowder/hyper-orama/blob/master/my-clip.gif?raw=true",
+    "dateAdded": "1550950521288"
   }
 ]
