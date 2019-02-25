@@ -589,7 +589,7 @@
     "name": "hyper-orama",
     "description": "Record and share your Hyper terminal sesson",
    "type": "plugin",
-    "preview": "https://github.com/cwlowder/hyper-orama/blob/master/my-clip.gif?raw=true",
+    "preview": "https://github.com/cwlowder/hyper-orama/blob/master/demo-out.gif?raw=true",
     "dateAdded": "1550950521288"
   }
 ]
