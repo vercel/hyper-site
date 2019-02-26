@@ -1,16 +1,18 @@
-import react from 'react'
-import Router from 'next/router'
+import React from 'react'
 import Head from 'next/head'
-import cachedFetch from '../lib/cached-json-fetch'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
 import getPluginInfo from '../lib/get-plugin'
 
 export default class extends React.Component {
-  static async getInitialProps({ query: { id } }) {
+  static async getInitialProps({ res, query: { id } }) {
     let plugin
 
-    plugin = await getPluginInfo(id, { meta: true })
+    plugin = await getPluginInfo(id, { meta: false })
+
+    if (res) {
+      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
+    }
 
     if (!plugin.meta) {
       return {}

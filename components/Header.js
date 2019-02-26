@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './Logo'
-import MobileNavToggle from '../static/mobile-nav-arrow.svg'
+import MobileNavToggle from '../components/icons/mobile-nav-arrow.svg'
 import Link from 'next/link'
 import ActiveLink from './ActiveLink'
 import SearchInput from './Search'
@@ -23,6 +23,7 @@ export default class Header extends React.Component {
   }
 
   render() {
+    const { mobileNavShown } = this.state
     return (
       <React.Fragment>
         <header className="container">
@@ -151,7 +152,7 @@ export default class Header extends React.Component {
             }
 
             .header__mobile-nav {
-              display: ${this.state.mobileNavShown ? 'flex' : 'none'};
+              display: ${mobileNavShown ? 'flex' : 'none'};
               width: 100%;
               flex-direction: column;
               align-items: center;

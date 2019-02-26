@@ -1,3 +1,4 @@
-import Logo from '../static/logo.svg'
+import React from 'react'
+import Logo from '../components/icons/logo.svg'
 
 export default () => <Logo />

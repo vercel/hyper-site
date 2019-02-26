@@ -1,7 +1,8 @@
+import React from 'react'
 import Gravatar from 'react-gravatar'
 import Link from 'next/link'
 import InstallModal from './InstallModal'
-import GithubIcon from '../static/github-icon.svg'
+import GithubIcon from '../components/icons/github-icon.svg'
 import getPluginInfo from '../lib/get-plugin.js'
 import * as gtag from '../lib/gtag'
 
@@ -42,7 +43,9 @@ export default class PluginInfo extends React.Component {
   }
 
   async componentDidMount() {
-    const plugin = await getPluginInfo(this.props.plugin.name)
+    const plugin = await getPluginInfo(
+      this.props.plugin.name || this.props.plugin.meta.name
+    )
 
     if (plugin !== undefined) {
       await this.setState({
@@ -146,8 +149,14 @@ export default class PluginInfo extends React.Component {
           </div>
 
           <span className="plugin-info__downloads border-followed">
-            {this.state.plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
-            downloads in the last month
+            {this.state.plugin.collected.npm.downloads[2].count > 0 ? (
+              <>
+                {this.state.plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
+                downloads in the last month
+              </>
+            ) : (
+              <>Brand new!</>
+            )}
           </span>
 
           {this.state.plugin.collected.metadata.links.repository && (

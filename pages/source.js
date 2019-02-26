@@ -2,13 +2,13 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Router from 'next/router'
-import cachedFetch, { overrideCache } from '../lib/cached-json-fetch'
+import cachedFetch from '../lib/cached-json-fetch'
 import getPackageInfo from '../lib/get-plugin'
 import Layout from '../components/Layout'
 import PluginInfo from '../components/PluginInfo'
-import FileIcon from '../static/file-icon.svg'
-import DirectoryIcon from '../static/directory-icon.svg'
-import BackArrow from '../static/back-arrow.svg'
+import FileIcon from '../components/icons/file-icon.svg'
+import DirectoryIcon from '../components/icons/directory-icon.svg'
+import BackArrow from '../components/icons/back-arrow.svg'
 
 export default class extends React.Component {
   static async getInitialProps({ query: { id }, res }) {
@@ -24,6 +24,10 @@ export default class extends React.Component {
     } catch (err) {
       console.error(err)
       res.redirect(`/plugins/${id}`)
+    }
+
+    if (res) {
+      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
     }
 
     return {
@@ -62,7 +66,7 @@ export default class extends React.Component {
 
   async getFileContents(file) {
     const response = await cachedFetch(
-      `https://unpkg.com/${this.props.id}@latest/${file}`,
+      `https://unpkg.com/${this.props.id}@latest${file}`,
       {},
       'text'
     )
