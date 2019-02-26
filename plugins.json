@@ -205,7 +205,7 @@
     "name": "hyper-electron-highlighter",
     "description": "A theme for Hyper based on electron-highlighter-syntax for Atom",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-electron-highlighter/997a6ba6/screenshot.png",
+    "preview": "https://cdn.jsdelivr.net/gh/mikemcbride/hyper-electron-highlighter@52b9c5e2147559896c301c17cc7ae696cbbfc010/screenshot.png",
     "colors": [
       "#212836",
       "#6af699",
@@ -222,7 +222,7 @@
     "name": "hyper-website-theme",
     "description": "A theme for Hyper based on the project website",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-website-theme/259a039e597e24059266584abaefcde42fecac85/screenshot.png",
+    "preview": "https://cdn.jsdelivr.net/gh/mikemcbride/hyper-website-theme@aab4e9d2ad43797ba9607be5582a21bbdbe331b9/screenshot.png",
     "colors": [
       "#000000",
       "#50e3c2",
@@ -234,7 +234,7 @@
     "name": "hyper-firefox-devtools",
     "description": "A theme for Hyper based on the Firefox devtools colors",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-firefox-devtools/16104778ff9240a58f066427fb2628745ea66548/screenshot.png",
+    "preview": "https://cdn.jsdelivr.net/gh/mikemcbride/hyper-firefox-devtools@6f20bbb6ef5c67c9dfe08d3d9bf3585c61fbd4a3/screenshot.png",
     "colors": [
       "#0c0c0d",
       "#75bfff",
@@ -246,7 +246,7 @@
     "name": "hyper-mono-christmas",
     "description": "A monochrome theme for Hyper with red and green",
     "type": "theme",
-    "preview": "https://cdn.rawgit.com/mikemcbride/hyper-mono-christmas/9176e250/screenshot.png",
+    "preview": "https://cdn.jsdelivr.net/gh/mikemcbride/hyper-mono-christmas@bf8a9335b6e4b5774f710fbbf02d0a9a76c1c802/screenshot.png",
     "colors": [
       "#181818",
       "#ff5869",
