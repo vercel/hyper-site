@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["hyper.is", "www.hyper.is"],
+  "alias": ["hyper.is"],
   "builds": [{"src": "package.json", "use": "@now/next"}],
   "routes": [
     {"src": "/(.*)/$", "status": 301, "headers": { "Location": "/$1"} },
