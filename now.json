@@ -9,6 +9,6 @@
     {"src": "/(.*)", "dest": "/$1"}
   ],
   "env": {
-    "GITHUB_TOKEN": "@github-auth-token"
+    "GITHUB_TOKEN": "@hyper-github-auth-token"
   }
 }
