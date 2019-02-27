@@ -7,5 +7,8 @@
     {"src": "/plugins/(?<id>[^/]+)$", "dest": "/plugin?id=$id"},
     {"src": "/plugins/(?<id>[^/]+)/source$", "dest": "/source?id=$id"},
     {"src": "/(.*)", "dest": "/$1"}
-  ]
+  ],
+  "env": {
+    "GITHUB_TOKEN": "@github-auth-token"
+  }
 }
