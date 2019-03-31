@@ -583,5 +583,13 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hxterm",
+    "description": "XTerm color palette for your Hyper.",
+    "type": "theme",
+    "preview": "https://https://raw.githubusercontent.com/dehahost/hxterm/master/screenshot.png",
+    "colors": ["#000000", "#CD0000", "#FF0000", "#00CD00", "#00FF00", "#0000EE", "#5C5CFF", "#FFFFFF"],
+    "dateAdded": "1553992513362"
   }
 ]
