@@ -588,7 +588,7 @@
     "name": "hxterm",
     "description": "XTerm color palette for your Hyper.",
     "type": "theme",
-    "preview": "https://https://raw.githubusercontent.com/dehahost/hxterm/master/screenshot.png",
+    "preview": "https://raw.githubusercontent.com/dehahost/hxterm/master/screenshot.png",
     "colors": ["#000000", "#CD0000", "#FF0000", "#00CD00", "#00FF00", "#0000EE", "#5C5CFF", "#FFFFFF"],
     "dateAdded": "1553992513362"
   }
