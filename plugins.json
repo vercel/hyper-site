@@ -583,5 +583,21 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
-  }
+  },
+  {
+    "name": "hyper-italichorizon",
+    "description": "A hyper theme based on the warm and comfy horizon theme on Visual Stuido Code.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/Lunchb0ne/hyper-italichorizon/master/media/screen.png",
+    "colors": [
+      "#E95678",
+      "#29D398",
+      "#FAB795",
+      "#26BBD9",
+      "#EE64AC",
+      "#59E1E3"
+    ],
+    "dateAdded": "1555068318867"
+},
+	
 ]
