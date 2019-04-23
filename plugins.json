@@ -583,5 +583,17 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-cola-theme",
+    "description": "Cola-inspired color theme for Hyper",
+    "type": "theme",
+    "colors": [
+      "#DE0A1C",
+      "#FFFFFF",
+      "#280C0C"
+    ],
+    "preview": "https://github.com/asny23/hyper-cola-theme/blob/master/images/screenshot1.gif?raw=true",
+    "dateAdded": "1556028223344"
   }
 ]
