@@ -1,5 +1,4 @@
-[
-  {
+[{
     "name": "hypercwd",
     "description": "Opens new tabs with the same directory as the current tab in Hyper for OS X, Linux, and Windows.",
     "type": "plugin",
@@ -424,11 +423,9 @@
   },
   {
     "name": "hyper-night-owl",
-    "description":
-      "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
+    "description": "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
     "type": "theme",
-    "preview":
-      "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
+    "preview": "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
     "colors": [
       "#011627",
       "#EF5350",
@@ -508,7 +505,7 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
     "dateAdded": "1541659140469"
-  },  
+  },
   {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
@@ -538,18 +535,18 @@
     "featured": false
   },
   {
-	  "name": "hyper-npm-theme",
-	  "description": "A smart hyper theme inspired by npm",
-	  "type": "theme",
-	  "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
-	  "colors": [
-		  "#f3f3f3",
+    "name": "hyper-npm-theme",
+    "description": "A smart hyper theme inspired by npm",
+    "type": "theme",
+    "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
+    "colors": [
+      "#f3f3f3",
       "#FFCD3A",
       "#CB3837",
       "#C836C3",
       "#28008A"
-	  ],
-	  "dateAdded": "1545314699015"
+    ],
+    "dateAdded": "1545314699015"
   },
   {
     "name": "hyper-letters",
@@ -583,5 +580,17 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-lilac-theme",
+    "description": "A minimal hyper theme with pretty pastel colours.",
+    "type": "theme",
+    "colors": [
+      "000000",
+      "ff90f6",
+      "e61f44"
+    ],
+    "preview": "https://raw.githubusercontent.com/shubham-saudolla/media/master/hyper-lilac-theme/hyperLilacScreenshot.png",
+    "dateAdded": "1556529333798"
   }
 ]
