@@ -34,9 +34,6 @@ export default class Header extends React.Component {
           </Link>
 
           <nav>
-            <ActiveLink href="/blog" handleClick={this.toggleMobileNav}>
-              Blog
-            </ActiveLink>
             <ActiveLink href="/plugins" handleClick={this.toggleMobileNav}>
               Plugins
             </ActiveLink>

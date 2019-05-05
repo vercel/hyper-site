@@ -250,12 +250,12 @@ export default () => (
 
       /* Helps maintain consistent width */
       .container {
-        width: 900px;
+        width: 1000px;
         max-width: 100%;
         margin: 0 auto;
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 1000px) {
         .container {
           padding: 0 40px;
         }

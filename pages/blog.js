@@ -23,15 +23,20 @@ class Blog extends React.Component {
               justify-content: center;
               width: 100%;
               position: relative;
-              max-width: 650px;
+              max-width: 750px;
             }
             .content {
-              max-width: 650px;
+              max-width: 750px;
+            }
+
+            .content :global(h1) {
+              font-size: 44px;
+              text-align: center;
             }
 
             .content :global(p) {
-              font-size: 14px;
-              line-height: 24px;
+              font-size: 16px;
+              line-height: 26px;
               margin: 0 0 20px;
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
