@@ -12,6 +12,7 @@ export default ({ os }) => (
           <a
             className="download-button"
             href="https://releases.hyper.is/download/mac"
+            target="_blank"
           >
             <AppleLogo />
             <strong>Download Hyper for macOS</strong>
@@ -22,6 +23,7 @@ export default ({ os }) => (
           <a
             className="download-button"
             href="https://releases.hyper.is/download/win"
+            target="_blank"
           >
             <WindowsLogo />
             <strong>Download Hyper for Windows</strong>
@@ -32,6 +34,7 @@ export default ({ os }) => (
           <a
             className="download-button"
             href="https://releases.hyper.is/download/rpm"
+            target="_blank"
           >
             <LinuxLogo />
             <strong>Download Hyper for Fedora</strong>
@@ -42,6 +45,7 @@ export default ({ os }) => (
           <a
             className="download-button"
             href="https://releases.hyper.is/download/deb"
+            target="_blank"
           >
             <LinuxLogo />
             <strong>Download Hyper for Ubuntu</strong>
@@ -52,6 +56,7 @@ export default ({ os }) => (
           <a
             className="download-button"
             href="https://releases.hyper.is/download/AppImage"
+            target="_blank"
           >
             <LinuxLogo />
             <strong>Download Hyper for Linux</strong>
