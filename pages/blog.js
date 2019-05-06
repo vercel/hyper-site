@@ -23,6 +23,7 @@ class Blog extends React.Component {
               justify-content: center;
               width: 100%;
               position: relative;
+              overflow: hidden;
             }
 
             .content {
