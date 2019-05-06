@@ -24,6 +24,7 @@ class Blog extends React.Component {
               width: 100%;
               position: relative;
             }
+
             .content {
               max-width: 750px;
             }
@@ -38,6 +39,7 @@ class Blog extends React.Component {
               line-height: 46px;
               letter-spacing: -0.015em;
               margin: 0px auto;
+              margin-bottom: 20px;
             }
 
             .content :global(p:not(.caption)) {
@@ -49,9 +51,53 @@ class Blog extends React.Component {
                 'Droid Sans', 'Helvetica Neue', sans-serif;
             }
 
+            .content :global(.heading) {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              margin-top: 48px;
+              padding: 0 40px;
+              text-align: center;
+              z-index: 1000;
+            }
+
+            .content :global(.authors) {
+              margin: 0;
+              margin-top: 30px;
+              padding: 0;
+              list-style: none;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+            }
+
             .content :global(.oversize) {
               width: 150%;
               margin-left: -28%;
+            }
+
+            .content :global(time) {
+              width: 100%;
+              text-align: center;
+              color: #999;
+              font-size: 12px;
+            }
+
+            .content :global(hr) {
+              margin: 50px 0;
+              margin-left: -100vw;
+              margin-right: -100vw;
+              border: none;
+              height: 1px;
+              background-color: rgba(255, 255, 255, 0.4);
+            }
+
+            @media (max-width: 768px) {
+              .container .content {
+                width: 100vw;
+                padding: 0 35px;
+              }
             }
           `}
         </style>

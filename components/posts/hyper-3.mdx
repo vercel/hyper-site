@@ -1,10 +1,47 @@
 import DownloadButton from '../DownloadButton.js'
 import Caption from '../text/Caption.js'
+import Author from '../blog/Author.js'
 import Image from '../blog/Image.js'
 
-<div style={{ padding: '100px 0px 50px 0' }}>
+<div className="heading">
   <h1>Hyper 3</h1>
+  <time datetime="2019-05-05">Friday, May 5rd 2019</time>
 </div>
+
+<ul className="authors">
+  <li>
+    <Author
+      data={{
+        name: 'Test Ing',
+        handle: '@testing_',
+        thumbnail: 'https://zeit.co/api/www/avatar/?u=hharnisc&s=160',
+        url: 'https://twitter.com/testing_'
+      }}
+    />
+  </li>
+  <li>
+    <Author
+      data={{
+        name: 'Test Ing',
+        handle: '@testing_',
+        thumbnail: 'https://zeit.co/api/www/avatar/?u=hharnisc&s=160',
+        url: 'https://twitter.com/testing_'
+      }}
+    />
+  </li>
+  <li>
+    <Author
+      data={{
+        name: 'Test Ing',
+        handle: '@testing_',
+        thumbnail: 'https://zeit.co/api/www/avatar/?u=hharnisc&s=160',
+        url: 'https://twitter.com/testing_'
+      }}
+    />
+  </li>
+</ul>
+
+<hr />
 
 **Hyper 3 is finally out!** The main theme for this release is **performance**.
 Download it below to try out Hyper 3 right away, and read on to learn more about
