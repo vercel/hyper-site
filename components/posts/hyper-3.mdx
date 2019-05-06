@@ -3,9 +3,8 @@ import Caption from '../text/Caption.js'
 import Author from '../blog/Author.js'
 import Image from '../blog/Image.js'
 
-<div className="heading">
-  <h1>Hyper 3</h1>
-  <time datetime="2019-05-05">Friday, May 5th 2019</time>
+<div style={{ padding: '100px 0px 50px 0' }}>
+  <h1> Hyper 3 </h1>
 </div>
 
 <ul className="authors">
@@ -60,11 +59,9 @@ what's new.
 </div>
 <br/>
 <br/>
-<p>
-In this release, we are including several big and small improvements to Hyper 3,
+This release includes several big and small improvements to Hyper 3,
 which makes it *really* fast. For those of us who spend a significant amount of
 time on the command line, this release is a total game changer.
-</p>
 
 <br/>
 <br/>
@@ -82,48 +79,40 @@ time on the command line, this release is a total game changer.
 
 ## Getting There
 
-Looking back, for this release, an interesting realisation for our team was the
-short time from "let's make this thing faster", to "Holy shell! That's fast!"/
+Looking back on this release, a pleasant surprise for all of us has been
+how little time it took from "let's make this thing faster", to "Holy shell! That's fast!"
 
-The great thing about building on the web platform, is that tools are efficient and mature —
-in this case, the DevTools profiler was integral to our process.
-The DevTools profiler kept our workflow efficient. We continuously captured CPU
-profiles to discover bottlenecks and focused only on the issues that mattered.
-
-Below, we revisit some of the important changes that were shipped in this release:
+Below, we visit some of the important changes that were shipped as part of this release:
 
 <br/>
 <br/>
-<h3>WebGL Renderer</h3>
+### WebGL Renderer
 
-The WebGL renderer is the piece of code that draws actual pixels on the screen based on the state of the terminal.
-The original Hyper renderer used the DOM — a flexible approach (thanks to CSS), but slow.
+A renderer is the piece of code that draws actual pixels on the screen based on the state of the terminal.
+The original Hyper renderer used the DOM. While that was a flexible approach thanks to CSS, it was also slow.
 
 Hyper 2 improved upon this by switching from `hterm` to `xterm.js` and its
-canvas-based renderer, which made it much faster. We knew it was
-possible to deliver faster performance by completely rewriting the renderer using
+canvas-based renderer, which made it much faster. For Hyper 3, we knew it was
+possible to deliver even faster performance by completely rewriting the renderer with
 [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API).
-By a fortunate coincidence, as we were figuring that out for Hyper 3,
-[@Tyriar](https://github.com/tyriar) (from `xterm.js` and `VSCode` fame), [just returned from a "vacation"](https://twitter.com/Tyriar/status/1064932797016489984)
+By a fortunate coincidence, as we were figuring that out,
+[Daniel Imms](https://github.com/tyriar) (from `xterm.js` and `VSCode` fame), [just returned from a "vacation"](https://twitter.com/Tyriar/status/1064932797016489984)
 where he happened to be write a shiny new WebGL renderer. Isn't the open source
 community just amazing?
 
-We immediately merged @Tyriar's branch onto a test fork, and well,
-it ran circles around Hyper 2. Thanks [@Tyriar](https://twitter.com/Tyriar)!
+We immediately merged Daniel's branch onto a test fork, and well,
+it ran circles around Hyper 2. Thanks [Daniel](https://twitter.com/Tyriar)!
 
-Currently, there are minor limitations with this renderer (selection is always black-and-white,
-and you can't have more than 16 terminals visible simultaneously) but we think the performance
-benefits vastly outweigh them.
-
-The new renderer is still work-in-progress, so you can expect further improvements in the near future.
+We are aware of a few minor limitations with using this renderer (e.g selection is always black-and-white,
+and you can't have more than 16 terminals visible simultaneously) but the performance
+benefits outweigh them. The new renderer is still work-in-progress, so you can expect further improvements in the near future.
 
 <br/>
 <br/>
-<h3>IPC Batching</h3>
+### IPC Batching
 
-We discovered was that commands that were very verbose would cause
-Hyper to temporarily choke for a few seconds. For example,
-running `find ~` would cause Hyper to:
+We also discovered that commands that were very verbose would cause Hyper to
+temporarily choke for a few seconds. For example, running `find ~` would cause Hyper to:
 
 - Run painfully slow for ~5 seconds (at ~1 frame-per-second)
 - Suddenly get faster (at ~15 frames-per-second) and finish printing everything in ~10 seconds.
@@ -135,45 +124,45 @@ in from the main process.
 <Image  width={5469 / 3} height={1297 / 3} src="static/blog/hyper2.png" caption="Hyper 2"/>
 <Image  width={5469 / 3} height={1297 / 3} src="static/blog/hyper3.png" caption="Hyper 3"/>
 <Caption>
-  It is easy to see the difference between Hyper 2 and 3.
+  It is easy to see the difference between Hyper v2 and v3.
   <br/>
   The pink segments represent the time spent in processing IPC, instead of parsing
   or rendering.
 </Caption>
 
 Electron uses a multi-process architecture where each window runs on its own separate
-process called a "renderer" process.
-Additionally, there's one Node.js-based "main" process that communicates directly with
-the underlying OS. In order for terminal data to be rendered by Hyper, it must
+"renderer" process. Additionally, there's one Node.js-based "main" process that
+communicates directly with the underlying OS. In order for terminal data to be rendered by Hyper, it must
 be passed from the main process to the renderer process using IPC (Inter-Process
 Communication).
 
 **Node's IPC, unfortunately, comes with a non-trivial amount of overhead.**
 Messages are sent back and forth as **JSON strings**, which must be encoded on
-one side and decoded on the other. Not only that, receiving data through IPC is
-an async operation and thus queued in v8's event loop. Yielding back to the
-event loop each time after processing small messages made matters worse
-This repeated IPC caused thrashing when processing bursts of text, like running `cat` on a large file (see upper profile
-above).
+one side and decoded on the other. Also, receiving data through IPC is
+an async operation, and thus queued in V8's event loop. Yielding back to the
+event loop each time after processing small messages makes matters further worse.
+This repeated IPC caused thrashing when processing bursts of text (like running
+`cat` on a large file).
 
-To mitigate this problem, we came up with a simple solution: batch data into larger chunks
-before sending them to the renderer process. IPC batching reduces the number of
+To mitigate this problem, we came up with a simple solution: **batch data into larger chunks
+before sending them to the renderer process**. IPC batching reduces the number of
 messages for verbose commands significantly and allows the renderer to focus on,
 well, rendering.
+
 One important consideration was to **batch as much data as possible to reduce the IPC
-overhead, but not too much as to introduce perceivable latency**.
+overhead, but not so much that we introduce perceivable latency**.
 With this approach, the renderer process now spends most of its time doing
-terminal emulation and rendering instead of processing a IPC messages.
+terminal emulation and rendering instead of processing IPC messages.
 The outcome is a much smoother, and faster terminal.
 
-On a similar vein, we're also testing a new approach to [decide how much data
+On a similar vein, we are also testing a new approach to [decide how much data
 is parsed](https://github.com/zeit/xterm.js/pull/4/files) before yielding to the
 renderer. The idea is to prevent skipped frames for a more responsive terminal.
 
 <br/>
 <br/>
 
-<h3>Electron v3</h3>
+### Electron v3
 
 Hyper 3 bumps the underlying Electron from v1 to v3. We also
 tested v4, but a [regression in the Canvas
@@ -184,28 +173,27 @@ their corresponding bug fixes.
 <br/>
 <br/>
 
-<h3>Faster Startup Time</h3>
+### Faster Startup Time
+
 Hyper 3 improves startup time by creating the first _pseudoterminal (pty)_ as
 soon as possible. A pty is a facility provided by operating systems to allow programs such as
 Hyper to emulate terminals.
 
-In previous versions, Hyper would wait for the Chromium window to open, for
-the window to send an "I'm ready" message, and _only then_ create the pty.
-As it turns out, those two activities require a substantial amount of time, but
-can be done in parallel.
+In previous versions, Hyper would wait for the Chromium window to open, send an "I'm ready" message,
+and _only then_ create the pty. Those two activities take a substantial amount of time,
+but could be done in parallel.
 
-Hyper 3 starts initializing both at the same time, so by the time the window says "I'm ready", the pty
+Hyper 3 starts initializing both at the same time. By the time the window says "I'm ready", the pty
 is already warmed-up and ready to be consumed. This gives Hyper 3 a decent boost in launch time
 (about 150ms on Linux, potentially better on other platforms).
 
 <br/>
 <br/>
 
-<h3>Emoji Support</h3>
+### Emoji Support
 
-If you're on MacOS, you can now press `Command + Control + Space` to get the
-emoji popup and [jazz up those commit messages](https://gitmoji.carloscuesta.me/), (or for anything else really, we ❤
-emoji).
+If you're on MacOS, you can now press `Command + Control + Space` to get an
+emoji popup and [jazz up those commit messages](https://gitmoji.carloscuesta.me/).
 
 <Image src="static/blog/supports-emoji.png" width={1062 / 2} height={950 / 2}/>
 <br/>
@@ -234,10 +222,12 @@ We're genuinely thankful for our open source communities. We're not saying this 
 we are building on top of an incredible set of open source libraries, but also because we find
 the helpful ethos of the community very touching.
 
-As soon as the xterm.js folks heard we were working on performance, they jumped right in and helped us with
-feedback and several initiatives they had on their side. We would like to extend huge thanks to [@Tyriar](https://github.com/tyriar),
+As soon as the [`xterm.js`](https://github.com/xtermjs/xterm.js/) team heard we
+were working on performance, they jumped right in and helped us with
+feedback and several initiatives they had on their side. We would like to extend
+huge thanks to [Daniel Imms](https://github.com/tyriar),
 [@Jerch](https://github.com/jerch) and
-[@Stanzilla](https://github.com/stanzilla) for their contribution and feedback.
+[Benjamin Staneck](https://github.com/stanzilla) for their contribution and feedback.
 
 <br/>
 <br/>
