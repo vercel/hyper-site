@@ -63,16 +63,10 @@ export default class Index extends React.Component {
 
     const releases = await cachedFetch(
       `https://api.github.com/repos/zeit/hyper/releases`,
-      {
-        headers: {
-          Authorization: `token ${process.env.GITHUB_TOKEN}`
-        }
-      },
       'json'
     )
 
-    // let stable = releases.find(release => !release.prerelease)
-    let stable = true
+    let stable = releases.find(release => !release.prerelease)
 
     return { OS, stable }
   }
