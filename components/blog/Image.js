@@ -93,6 +93,7 @@ class Image extends Component {
           .container {
             display: flex;
             justify-content: center;
+            width: auto;
           }
 
           p {
