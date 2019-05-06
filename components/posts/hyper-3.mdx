@@ -86,7 +86,6 @@ how little time it took from "let's make this thing faster", to "Holy shell! Tha
 Below, we visit some of the important changes that were shipped as part of this release:
 
 <br/>
-<br/>
 
 ### WebGL Renderer
 
@@ -109,7 +108,6 @@ We are aware of a few minor limitations with using this renderer (e.g selection 
 and you can't have more than 16 terminals visible simultaneously) but the performance
 benefits outweigh them. The new renderer is still work-in-progress, so you can expect further improvements in the near future.
 
-<br/>
 <br/>
 
 ### IPC Batching
@@ -163,17 +161,15 @@ is parsed](https://github.com/zeit/xterm.js/pull/4/files) before yielding to the
 renderer. The idea is to prevent skipped frames for a more responsive terminal.
 
 <br/>
-<br/>
 
-### Electron v3
+### Electron V3
 
-Hyper 3 bumps the underlying Electron from v1 to v3. We also
-tested v4, but a [regression in the Canvas
+Hyper 3 bumps the underlying Electron from V1 to V3. We also
+tested V4, but a [regression in the Canvas
 API](https://bugs.chromium.org/p/chromium/issues/detail?id=683994#c35) forced us
-to stay on v3. The upgrade brings in newer versions of V8 and Node.js, and
+to stay on V3. The upgrade brings in newer versions of V8 and Node.js, and
 their corresponding bug fixes.
 
-<br/>
 <br/>
 
 ### Faster Startup Time
@@ -191,16 +187,35 @@ is already warmed-up and ready to be consumed. This gives Hyper 3 a decent boost
 (about 150ms on Linux, potentially better on other platforms).
 
 <br/>
-<br/>
 
 ### Emoji Support
 
 If you're on MacOS, you can now press `Command + Control + Space` to get an
 emoji popup and [jazz up those commit messages](https://gitmoji.carloscuesta.me/).
 
-<Image src="static/blog/supports-emoji.png" width={1062 / 2} height={950 / 2}/>
+<Image
+  src="static/blog/supports-emoji.png"
+  width={1062 / 2}
+  height={950 / 2}
+  caption="With the new emoji support, introducing emoji within Git commits (or elsewhere) is easier than ever."
+  />
 <br/>
-<br/>
+
+### More Themes on Hyper Store
+
+Since Hyper 2, we have added many new themes into the [Hyper Store](https://hyper.is/themes?newest).
+This means it's now even easier to customise your Hyper experience to your personality.
+
+We have a detailed contribution page that explains how you can go about
+[enlisting your extension](https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store).
+We encourage all contribution and look forward to adding more themes and plugins from the community!
+
+<Image
+  width={1800 / 2}
+  height={1360 / 2}
+  src="static/blog/themes.png"
+  caption="Hyper supports themes, allowing you to customise your development experience."
+/>
 
 ## The Road Ahead
 
@@ -216,7 +231,6 @@ We're excited to keep improving Hyper, both in terms of performance and
 capabilities — there's a lot to do. Hyper is completely open source, and we welcome your
 [involvement and contribution](https://github.com/zeit/hyper).
 
-<br/>
 <br/>
 
 ## Acknowledgments
@@ -234,10 +248,3 @@ huge thanks to [Daniel Imms](https://github.com/tyriar),
 
 <br/>
 <br/>
-
-<Image
-  width={1800 / 2}
-  height={1360 / 2}
-  src="static/blog/themes.png"
-  caption="Themes Support"
-/>
