@@ -2,7 +2,12 @@ import React from 'react'
 import { withRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import InlineCode from '../components/blog/inline-code'
 import Hyper3 from '../components/posts/hyper-3.mdx'
+
+const MDXComponents = {
+  inlineCode: InlineCode
+}
 
 class Blog extends React.Component {
   render() {
@@ -10,10 +15,27 @@ class Blog extends React.Component {
       <Layout>
         <Head>
           <title>Hyper Blog</title>
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:site" content="@zeithq" />
+          <meta property="og:title" content="Hyper™" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://hyper.is" />
+          <meta
+            property="description"
+            content="Hyper 3: A cross-platform HTML/JS/CSS terminal"
+          />
+          <meta
+            property="og:description"
+            content="Hyper 3: A cross-platform HTML/JS/CSS terminal"
+          />
+          <meta
+            property="og:image"
+            content="https://hyper.is/static/blog/hyper-3-twitter-card.png"
+          />
         </Head>
         <div className="container">
           <div className="content">
-            <Hyper3 />
+            <Hyper3 components={MDXComponents} />
           </div>
         </div>
         <style jsx>
@@ -105,7 +127,7 @@ class Blog extends React.Component {
                 padding: 0 35px;
               }
               .content :global(.authors) {
-                flex-direction: column;
+                flex-wrap: wrap;
               }
             }
           `}
