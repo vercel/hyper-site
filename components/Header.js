@@ -46,6 +46,9 @@ export default class Header extends React.Component {
               GitHub
             </a>
             <a href="/#installation">Download</a>
+            <ActiveLink href="/blog" handleClick={this.toggleMobileNav}>
+              Blog
+            </ActiveLink>
           </nav>
 
           <div className="header__right">
@@ -76,6 +79,9 @@ export default class Header extends React.Component {
           >
             Submit
           </a>
+          <ActiveLink href="/blog" handleClick={this.toggleMobileNav}>
+            Blog
+          </ActiveLink>
           <SearchInput handleSearch={this.props.handleSearch} />
         </nav>
 
