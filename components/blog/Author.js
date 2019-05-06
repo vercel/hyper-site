@@ -11,6 +11,7 @@ const Author = ({ data }) => (
       .wrapper {
         display: grid;
         grid-template-areas: 'thumbnail data';
+        grid-template-columns: 1fr 2fr;
         align-items: center;
       }
 
@@ -19,6 +20,8 @@ const Author = ({ data }) => (
         width: 28px;
         height: 28px;
         grid-area: thumbnail;
+        align-self: center;
+        margin: auto;
       }
 
       .data {
@@ -33,6 +36,12 @@ const Author = ({ data }) => (
         font-size: 14px;
         line-height: 1em;
         margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .wrapper {
+          margin-bottom: 20px;
+        }
       }
     `}</style>
   </div>

@@ -79,6 +79,9 @@ export default class Header extends React.Component {
           >
             Submit
           </a>
+          <ActiveLink href="/blog" handleClick={this.toggleMobileNav}>
+            Blog
+          </ActiveLink>
           <SearchInput handleSearch={this.props.handleSearch} />
         </nav>
 

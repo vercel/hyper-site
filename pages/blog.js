@@ -104,6 +104,9 @@ class Blog extends React.Component {
                 width: 100vw;
                 padding: 0 35px;
               }
+              .content :global(.authors) {
+                flex-direction: column;
+              }
             }
           `}
         </style>
