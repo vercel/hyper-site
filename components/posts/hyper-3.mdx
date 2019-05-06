@@ -39,8 +39,13 @@ import Image from '../blog/Image.js'
 
 <hr />
 
-**Hyper 3 is finally out!** The main theme for this release is **performance**.
-Download it below to try out Hyper 3 right away, and read on to learn more about
+**Hyper 3 is finally out!** The primary focus for this release is **performance**.
+
+The latest version includes several enhancements that make Hyper *really* fast.
+For those of us who spend a significant amount of
+time on the command line, this release is a total game changer.
+
+Download Hyper 3 below to try it out, and read on to learn more about
 what's new.
 
 <br/>
@@ -60,10 +65,6 @@ what's new.
 <br/>
 <br/>
 
-This release includes several big and small improvements to Hyper 3,
-which makes it *really* fast. For those of us who spend a significant amount of
-time on the command line, this release is a total game changer.
-
 <br/>
 <br/>
 <video
@@ -80,8 +81,8 @@ time on the command line, this release is a total game changer.
 
 ## Getting There
 
-Looking back on this release, a pleasant surprise for all of us has been
-how little time it took from "let's make this thing faster", to "Holy shell! That's fast!"
+Looking back on this release, a pleasant surprise has been
+how little time it took from *"let's make this thing faster"* to *"Holy shell! That's fast!"*
 
 Below, we visit some of the important changes that were shipped as part of this release:
 
@@ -89,19 +90,18 @@ Below, we visit some of the important changes that were shipped as part of this 
 
 ### WebGL Renderer
 
-A renderer is the piece of code that draws actual pixels on the screen based on the state of the terminal.
-The original Hyper renderer used the DOM. While that was a flexible approach thanks to CSS, it was also slow.
+The renderer is the piece of code that draws actual pixels on the screen based on the state of the terminal.
+The original Hyper renderer was based on the DOM. While that was a flexible approach thanks to CSS, it was also very slow.
 
-Hyper 2 improved upon this by switching from `hterm` to `xterm.js` and its
-canvas-based renderer, which made it much faster. For Hyper 3, we knew it was
+Hyper 2 improved upon this by switching from `hterm` to `xterm.js` and using its
+canvas-based renderer. While that made Hyper 2 faster, for Hyper 3 we knew it was
 possible to deliver even faster performance by completely rewriting the renderer with
 [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API).
-By a fortunate coincidence, as we were figuring that out,
+By fortunate coincidence, as we were still figuring things out,
 [Daniel Imms](https://github.com/tyriar) (from `xterm.js` and `VSCode` fame), [just returned from a "vacation"](https://twitter.com/Tyriar/status/1064932797016489984)
-where he happened to be write a shiny new WebGL renderer. Isn't the open source
-community just amazing?
+where he happened to be write a shiny new WebGL renderer.
 
-We immediately merged Daniel's branch onto a test fork, and well,
+Isn't the open source community just amazing? We immediately merged Daniel's branch onto a test fork, and well,
 it ran circles around Hyper 2. Thanks [Daniel](https://twitter.com/Tyriar)!
 
 We are aware of a few minor limitations with using this renderer (e.g selection is always black-and-white,
@@ -235,7 +235,7 @@ capabilities — there's a lot to do. Hyper is completely open source, and we we
 
 ## Acknowledgments
 
-We're genuinely thankful for our open source communities. We're not saying this only because
+We're genuinely thankful to the open source community. We're not saying this only because
 we are building on top of an incredible set of open source libraries, but also because we find
 the helpful ethos of the community very touching.
 
