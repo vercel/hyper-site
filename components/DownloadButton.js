@@ -59,7 +59,7 @@ export default ({ os }) => (
         )
       } else {
         return (
-          <a href="#installation" className="download-button">
+          <a href="/#installation" className="download-button">
             <DownloadIcon />
             <strong>Download Hyper</strong>
           </a>

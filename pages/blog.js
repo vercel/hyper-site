@@ -51,6 +51,11 @@ class Blog extends React.Component {
                 'Droid Sans', 'Helvetica Neue', sans-serif;
             }
 
+            .content :global(ul:not(.authors) li) {
+              font-size: 16px;
+              line-height: 2em;
+            }
+
             .content :global(.heading) {
               display: flex;
               flex-direction: column;

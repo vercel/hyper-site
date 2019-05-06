@@ -12,30 +12,27 @@ import Image from '../blog/Image.js'
   <li>
     <Author
       data={{
-        name: 'Test Ing',
-        handle: '@testing_',
-        thumbnail: 'https://zeit.co/api/www/avatar/?u=hharnisc&s=160',
-        url: 'https://twitter.com/testing_'
+        name: 'Juan Campa',
+        twitter: 'juancampa',
+        thumbnail: 'https://zeit.co/api/www/avatar/?u=juan&s=160'
       }}
     />
   </li>
   <li>
     <Author
       data={{
-        name: 'Test Ing',
-        handle: '@testing_',
-        thumbnail: 'https://zeit.co/api/www/avatar/?u=hharnisc&s=160',
-        url: 'https://twitter.com/testing_'
+        name: 'Julien Déléan',
+        twitter: 'CHaBou69',
+        thumbnail: 'https://zeit.co/api/www/avatar/?u=chabou&s=160'
       }}
     />
   </li>
   <li>
     <Author
       data={{
-        name: 'Test Ing',
-        handle: '@testing_',
-        thumbnail: 'https://zeit.co/api/www/avatar/?u=hharnisc&s=160',
-        url: 'https://twitter.com/testing_'
+        name: 'Daniel Imms',
+        twitter: 'tyriar',
+        thumbnail: 'https://zeit.co/api/www/avatar/?u=tyriar&s=160'
       }}
     />
   </li>
@@ -73,18 +70,13 @@ time on the command line, this release is a total game changer.
 <br/>
 <video
     id="vid"
-    src="static/v2-vs-v3.mp4"
+    src="static/blog/comparison.mp4"
     className="oversize"
-    width="100%"
     autoPlay
     loop
     muted
     />
  <br/>
- <div style={{ display: 'flex', justifyContent: 'space-around', margin: '15px 0px 0px 0px' }}>
-    <div>Hyper 2</div>
-    <div>Hyper 3</div>
-</div>
 <br/>
 <br/>
 
@@ -93,7 +85,7 @@ time on the command line, this release is a total game changer.
 Looking back, for this release, an interesting realisation for our team was the
 short time from "let's make this thing faster", to "Holy shell! That's fast!"/
 
-The great thing about building on the web platform, is that tools are efficient and mature ?
+The great thing about building on the web platform, is that tools are efficient and mature —
 in this case, the DevTools profiler was integral to our process.
 The DevTools profiler kept our workflow efficient. We continuously captured CPU
 profiles to discover bottlenecks and focused only on the issues that mattered.
@@ -105,7 +97,7 @@ Below, we revisit some of the important changes that were shipped in this releas
 <h3>WebGL Renderer</h3>
 
 The WebGL renderer is the piece of code that draws actual pixels on the screen based on the state of the terminal.
-The original Hyper renderer used the DOM ? a flexible approach (thanks to CSS), but slow.
+The original Hyper renderer used the DOM — a flexible approach (thanks to CSS), but slow.
 
 Hyper 2 improved upon this by switching from `hterm` to `xterm.js` and its
 canvas-based renderer, which made it much faster. We knew it was
@@ -140,8 +132,8 @@ Digging within the CPU profile, we noticed that the "renderer" process was
 spending most of its time handling an overwhelming amount of messages coming
 in from the main process.
 
-<Image  width={5469 / 3} height={1297 / 3} src="../../static/blog/hyper2.png" caption="Hyper 2"/>
-<Image  width={5469 / 3} height={1297 / 3} src="../../static/blog/hyper3.png" caption="Hyper 3"/>
+<Image  width={5469 / 3} height={1297 / 3} src="static/blog/hyper2.png" caption="Hyper 2"/>
+<Image  width={5469 / 3} height={1297 / 3} src="static/blog/hyper3.png" caption="Hyper 3"/>
 <Caption>
   It is easy to see the difference between Hyper 2 and 3.
   <br/>
@@ -211,10 +203,10 @@ is already warmed-up and ready to be consumed. This gives Hyper 3 a decent boost
 <h3>Emoji Support</h3>
 
 If you're on MacOS, you can now press `Command + Control + Space` to get the
-emoji popup and [jazz up those commit messages](https://gitmoji.carloscuesta.me/), (or for anything else really, we ?
+emoji popup and [jazz up those commit messages](https://gitmoji.carloscuesta.me/), (or for anything else really, we ❤
 emoji).
 
-<Image src="../../static/emoji.png" width={1208 / 2.5} height={740 / 2.5}/>
+<Image src="static/blog/supports-emoji.png" width={1062 / 2} height={950 / 2}/>
 <br/>
 <br/>
 
@@ -229,7 +221,7 @@ extensibility. This opens new possibilities that can make the CLI experience
 [more productive](https://github.com/chabou/hyper-pane) (and [fun](https://github.com/Aaronius/hyper-cat))!
 
 We're excited to keep improving Hyper, both in terms of performance and
-capabilities ? there's a lot to do. Hyper is completely open source, and we welcome your
+capabilities — there's a lot to do. Hyper is completely open source, and we welcome your
 [involvement and contribution](https://github.com/zeit/hyper).
 
 <br/>

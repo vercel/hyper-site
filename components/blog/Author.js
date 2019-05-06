@@ -5,7 +5,7 @@ const Author = ({ data }) => (
     <img src={data.thumbnail} alt={`${data.name} profile picture`} />
     <div className="data">
       <span>{data.name}</span>
-      <a href={data.url}>{data.handle}</a>
+      <a href={`https://twitter.com/${data.twitter}`}>@{data.twitter}</a>
     </div>
     <style jsx>{`
       .wrapper {
