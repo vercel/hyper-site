@@ -23,19 +23,35 @@ class Blog extends React.Component {
               justify-content: center;
               width: 100%;
               position: relative;
-              max-width: 650px;
             }
             .content {
-              max-width: 650px;
+              max-width: 750px;
             }
 
-            .content :global(p) {
-              font-size: 14px;
-              line-height: 24px;
+            .content :global(h1) {
+              font-weight: 600;
+              font-size: 36px;
+              max-width: 900px;
+              text-align: center;
+              padding-left: 20px;
+              padding-right: 20px;
+              line-height: 46px;
+              letter-spacing: -0.015em;
+              margin: 0px auto;
+            }
+
+            .content :global(p:not(.caption)) {
+              font-size: 16px;
+              line-height: 32px;
               margin: 0 0 20px;
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
                 'Droid Sans', 'Helvetica Neue', sans-serif;
+            }
+
+            .content :global(.oversize) {
+              width: 150%;
+              margin-left: -28%;
             }
           `}
         </style>

@@ -71,7 +71,8 @@ export default class Index extends React.Component {
       'json'
     )
 
-    let stable = releases.find(release => !release.prerelease)
+    // let stable = releases.find(release => !release.prerelease)
+    let stable = true
 
     return { OS, stable }
   }

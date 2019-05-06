@@ -93,6 +93,7 @@ export default ({ os }) => (
 
       .download-button strong {
         color: #000000;
+        margin-bottom: 3px;
       }
     `}</style>
   </React.Fragment>
