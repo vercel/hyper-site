@@ -583,5 +583,22 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-plastic",
+    "description": "A Hyper theme based on Will Stone's Plastic theme for VS Code",
+    "type": "theme",
+    "colors": [
+      "#21252B",
+      "#E06C75",
+      "#98C379",
+      "#D19A66",
+      "#61AFEF",
+      "#B57EDC",
+      "#56B6C2",
+      "#A9B2C3"
+    ],
+    "preview": "https://raw.githubusercontent.com/lowmess/hyper-plastic/master/preview.png",
+    "dateAdded": "1557253833179"
   }
 ]
