@@ -1,7 +1,7 @@
 {
   "version": 2,
   "alias": ["hyper.is"],
-  "builds": [{"src": "package.json", "use": "@now/next"}],
+  "builds": [{"src": "package.json", "use": "@now/next@canary"}],
   "routes": [
     {"src": "/(.*)/$", "status": 301, "headers": { "Location": "/$1"} },
     {"src": "/plugins/(?<id>[^/]+)$", "dest": "/plugin?id=$id"},
