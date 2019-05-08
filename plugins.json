@@ -583,5 +583,22 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-seoul256",
+    "description": "A port of the seoul256.vim theme for Hyper.",
+    "type": "theme",
+    "colors": [
+       "#4e4e4e",
+       "#d68787",
+       "#d8af5f",
+       "#5f865f",
+       "#85add4",
+       "#d7afaf",
+       "#87afaf",
+       "#d0d0d0"
+    ],
+    "preview": "https://raw.githubusercontent.com/waigx/hyper-seoul256/master/screenshot.png",
+    "dateAdded": "1557291980906"
   }
 ]
