@@ -61,15 +61,18 @@ export default class Index extends React.Component {
       OS = 'linux'
     }
 
-    const releases = await cachedFetch(
-      `https://api.github.com/repos/zeit/hyper/releases`,
-      {
-        headers: {
-          Authorization: `token ${process.env.GITHUB_TOKEN}`
-        }
-      },
-      'json'
-    )
+    // const releases = await cachedFetch(
+    //   `https://api.github.com/repos/zeit/hyper/releases`,
+    //   {
+    //     headers: {
+    //       Authorization: `token ${process.env.GITHUB_TOKEN}`
+    //     }
+    //   },
+    //   'json'
+    // )
+    if (res) {
+      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
+    }
 
     // let stable = releases.find(release => !release.prerelease)
     let stable = true
@@ -408,30 +411,32 @@ export default class Index extends React.Component {
             </h3>
             <div className="table">
               <table id="config-paths-table" className="offset-header">
-                <tr>
-                  <td>
-                    <strong>macOS</strong>
-                  </td>
-                  <td>
-                    <Path os="mac" path=".hyper.js" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Windows</strong>
-                  </td>
-                  <td>
-                    <Path os="windows" path=".hyper.js" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Linux</strong>
-                  </td>
-                  <td>
-                    <Path os="linux" path=".hyper.js" />
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>macOS</strong>
+                    </td>
+                    <td>
+                      <Path os="mac" path=".hyper.js" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Windows</strong>
+                    </td>
+                    <td>
+                      <Path os="windows" path=".hyper.js" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Linux</strong>
+                    </td>
+                    <td>
+                      <Path os="linux" path=".hyper.js" />
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <p>
@@ -1337,30 +1342,32 @@ export default class Index extends React.Component {
             </h4>
             <div className="table">
               <table id="plugins-paths-table" className="offset-header">
-                <tr>
-                  <td>
-                    <strong>macOS</strong>
-                  </td>
-                  <td>
-                    <Path os="mac" path=".hyper_plugins" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Windows</strong>
-                  </td>
-                  <td>
-                    <Path os="windows" path=".hyper_plugins" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Linux</strong>
-                  </td>
-                  <td>
-                    <Path os="linux" path=".hyper_plugins" />
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>macOS</strong>
+                    </td>
+                    <td>
+                      <Path os="mac" path=".hyper_plugins" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Windows</strong>
+                    </td>
+                    <td>
+                      <Path os="windows" path=".hyper_plugins" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Linux</strong>
+                    </td>
+                    <td>
+                      <Path os="linux" path=".hyper_plugins" />
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <p>
