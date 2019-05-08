@@ -71,7 +71,7 @@ export default class Index extends React.Component {
     //   'json'
     // )
     if (res) {
-      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
+      res.setHeader('Cache-Control', 's-maxage=7200, stale-while-revalidate')
     }
 
     // let stable = releases.find(release => !release.prerelease)

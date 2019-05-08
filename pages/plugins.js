@@ -21,7 +21,7 @@ class Plugins extends React.Component {
   static async getInitialProps({ res }) {
     const plugins = await getPlugins({ type: 'plugin' })
     if (res) {
-      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
+      res.setHeader('Cache-Control', 's-maxage=7200, stale-while-revalidate')
     }
     return { plugins }
   }

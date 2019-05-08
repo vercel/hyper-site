@@ -3,11 +3,6 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 
 export default class extends React.Component {
-  static async getInitialProps({ res }) {
-    if (res) {
-      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
-    }
-  }
   render() {
     return (
       <div>
