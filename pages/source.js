@@ -27,7 +27,7 @@ export default class extends React.Component {
     }
 
     if (res) {
-      res.setHeader('Cache-Control', 'Cache-Control: s-maxage=7200')
+      res.setHeader('Cache-Control', 's-maxage=7200, stale-while-revalidate')
     }
 
     return {
