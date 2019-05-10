@@ -19,7 +19,7 @@ class Blog extends React.Component {
           <meta property="twitter:site" content="@zeithq" />
           <meta property="og:title" content="Hyper™" />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://hyper.is" />
+          <meta property="og:url" content="https://hyper.is/blog" />
           <meta
             property="description"
             content="Hyper 3: A cross-platform HTML/JS/CSS terminal"
