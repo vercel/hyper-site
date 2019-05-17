@@ -583,5 +583,18 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-ber",
+    "description": "80's Synthwave style theme",
+    "type": "theme",
+    "colors": [
+      "#FC28A8",
+      "#262335",
+      "#f97e72",
+      "#fff951"
+    ],
+    "preview": "https://raw.githubusercontent.com/sitefinitysteve/hyperterm-ber/master/notabs.PNG",
+    "dateAdded": "1557257228401"
   }
 ]
