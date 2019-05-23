@@ -583,5 +583,22 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-pencil",
+    "description": "Pencil theme for hyper terminal.",
+    "type": "theme",
+    "colors": [
+      "#2c2c2c",
+      "#d02783",
+      "#00b38a",
+      "#b6a917",
+      "#009fcf",
+      "#65508b",
+      "#1eb3c6",
+      "#e0e0e0"
+    ],
+    "preview": "https://raw.githubusercontent.com/wagnermoschini/hyper-pencil/master/screenshot.png",
+    "dateAdded": "1554402958625"
   }
 ]
