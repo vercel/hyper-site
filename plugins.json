@@ -583,5 +583,20 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-sunrise",
+    "description": "A simple sunrise / dawn theme for Hyper terminal",
+    "type": "theme",
+    "preview": "https://github.com/karansapolia/hyper-sunrise/blob/master/hyper-sunrise-image.png",
+    "colors": [
+      "#FAB795",
+      "#26BBD9",
+      "#EE64AC",
+      "#29D398",
+      "#E95678",
+      "#59E1E3",
+    ],
+    "dateAdded": "1559336801081"
   }
 ]
