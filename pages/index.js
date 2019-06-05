@@ -140,6 +140,8 @@ export default class Index extends React.Component {
               </svg>
             </div>
 
+            <p>Hyper is an Electron-based terminal built built on HTML/CSS/JS.</p>
+      
             <div id="video">
               <video
                 id="vid"
