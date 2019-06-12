@@ -47,13 +47,13 @@ export default class extends React.Component {
                 href={`/plugin?id=${plugin.name}`}
                 as={`/plugins/${plugin.name}`}
               >
-                <div className="plugin-contents">
+                <a className="plugin-contents">
                   <Plugin
                     {...plugin}
                     query={this.props.query}
                     featured={true}
                   />
-                </div>
+                </a>
               </Link>
             </div>
           ))}
@@ -79,6 +79,8 @@ export default class extends React.Component {
             }
 
             .plugin-contents {
+              display: block;
+              color: inherit;
               cursor: pointer;
               border: 1px solid #333;
               transition: border 0.2s ease;
@@ -114,7 +116,7 @@ export default class extends React.Component {
             href={`/plugin?id=${plugin.name}`}
             as={`/plugins/${plugin.name}`}
           >
-            <div
+            <a
               className="plugin"
               onMouseEnter={() => {
                 Router.prefetch(
@@ -126,7 +128,7 @@ export default class extends React.Component {
               <div className="plugin-contents">
                 <Plugin {...plugin} query={this.props.query} featured={false} />
               </div>
-            </div>
+            </a>
           </Link>
         ))}
 
@@ -136,6 +138,8 @@ export default class extends React.Component {
           }
 
           .plugin {
+            display: block;
+            color: inherit;
             padding-bottom: 16px;
             cursor: pointer;
             transition: background 0.2s ease;
