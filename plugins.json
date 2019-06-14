@@ -583,5 +583,12 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-shorcut",
+    "description": "Basic shorcut in your Hyper terminal",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/MickaelBlet/hyper-shorcut/master/hyper-shorcut.gif",
+    "dateAdded": "1560475755195"
   }
 ]
