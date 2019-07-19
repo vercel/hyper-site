@@ -583,5 +583,22 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-horizon-theme",
+    "description": "A beautifully warm dark theme for Hyper, based on Horizon Theme VSCode by Jolaleye",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/thedoomshine/hyper-horizon-theme/master/hyper-horizon-theme.png",
+    "colors": [
+      "#1C1E26",
+      "#D5D8DA",
+      "#26BBD9",
+      "#59E1E3",
+      "#29D398",
+      "#EE64AC ",
+      "#E95678",
+      "#FAB795"
+    ],
+    "dateAdded": "1554500725324"
   }
 ]
