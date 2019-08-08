@@ -584,4 +584,15 @@
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
   }
+	{
+    "name": "hyper-tokyo-ghoul",
+    "description": "Various characters from Tokyo Ghouls",
+    "type": "theme",
+    "preview": "https://github.com/AnupamYedida/hyper-tokyo-ghoul/blob/master/Images/Tokyo-Ghoul.png",
+    "colors": [
+      "#eff0eb",
+      "#282a36"
+    ],
+    "dateAdded": "1565284969879"
+}
 ]
