@@ -583,5 +583,17 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyperterm-ultrasweet",
+    "description": "A dark theme with nebula hues for Hyper",
+    "type": "theme",
+    "colors": [
+      "#161219",
+      "#f984ef",
+      "#f288a9"
+    ],
+    "preview": "https://raw.githubusercontent.com/amandaflagg/hyperterm-ultrasweet/master/hyperterm-ultrasweet.png",
+    "dateAdded": "1566514263975"
   }
 ]
