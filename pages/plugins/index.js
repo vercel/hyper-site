@@ -1,11 +1,11 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import Head from 'next/head'
-import Layout from '../components/Layout'
-import PluginsList from '../components/PluginsList'
-import Filter from '../components/Filter'
-import SubmitButton from '../components/SubmitButton'
-import getPlugins from '../lib/get-plugins'
+import Layout from '../../components/Layout'
+import PluginsList from '../../components/PluginsList'
+import Filter from '../../components/Filter'
+import SubmitButton from '../../components/SubmitButton'
+import getPlugins from '../../lib/get-plugins'
 
 class Plugins extends React.Component {
   constructor() {
@@ -14,16 +14,8 @@ class Plugins extends React.Component {
     this.state = {
       filter: 'featured'
     }
-
+    this.plugins = getPlugins({ type: 'plugin' })
     this.handleFilterChange = this.handleFilterChange.bind(this)
-  }
-
-  static async getInitialProps({ res }) {
-    const plugins = await getPlugins({ type: 'plugin' })
-    if (res) {
-      res.setHeader('Cache-Control', 's-maxage=7200, stale-while-revalidate')
-    }
-    return { plugins }
   }
 
   componentWillMount() {
@@ -62,7 +54,8 @@ class Plugins extends React.Component {
   }
 
   render() {
-    const plugins = this.props.plugins
+    const { plugins } = this
+
     return (
       <Layout>
         <Head>
