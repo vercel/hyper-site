@@ -47,15 +47,7 @@ export default class PluginInfo extends React.Component {
       this.props.plugin.name || this.props.plugin.meta.name
     )
 
-    if (plugin !== undefined) {
-      await this.setState({
-        plugin
-      })
-    }
-
-    this.setState({
-      isPluginLoading: false
-    })
+    this.setState({ plugin, isPluginLoading: false })
   }
 
   openInstallModal() {

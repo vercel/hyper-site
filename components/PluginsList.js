@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
 import Highlighter from 'react-highlighter'
 import Plugin from './Plugin'
 
@@ -27,11 +26,6 @@ export default class PluginsList extends React.Component {
     }
 
     return sortedPlugins
-  }
-
-  componentDidMount() {
-    // Optimization
-    Router.prefetch('/plugin')
   }
 
   render() {
