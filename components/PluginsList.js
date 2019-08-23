@@ -43,10 +43,7 @@ export default class PluginsList extends React.Component {
         <div className="plugins-list container">
           {plugins.map((plugin, i) => (
             <div key={plugin.name} className="plugin">
-              <Link
-                href={`/plugin?id=${plugin.name}`}
-                as={`/plugins/${plugin.name}`}
-              >
+              <Link href="/plugins/[id]" as={`/plugins/${plugin.name}`}>
                 <div className="plugin-contents">
                   <Plugin
                     {...plugin}
@@ -111,18 +108,10 @@ export default class PluginsList extends React.Component {
         {plugins.map((plugin, i) => (
           <Link
             key={plugin.name}
-            href={`/plugin?id=${plugin.name}`}
+            href="/plugins/[id]"
             as={`/plugins/${plugin.name}`}
           >
-            <div
-              className="plugin"
-              onMouseEnter={() => {
-                Router.prefetch(
-                  `/plugin?id=${plugin.name}`,
-                  `/plugins/${plugin.name}`
-                )
-              }}
-            >
+            <div className="plugin">
               <div className="plugin-contents">
                 <Plugin {...plugin} query={this.props.query} featured={false} />
               </div>

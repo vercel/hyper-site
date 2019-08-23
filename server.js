@@ -4,11 +4,6 @@ const router = require('path-match')()
 
 const routes = [
   {
-    page: '/plugin',
-    match: router('/plugins/:id'),
-    query: params => ({ id: params.id })
-  },
-  {
     page: '/source',
     match: router('/plugins/:id/source'),
     query: params => ({ id: params.id })

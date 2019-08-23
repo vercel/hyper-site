@@ -225,10 +225,7 @@ export default class extends React.Component {
           )}
         </Head>
         <header className="container">
-          <Link
-            href={`/plugin?id=${this.props.id}`}
-            as={`/plugins/${this.props.id}`}
-          >
+          <Link href="/plugins/[id]" as={`/plugins/${this.props.id}`}>
             <a className="plugin__back-link">
               <BackArrow width="7" height="14" />
             </a>
