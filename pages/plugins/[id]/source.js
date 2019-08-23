@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import cachedFetch from '../../../lib/cached-json-fetch'
-import getPackageInfo from '../../../lib/get-plugin'
+import plugins from '../../../plugins.json'
 import Layout from '../../../components/Layout'
 import PluginInfo from '../../../components/PluginInfo'
 import FileIcon from '../../../components/icons/file-icon.svg'
@@ -15,7 +15,7 @@ class Source extends React.Component {
     let plugin, pluginContents
 
     try {
-      plugin = await getPackageInfo(id, { meta: true })
+      plugin = plugins.find(p => p.name === id)
       pluginContents = await cachedFetch(
         `https://unpkg.com/${id}@latest/?meta`,
         {},
@@ -217,10 +217,10 @@ class Source extends React.Component {
           {this.state.activeFile ? (
             <title>
               Hyper Store - "{this.formatFileName(this.state.activeFile)}" of{' '}
-              {this.props.plugin.meta.name}
+              {this.props.plugin.name}
             </title>
           ) : (
-            <title>Hyper Store - Source of {this.props.plugin.meta.name}</title>
+            <title>Hyper Store - Source of {this.props.plugin.name}</title>
           )}
         </Head>
         <header className="container">
@@ -229,7 +229,7 @@ class Source extends React.Component {
               <BackArrow width="7" height="14" />
             </a>
           </Link>
-          <h1>{this.props.plugin.meta.name}</h1>
+          <h1>{this.props.plugin.name}</h1>
         </header>
         <div className="source container">
           {this.renderFileTree(this.props.pluginContents.files)}
