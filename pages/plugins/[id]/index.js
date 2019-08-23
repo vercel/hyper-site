@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Layout from '../../components/Layout'
-import PluginInfo from '../../components/PluginInfo'
-import plugins from '../../plugins.json'
+import Layout from '../../../components/Layout'
+import PluginInfo from '../../../components/PluginInfo'
+import plugins from '../../../plugins.json'
 
 const Plugin = ({ plugin }) => {
   const router = useRouter()
