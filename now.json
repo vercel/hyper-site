@@ -1,11 +1,10 @@
 {
   "version": 2,
   "alias": ["hyper.is"],
-  "builds": [{ "src": "package.json", "use": "@now/next@canary" }],
-  "routes": [
-    { "src": "/(.*)/$", "status": 301, "headers": { "Location": "/$1" } }
-  ],
   "env": {
     "GITHUB_TOKEN": "@hyper-github-auth-token"
-  }
+  },
+  "routes": [
+    { "src": "/(.*)/$", "status": 301, "headers": { "Location": "/$1" } }
+  ]
 }
