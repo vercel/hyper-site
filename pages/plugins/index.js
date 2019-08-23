@@ -21,7 +21,7 @@ const Plugins = () => {
   }, [])
 
   React.useEffect(() => {
-    setFilter(router.asPath.split('?')[1] || 'featured')
+    setFilter(router.asPath.split('?')[1].replace('=', '') || 'featured')
   }, [router.asPath])
 
   return (

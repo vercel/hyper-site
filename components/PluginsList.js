@@ -4,7 +4,7 @@ import Router from 'next/router'
 import Highlighter from 'react-highlighter'
 import Plugin from './Plugin'
 
-export default class extends React.Component {
+export default class PluginsList extends React.Component {
   constructor(props) {
     super()
 
