@@ -99,7 +99,7 @@ export default class PluginInfo extends React.Component {
             )}
             &nbsp;
             <Link
-              href={`/source?id=${plugin.name}`}
+              href="/plugins/[id]/source"
               as={`/plugins/${plugin.name}/source`}
             >
               <a className="plugin-info__link">View source code</a>
@@ -170,7 +170,7 @@ export default class PluginInfo extends React.Component {
           )}
 
           <Link
-            href={`/source?id=${this.state.plugin.collected.metadata.name}`}
+            href="/plugins/[id]/source"
             as={`/plugins/${this.state.plugin.collected.metadata.name}/source`}
           >
             <a className="plugin-info__link">View source code</a>

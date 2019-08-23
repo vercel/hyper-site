@@ -2,13 +2,7 @@ const { parse } = require('url')
 const next = require('next')
 const router = require('path-match')()
 
-const routes = [
-  {
-    page: '/source',
-    match: router('/plugins/:id/source'),
-    query: params => ({ id: params.id })
-  }
-]
+const routes = []
 
 const dev = process.env.NODE_ENV !== 'production'
 
