@@ -1,29 +1,14 @@
 import React from 'react'
-import { withRouter, useRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import PluginsList from '../components/PluginsList'
 import Filter from '../components/Filter'
 import SubmitButton from '../components/SubmitButton'
-import getPlugins from '../lib/get-plugins'
+import { usePlugins, useFilter } from '../lib/plugins'
 
 const Themes = () => {
-  const router = useRouter()
-  const [plugins, setPlugins] = React.useState([])
-  const [filter, setFilter] = React.useState()
-  const updateFilter = newFilter => {
-    const href = `/themes?${newFilter}`
-    router.push(href, href, { shallow: true })
-  }
-
-  React.useEffect(() => {
-    setPlugins(getPlugins({ type: 'theme' }))
-  }, [])
-
-  React.useEffect(() => {
-    const path = router.asPath.split('?')[1]
-    setFilter(path && path.replace('=', ''))
-  }, [router.asPath])
+  const plugins = usePlugins({ type: 'theme' })
+  const [filter, setFilter] = useFilter('featured')
 
   return (
     <Layout>
@@ -31,7 +16,7 @@ const Themes = () => {
         <title>Hyper Store - Plugins</title>
       </Head>
       <div className="plugins-heading container">
-        <Filter handleFilterChange={updateFilter} currentFilter={filter} />
+        <Filter handleFilterChange={setFilter} currentFilter={filter} />
         <SubmitButton href="https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store">
           Submit a Plugin
         </SubmitButton>
