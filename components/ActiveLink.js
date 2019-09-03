@@ -2,7 +2,7 @@ import { withRouter } from 'next/router'
 import Link from 'next/link'
 
 const ActiveLink = ({ children, router, href }) => (
-  <Link href={href} prefetch>
+  <Link href={href}>
     <a>
       {children}
 

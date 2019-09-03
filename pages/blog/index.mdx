@@ -1,47 +1,34 @@
-import DownloadButton from '../DownloadButton.js'
-import Caption from '../text/Caption.js'
-import Author from '../blog/Author.js'
-import Image from '../blog/Image.js'
+import withPost from '../../components/blog/with-post'
+import Image from '../../components/blog/Image.js'
+import DownloadButton from '../../components/DownloadButton.js'
+import Caption from '../../components/text/Caption.js'
 
-<div style={{ padding: '100px 0px 50px 0' }}>
-  <h1> Hyper 3 </h1>
-</div>
+export const meta = {
+  title: 'Hyper 3',
+  authors: [
+    {
+      name: 'Juan Campa',
+      twitter: 'juancampa',
+      thumbnail: 'https://zeit.co/api/www/avatar/?u=juan&s=160'
+    },
+    {
+      name: 'Julien Déléan',
+      twitter: 'CHaBou69',
+      thumbnail: 'https://zeit.co/api/www/avatar/?u=chabou&s=160'
+    },
+    {
+      name: 'Daniel Imms',
+      twitter: 'tyriar',
+      thumbnail: 'https://zeit.co/api/www/avatar/?u=tyriar&s=160'
+    }
+  ]
+}
 
-<ul className="authors">
-  <li>
-    <Author
-      data={{
-        name: 'Juan Campa',
-        twitter: 'juancampa',
-        thumbnail: 'https://zeit.co/api/www/avatar/?u=juan&s=160'
-      }}
-    />
-  </li>
-  <li>
-    <Author
-      data={{
-        name: 'Julien Déléan',
-        twitter: 'CHaBou69',
-        thumbnail: 'https://zeit.co/api/www/avatar/?u=chabou&s=160'
-      }}
-    />
-  </li>
-  <li>
-    <Author
-      data={{
-        name: 'Daniel Imms',
-        twitter: 'tyriar',
-        thumbnail: 'https://zeit.co/api/www/avatar/?u=tyriar&s=160'
-      }}
-    />
-  </li>
-</ul>
-
-<hr />
+export default withPost(meta)
 
 **Hyper 3 is finally out!** The primary focus for this release is **performance**.
 
-The latest version includes several enhancements that make Hyper *really* fast.
+The latest version includes several enhancements that make Hyper _really_ fast.
 For those of us who spend a significant amount of
 time on the command line, this release is a total game changer.
 
@@ -82,11 +69,11 @@ what's new.
 ## Getting There
 
 Looking back on this release, a pleasant surprise has been
-how little time it took from *"let's make this thing faster"* to *"Holy shell! That's fast!"*
+how little time it took from _"let's make this thing faster"_ to _"Holy shell! That's fast!"_
 
 Below, we visit some of the important changes that were shipped as part of this release:
 
-<br/>
+<br />
 
 ### WebGL Renderer
 
@@ -108,7 +95,7 @@ We are aware of a few minor limitations with using this renderer (e.g selection 
 and you can't have more than 16 terminals visible simultaneously) but the performance
 benefits outweigh them. The new renderer is still work-in-progress, so you can expect further improvements in the near future.
 
-<br/>
+<br />
 
 ### IPC Batching
 
@@ -122,8 +109,8 @@ Digging within the CPU profile, we noticed that the "renderer" process was
 spending most of its time handling an overwhelming amount of messages coming
 in from the main process.
 
-<Image  width={5469 / 3} height={1297 / 3} src="static/blog/hyper2.png" caption="Hyper 2"/>
-<Image  width={5469 / 3} height={1297 / 3} src="static/blog/hyper3.png" caption="Hyper 3"/>
+<Image width={5469 / 3} height={1297 / 3} src="static/blog/hyper2.png" caption="Hyper 2"/>
+<Image width={5469 / 3} height={1297 / 3} src="static/blog/hyper3.png" caption="Hyper 3"/>
 <Caption>
   It is easy to see the difference between Hyper v2 and v3.
   <br/>
@@ -160,7 +147,7 @@ On a similar vein, we are also testing a new approach to [decide how much data
 is parsed](https://github.com/zeit/xterm.js/pull/4/files) before yielding to the
 renderer. The idea is to prevent skipped frames for a more responsive terminal.
 
-<br/>
+<br />
 
 ### Electron V3
 
@@ -170,7 +157,7 @@ API](https://bugs.chromium.org/p/chromium/issues/detail?id=683994#c35) forced us
 to stay on V3. The upgrade brings in newer versions of V8 and Node.js, and
 their corresponding bug fixes.
 
-<br/>
+<br />
 
 ### Faster Startup Time
 
@@ -186,7 +173,7 @@ Hyper 3 starts initializing both at the same time. By the time the window says "
 is already warmed-up and ready to be consumed. This gives Hyper 3 a decent boost in launch time
 (about 150ms on Linux, potentially better on other platforms).
 
-<br/>
+<br />
 
 ### Emoji Support
 
@@ -231,7 +218,7 @@ We're excited to keep improving Hyper, both in terms of performance and
 capabilities — there's a lot to do. Hyper is completely open source, and we welcome your
 [involvement and contribution](https://github.com/zeit/hyper).
 
-<br/>
+<br />
 
 ## Acknowledgments
 
