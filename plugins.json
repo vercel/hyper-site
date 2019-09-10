@@ -583,5 +583,15 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-iacc",
+    "description": "🔴⚪️🔴 IACC theme for Hyper",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/tinchodipalma/hyper-iacc/master/media/hyper-iacc-screenshot.png",
+    "colors": [
+      "#DC0E1C"
+    ],
+    "dateAdded": "1558978577779"
   }
 ]
