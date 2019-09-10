@@ -583,5 +583,12 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-slack",
+    "description": "Extension for Hyper that let's you read Slack channel history and send messages to public channels through a closable chat window.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/MilkaChucky/hyper-slack/master/screenshots/hyper-slack_chat.png",
+    "dateAdded": "1557500291178"
   }
 ]
