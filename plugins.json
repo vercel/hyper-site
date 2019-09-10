@@ -583,5 +583,32 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
-  }
+  },
+  {
+    "name": "hyper-monokai-deluxe",
+    "description": "Monokai colors with the identity border of hyper.js itself. For all who like good colors and a beautiful terminal.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/hummal/hyper-monokai-deluxe/master/example.png",
+    "colors": [
+      "#282828",
+      "#F92672",
+      "#A6E22E",
+      "#FD971F",
+      "#AE81FF",
+      "#66D9EF",
+      "#38CCD1",
+      "#ffffff",
+      "#49483E",
+      "#F92672",      
+      "#A6E22E",
+      "#FD971F",
+      "#AE81FF",
+      "#66D9EF",
+      "#38CCD1",
+      "#ffffff",
+      "#ffffff",
+      "#F8F8F0"
+    ],
+    "dateAdded": "1558704315514"
+}
 ]
