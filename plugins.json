@@ -583,5 +583,22 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-brackets-dark",
+    "description": "A dark theme based on the Brackets dark theme",
+    "type": "theme",
+    "preview": "https://repository-images.githubusercontent.com/200406975/7594e380-b60e-11e9-8c1c-44a0268e2abc",
+    "colors": [
+      "#1d1f21",
+      "#dddddd",
+      "#d89333",
+      "#85a300",
+      "#d85896",
+      "#6c9ef8",
+      "#6c71c4",
+      "#b77fdb"
+    ],
+    "dateAdded": "1565743432317"
   }
 ]
