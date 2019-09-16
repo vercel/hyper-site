@@ -583,6 +583,18 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-hypest",
+    "description": "A beautiful and minimal macOS theme with vibrancy",
+    "type": "theme",
+    "preview": "https://github.com/dizzyup/hyper-hypest/raw/master/assets/preview.jpg?raw=true",
+    "colors": [
+      "#ffffff",
+      "#222222",
+      "#0095FF"
+    ],
+    "dateAdded": "1558342235115"
   }
 	{
     "name": "hyper-tokyo-ghoul",

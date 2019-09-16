@@ -1,21 +1,21 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Router from 'next/router'
-import cachedFetch from '../lib/cached-json-fetch'
-import getPackageInfo from '../lib/get-plugin'
-import Layout from '../components/Layout'
-import PluginInfo from '../components/PluginInfo'
-import FileIcon from '../components/icons/file-icon.svg'
-import DirectoryIcon from '../components/icons/directory-icon.svg'
-import BackArrow from '../components/icons/back-arrow.svg'
+import { withRouter } from 'next/router'
+import cachedFetch from '../../../lib/cached-json-fetch'
+import plugins from '../../../plugins.json'
+import Layout from '../../../components/Layout'
+import PluginInfo from '../../../components/PluginInfo'
+import FileIcon from '../../../components/icons/file-icon.svg'
+import DirectoryIcon from '../../../components/icons/directory-icon.svg'
+import BackArrow from '../../../components/icons/back-arrow.svg'
 
-export default class extends React.Component {
+class Source extends React.Component {
   static async getInitialProps({ query: { id }, res }) {
     let plugin, pluginContents
 
     try {
-      plugin = await getPackageInfo(id, { meta: true })
+      plugin = plugins.find(p => p.name === id)
       pluginContents = await cachedFetch(
         `https://unpkg.com/${id}@latest/?meta`,
         {},
@@ -37,7 +37,9 @@ export default class extends React.Component {
     }
   }
 
-  componentWillMount() {
+  constructor(props) {
+    super(props)
+
     let initialFile
     const requestedFile = this.readFileFromURL()
 
@@ -49,11 +51,11 @@ export default class extends React.Component {
       ).path
     }
 
-    // Get Initial File
-    this.updateActiveFile(initialFile)
+    this.state = { activeFile: initialFile }
+  }
 
-    // Get Initial File Contents
-    this.fetchFileContents(initialFile)
+  componentDidMount() {
+    this.fetchFileContents(this.state.activeFile)
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -84,18 +86,15 @@ export default class extends React.Component {
   }
 
   readFileFromURL() {
-    return (
-      Object.keys(this.props.url.query)[1] ||
-      this.props.url.asPath.split('?')[1]
-    )
+    const path = this.props.router.asPath.split('?')[1]
+    return path && path.replace('=', '')
   }
 
   updateURL(file) {
-    const { url } = this.props
     const formattedFile = this.formatFileName(file)
-    Router.push(
-      `/source?id=${this.props.id}&${formattedFile}`,
-      `source?${formattedFile}`,
+    this.props.router.push(
+      '/plugins/[id]/source',
+      `/plugins/${this.props.id}/source?${formattedFile}`,
       { shallow: true }
     )
   }
@@ -218,22 +217,19 @@ export default class extends React.Component {
           {this.state.activeFile ? (
             <title>
               Hyper Store - "{this.formatFileName(this.state.activeFile)}" of{' '}
-              {this.props.plugin.meta.name}
+              {this.props.plugin.name}
             </title>
           ) : (
-            <title>Hyper Store - Source of {this.props.plugin.meta.name}</title>
+            <title>Hyper Store - Source of {this.props.plugin.name}</title>
           )}
         </Head>
         <header className="container">
-          <Link
-            href={`/plugin?id=${this.props.id}`}
-            as={`/plugins/${this.props.id}`}
-          >
+          <Link href="/plugins/[id]" as={`/plugins/${this.props.id}`}>
             <a className="plugin__back-link">
               <BackArrow width="7" height="14" />
             </a>
           </Link>
-          <h1>{this.props.plugin.meta.name}</h1>
+          <h1>{this.props.plugin.name}</h1>
         </header>
         <div className="source container">
           {this.renderFileTree(this.props.pluginContents.files)}
@@ -303,3 +299,5 @@ export default class extends React.Component {
     )
   }
 }
+
+export default withRouter(Source)
