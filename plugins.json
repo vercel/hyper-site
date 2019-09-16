@@ -583,5 +583,20 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-propane-propane",
+    "description": "A Tribute Theme for Mr. Lahey",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/stevenselcuk/hyper-propane-propane/master/screenshot.png",
+    "colors": [
+      "#E11C72",
+      "#0EF984",
+      "#F5CB09",
+      "#6200FF",
+      "#38003C",
+      "#FF444D"
+    ],
+    "dateAdded": "1568050878809"
   }
 ]
