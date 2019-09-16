@@ -1,5 +1,6 @@
-// next.config.js
-const withMDX = require('@zeit/next-mdx')()
+const withMDX = require('@next/mdx')()
+
 module.exports = withMDX({
-  target: 'serverless'
+  target: 'serverless',
+  pageExtensions: ['js', 'mdx']
 })

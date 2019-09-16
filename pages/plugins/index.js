@@ -1,13 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
-import Layout from '../components/Layout'
-import PluginsList from '../components/PluginsList'
-import Filter from '../components/Filter'
-import SubmitButton from '../components/SubmitButton'
-import { usePlugins, useFilter } from '../lib/plugins'
+import Layout from '../../components/Layout'
+import PluginsList from '../../components/PluginsList'
+import Filter from '../../components/Filter'
+import SubmitButton from '../../components/SubmitButton'
+import { usePlugins, useFilter } from '../../lib/plugins'
 
-const Themes = () => {
-  const plugins = usePlugins({ type: 'theme' })
+const Plugins = () => {
+  const plugins = usePlugins({ type: 'plugin' })
   const [filter, setFilter] = useFilter('featured')
 
   return (
@@ -32,4 +32,4 @@ const Themes = () => {
   )
 }
 
-export default Themes
+export default Plugins
