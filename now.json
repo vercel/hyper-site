@@ -1,9 +1,6 @@
 {
   "version": 2,
   "alias": ["hyper.is"],
-  "env": {
-    "GITHUB_TOKEN": "@hyper-github-auth-token"
-  },
   "routes": [
     { "src": "/(.*)/$", "status": 301, "headers": { "Location": "/$1" } }
   ]
