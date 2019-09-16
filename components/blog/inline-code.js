@@ -1,3 +1,5 @@
+const literal = '`'
+
 const FONT_FAMILY_MONO =
   'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif'
 
@@ -26,11 +28,11 @@ const InlineCode = ({ children, noWrap }, { disabled, darkBg } = {}) => (
         }
 
         code::before {
-          content: '\`';
+          content: '${literal}';
         }
 
         code::after {
-          content: '\`';
+          content: '${literal}';
         }
 
         code.dark {

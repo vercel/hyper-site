@@ -61,15 +61,6 @@ export default class Index extends React.Component {
       OS = 'linux'
     }
 
-    // const releases = await cachedFetch(
-    //   `https://api.github.com/repos/zeit/hyper/releases`,
-    //   {
-    //     headers: {
-    //       Authorization: `token ${process.env.GITHUB_TOKEN}`
-    //     }
-    //   },
-    //   'json'
-    // )
     if (res) {
       res.setHeader('Cache-Control', 's-maxage=7200, stale-while-revalidate')
     }
