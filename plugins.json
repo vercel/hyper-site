@@ -595,5 +595,12 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-prefix-of-tab",
+    "description": "add prefix to the title of current active tab.",
+    "type": "plugin",
+    "preview": "https://github.com/ivanwonder/hyper-prefix-of-tab/raw/master/demo.png",
+    "dateAdded": "1570875980994"
   }
 ]
