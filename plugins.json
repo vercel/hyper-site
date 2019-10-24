@@ -595,5 +595,12 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-filedrop",
+    "description": "The Hyper plugin that inserts file path when a file was dropped on the terminal",
+    "type": "plugin",
+    "preview": "https://github.com/Leko/hyper-filedrop/raw/master/demo.gif?raw=true",
+    "dateAdded": "1571937916532"
   }
 ]
