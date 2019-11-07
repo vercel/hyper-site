@@ -595,5 +595,15 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-monokai-octagon",
+    "description": "A dark theme inspired by Monokai Pro's Octagon Filter",
+    "type": "theme",
+    "preview": "https://github.com/MozzarellaM/hyper-monokai-octagon/blob/master/screenshot2.png?raw=true",
+    "colors": [
+      "#1E202B", "#F37480", "#C0D162", "#A4CEBA", "#EBF2F1"
+    ],
+    "dateAdded": "1573164177720"
   }
 ]
