@@ -47,15 +47,7 @@ export default class PluginInfo extends React.Component {
       this.props.plugin.name || this.props.plugin.meta.name
     )
 
-    if (plugin !== undefined) {
-      await this.setState({
-        plugin
-      })
-    }
-
-    this.setState({
-      isPluginLoading: false
-    })
+    this.setState({ plugin, isPluginLoading: false })
   }
 
   openInstallModal() {
@@ -99,7 +91,7 @@ export default class PluginInfo extends React.Component {
             )}
             &nbsp;
             <Link
-              href={`/source?id=${plugin.name}`}
+              href="/plugins/[id]/source"
               as={`/plugins/${plugin.name}/source`}
             >
               <a className="plugin-info__link">View source code</a>
@@ -170,7 +162,7 @@ export default class PluginInfo extends React.Component {
           )}
 
           <Link
-            href={`/source?id=${this.state.plugin.collected.metadata.name}`}
+            href="/plugins/[id]/source"
             as={`/plugins/${this.state.plugin.collected.metadata.name}/source`}
           >
             <a className="plugin-info__link">View source code</a>

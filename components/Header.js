@@ -27,7 +27,7 @@ export default class Header extends React.Component {
     return (
       <React.Fragment>
         <header className="container">
-          <Link prefetch href="/">
+          <Link href="/">
             <a className="logo">
               <Logo />
             </a>

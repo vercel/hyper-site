@@ -1,5 +1,7 @@
 import { FONT_FAMILY_MONO } from '../css-config'
 
+const literal = '`'
+
 const Caption = ({ children }) => (
   <p className="caption">
     {children}
@@ -28,11 +30,11 @@ const Code = ({ children }) => (
         }
 
         code::before {
-          content: '\`';
+          content: '${literal}';
         }
 
         code::after {
-          content: '\`';
+          content: '${literal}';
         }
       `}
     </style>
