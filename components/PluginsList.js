@@ -1,10 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
 import Highlighter from 'react-highlighter'
 import Plugin from './Plugin'
 
-export default class extends React.Component {
+export default class PluginsList extends React.Component {
   constructor(props) {
     super()
 
@@ -29,11 +28,6 @@ export default class extends React.Component {
     return sortedPlugins
   }
 
-  componentDidMount() {
-    // Optimization
-    Router.prefetch('/plugin')
-  }
-
   render() {
     const plugins = this.orderPlugins(this.props.plugins, this.props.filteredBy)
 
@@ -43,10 +37,7 @@ export default class extends React.Component {
         <div className="plugins-list container">
           {plugins.map((plugin, i) => (
             <div key={plugin.name} className="plugin">
-              <Link
-                href={`/plugin?id=${plugin.name}`}
-                as={`/plugins/${plugin.name}`}
-              >
+              <Link href="/plugins/[id]" as={`/plugins/${plugin.name}`}>
                 <a className="plugin-contents">
                   <Plugin
                     {...plugin}
@@ -113,18 +104,10 @@ export default class extends React.Component {
         {plugins.map((plugin, i) => (
           <Link
             key={plugin.name}
-            href={`/plugin?id=${plugin.name}`}
+            href="/plugins/[id]"
             as={`/plugins/${plugin.name}`}
           >
-            <a
-              className="plugin"
-              onMouseEnter={() => {
-                Router.prefetch(
-                  `/plugin?id=${plugin.name}`,
-                  `/plugins/${plugin.name}`
-                )
-              }}
-            >
+            <a className="plugin">
               <div className="plugin-contents">
                 <Plugin {...plugin} query={this.props.query} featured={false} />
               </div>
