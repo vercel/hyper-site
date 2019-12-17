@@ -595,5 +595,20 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-witchhazel",
+    "description": "A dark & feminine color scheme.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/metalcanine/hyper-witchhazel/master/assets/screenshot.png",
+    "colors": [
+      "#FF857F",
+      "#C2FFDF",
+      "#FFF352",
+      "#CEB1FF",
+      "#FFB8D1",
+      "#1BC5E0"
+    ],
+    "dateAdded": "1576608213667"
   }
 ]
