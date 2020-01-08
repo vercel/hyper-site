@@ -595,5 +595,17 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyperterm-horizon",
+    "description": "Unofficial Port of the VSCode theme Horizon to Hyper",
+    "type": "theme",
+    "preview": "https://user-images.githubusercontent.com/29304238/72005634-6dae2f00-3291-11ea-9d6d-25994ee18419.png",
+    "colors": [
+      "#1C1E26",
+      "#D5D8DA",
+      "#E9436D"
+    ],
+    "dateAdded": "1578510584536"
   }
 ]
