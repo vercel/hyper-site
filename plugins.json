@@ -595,5 +595,12 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-drop-file",
+    "description": "Drop file path from file explorer into your terminal",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/qweasd1/hyper-drop-file/master/hyper_drop_file.gif",
+    "dateAdded": "1578755100695"
   }
 ]
