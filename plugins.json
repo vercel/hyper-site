@@ -595,5 +595,19 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
-  }
+  },
+  {
+    "name": "hyper-phunk",
+    "description": "A low-key neon theme for hyper terminal",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/frytoli/hyper-phunk/master/hyper-phunk.png",
+    "colors": [
+      "#1C2140",
+      "#F20000",
+      "#FF7B00",
+      "#FFA100",
+      "#68f2f2"
+    ],
+    "dateAdded": "1581354905732"
+  },
 ]
