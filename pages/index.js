@@ -1,10 +1,10 @@
 import React from 'react'
+import Head from 'next/head'
+import fetch from 'isomorphic-unfetch'
+
 import Layout from '../components/Layout.js'
 import Footer from '../components/Footer.js'
-import Head from 'next/head'
 import DownloadButton from '../components/DownloadButton.js'
-
-import cachedFetch from '../lib/cached-json-fetch'
 
 const Path = ({ os, path }) => (
   <React.Fragment>
@@ -38,41 +38,50 @@ const PathLink = ({ os, path, type }) => (
 )
 
 export default class Index extends React.Component {
-  static async getInitialProps({ req, res }) {
-    const userAgent =
-      typeof window !== 'undefined'
-        ? navigator.userAgent
-        : req.headers['user-agent']
-    let OS
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      // Mac by default
+      os: 'mac'
+    }
+  }
+
+  async componentDidMount() {
+    const { userAgent } = navigator
+
+    let os
 
     if (
       /Mac/.test(userAgent) &&
       !/iPhone/.test(userAgent) &&
       !/iPad/.test(userAgent)
     ) {
-      OS = 'mac'
+      os = 'mac'
     } else if (/Windows/.test(userAgent)) {
-      OS = 'windows'
+      os = 'windows'
     } else if (/Fedora/.test(userAgent)) {
-      OS = 'fedora'
+      os = 'fedora'
     } else if (/Ubuntu/.test(userAgent)) {
-      OS = 'ubuntu'
+      os = 'ubuntu'
     } else if (/Linux/.test(userAgent)) {
-      OS = 'linux'
+      os = 'linux'
     }
 
-    if (res) {
-      res.setHeader('Cache-Control', 's-maxage=7200, stale-while-revalidate')
-    }
+    const latest = await (await fetch(
+      'https://api.github.com/repos/zeit/hyper/releases/latest'
+    )).json()
 
-    // let stable = releases.find(release => !release.prerelease)
-    let stable = true
+    console.log(latest)
 
-    return { OS, stable }
+    this.setState({
+      os,
+      stable: latest
+    })
   }
 
   render() {
-    const { stable } = this.props
+    const { stable = {} } = this.state
     return (
       <Layout>
         <Head>
@@ -143,7 +152,7 @@ export default class Index extends React.Component {
 
             <div className="top-content">
               <div className="top-download">
-                <DownloadButton os={this.props.OS} />
+                <DownloadButton os={this.state.os} />
                 <span className="other-downloads">
                   <a href="#installation">Other platforms</a>
                 </span>
@@ -184,7 +193,7 @@ export default class Index extends React.Component {
                     </td>
                     <td
                       id="td-mac-os"
-                      className={this.props.OS === 'mac' ? 'highlighted' : ''}
+                      className={this.state.os === 'mac' ? 'highlighted' : ''}
                     >
                       <a href="https://releases.hyper.is/download/mac">
                         <img src="static/download-icon.svg" />
@@ -201,7 +210,7 @@ export default class Index extends React.Component {
                     <td
                       id="td-win"
                       className={
-                        this.props.OS === 'windows' ? 'highlighted' : ''
+                        this.state.os === 'windows' ? 'highlighted' : ''
                       }
                     >
                       <a href="https://releases.hyper.is/download/win">
@@ -219,7 +228,7 @@ export default class Index extends React.Component {
                     <td
                       id="td-debian"
                       className={
-                        this.props.OS === 'ubuntu' ? 'highlighted' : ''
+                        this.state.os === 'ubuntu' ? 'highlighted' : ''
                       }
                     >
                       <a href="https://releases.hyper.is/download/deb">
@@ -237,7 +246,7 @@ export default class Index extends React.Component {
                     <td
                       id="td-fedora"
                       className={
-                        this.props.OS === 'fedora' ? 'highlighted' : ''
+                        this.state.os === 'fedora' ? 'highlighted' : ''
                       }
                     >
                       <a href="https://releases.hyper.is/download/rpm">
@@ -254,7 +263,7 @@ export default class Index extends React.Component {
                     </td>
                     <td
                       id="td-appimage"
-                      className={this.props.OS === 'linux' ? 'highlighted' : ''}
+                      className={this.state.os === 'linux' ? 'highlighted' : ''}
                     >
                       <a href="https://releases.hyper.is/download/AppImage">
                         <img src="static/download-icon.svg" />
@@ -303,7 +312,7 @@ export default class Index extends React.Component {
             </pre>
             <p>
               Then edit{' '}
-              <PathLink os={this.props.OS} path=".hyper.js" type="config" /> and
+              <PathLink os={this.state.os} path=".hyper.js" type="config" /> and
               add it to <code>plugins</code>
             </p>
             <pre>
@@ -326,7 +335,7 @@ export default class Index extends React.Component {
               <code>Hyper</code> will show a notification when your modules are
               installed to{' '}
               <PathLink
-                os={this.props.OS}
+                os={this.state.os}
                 path=".hyper_plugins"
                 type="plugins"
               />
@@ -341,7 +350,7 @@ export default class Index extends React.Component {
             </h2>
             <p>
               All command keys can be changed. In order to change them, edit{' '}
-              <PathLink os={this.props.OS} path=".hyper.js" type="config" /> and
+              <PathLink os={this.state.os} path=".hyper.js" type="config" /> and
               add your desired change to <code>keymaps</code>.
             </p>
             <p> Then Hyper will change the default with your custom change.</p>
@@ -1298,7 +1307,7 @@ export default class Index extends React.Component {
             <p>
               When developing, you can add your plugin to{' '}
               <PathLink
-                os={this.props.OS}
+                os={this.state.os}
                 path=".hyper_plugins/local"
                 type="plugins"
               />{' '}
