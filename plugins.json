@@ -585,6 +585,18 @@
     "dateAdded": "1547219532507"
   },
   {
+    "name": "hyper-hypest",
+    "description": "A beautiful and minimal macOS theme with vibrancy",
+    "type": "theme",
+    "preview": "https://github.com/dizzyup/hyper-hypest/raw/master/assets/preview.jpg?raw=true",
+    "colors": [
+      "#ffffff",
+      "#222222",
+      "#0095FF"
+    ],
+    "dateAdded": "1558342235115"
+  },
+  {
     "name": "hyper-seoul256",
     "description": "A port of the seoul256.vim theme for Hyper.",
     "type": "theme",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'next/router'
+import { withRouter, useRouter } from 'next/router'
 import Meta from './Meta'
 import Header from './Header'
 import SearchList from './SearchList'
@@ -11,79 +11,40 @@ RouterEvents.on('routeChangeComplete', url => {
   gtag.pageview(url)
 })
 
-class Layout extends React.Component {
-  state = {
-    searchQuery: null,
-    originalURL: null,
-    originalQuery: null
-  }
-
-  constructor() {
-    super()
-
-    this.handleSearch = this.handleSearch.bind(this)
-  }
-
-  componentDidMount() {
-    const { router } = this.props
-    this.setState({
-      originalURL: router.asPath,
-      originalQuery: router.query.q || null
-    })
-
-    if (router.query.q) {
-      this.setState({
-        searchQuery: router.query.q
-      })
-    }
-  }
-
-  handleSearch(query) {
-    const { router } = this.props
-    const { originalQuery } = this.state
-    const newQuery = query || originalQuery
+const Layout = ({ children }) => {
+  const router = useRouter()
+  const { q } = router.query
+  const [search, setSearch] = React.useState()
+  const handleSearch = newQuery => {
+    const queryObj = { ...router.query }
 
     if (newQuery) {
-      // We construct the original href for shallow routing
-      const href = format({ pathname: router.pathname, query: router.query })
-      // asPath will be different depending on user input
-      const asPath = `/search?q=${newQuery}`
-      router.replace(href, asPath, { shallow: true })
+      queryObj.q = newQuery
     } else {
-      // When query is empty we render the original url
-      router.replace(this.state.originalURL, this.state.originalURL, {
-        shallow: true
-      })
+      // When the query is empty, remove if from the URL
+      delete queryObj.q
     }
 
-    this.setState({
-      searchQuery: newQuery
-    })
+    router.replace({ pathname: router.pathname, query: queryObj })
   }
 
-  render() {
-    return (
-      <div className="main">
-        <Meta />
+  React.useEffect(() => {
+    setSearch(q)
+  }, [q])
 
-        <Header handleSearch={this.handleSearch} />
+  return (
+    <div className="main">
+      <Meta />
 
-        {(this.state && this.state.searchQuery) ||
-        this.props.query ||
-        this.props.router.query.q ? (
-          <SearchList
-            query={
-              this.state && this.state.searchQuery
-                ? this.state.searchQuery
-                : this.props.query
-            }
-          />
-        ) : (
-          <div className="page">{this.props.children}</div>
-        )}
-      </div>
-    )
-  }
+      <Header handleSearch={handleSearch} />
+
+      {q ? (
+        <SearchList query={search} />
+      ) : (
+        <div className="page">{children}</div>
+      )}
+    </div>
+  )
 }
 
-export default withRouter(Layout)
+export default Layout
