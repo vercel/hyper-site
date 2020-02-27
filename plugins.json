@@ -594,6 +594,31 @@
       "#222222",
       "#0095FF"
     ],
-    "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-cobalt-next",
+    "description": "Hyper theme based on the Cobalt Next Theme for VS Code",
+    "type": "theme",
+    "colors": [
+      "#1b2b34",
+      "#0f1c23",
+      "#ed6f7d",
+      "#99c794",
+      "#fac863",
+      "#5a9bcf",
+      "#c5a5c5",
+      "#5fb3b3",
+      "#d8dee9",
+      "#65737e",
+      "#D6838C",
+      "#C1DCBE",
+      "#FFDE9B",
+      "#8ABEE7",
+      "#EDCDED",
+      "#9BE2E2",
+      "#ffffff",
+    ],
+    "preview": "https://raw.githubusercontent.com/davidleininger/hyper-cobalt-next/master/screenshot.png",
+    "dateAdded": "1559883788876"
   }
 ]
