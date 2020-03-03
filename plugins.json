@@ -595,5 +595,16 @@
       "#0095FF"
     ],
     "dateAdded": "1558342235115"
-  }
+  },
+	{
+    "name": "hyper-tokyo-ghoul",
+    "description": "Various characters from Tokyo Ghouls",
+    "type": "theme",
+    "preview": "https://github.com/AnupamYedida/hyper-tokyo-ghoul/blob/master/Images/Tokyo-Ghoul.png",
+    "colors": [
+      "#eff0eb",
+      "#282a36"
+    ],
+    "dateAdded": "1565284969879"
+},
 ]
