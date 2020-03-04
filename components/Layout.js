@@ -1,20 +1,13 @@
-import React from 'react'
-import { withRouter, useRouter } from 'next/router'
-import Meta from './Meta'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Header from './Header'
 import SearchList from './SearchList'
-import * as gtag from '../lib/gtag'
-import RouterEvents from '../lib/router-events'
-import { format } from 'url'
-
-RouterEvents.on('routeChangeComplete', url => {
-  gtag.pageview(url)
-})
+import { pageView as gTagPageView } from '../lib/gtag'
 
 const Layout = ({ children }) => {
   const router = useRouter()
   const { q } = router.query
-  const [search, setSearch] = React.useState()
+  const [search, setSearch] = useState()
   const handleSearch = newQuery => {
     const queryObj = { ...router.query }
 
@@ -28,14 +21,15 @@ const Layout = ({ children }) => {
     router.replace({ pathname: router.pathname, query: queryObj })
   }
 
-  React.useEffect(() => {
-    setSearch(q)
+  useEffect(() => {
+    router.events.on('routeChangeStart', url => gTagPageView(url))
+    return () => {
+      router.events.off('routeChangeStart', url => gTagPageView(url))
+    }
   }, [q])
 
   return (
     <div className="main">
-      <Meta />
-
       <Header handleSearch={handleSearch} />
 
       {q ? (
