@@ -1,0 +1,10 @@
+.searchError {
+  width: 100%;
+  text-align: center;
+  height: calc(100vh - 122px);
+  min-height: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}

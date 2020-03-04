@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Header from './Header'
-import SearchList from './SearchList'
+import SearchList from '../components/search-list'
 import { pageView as gTagPageView } from '../lib/gtag'
 
 const Layout = ({ children }) => {
   const router = useRouter()
   const { q } = router.query
-  const [search, setSearch] = useState()
   const handleSearch = newQuery => {
     const queryObj = { ...router.query }
 
@@ -29,15 +28,11 @@ const Layout = ({ children }) => {
   }, [q])
 
   return (
-    <div className="main">
+    <>
       <Header handleSearch={handleSearch} />
 
-      {q ? (
-        <SearchList query={search} />
-      ) : (
-        <div className="page">{children}</div>
-      )}
-    </div>
+      {q ? <SearchList /> : <div className="page">{children}</div>}
+    </>
   )
 }
 
