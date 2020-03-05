@@ -2,9 +2,10 @@ import React from 'react'
 import Head from 'next/head'
 import fetch from 'isomorphic-unfetch'
 
-import Layout from '../components/Layout.js'
-import Footer from '../components/Footer.js'
+import Page from '../components/page'
 import DownloadButton from '../components/DownloadButton.js'
+
+const literal = '`'
 
 const Path = ({ os, path }) => (
   <React.Fragment>
@@ -25,7 +26,7 @@ const Path = ({ os, path }) => (
     <style jsx>{`
       code:before,
       code:after {
-        content: '\\0060';
+        content: '${literal}';
       }
     `}</style>
   </React.Fragment>
@@ -83,7 +84,7 @@ export default class Index extends React.Component {
   render() {
     const { stable = {} } = this.state
     return (
-      <Layout>
+      <Page footer={true}>
         <Head>
           <title>Hyper™</title>
           <meta property="twitter:card" content="summary_large_image" />
@@ -2002,8 +2003,6 @@ export default class Index extends React.Component {
           </div>
         </div>
 
-        <Footer />
-
         <style jsx>{`
           :global(body) {
             color: #ccc;
@@ -2199,7 +2198,7 @@ export default class Index extends React.Component {
           #content td code:after,
           #content li code:before,
           #content li code:after {
-            content: '\\0060';
+            content: '${literal}';
           }
 
           #content pre {
@@ -2539,7 +2538,7 @@ export default class Index extends React.Component {
             display: none;
           }
         `}</style>
-      </Layout>
+      </Page>
     )
   }
 }

@@ -1,17 +1,17 @@
 import React from 'react'
 import Head from 'next/head'
-import Layout from '../components/Layout'
+import Page from '../components/page'
 import PluginsList from '../components/PluginsList'
 import Filter from '../components/Filter'
 import SubmitButton from '../components/SubmitButton'
 import { usePlugins, useFilter } from '../lib/plugins'
 
-const Themes = () => {
+export default () => {
   const plugins = usePlugins({ type: 'theme' })
   const [filter, setFilter] = useFilter('featured')
 
   return (
-    <Layout>
+    <Page>
       <Head>
         <title>Hyper Store - Plugins</title>
       </Head>
@@ -28,8 +28,6 @@ const Themes = () => {
           position: relative;
         }
       `}</style>
-    </Layout>
+    </Page>
   )
 }
-
-export default Themes

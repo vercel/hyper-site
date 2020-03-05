@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Layout from '../../../components/Layout'
+import Page from '../../../components/Page'
 import PluginInfo from '../../../components/PluginInfo'
 import plugins from '../../../plugins.json'
 
@@ -10,7 +10,7 @@ const Plugin = ({ plugin }) => {
 
   if (!plugin) {
     return (
-      <Layout>
+      <Page>
         <div className="plugin__notfound">
           <span>
             Couldn't find plugin <b>{router.query.id}</b>
@@ -25,12 +25,12 @@ const Plugin = ({ plugin }) => {
             }
           `}</style>
         </div>
-      </Layout>
+      </Page>
     )
   }
 
   return (
-    <Layout>
+    <Page>
       <Head>
         <title>Hyper Store - {plugin.name}</title>
         <meta property="og:title" content={`Hyper Store - ${plugin.name}`} />
@@ -96,7 +96,7 @@ const Plugin = ({ plugin }) => {
           margin-bottom: 40px;
         }
       `}</style>
-    </Layout>
+    </Page>
   )
 }
 

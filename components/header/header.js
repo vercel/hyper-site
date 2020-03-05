@@ -12,7 +12,7 @@ export default () => {
 
   return (
     <>
-      <header className={`container ${styles.header}`}>
+      <header className={styles.header}>
         <Link className={styles.logo} href="/">
           <Logo />
         </Link>
@@ -41,9 +41,7 @@ export default () => {
       </header>
 
       <nav
-        className={`container ${styles.mobileNav} ${
-          mobileNavShown ? styles.active : ''
-        }`}
+        className={`${styles.mobileNav} ${mobileNavShown ? styles.active : ''}`}
       >
         <Link href="/plugins">Plugins</Link>
         <Link href="/themes">Themes</Link>
