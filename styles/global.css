@@ -60,40 +60,40 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
 }
 
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Oxygen-Sans, 'Fira Sans', 'Droid Sans', Ubuntu, Cantarell,
-    'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    font-size: 1.6rem;
-    line-height: 1.5em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Oxygen-Sans, 'Fira Sans', 'Droid Sans', Ubuntu, Cantarell, 'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 :focus {
-    outline: 0;
+  outline: 0;
 }
 
 pre,
@@ -101,72 +101,76 @@ code,
 kbd,
 samp,
 tt {
-    font-family: Menlo, 'Courier New', Courier, monospace;
-    font-size: 1em;
+  font-family: Menlo, 'Courier New', Courier, monospace;
+  font-size: 1em;
 }
 
 /*
   Custom Styles
   ---
 */
+:root {
+  --font-mono: 'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif';
+}
+
 body {
-    background: black;
-    color: white;
-    font-size: 1.4rem;
+  background: black;
+  color: white;
+  font-size: 1.4rem;
 }
 
 a {
-    color: #50e3c2;
-    cursor: pointer;
-    transition: color 0.2s ease;
+  color: #50e3c2;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #3afacf;
+  color: #3afacf;
 }
 
 a.dark {
-    color: #999999;
-    text-decoration: underline;
+  color: #999999;
+  text-decoration: underline;
 }
 
 a.dark:hover {
-    color: #666666;
+  color: #666666;
 }
 
 ::selection {
-    background-color: #f81ce5;
-    color: #fff;
+  background-color: #f81ce5;
+  color: #fff;
 }
 
 ::-moz-selection {
-    /* Code for Firefox */
-    background: #f81ce5;
-    color: #fff;
+  /* Code for Firefox */
+  background: #f81ce5;
+  color: #fff;
 }
 
 /* Paragraphs */
 p {
-    margin-bottom: 16px;
-    font-size: 1.2rem;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
 }
 
 /* Helper Classes */
 .text-uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 /* Helps maintain consistent width */
 .container {
-    width: 900px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 900px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 900px) {
-    .container {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }

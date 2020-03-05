@@ -1,8 +1,7 @@
 import React from 'react'
-import { withRouter } from 'next/router'
 import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
-import Layout from '../Layout'
+import Page from '../page'
 import InlineCode from './inline-code'
 import Author from './Author'
 
@@ -11,7 +10,7 @@ const MDXComponents = {
 }
 
 const WithPost = meta => ({ children }) => (
-  <Layout>
+  <Page>
     <Head>
       <title>Hyper Blog</title>
       <meta property="twitter:card" content="summary_large_image" />
@@ -149,7 +148,7 @@ const WithPost = meta => ({ children }) => (
         }
       `}
     </style>
-  </Layout>
+  </Page>
 )
 
 export default WithPost

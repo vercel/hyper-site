@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import fetch from 'isomorphic-unfetch'
 
-import Layout from '../components/Layout.js'
+import Page from '../components/page'
 import Footer from '../components/Footer.js'
 import DownloadButton from '../components/DownloadButton.js'
 
@@ -83,7 +83,7 @@ export default class Index extends React.Component {
   render() {
     const { stable = {} } = this.state
     return (
-      <Layout>
+      <Page>
         <Head>
           <title>Hyper™</title>
           <meta property="twitter:card" content="summary_large_image" />
@@ -2539,7 +2539,7 @@ export default class Index extends React.Component {
             display: none;
           }
         `}</style>
-      </Layout>
+      </Page>
     )
   }
 }

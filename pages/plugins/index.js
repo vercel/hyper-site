@@ -1,6 +1,5 @@
-import React from 'react'
 import Head from 'next/head'
-import Layout from '../../components/Layout'
+import Page from '../../components/Page'
 import PluginsList from '../../components/PluginsList'
 import Filter from '../../components/Filter'
 import SubmitButton from '../../components/SubmitButton'
@@ -11,7 +10,7 @@ const Plugins = () => {
   const [filter, setFilter] = useFilter('featured')
 
   return (
-    <Layout>
+    <Page>
       <Head>
         <title>Hyper Store - Plugins</title>
       </Head>
@@ -28,7 +27,7 @@ const Plugins = () => {
           position: relative;
         }
       `}</style>
-    </Layout>
+    </Page>
   )
 }
 
