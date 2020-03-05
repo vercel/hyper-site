@@ -1,4 +1,5 @@
 .header {
+  composes: container from global;
   position: relative;
   padding-top: 32px;
   margin-bottom: 24px;
@@ -35,6 +36,10 @@
   font-size: 18px;
   color: white;
   font-weight: bold;
+}
+
+.mobileNav {
+  composes: container from global;
 }
 
 .toggle,
