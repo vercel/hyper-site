@@ -160,11 +160,13 @@ p {
 .container {
     width: 900px;
     max-width: 100%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 900px) {
     .container {
-        padding: 0 40px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
