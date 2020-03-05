@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Page from '../../components/Page'
+import Page from '../../components/page'
 import PluginsList from '../../components/PluginsList'
 import Filter from '../../components/Filter'
 import SubmitButton from '../../components/SubmitButton'
