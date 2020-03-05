@@ -8,8 +8,8 @@
   background: transparent;
   border: none;
   color: white;
-  font-size: 1.4rem;
-  padding-right: 8px;
+  font-size: 14px;
+  padding: 0 8px 0 0;
   width: 120px;
   transition: width 0.2s ease;
 }
