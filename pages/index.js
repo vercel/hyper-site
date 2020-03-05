@@ -97,10 +97,7 @@ export default class Index extends React.Component {
             property="og:description"
             content="Hyper™: HTML/JS/CSS terminal"
           />
-          <meta
-            property="og:image"
-            content="https://hyper.is/static/hyper.png"
-          />
+          <meta property="og:image" content="https://hyper.is/hyper.png" />
         </Head>
 
         <div id="main">
@@ -144,7 +141,7 @@ export default class Index extends React.Component {
             <div id="video">
               <video
                 id="vid"
-                src="static/hyperapp.mp4"
+                src="/hyperapp.mp4"
                 height="100%"
                 autoPlay
                 muted
@@ -160,7 +157,7 @@ export default class Index extends React.Component {
               </div>
               <div id="arrow">
                 <a href="#installation">
-                  <img src="static/arrow.svg" width={18} />
+                  <img src="/arrow.svg" width={18} />
                 </a>
               </div>
             </div>
@@ -197,7 +194,7 @@ export default class Index extends React.Component {
                       className={this.state.os === 'mac' ? 'highlighted' : ''}
                     >
                       <a href="https://releases.hyper.is/download/mac">
-                        <img src="static/download-icon.svg" />
+                        <img src="/download-icon.svg" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -215,7 +212,7 @@ export default class Index extends React.Component {
                       }
                     >
                       <a href="https://releases.hyper.is/download/win">
-                        <img src="static/download-icon.svg" />
+                        <img src="/download-icon.svg" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -233,7 +230,7 @@ export default class Index extends React.Component {
                       }
                     >
                       <a href="https://releases.hyper.is/download/deb">
-                        <img src="static/download-icon.svg" />
+                        <img src="/download-icon.svg" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -251,7 +248,7 @@ export default class Index extends React.Component {
                       }
                     >
                       <a href="https://releases.hyper.is/download/rpm">
-                        <img src="static/download-icon.svg" />
+                        <img src="/download-icon.svg" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -267,7 +264,7 @@ export default class Index extends React.Component {
                       className={this.state.os === 'linux' ? 'highlighted' : ''}
                     >
                       <a href="https://releases.hyper.is/download/AppImage">
-                        <img src="static/download-icon.svg" />
+                        <img src="/download-icon.svg" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -1796,7 +1793,7 @@ export default class Index extends React.Component {
               .
             </p>
             <p style={{ textAlign: 'center' }}>
-              <img src="static/hyperyellow.gif" width={446} height={333} />
+              <img src="/hyperyellow.gif" width={446} height={333} />
             </p>
             <p>
               Themes are simply plugins! Only one hook,{' '}
