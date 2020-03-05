@@ -1,0 +1,10 @@
+.link {
+    font-size: 1.4rem;
+    color: #999999;
+    transition: color 0.2s ease;
+}
+
+.link.active,
+.link:hover {
+    color: white;
+}

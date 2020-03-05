@@ -1,0 +1,73 @@
+.header {
+  position: relative;
+  padding-top: 32px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2000;
+}
+
+.logo {
+  display: flex;
+}
+
+.desktopNav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.desktopNav > a:not(:last-child) {
+  margin-right: 24px;
+}
+
+.rightNav {
+  display: flex;
+  align-items: center;
+}
+
+.rightNav > a:last-child {
+  margin-left: 24px;
+}
+
+.zeit {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
+
+.toggle,
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktopNav,
+  .rightNav {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .mobileNav.active {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  .mobileNav > a {
+    height: 48px;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+}

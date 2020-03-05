@@ -1,0 +1,62 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  padding-right: 8px;
+  width: 120px;
+  transition: width 0.2s ease;
+}
+
+.input:focus {
+  width: 136px;
+}
+
+.input::placeholder {
+  color: #999999;
+}
+
+.input::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.input::-ms-input-placeholder {
+  color: #999999;
+}
+
+.icon {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  -webkit-backface-visibility: hidden;
+}
+
+.input:focus + .icon {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .root {
+    height: 48px;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .input {
+    font-size: 1.6rem;
+  }
+
+  .input,
+  .input:focus {
+    width: 100%;
+  }
+}
