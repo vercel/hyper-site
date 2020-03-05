@@ -28,7 +28,7 @@ const WithPost = meta => ({ children }) => (
       />
       <meta
         property="og:image"
-        content="https://hyper.is/static/blog/hyper-3-twitter-card.png"
+        content="https://hyper.is/blog/hyper-3-twitter-card.png"
       />
     </Head>
 
