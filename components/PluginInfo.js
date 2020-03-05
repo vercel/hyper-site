@@ -4,7 +4,7 @@ import Link from 'next/link'
 import InstallModal from './InstallModal'
 import GithubIcon from '../components/icons/github-icon.svg'
 import getPluginInfo from '../lib/get-plugin.js'
-import * as gtag from '../lib/gtag'
+import { event as gTagEvent } from '../lib/gtag'
 
 export const PluginInfoBar = ({ children }) => (
   <div className="plugin-info">
@@ -51,7 +51,7 @@ export default class PluginInfo extends React.Component {
   }
 
   openInstallModal() {
-    gtag.event({
+    gTagEvent({
       action: 'Opened install modal',
       category: 'plugin',
       label: 'open_install_modal',
