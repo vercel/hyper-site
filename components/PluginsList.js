@@ -38,13 +38,13 @@ export default class PluginsList extends React.Component {
           {plugins.map((plugin, i) => (
             <div key={plugin.name} className="plugin">
               <Link href="/plugins/[id]" as={`/plugins/${plugin.name}`}>
-                <div className="plugin-contents">
+                <a className="plugin-contents">
                   <Plugin
                     {...plugin}
                     query={this.props.query}
                     featured={true}
                   />
-                </div>
+                </a>
               </Link>
             </div>
           ))}
@@ -70,6 +70,8 @@ export default class PluginsList extends React.Component {
             }
 
             .plugin-contents {
+              display: block;
+              color: inherit;
               cursor: pointer;
               border: 1px solid #333;
               transition: border 0.2s ease;
@@ -105,11 +107,11 @@ export default class PluginsList extends React.Component {
             href="/plugins/[id]"
             as={`/plugins/${plugin.name}`}
           >
-            <div className="plugin">
+            <a className="plugin">
               <div className="plugin-contents">
                 <Plugin {...plugin} query={this.props.query} featured={false} />
               </div>
-            </div>
+            </a>
           </Link>
         ))}
 
@@ -119,6 +121,8 @@ export default class PluginsList extends React.Component {
           }
 
           .plugin {
+            display: block;
+            color: inherit;
             padding-bottom: 16px;
             cursor: pointer;
             transition: background 0.2s ease;
