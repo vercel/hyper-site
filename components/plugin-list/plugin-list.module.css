@@ -43,16 +43,16 @@
     flex-flow: row wrap;
 }
 
-.featuredElem {
+.featuredElemContainer {
     width: 50%;
     margin-bottom: 24px;
 }
 
-.featuredElem:nth-child(odd) {
+.featuredElemContainer:nth-child(odd) {
     padding-right: 16px;
 }
 
-.featuredElem:nth-child(even) {
+.featuredElemContainer:nth-child(even) {
     padding-left: 16px;
 }
 
@@ -66,18 +66,19 @@
     overflow: hidden;
 }
 
-.featuredElem:hover .featuredElemContent {
+.featuredElemContainer:hover .featuredElemContent {
+    color: inherit;
     border-color: white;
 }
 
 @media (max-width: 48em) {
-    .featuredElem {
+    .featuredElemContainer {
         width: 100%;
         margin-bottom: 16px;
     }
 
-    .featuredElem:nth-child(odd),
-    .featuredElem:nth-child(even) {
+    .featuredElemContainer:nth-child(odd),
+    .featuredElemContainer:nth-child(even) {
         padding: 0;
     }
 }

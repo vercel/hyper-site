@@ -73,7 +73,7 @@ export default class PluginInfo extends React.Component {
 
     if (this.state && (!this.state.plugin || !this.state.plugin.collected)) {
       return (
-        <React.Fragment>
+        <>
           <InstallModal
             name={plugin.name}
             isOpen={this.state.isModalOpen}
@@ -116,12 +116,12 @@ export default class PluginInfo extends React.Component {
               opacity: 0.9;
             }
           `}</style>
-        </React.Fragment>
+        </>
       )
     }
 
     return (
-      <React.Fragment>
+      <>
         <InstallModal
           name={plugin.name}
           isOpen={this.state.isModalOpen}
@@ -289,7 +289,7 @@ export default class PluginInfo extends React.Component {
             }
           `}</style>
         </PluginInfoBar>
-      </React.Fragment>
+      </>
     )
   }
 }

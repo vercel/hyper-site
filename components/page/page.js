@@ -1,12 +1,10 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
 import Header from '../header'
-import Footer from '../footer'
 import SearchList from '../search-list'
 import { pageView as gTagPageView } from '../../lib/gtag'
 
-export default ({ children, title, footer = false }) => {
+export default ({ children }) => {
   const router = useRouter()
   const { q } = router.query
 
@@ -19,16 +17,8 @@ export default ({ children, title, footer = false }) => {
 
   return (
     <>
-      {title && (
-        <Head>
-          <title>{title}</title>
-        </Head>
-      )}
       <Header />
-
       {q ? <SearchList /> : children}
-
-      {footer && !q && <Footer />}
     </>
   )
 }

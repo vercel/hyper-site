@@ -25,7 +25,7 @@ export default ({ query, plugins, filteredBy }) => {
     return (
       <div className={styles.featuredWrapper}>
         {sortedPlugins.map(plugin => (
-          <div key={plugin.name} className={styles.featuredElem}>
+          <div key={plugin.name} className={styles.featuredElemContainer}>
             <Link href="/plugins/[id]" as={`/plugins/${plugin.name}`}>
               <a className={styles.featuredElemContent}>
                 <Plugin {...plugin} query={query} featured={true} />
