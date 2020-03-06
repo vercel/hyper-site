@@ -1,4 +1,4 @@
-import React from 'react'
+import { Component } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
@@ -10,7 +10,7 @@ import FileIcon from '../../../components/icons/file-icon.svg'
 import DirectoryIcon from '../../../components/icons/directory-icon.svg'
 import BackArrow from '../../../components/icons/back-arrow.svg'
 
-class Source extends React.Component {
+class Source extends Component {
   static async getInitialProps({ query: { id }, res }) {
     let plugin, pluginContents
 

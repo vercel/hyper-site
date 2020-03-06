@@ -1,4 +1,4 @@
-import React from 'react'
+import { Component } from 'react'
 import Head from 'next/head'
 import fetch from 'isomorphic-unfetch'
 
@@ -8,7 +8,7 @@ import DownloadButton from '../components/DownloadButton.js'
 const literal = '`'
 
 const Path = ({ os, path }) => (
-  <React.Fragment>
+  <>
     <code>
       {(() => {
         switch (os) {
@@ -29,7 +29,7 @@ const Path = ({ os, path }) => (
         content: '${literal}';
       }
     `}</style>
-  </React.Fragment>
+  </>
 )
 
 const PathLink = ({ os, path, type }) => (
@@ -38,7 +38,7 @@ const PathLink = ({ os, path, type }) => (
   </a>
 )
 
-export default class Index extends React.Component {
+export default class Index extends Component {
   constructor(props) {
     super(props)
 
