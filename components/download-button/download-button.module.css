@@ -1,0 +1,27 @@
+.root {
+    background: #fff;
+    border-radius: 5px;
+    color: #000;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    transition: background 0.12s ease-in-out;
+}
+
+.root:hover {
+    background: #e5e5e5;
+}
+
+.root svg {
+    fill: #000;
+    margin-right: 12px;
+    height: 16px;
+}
+
+.root strong {
+    color: #000000;
+    margin-bottom: 3px;
+}

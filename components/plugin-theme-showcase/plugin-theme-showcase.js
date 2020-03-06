@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from '../link'
 import Page from '../page'
 import PluginsList from '../plugin-list'
@@ -9,7 +10,12 @@ export default ({ variant }) => {
   const [filter, setFilter] = useFilter('featured')
 
   return (
-    <Page title={`Hyper Store - ${variant === 'theme' ? 'Themes' : 'Plugins'}`}>
+    <Page>
+      <Head>
+        <title>{`Hyper Store - ${
+          variant === 'theme' ? 'Themes' : 'Plugins'
+        }`}</title>
+      </Head>
       <nav className={styles.nav}>
         <div className={styles.filtersWrapper}>
           <div className={styles.filters}>
