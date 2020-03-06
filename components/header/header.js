@@ -32,10 +32,7 @@ export default () => {
           </Link>
         </div>
 
-        <span
-          className={`${styles.toggle} ${mobileNavShown ? styles.active : ''}`}
-          onClick={toggle}
-        >
+        <span className={styles.toggle} onClick={toggle}>
           <MobileNavToggle />
         </span>
       </header>

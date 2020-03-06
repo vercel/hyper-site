@@ -66,10 +66,6 @@
     margin-bottom: 48px;
   }
 
-  .toggle.active {
-    transform: rotate(180deg);
-  }
-
   .mobileNav > a {
     height: 48px;
     width: 100%;

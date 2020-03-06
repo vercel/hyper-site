@@ -1,0 +1,83 @@
+/* List view */
+.listWrapper {
+    padding-top: 48px;
+}
+
+.listElemContainer {
+    display: block;
+    color: inherit;
+    padding-bottom: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.listElemContainer:hover {
+    color: inherit;
+    background: #121212;
+}
+
+.listElemContent {
+    padding-top: 16px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.listElemContainer:not(:first-of-type) .listElemContent {
+    border-top: 1px solid #333333;
+    transition: border 0.2s ease;
+}
+
+.listElemContainer:hover .listElemContent {
+    border-color: transparent;
+}
+
+.listElemContainer:hover + .listElemContainer .listElemContent {
+    border-color: transparent;
+}
+
+/* Featured view */
+.featuredWrapper {
+    composes: container from global;
+    padding-top: 48px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.featuredElem {
+    width: 50%;
+    margin-bottom: 24px;
+}
+
+.featuredElem:nth-child(odd) {
+    padding-right: 16px;
+}
+
+.featuredElem:nth-child(even) {
+    padding-left: 16px;
+}
+
+.featuredElemContent {
+    display: block;
+    color: inherit;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: border 0.2s ease;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.featuredElem:hover .featuredElemContent {
+    border-color: white;
+}
+
+@media (max-width: 48em) {
+    .featuredElem {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .featuredElem:nth-child(odd),
+    .featuredElem:nth-child(even) {
+        padding: 0;
+    }
+}

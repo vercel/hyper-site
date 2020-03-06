@@ -1,0 +1,73 @@
+.nav {
+    composes: container from global;
+    position: relative;
+}
+
+.filtersWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.filters {
+    border: 1px solid #333333;
+    border-radius: 4px;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.filters a {
+    font-size: 1rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: #999999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.filters a:hover,
+.filters a.active {
+    color: white;
+    text-decoration: none;
+}
+
+.filters a:not(:last-child) {
+    border-right: 1px solid #333333;
+}
+
+.submitButton {
+    cursor: pointer;
+    border-radius: 2px;
+    background: black;
+    color: white;
+    font-size: 1.2rem;
+    height: 2.4rem;
+    border: 1px solid #333;
+    padding: 0 16px;
+    margin-left: auto;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 200ms ease;
+}
+
+.submitButton:hover {
+    border-color: #50e3c2;
+    background: #50e3c2;
+    color: black;
+}
+
+@media (max-width: 900px) {
+    .submitButton {
+        right: 40px;
+    }
+}
+
+@media (max-width: 568px) {
+    .submitButton {
+        display: none;
+    }
+}
