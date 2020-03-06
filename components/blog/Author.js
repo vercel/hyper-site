@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Author = ({ data }) => (
   <div className="wrapper">
     <img src={data.thumbnail} alt={`${data.name} profile picture`} />

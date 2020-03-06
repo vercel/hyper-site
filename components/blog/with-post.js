@@ -1,4 +1,3 @@
-import React from 'react'
 import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
 import Page from '../page'

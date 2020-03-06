@@ -1,11 +1,10 @@
-import React from 'react'
 import AppleLogo from './icons/apple-logo.svg'
 import WindowsLogo from './icons/windows-logo.svg'
 import LinuxLogo from './icons/linux-logo.svg'
 import DownloadIcon from './icons/download-icon.svg'
 
 export default ({ os }) => (
-  <React.Fragment>
+  <>
     {(() => {
       if (os === 'mac') {
         return (
@@ -101,5 +100,5 @@ export default ({ os }) => (
         margin-bottom: 3px;
       }
     `}</style>
-  </React.Fragment>
+  </>
 )

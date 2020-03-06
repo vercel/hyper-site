@@ -1,3 +1,3 @@
-import PluginThemePage from '../../components/plugin-theme-page'
+import PluginThemeShowcase from '../../components/plugin-theme-showcase'
 
-export default () => <PluginThemePage variant="plugin" />
+export default () => <PluginThemeShowcase variant="plugin" />

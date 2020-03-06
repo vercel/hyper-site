@@ -2,7 +2,7 @@ import Link from '../link'
 import Page from '../page'
 import PluginsList from '../plugin-list'
 import { usePlugins, useFilter } from '../../lib/plugins'
-import styles from './plugin-theme-page.module.css'
+import styles from './plugin-theme-showcase.module.css'
 
 export default ({ variant }) => {
   const plugins = usePlugins({ type: variant })
