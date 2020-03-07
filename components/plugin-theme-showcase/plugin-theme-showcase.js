@@ -37,7 +37,7 @@ export default ({ variant }) => {
           className={styles.submitButton}
           href="https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
         >
-          {`Submit a ${variant === 'theme' ? 'Theme' : 'Plugin'}`}
+          {`Submit a ${variant === 'theme' ? 'theme' : 'plugin'}`}
         </Link>
       </nav>
       <PluginsList plugins={plugins} filteredBy={filter} />

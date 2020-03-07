@@ -160,12 +160,21 @@ export default class PluginInfo extends React.Component {
             </a>
           )}
 
-          <Link
-            href="/plugins/[id]/source"
-            as={`/plugins/${this.state.plugin.collected.metadata.name}/source`}
-          >
-            <a className="plugin-info__link">View source code</a>
-          </Link>
+          {this.props.variant === 'description' ? (
+            <Link
+              href="/plugins/[id]/source"
+              as={`/plugins/${this.state.plugin.collected.metadata.name}/source`}
+            >
+              <a className="plugin-info__link">view source code</a>
+            </Link>
+          ) : (
+            <Link
+              href="/plugins/[id]"
+              as={`/plugins/${this.state.plugin.collected.metadata.name}`}
+            >
+              <a className="plugin-info__link">view description</a>
+            </Link>
+          )}
 
           <div className="plugin-info__version">
             Version {this.state.plugin.collected.metadata.version}
