@@ -39,7 +39,7 @@ export default () => {
         <h1>{plugin.name}</h1>
         <p>{plugin.description}</p>
         <img src={plugin.preview} alt={`${plugin.name} preview`} />
-        <PluginInfo plugin={plugin} />
+        <PluginInfo variant="description" plugin={plugin} />
       </div>
     </Page>
   )
