@@ -14,8 +14,11 @@ export default () => {
   if (!plugin) {
     return (
       <Page>
+        <Head>
+          <title>Hyper Store</title>
+        </Head>
         <div className={styles.notFound}>
-          Couldn't find plugin <b>{id}</b>
+          Couldn't find "<b>{id}</b>"
         </div>
       </Page>
     )
