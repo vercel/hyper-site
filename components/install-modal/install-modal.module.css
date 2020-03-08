@@ -1,0 +1,65 @@
+.root {
+    width: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.content {
+    background: white;
+    color: black;
+    padding: 40px;
+    position: relative;
+    z-index: 1200;
+    max-width: 100%;
+    width: 480px;
+    text-align: center;
+}
+
+.content h3 {
+    margin-top: 0;
+    font-weight: 400;
+}
+
+.content p {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+}
+
+.content pre {
+    border: 1px solid #eaeaea;
+    color: #bd10e0;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    white-space: pre-wrap;
+}
+
+.content pre::before {
+    content: '$';
+    margin-right: 12px;
+}
+
+.security {
+    composes: dark from global;
+    margin-top: 24px;
+    font-size: 1.4rem;
+    display: inline-block;
+}
