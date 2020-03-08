@@ -17,21 +17,19 @@ export default ({ variant }) => {
         }`}</title>
       </Head>
       <nav className={styles.nav}>
-        <div className={styles.filtersWrapper}>
-          <div className={styles.filters}>
-            <a
-              onClick={() => setFilter('featured')}
-              className={filter === 'featured' ? styles.active : ''}
-            >
-              Featured
-            </a>
-            <a
-              onClick={() => setFilter('newest')}
-              className={filter === 'newest' ? styles.active : ''}
-            >
-              Newest
-            </a>
-          </div>
+        <div className={styles.filters}>
+          <a
+            onClick={() => setFilter('featured')}
+            className={filter === 'featured' ? styles.active : ''}
+          >
+            Featured
+          </a>
+          <a
+            onClick={() => setFilter('newest')}
+            className={filter === 'newest' ? styles.active : ''}
+          >
+            Newest
+          </a>
         </div>
         <Link
           className={styles.submitButton}

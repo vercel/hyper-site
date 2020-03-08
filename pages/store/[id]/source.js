@@ -120,23 +120,26 @@ export default () => {
       <Head>
         <title>Hyper Store - Source of {plugin.name}</title>
       </Head>
-      {fileContents && (
-        <>
-          <header className={styles.header}>
-            <h1>{plugin.name}</h1>
-          </header>
-          <div className={styles.container}>
+      <header className={styles.header}>
+        <h1>{plugin.name}</h1>
+      </header>
+      <div className={styles.container}>
+        {fileContents ? (
+          <>
             {renderFileTree(pluginContents.files)}
             <div className={styles.content}>
               {fileContents && fileContents[activeFile] ? (
                 <pre>{fileContents[activeFile]}</pre>
               ) : (
-                <span className={styles.loading}>Contents loading...</span>
+                <span className={styles.fileLoading}>Contents loading...</span>
               )}
             </div>
-          </div>
-        </>
-      )}
+          </>
+        ) : (
+          <span className={styles.pluginLoading}>Loading source code...</span>
+        )}
+      </div>
+
       <PluginInfo variant="source" plugin={plugin} />
     </Page>
   )

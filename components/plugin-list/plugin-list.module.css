@@ -1,6 +1,7 @@
 /* List view */
-.listWrapper {
+.listWrapper, .featuredWrapper {
     padding-top: 48px;
+    padding-bottom: 64px;
 }
 
 .listElemContainer {
@@ -38,7 +39,6 @@
 /* Featured view */
 .featuredWrapper {
     composes: container from global;
-    padding-top: 48px;
     display: flex;
     flex-flow: row wrap;
 }
