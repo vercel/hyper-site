@@ -29,7 +29,7 @@ export default () => {
           return r.json()
         })
         .then(d => setPluginContents(d))
-        .catch(() => router.replace(`/plugins/${pluginId}`))
+        .catch(() => router.replace(`/store/${pluginId}`))
     }
   }, [pluginId])
 
@@ -61,8 +61,8 @@ export default () => {
 
   const handleClickOnFile = path =>
     router.push(
-      '/plugins/[id]/source',
-      `/plugins/${pluginId}/source?${formatFileName(path)}`
+      '/store/[id]/source',
+      `/store/${pluginId}/source?${formatFileName(path)}`
     )
 
   const renderFileTree = root => (
@@ -170,7 +170,7 @@ export default () => {
       {fileContents && (
         <>
           <header className="container">
-            <Link href="/plugins/[id]" as={`/plugins/${pluginId}`}>
+            <Link href="/store/[id]" as={`/plugins/${pluginId}`}>
               <a className="plugin__back-link">
                 <BackArrow width="7" height="14" />
               </a>

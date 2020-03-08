@@ -26,7 +26,7 @@ export default ({ query, plugins, filteredBy }) => {
       <div className={styles.featuredWrapper}>
         {sortedPlugins.map(plugin => (
           <div key={plugin.name} className={styles.featuredElemContainer}>
-            <Link href="/plugins/[id]" as={`/plugins/${plugin.name}`}>
+            <Link href="/store/[id]" as={`/store/${plugin.name}`}>
               <a className={styles.featuredElemContent}>
                 <Plugin {...plugin} query={query} featured={true} />
               </a>
@@ -40,11 +40,7 @@ export default ({ query, plugins, filteredBy }) => {
   return (
     <div className={styles.listWrapper}>
       {sortedPlugins.map(plugin => (
-        <Link
-          key={plugin.name}
-          href="/plugins/[id]"
-          as={`/plugins/${plugin.name}`}
-        >
+        <Link key={plugin.name} href="/store/[id]" as={`/store/${plugin.name}`}>
           <a className={styles.listElemContainer}>
             <div className={styles.listElemContent}>
               <Plugin {...plugin} query={query} featured={false} />
