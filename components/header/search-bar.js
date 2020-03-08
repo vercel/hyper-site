@@ -29,6 +29,7 @@ export default () => {
         onKeyUp={handleSearch}
         placeholder="Search store..."
         className={styles.input}
+        aria-label="Search input"
       />
       <SearchIcon className={styles.icon} onClick={handleFocus} />
     </div>

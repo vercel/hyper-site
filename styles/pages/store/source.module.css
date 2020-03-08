@@ -1,0 +1,90 @@
+.header {
+  composes: container from global;
+  display: flex;
+  margin-bottom: 24px;
+  margin-top: 40px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.container {
+  composes: container from global;
+  display: flex;
+  overflow-x: hidden;
+  padding-bottom: 64px;
+}
+
+.content {
+  font-size: 1.2rem;
+  padding: 0 20px;
+  overflow-x: auto;
+}
+
+.loading {
+  color: #999999;
+}
+
+.files {
+  padding-right: 20px;
+}
+
+.file {
+  color: #999999;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.file.active,
+.file:hover {
+  color: white;
+}
+
+.file.active .icon,
+.file:hover .icon {
+  fill: white;
+}
+
+.icon {
+  margin-right: 12px;
+  fill: #999;
+  transition: fill 0.2s ease;
+  min-width: 11px;
+}
+
+.directoryList {
+  padding-left: 12px;
+  display: none;
+}
+
+.directoryToggle {
+  display: none;
+}
+
+.directoryToggle:checked + .directoryList {
+  display: block;
+}
+
+.header,
+.content,
+.files {
+  animation: appear 200ms ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
