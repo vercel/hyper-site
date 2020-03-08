@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Page from '../../../components/page'
 import PluginInfo from '../../../components/PluginInfo'
 import plugins from '../../../plugins.json'
-import styles from '../../../styles/pages/store-index.module.css'
+import styles from '../../../styles/pages/store/index.module.css'
 
 export default () => {
   const {
