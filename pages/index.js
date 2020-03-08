@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Page from '../components/page'
 import Footer from '../components/footer'
 import DownloadButton from '../components/download-button'
+import DownloadIcon from '../components/icons/download-icon.svg'
+import Arrow from '../components/icons/arrow.svg'
 
 const literal = '`'
 
@@ -132,7 +134,7 @@ export default () => {
             </div>
             <div id="arrow">
               <a href="#installation">
-                <img src="/arrow.svg" width={18} />
+                <Arrow />
               </a>
             </div>
           </div>
@@ -169,7 +171,7 @@ export default () => {
                     className={os === 'mac' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/mac">
-                      <img src="/download-icon.svg" />
+                      <DownloadIcon />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -183,7 +185,7 @@ export default () => {
                     className={os === 'windows' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/win">
-                      <img src="/download-icon.svg" />
+                      <DownloadIcon />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -197,7 +199,7 @@ export default () => {
                     className={os === 'ubuntu' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/deb">
-                      <img src="/download-icon.svg" />
+                      <DownloadIcon />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -211,7 +213,7 @@ export default () => {
                     className={os === 'fedora' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/rpm">
-                      <img src="/download-icon.svg" />
+                      <DownloadIcon />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -225,7 +227,7 @@ export default () => {
                     className={os === 'linux' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/AppImage">
-                      <img src="/download-icon.svg" />
+                      <DownloadIcon />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -1734,7 +1736,12 @@ export default () => {
             .
           </p>
           <p style={{ textAlign: 'center' }}>
-            <img src="/hyperyellow.gif" width={446} height={333} />
+            <img
+              src="/hyperyellow.gif"
+              alt="hyperyellow theme"
+              width={446}
+              height={333}
+            />
           </p>
           <p>
             Themes are simply plugins! Only one hook,{' '}
@@ -2033,6 +2040,7 @@ export default () => {
             left: 50%;
             margin-left: -9px;
             bottom: 20px;
+            width: 18px;
           }
 
           #video {
@@ -2248,13 +2256,13 @@ export default () => {
             text-align: center;
           }
 
-          #content #installation-table td:not(.highlighted) img {
+          #content #installation-table td:not(.highlighted) :global(svg) {
             opacity: 0.5;
             transition: opacity 0.3s ease;
             -webkit-backface-visibility: hidden;
           }
 
-          #content #installation-table td a:hover img {
+          #content #installation-table td a:hover :global(svg) {
             opacity: 1;
           }
 
@@ -2269,11 +2277,6 @@ export default () => {
 
           #content #installation-table td[id^='td'] {
             padding: 0;
-          }
-
-          #content #installation-table img {
-            width: 17px;
-            height: 13px;
           }
 
           #content #config-paths-table td {
