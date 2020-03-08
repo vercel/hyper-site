@@ -1,7 +1,7 @@
 .header {
   composes: container from global;
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   margin-top: 40px;
   width: 100%;
   justify-content: center;
@@ -27,7 +27,14 @@
   overflow-x: auto;
 }
 
-.loading {
+.pluginLoading {
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+}
+
+.pluginLoading,
+.fileLoading {
   color: #999999;
 }
 
@@ -74,10 +81,9 @@
   display: block;
 }
 
-.header,
 .content,
 .files {
-  animation: appear 200ms ease;
+  animation: appear 150ms ease;
 }
 
 @keyframes appear {
