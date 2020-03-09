@@ -83,7 +83,7 @@
 
 .content,
 .files {
-  animation: appear 150ms ease;
+  animation: appear 150ms ease-out;
 }
 
 @keyframes appear {
