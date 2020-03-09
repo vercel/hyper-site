@@ -60,7 +60,7 @@ export default () => {
 
   const handleClickOnFile = path =>
     router.push(
-      '/store/[id]/source',
+      '/store/[name]/source',
       `/store/${pluginId}/source?${formatFileName(path)}`
     )
 

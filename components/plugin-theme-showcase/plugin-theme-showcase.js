@@ -1,13 +1,21 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Link from '../link'
 import Page from '../page'
 import PluginsList from '../plugin-list'
-import { usePlugins, useFilter } from '../../lib/plugins'
 import styles from './plugin-theme-showcase.module.css'
+import stuff from '../../plugins'
+import { useRouter } from 'next/router'
 
 export default ({ variant }) => {
-  const plugins = usePlugins({ type: variant })
-  const [filter, setFilter] = useFilter('featured')
+  const router = useRouter()
+  const plugins = stuff.filter(e => e.type === variant)
+  const [filter, setFilter] = useState(router.query.filter ?? 'featured')
+
+  const handleFilterChange = newFilter => {
+    setFilter(newFilter)
+    router.push({ pathname: router.pathname, query: { filter: newFilter } })
+  }
 
   return (
     <Page>
@@ -19,13 +27,13 @@ export default ({ variant }) => {
       <nav className={styles.nav}>
         <div className={styles.filters}>
           <a
-            onClick={() => setFilter('featured')}
+            onClick={() => handleFilterChange('featured')}
             className={filter === 'featured' ? styles.active : ''}
           >
             Featured
           </a>
           <a
-            onClick={() => setFilter('newest')}
+            onClick={() => handleFilterChange('newest')}
             className={filter === 'newest' ? styles.active : ''}
           >
             Newest

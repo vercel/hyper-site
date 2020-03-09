@@ -1,30 +1,10 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import Page from '../../../components/page'
 import PluginInfo from '../../../components/PluginInfo'
-import plugins from '../../../plugins.json'
+import plugins from '../../../plugins'
 import styles from '../../../styles/pages/store/index.module.css'
 
-export default () => {
-  const {
-    query: { id }
-  } = useRouter()
-  const plugin = plugins.find(p => p.name === id)
-
-  if (!plugin) {
-    return (
-      <Page>
-        <Head>
-          <title>Hyper Store</title>
-        </Head>
-        <div className={styles.notFound}>
-          Couldn't find "<b>{id}</b>"
-        </div>
-      </Page>
-    )
-  }
-
-  return (
+export default ({ plugin }) => (
     <Page>
       <Head>
         <title>Hyper Store - {plugin.name}</title>
@@ -46,4 +26,12 @@ export default () => {
       </div>
     </Page>
   )
-}
+
+export const getStaticProps = ({ params }) => ({
+  props: { plugin: plugins.find(e => e.name === params.name) }
+})
+
+export const getStaticPaths = () => ({
+  paths: plugins.map(({ name }) => ({ params: { name } })),
+  fallback: false
+})
