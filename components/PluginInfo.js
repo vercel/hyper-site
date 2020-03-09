@@ -89,7 +89,10 @@ export default class PluginInfo extends React.Component {
               </span>
             )}
             &nbsp;
-            <Link href="/store/[id]/source" as={`/store/${plugin.name}/source`}>
+            <Link
+              href="/store/[name]/source"
+              as={`/store/${plugin.name}/source`}
+            >
               <a className="plugin-info__link">View source code</a>
             </Link>
             <a className="plugin-info__install" onClick={this.openInstallModal}>
@@ -159,14 +162,14 @@ export default class PluginInfo extends React.Component {
 
           {this.props.variant === 'description' ? (
             <Link
-              href="/store/[id]/source"
+              href="/store/[name]/source"
               as={`/store/${this.state.plugin.collected.metadata.name}/source`}
             >
               <a className="plugin-info__link">view source code</a>
             </Link>
           ) : (
             <Link
-              href="/store/[id]"
+              href="/store/[name]"
               as={`/store/${this.state.plugin.collected.metadata.name}`}
             >
               <a className="plugin-info__link">view description</a>
