@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import plugins from '../../../plugins.json'
 import Page from '../../../components/page'
-import PluginInfo from '../../../components/PluginInfo'
+import PluginInfo from '../../../components/plugin-info'
 import FileIcon from '../../../components/icons/file-icon.svg'
 import DirectoryIcon from '../../../components/icons/directory-icon.svg'
 import styles from '../../../styles/pages/store/source.module.css'
@@ -12,7 +12,7 @@ const formatFileName = path => path.replace(/^\/+|\/+$/g, '')
 
 export default () => {
   const router = useRouter()
-  const pluginId = router.query.id
+  const pluginId = router.query.name
   const plugin = plugins.find(p => p.name === pluginId)
   const [pluginContents, setPluginContents] = useState(null)
   const [activeFile, setActiveFile] = useState(null)
@@ -140,7 +140,7 @@ export default () => {
         )}
       </div>
 
-      <PluginInfo variant="source" plugin={plugin} />
+      <PluginInfo variant="source" pluginName={plugin.name} />
     </Page>
   )
 }

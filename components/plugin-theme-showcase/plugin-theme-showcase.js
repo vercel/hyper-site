@@ -4,12 +4,12 @@ import Link from '../link'
 import Page from '../page'
 import PluginsList from '../plugin-list'
 import styles from './plugin-theme-showcase.module.css'
-import stuff from '../../plugins'
+import allPlugins from '../../plugins'
 import { useRouter } from 'next/router'
 
 export default ({ variant }) => {
   const router = useRouter()
-  const plugins = stuff.filter(e => e.type === variant)
+  const plugins = allPlugins.filter(e => e.type === variant)
   const [filter, setFilter] = useState(router.query.filter ?? 'featured')
 
   const handleFilterChange = newFilter => {

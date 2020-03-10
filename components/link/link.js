@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-export default ({ href, children, className = '' }) => {
+export default ({ href, children, className = '', as }) => {
   const isInternal = /^\/(?!\/)/.test(href)
 
   if (isInternal)
     return (
-      <Link href={href}>
+      <Link href={href} as={as}>
         <a className={className}>{children}</a>
       </Link>
     )

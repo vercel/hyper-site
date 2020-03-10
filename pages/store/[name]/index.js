@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Page from '../../../components/page'
-import PluginInfo from '../../../components/PluginInfo'
+import PluginInfo from '../../../components/plugin-info'
 import plugins from '../../../plugins'
 import styles from '../../../styles/pages/store/index.module.css'
 
@@ -22,7 +22,7 @@ export default ({ plugin }) => (
         <h1>{plugin.name}</h1>
         <p>{plugin.description}</p>
         <img src={plugin.preview} alt={`${plugin.name} preview`} />
-        <PluginInfo variant="description" plugin={plugin} />
+        <PluginInfo variant="description" pluginName={plugin.name} />
       </div>
     </Page>
   )
