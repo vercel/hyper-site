@@ -3,7 +3,7 @@ import selectText from '../../lib/select-text'
 import Link from '../link'
 import styles from './install-modal.module.css'
 
-export default ({ name, open, onClose }) => {
+export default ({ pluginName, open, onClose }) => {
   const preEl = useRef(null)
 
   useEffect(() => {
@@ -23,12 +23,12 @@ export default ({ name, open, onClose }) => {
     <div className={styles.root}>
       <div className={styles.backdrop} onClick={onClose} />
       <div className={styles.content}>
-        <h3>Install {name}</h3>
+        <h3>Install {pluginName}</h3>
         <p>
           Use the <code>hyper</code> command, bundled with your Hyper app, to
-          install {name} by entering the following into Hyper:
+          install {pluginName} by entering the following into Hyper:
         </p>
-        <pre ref={preEl}>hyper i {name}</pre>
+        <pre ref={preEl}>hyper i {pluginName}</pre>
         <Link
           href="https://github.com/zeit/hyper-plugins/wiki/Security-and-Hyper-plugins"
           className={styles.security}

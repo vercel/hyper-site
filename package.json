@@ -32,7 +32,8 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-gravatar": "^2.6.3",
-    "react-highlighter": "^0.4.3"
+    "react-highlighter": "^0.4.3",
+    "swr": "^0.1.18"
   },
   "devDependencies": {
     "husky": "^1.2.0",
