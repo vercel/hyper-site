@@ -12,7 +12,7 @@ const formatFileName = path => path.replace(/^\/+|\/+$/g, '')
 
 export default () => {
   const router = useRouter()
-  const pluginId = router.query.id
+  const pluginId = router.query.name
   const plugin = plugins.find(p => p.name === pluginId)
   const [pluginContents, setPluginContents] = useState(null)
   const [activeFile, setActiveFile] = useState(null)
