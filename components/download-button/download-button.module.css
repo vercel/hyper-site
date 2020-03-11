@@ -13,12 +13,11 @@
 
 .root:hover {
     background: #e5e5e5;
+    color: black;
 }
 
 .root svg {
-    fill: #000;
     margin-right: 12px;
-    height: 16px;
 }
 
 .root strong {

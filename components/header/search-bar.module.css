@@ -34,9 +34,10 @@
   opacity: 0.5;
   transition: opacity 0.2s ease;
   -webkit-backface-visibility: hidden;
+  cursor: pointer;
 }
 
-.input:focus + .icon {
+.input:focus + .icon, .icon:hover {
   opacity: 1;
 }
 
