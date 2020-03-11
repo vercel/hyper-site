@@ -1970,7 +1970,7 @@ export default () => {
       <Footer />
 
       <style jsx>{`
-          :global(body) {
+          #main {
             color: #ccc;
           }
 
