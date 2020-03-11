@@ -1,7 +1,5 @@
 import withPost from '../../components/blog/with-post'
-import Image from '../../components/blog/Image.js'
 import DownloadButton from '../../components/download-button'
-import Caption from '../../components/text/Caption.js'
 
 export const meta = {
   title: 'Hyper 3',
@@ -109,14 +107,16 @@ Digging within the CPU profile, we noticed that the "renderer" process was
 spending most of its time handling an overwhelming amount of messages coming
 in from the main process.
 
-<Image width={5469 / 3} height={1297 / 3} src="/blog/hyper2.png" caption="Hyper 2"/>
-<Image width={5469 / 3} height={1297 / 3} src="/blog/hyper3.png" caption="Hyper 3"/>
-<Caption>
+<img className="oversize" src="/blog/hyper2.png" />
+<p className="caption">Hyper 2</p>
+<img className="oversize" src="/blog/hyper3.png" />
+<p className="caption">Hyper 3</p>
+<p className="caption">
   It is easy to see the difference between Hyper v2 and v3.
   <br/>
   The pink segments represent the time spent in processing IPC, instead of parsing
   or rendering.
-</Caption>
+</p>
 
 Electron uses a multi-process architecture where each window runs on its own separate
 "renderer" process. Additionally, there's one Node.js-based "main" process that
@@ -180,12 +180,8 @@ is already warmed-up and ready to be consumed. This gives Hyper 3 a decent boost
 If you're on MacOS, you can now press `Command + Control + Space` to get an
 emoji popup and [jazz up those commit messages](https://gitmoji.carloscuesta.me/).
 
-<Image
-  src="/blog/supports-emoji.png"
-  width={1062 / 2}
-  height={950 / 2}
-  caption="With the new emoji support, introducing emoji within Git commits (or elsewhere) is easier than ever."
-  />
+<img src="/blog/supports-emoji.png" />
+  <p className="caption">With the new emoji support, introducing emoji within Git commits (or elsewhere) is easier than ever.</p>
 <br/>
 
 ### More Themes on Hyper Store
@@ -197,12 +193,8 @@ We have a detailed contribution page that explains how you can go about
 [enlisting your extension](https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store).
 We encourage all contribution and look forward to adding more themes and plugins from the community!
 
-<Image
-  width={1800 / 2}
-  height={1360 / 2}
-  src="/blog/themes.png"
-  caption="Hyper supports themes, allowing you to customise your development experience."
-/>
+<img src="/blog/themes.png" />
+<p className="caption">Hyper supports themes, allowing you to customise your development experience.</p>
 
 ## The Road Ahead
 
@@ -232,6 +224,3 @@ feedback and several initiatives they had on their side. We would like to extend
 huge thanks to [Daniel Imms](https://github.com/tyriar),
 [@Jerch](https://github.com/jerch) and
 [Benjamin Staneck](https://github.com/stanzilla) for their contribution and feedback.
-
-<br/>
-<br/>

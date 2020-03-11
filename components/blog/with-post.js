@@ -4,11 +4,7 @@ import Page from '../page'
 import InlineCode from './inline-code'
 import Author from './Author'
 
-const MDXComponents = {
-  inlineCode: InlineCode
-}
-
-const WithPost = meta => ({ children }) => (
+export default meta => ({ children }) => (
   <Page>
     <Head>
       <title>Hyper Blog</title>
@@ -33,8 +29,8 @@ const WithPost = meta => ({ children }) => (
 
     <div className="container">
       <div className="content">
-        <MDXProvider components={MDXComponents}>
-          <div style={{ padding: '100px 0px 50px 0' }}>
+        <MDXProvider components={{ inlineCode: InlineCode }}>
+          <div className="title">
             <h1>{meta.title}</h1>
           </div>
 
@@ -61,6 +57,7 @@ const WithPost = meta => ({ children }) => (
           width: 100%;
           position: relative;
           overflow: hidden;
+          padding-bottom: 160px;
         }
 
         .content {
@@ -84,9 +81,6 @@ const WithPost = meta => ({ children }) => (
           font-size: 16px;
           line-height: 32px;
           margin: 0 0 20px;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-            'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-            'Helvetica Neue', sans-serif;
         }
 
         .content :global(ul:not(.authors) li) {
@@ -115,7 +109,13 @@ const WithPost = meta => ({ children }) => (
           align-items: center;
         }
 
+        .content :global(img) {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+
         .content :global(.oversize) {
+          max-width: unset;
           width: 150%;
           margin-left: -28%;
         }
@@ -136,18 +136,40 @@ const WithPost = meta => ({ children }) => (
           background-color: rgba(255, 255, 255, 0.4);
         }
 
+        .content :global(img) {
+          margin-top: 16px;
+        }
+
+        .content :global(.caption + img) {
+          margin-top: 0;
+        }
+
+        .content :global(.caption) {
+          color: #999;
+          font-size: 16px;
+          text-align: center;
+          margin: 0 0 32px;
+        }
+
+        .title {
+          padding: 100px 0 50px 0;
+        }
+
         @media (max-width: 768px) {
           .container .content {
             width: 100vw;
-            padding: 0 35px;
+            padding: 0;
           }
           .content :global(.authors) {
             flex-wrap: wrap;
+          }
+          .content :global(.oversize) {
+            max-width: 100%;
+            width: unset;
+            margin-left: unset;
           }
         }
       `}
     </style>
   </Page>
 )
-
-export default WithPost
