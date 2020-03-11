@@ -3,7 +3,7 @@ import InstallModal from './install-modal'
 import styles from './plugin-info.module.css'
 import useSWR from 'swr'
 import { event as gTagEvent } from '../../lib/gtag'
-import GithubIcon from '../icons/github-icon.svg'
+import { GitHub } from '../icons'
 import Gravatar from 'react-gravatar'
 import Link from '../link'
 
@@ -58,7 +58,7 @@ export default ({ pluginName, variant }) => {
               className={styles.github}
               href={plugin.collected.metadata.links.repository}
             >
-              <GithubIcon />
+              <GitHub size={14} />
             </Link>
           </>
         )}

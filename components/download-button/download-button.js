@@ -1,7 +1,4 @@
-import AppleLogo from '../icons/apple-logo.svg'
-import WindowsLogo from '../icons/windows-logo.svg'
-import LinuxLogo from '../icons/linux-logo.svg'
-import DownloadIcon from '../icons/download-icon.svg'
+import { Apple, Linux, Windows, Download } from '../icons'
 import Link from '../link'
 import styles from './download-button.module.css'
 
@@ -12,7 +9,7 @@ export default ({ os }) => {
         className={styles.root}
         href="https://releases.hyper.is/download/mac"
       >
-        <AppleLogo />
+        <Apple size={16} />
         <strong>Download Hyper for macOS</strong>
       </Link>
     )
@@ -22,7 +19,7 @@ export default ({ os }) => {
         className={styles.root}
         href="https://releases.hyper.is/download/win"
       >
-        <WindowsLogo />
+        <Windows size={16} />
         <strong>Download Hyper for Windows</strong>
       </Link>
     )
@@ -32,7 +29,7 @@ export default ({ os }) => {
         className={styles.root}
         href="https://releases.hyper.is/download/rpm"
       >
-        <LinuxLogo />
+        <Linux size={16} />
         <strong>Download Hyper for Fedora</strong>
       </Link>
     )
@@ -42,7 +39,7 @@ export default ({ os }) => {
         className={styles.root}
         href="https://releases.hyper.is/download/deb"
       >
-        <LinuxLogo />
+        <Linux />
         <strong>Download Hyper for Ubuntu</strong>
       </Link>
     )
@@ -52,14 +49,14 @@ export default ({ os }) => {
         className={styles.root}
         href="https://releases.hyper.is/download/AppImage"
       >
-        <LinuxLogo />
+        <Linux />
         <strong>Download Hyper for Linux</strong>
       </Link>
     )
   } else {
     return (
       <Link href="/#installation" className={styles.root}>
-        <DownloadIcon />
+        <Download height={12} width={16} />
         <strong>Download Hyper</strong>
       </Link>
     )

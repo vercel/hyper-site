@@ -52,20 +52,16 @@
 }
 
 .file.active,
-.file:hover {
-  color: white;
-}
-
+.file:hover,
 .file.active .icon,
 .file:hover .icon {
-  fill: white;
+  color: white;
 }
 
 .icon {
   margin-right: 12px;
-  fill: #999;
+  color: #999;
   transition: fill 0.2s ease;
-  min-width: 11px;
 }
 
 .directoryList {

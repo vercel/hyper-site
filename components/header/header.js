@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import Logo from '../icons/logo.svg'
 import Link from './header-link'
 import SearchBar from './search-bar'
-import MobileNavToggle from '../icons/mobile-nav-arrow.svg'
+import { Arrow, Logo } from '../icons'
 import styles from './header.module.css'
 
 export default () => {
@@ -14,7 +13,7 @@ export default () => {
     <>
       <header className={styles.header}>
         <Link className={styles.logo} href="/">
-          <Logo />
+          <Logo width={31} height={23} />
         </Link>
 
         <nav className={styles.desktopNav}>
@@ -33,7 +32,7 @@ export default () => {
         </div>
 
         <span className={styles.toggle} onClick={toggle}>
-          <MobileNavToggle />
+          <Arrow height={14} width={26} />
         </span>
       </header>
 

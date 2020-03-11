@@ -62,10 +62,11 @@
 .github {
     display: flex;
     margin-right: 24px;
+    color: #999;
 }
 
-.github:hover > svg {
-    fill: white;
+.github:hover {
+    color: white;
 }
 
 @media (max-width: 716px) {

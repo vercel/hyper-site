@@ -4,8 +4,7 @@ import { useRouter } from 'next/router'
 import plugins from '../../../plugins.json'
 import Page from '../../../components/page'
 import PluginInfo from '../../../components/plugin-info'
-import FileIcon from '../../../components/icons/file-icon.svg'
-import DirectoryIcon from '../../../components/icons/directory-icon.svg'
+import { File, Directory } from '../../../components/icons'
 import styles from '../../../styles/pages/store/source.module.css'
 
 const formatFileName = path => path.replace(/^\/+|\/+$/g, '')
@@ -75,7 +74,7 @@ export default () => {
               }`}
               onClick={() => handleClickOnFile(file.path)}
             >
-              <FileIcon className={styles.icon} />
+              <File width={11} height={15} className={styles.icon} />
               {file.path
                 .replace(/^\/+|\/+$/g, '')
                 .split('/')
@@ -89,7 +88,7 @@ export default () => {
                 className={styles.file}
                 htmlFor={`reveal-${file.path}`}
               >
-                <DirectoryIcon className={styles.icon} />
+                <Directory size={12} className={styles.icon} />
                 {file.path
                   .replace(/^\/+|\/+$/g, '')
                   .split('/')

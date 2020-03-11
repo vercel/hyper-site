@@ -1,6 +1,4 @@
-import AppleLogo from '../../components/icons/apple-logo.svg'
-import LinuxLogo from '../../components/icons/linux-logo.svg'
-import WindowsLogo from '../../components/icons/windows-logo.svg'
+import { Apple, Linux, Windows } from '../icons'
 import Link from '../link'
 import styles from './footer.module.css'
 
@@ -16,13 +14,13 @@ export default () => (
         <span className={styles.download}>
           Download for:
           <Link href="/#installation">
-            <AppleLogo />
+            <Apple size={16} />
           </Link>
           <Link href="/#installation">
-            <WindowsLogo />
+            <Windows size={16} />
           </Link>
           <Link href="/#installation">
-            <LinuxLogo />
+            <Linux size={16} />
           </Link>
         </span>
       </div>

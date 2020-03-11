@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useRouter } from 'next/router'
-import SearchIcon from '../icons/search.svg'
+import { Search } from '../icons'
 import styles from './search-bar.module.css'
 
 export default () => {
@@ -31,7 +31,7 @@ export default () => {
         className={styles.input}
         aria-label="Search input"
       />
-      <SearchIcon className={styles.icon} onClick={handleFocus} />
+      <Search size={14} className={styles.icon} onClick={handleFocus} />
     </div>
   )
 }

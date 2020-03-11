@@ -3,8 +3,7 @@ import Head from 'next/head'
 import Page from '../components/page'
 import Footer from '../components/footer'
 import DownloadButton from '../components/download-button'
-import DownloadIcon from '../components/icons/download-icon.svg'
-import Arrow from '../components/icons/arrow.svg'
+import { Arrow, Download } from '../components/icons'
 
 const literal = '`'
 
@@ -134,7 +133,7 @@ export default () => {
             </div>
             <div id="arrow">
               <a href="#installation">
-                <Arrow />
+                <Arrow height={14} width={26} />
               </a>
             </div>
           </div>
@@ -171,7 +170,11 @@ export default () => {
                     className={os === 'mac' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/mac">
-                      <DownloadIcon />
+                      <Download
+                        height={12}
+                        width={16}
+                        className="download-icon"
+                      />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -185,7 +188,11 @@ export default () => {
                     className={os === 'windows' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/win">
-                      <DownloadIcon />
+                      <Download
+                        height={12}
+                        width={16}
+                        className="download-icon"
+                      />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -199,7 +206,11 @@ export default () => {
                     className={os === 'ubuntu' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/deb">
-                      <DownloadIcon />
+                      <Download
+                        height={12}
+                        width={16}
+                        className="download-icon"
+                      />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -213,7 +224,11 @@ export default () => {
                     className={os === 'fedora' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/rpm">
-                      <DownloadIcon />
+                      <Download
+                        height={12}
+                        width={16}
+                        className="download-icon"
+                      />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -227,7 +242,11 @@ export default () => {
                     className={os === 'linux' ? 'highlighted' : ''}
                   >
                     <a href="https://releases.hyper.is/download/AppImage">
-                      <DownloadIcon />
+                      <Download
+                        height={12}
+                        width={16}
+                        className="download-icon"
+                      />
                       <span className="latest-version">{tagName}</span>
                     </a>
                   </td>
@@ -2040,9 +2059,12 @@ export default () => {
             left: 50%;
             margin-left: -9px;
             bottom: 20px;
-            width: 18px;
           }
-
+          
+          #arrow :global(svg) {
+            color: white;
+          }
+          
           #video {
             height: 50vh;
             top: 50%;
@@ -2256,14 +2278,16 @@ export default () => {
             text-align: center;
           }
 
-          #content #installation-table td:not(.highlighted) :global(svg) {
-            opacity: 0.5;
+          
+         #content #installation-table td:not(.highlighted) :global(.download-icon) {
+                     opacity: 0.5;
             transition: opacity 0.3s ease;
             -webkit-backface-visibility: hidden;
-          }
-
-          #content #installation-table td a:hover :global(svg) {
-            opacity: 1;
+            color: #50E3C2;
+         }
+          
+          #content #installation-table td a:hover :global(.download-icon) {
+                      opacity: 1;
           }
 
           #content #installation-table td.highlighted a {
