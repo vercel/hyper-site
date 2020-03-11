@@ -1,0 +1,24 @@
+.root {
+  color: #ff0080;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+.root::before,
+.root::after {
+  content: '`';
+}
+
+.root.dark {
+  color: #50e3c2;
+}
+
+.root.disabled {
+  color: #777;
+}
+
+.root.noWrap {
+  white-space: nowrap;
+}

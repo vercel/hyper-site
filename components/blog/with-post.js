@@ -39,9 +39,9 @@ const WithPost = meta => ({ children }) => (
           </div>
 
           <ul className="authors">
-            {meta.authors.map(author => (
-              <li key={author.twitter}>
-                <Author data={author} />
+            {meta.authors.map((author, i) => (
+              <li key={i}>
+                <Author {...author} />
               </li>
             ))}
           </ul>
