@@ -1,18 +1,17 @@
-import { useMemo } from 'react'
 import Head from 'next/head'
-import getPlugins from '../../lib/get-plugins'
-import escapeHtml from 'escape-html'
 import PluginsList from '../plugin-list'
 import { useRouter } from 'next/router'
 import styles from './search-list.module.css'
+import allPlugins from '../../plugins'
 
 export default () => {
   const {
     query: { q: query }
   } = useRouter()
-  const plugins = useMemo(() => getPlugins({ query: escapeHtml(query) }), [
-    query
-  ])
+  const plugins = allPlugins.filter(
+    ({ name, description }) =>
+      name.includes(query) || description.includes(query)
+  )
 
   if (plugins.length > 0) {
     return (
