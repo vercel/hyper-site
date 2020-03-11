@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Plugin from '../Plugin'
+import Plugin from '../plugin'
 import styles from './plugin-list.module.css'
 
 export default ({ query, plugins, filteredBy }) => {
