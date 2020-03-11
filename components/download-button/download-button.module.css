@@ -9,6 +9,7 @@
     margin-bottom: 16px;
     text-decoration: none;
     transition: background 0.12s ease-in-out;
+    line-height: 1;
 }
 
 .root:hover {
@@ -18,9 +19,4 @@
 
 .root svg {
     margin-right: 12px;
-}
-
-.root strong {
-    color: #000000;
-    margin-bottom: 3px;
 }
