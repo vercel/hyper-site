@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
 import Page from '../page'
 import InlineCode from './inline-code'
-import Author from './Author'
+import Author from './author'
 
 export default meta => ({ children }) => (
   <Page>
