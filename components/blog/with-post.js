@@ -109,9 +109,9 @@ export default meta => ({ children }) => (
           align-items: center;
         }
 
-        .content :global(img) {
+        .content > :global(img) {
           max-width: 100%;
-          margin: 0 auto;
+          margin: 16px auto 0;
         }
 
         .content :global(.oversize) {
@@ -134,10 +134,6 @@ export default meta => ({ children }) => (
           border: none;
           height: 1px;
           background-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .content :global(img) {
-          margin-top: 16px;
         }
 
         .content :global(.caption + img) {
