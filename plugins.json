@@ -613,5 +613,12 @@
       "#c4a7e7"
     ],
     "dateAdded": "1582919913142"
+  },
+  {
+    "name": "hyper-tabs-autohide",
+    "description": "Autohide all tabs.",
+    "type": "plugin",
+    "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
+    "dateAdded": "1583633829078"
   }
 ]
