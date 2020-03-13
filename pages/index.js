@@ -2053,11 +2053,15 @@ export default () => {
               'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
               'Helvetica Neue', sans-serif;
           }
+          
+          .top-download > :global(*:first-child) {
+          margin-bottom: 16px;
+          }
 
           #arrow {
             position: absolute;
             left: 50%;
-            margin-left: -9px;
+            transform: translateX(-50%);
             bottom: 20px;
           }
           

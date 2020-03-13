@@ -151,6 +151,11 @@ export default meta => ({ children }) => (
           padding: 100px 0 50px 0;
         }
 
+        .content :global(.button) {
+          display: flex;
+          justify-content: center;
+        }
+
         @media (max-width: 768px) {
           .container .content {
             width: 100vw;
