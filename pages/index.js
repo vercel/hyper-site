@@ -785,6 +785,32 @@ export default class Index extends React.Component {
                   </tr>
                   <tr>
                     <td>
+                      <code>onWindowClass</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>
+                        <b>v2.1.2*</b> Invoked when each window is created. If a
+                        plugin reloads, it's invoked again with the existing
+                        windows.
+                      </p>
+                      <p>Parameters:</p>
+                      <table className="params">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>window</code>
+                            </td>
+                            <td>
+                              Hyper Window class <code>Window</code>.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       <code>onWindow</code>
                     </td>
                     <td>Electron</td>
@@ -900,6 +926,40 @@ export default class Index extends React.Component {
                               <code>menu</code>
                             </td>
                             <td>The menu template object</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>decorateWindowClass</code>
+                    </td>
+                    <td>Electron</td>
+                    <td>
+                      <p>
+                        <b>v2.1.2*</b> Allow decoration on the Window class
+                        creation by passing options.
+                      </p>
+                      <p>Parameters:</p>
+                      <table className="params">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <code>options</code>
+                            </td>
+                            <td>
+                              The Hyper <code>Window</code> class options
+                              object.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code>uid</code>
+                            </td>
+                            <td>
+                              The <code>uid</code> inside options object.
+                            </td>
                           </tr>
                         </tbody>
                       </table>
