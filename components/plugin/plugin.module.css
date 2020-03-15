@@ -22,7 +22,7 @@
     font-weight: 400;
 }
 
-.featuedContent p {
+.featuredContent p {
     margin-bottom: 0;
     font-size: 1.2rem;
     color: #999999;
@@ -31,6 +31,7 @@
 .colors {
     display: flex;
     margin-left: auto;
+    margin-top: 4px;
 }
 
 .colors > * {
@@ -62,6 +63,10 @@
     padding-left: 4px;
     padding-right: 4px;
     font-weight: 400;
+}
+
+.listContent .colors {
+    margin-top: 0;
 }
 
 .listContent h4, .listContent p {

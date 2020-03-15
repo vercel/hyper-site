@@ -1,84 +1,68 @@
 /* List view */
-.listWrapper, .featuredWrapper {
-    padding-top: 48px;
-    padding-bottom: 64px;
+.listWrapper,
+.featuredWrapper {
+  padding-top: 48px;
+  padding-bottom: 64px;
 }
 
 .listElemContainer {
-    display: block;
-    color: inherit;
-    padding-bottom: 16px;
-    cursor: pointer;
-    transition: background 0.2s ease;
+  display: block;
+  color: inherit;
+  padding-bottom: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .listElemContainer:hover {
-    color: inherit;
-    background: #121212;
+  color: inherit;
+  background: #121212;
 }
 
 .listElemContent {
-    padding-top: 16px;
-    padding-left: 40px;
-    padding-right: 40px;
+  padding-top: 16px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .listElemContainer:not(:first-of-type) .listElemContent {
-    border-top: 1px solid #333333;
-    transition: border 0.2s ease;
+  border-top: 1px solid #333333;
+  transition: border 0.2s ease;
 }
 
 .listElemContainer:hover .listElemContent {
-    border-color: transparent;
+  border-color: transparent;
 }
 
 .listElemContainer:hover + .listElemContainer .listElemContent {
-    border-color: transparent;
+  border-color: transparent;
 }
 
 /* Featured view */
 .featuredWrapper {
-    composes: container from global;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.featuredElemContainer {
-    width: 50%;
-    margin-bottom: 24px;
-}
-
-.featuredElemContainer:nth-child(odd) {
-    padding-right: 16px;
-}
-
-.featuredElemContainer:nth-child(even) {
-    padding-left: 16px;
+  composes: container from global;
+  display: grid;
+  column-gap: 32px;
+  row-gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .featuredElemContent {
-    display: block;
-    color: inherit;
-    cursor: pointer;
-    border: 1px solid #333;
-    transition: border 0.2s ease;
-    border-radius: 5px;
-    overflow: hidden;
+  display: block;
+  color: inherit;
+  cursor: pointer;
+  border: 1px solid #333;
+  transition: border 0.2s ease;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.featuredElemContainer:hover .featuredElemContent {
-    color: inherit;
-    border-color: white;
+.featuredElemContent:hover {
+  color: inherit;
+  border-color: white;
 }
 
 @media (max-width: 48em) {
-    .featuredElemContainer {
-        width: 100%;
-        margin-bottom: 16px;
-    }
-
-    .featuredElemContainer:nth-child(odd),
-    .featuredElemContainer:nth-child(even) {
-        padding: 0;
-    }
+  .featuredWrapper {
+    grid-template-columns: 1fr;
+  }
 }
