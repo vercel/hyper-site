@@ -18,13 +18,15 @@ export default ({ query, plugins, filteredBy }) => {
     return (
       <div className={styles.featuredWrapper}>
         {sortedPlugins.map(plugin => (
-          <div key={plugin.name} className={styles.featuredElemContainer}>
-            <Link href="/store/[name]" as={`/store/${plugin.name}`}>
-              <a className={styles.featuredElemContent}>
-                <Plugin {...plugin} query={query} featured={true} />
-              </a>
-            </Link>
-          </div>
+          <Link
+            key={plugin.name}
+            href="/store/[name]"
+            as={`/store/${plugin.name}`}
+          >
+            <a className={styles.featuredElemContent}>
+              <Plugin {...plugin} query={query} featured={true} />
+            </a>
+          </Link>
         ))}
       </div>
     )
