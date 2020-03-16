@@ -22,35 +22,33 @@ export default ({ featured, name, description, colors, preview, query }) =>
       </div>
     </div>
   ) : (
-    <div className={styles.list}>
-      <div className={styles.listContent}>
-        <div>
-          <h4 className={styles.listName}>
-            {query ? (
-              <Highlighter matchClass={styles.highlight} search={query}>
-                {name}
-              </Highlighter>
-            ) : (
-              <span>{name}</span>
-            )}
-          </h4>
-          <p className={styles.listDescription}>
-            {query ? (
-              <Highlighter matchClass={styles.highlight} search={query}>
-                {description}
-              </Highlighter>
-            ) : (
-              description
-            )}
-          </p>
-        </div>
-        {colors && (
-          <div className={styles.colors}>
-            {colors.slice(0, MAX_COLORS).map((color, i) => (
-              <span style={{ background: color }} key={i} />
-            ))}
-          </div>
-        )}
+    <div className={styles.listContent}>
+      <div>
+        <h4 className={styles.listName}>
+          {query ? (
+            <Highlighter matchClass={styles.highlight} search={query}>
+              {name}
+            </Highlighter>
+          ) : (
+            name
+          )}
+        </h4>
+        <p className={styles.listDescription}>
+          {query ? (
+            <Highlighter matchClass={styles.highlight} search={query}>
+              {description}
+            </Highlighter>
+          ) : (
+            description
+          )}
+        </p>
       </div>
+      {colors && (
+        <div className={styles.colors}>
+          {colors.slice(0, MAX_COLORS).map((color, i) => (
+            <span style={{ background: color }} key={i} />
+          ))}
+        </div>
+      )}
     </div>
   )
