@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from '../link'
 import Page from '../page'
@@ -10,7 +10,13 @@ import { useRouter } from 'next/router'
 export default ({ variant }) => {
   const router = useRouter()
   const plugins = allPlugins.filter(e => e.type === variant)
-  const [filter, setFilter] = useState(router.query.filter ?? 'featured')
+  const [filter, setFilter] = useState('featured')
+
+  useEffect(() => {
+    if (router.query.filter) {
+      setFilter(router.query.filter)
+    }
+  }, [router.query.filter])
 
   const handleFilterChange = newFilter => {
     setFilter(newFilter)

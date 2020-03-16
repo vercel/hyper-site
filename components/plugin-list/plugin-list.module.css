@@ -8,33 +8,27 @@
 .listElemContainer {
   display: block;
   color: inherit;
-  padding-bottom: 16px;
+  padding: 16px 0;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.listElemContainer:hover {
+.listElemContainer:not(:first-child) {
+  border-top: 1px solid #333;
+}
+
+.listElemContainer:hover  {
   color: inherit;
   background: #121212;
+  border-color: transparent;
+}
+
+.listElemContainer:hover + .listElemContainer {
+  border-color: transparent;
 }
 
 .listElemContent {
-  padding-top: 16px;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.listElemContainer:not(:first-of-type) .listElemContent {
-  border-top: 1px solid #333333;
-  transition: border 0.2s ease;
-}
-
-.listElemContainer:hover .listElemContent {
-  border-color: transparent;
-}
-
-.listElemContainer:hover + .listElemContainer .listElemContent {
-  border-color: transparent;
+  composes: container from global;
 }
 
 /* Featured view */

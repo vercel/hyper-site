@@ -34,13 +34,11 @@ export default meta => ({ children }) => (
             <h1>{meta.title}</h1>
           </div>
 
-          <ul className="authors">
+          <div className="authors">
             {meta.authors.map((author, i) => (
-              <li key={i}>
-                <Author {...author} />
-              </li>
+              <Author key={i} {...author} />
             ))}
-          </ul>
+          </div>
 
           <hr />
 
@@ -83,7 +81,7 @@ export default meta => ({ children }) => (
           margin: 0 0 20px;
         }
 
-        .content :global(ul:not(.authors) li) {
+        .content :global(li) {
           font-size: 16px;
           line-height: 2em;
         }
@@ -164,6 +162,7 @@ export default meta => ({ children }) => (
           .content :global(.authors) {
             flex-wrap: wrap;
           }
+
           .content :global(.oversize) {
             max-width: 100%;
             width: unset;

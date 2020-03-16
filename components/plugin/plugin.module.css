@@ -45,13 +45,7 @@
     margin-right: 4px;
 }
 
-.list{
-    composes: container from global;
-    display: flex;
-}
-
 .listContent {
-    composes: container from global;
     display: flex;
     align-items: center;
     width: 100%;
@@ -69,17 +63,24 @@
     margin-top: 0;
 }
 
-.listContent h4, .listContent p {
+.listContent p {
     margin: 0;
 }
 
 .listName {
     font-size: 1.6rem;
     font-weight: 400;
-    margin-bottom: 4px;
+    margin: 0 0 4px;
 }
 
 .listDescription {
     font-size: 1.2rem;
     color: #999999;
+    max-width: 60ch;
+}
+
+@media (max-width: 500px) {
+    .listDescription {
+        max-width: 20ch;
+    }
 }
