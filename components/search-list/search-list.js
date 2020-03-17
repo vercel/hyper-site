@@ -1,13 +1,9 @@
 import Head from 'next/head'
 import PluginsList from '../plugin-list'
-import { useRouter } from 'next/router'
 import styles from './search-list.module.css'
 import allPlugins from '../../plugins'
 
-export default () => {
-  const {
-    query: { q: query }
-  } = useRouter()
+export default ({ query }) => {
   const plugins = allPlugins.filter(
     ({ name, description }) =>
       name.includes(query) || description.includes(query)
