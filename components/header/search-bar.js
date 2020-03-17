@@ -1,32 +1,19 @@
 import { useRef } from 'react'
-import { useRouter } from 'next/router'
 import { Search } from '../icons'
 import styles from './search-bar.module.css'
 
-export default () => {
-  const router = useRouter()
+export default ({ onSearch }) => {
   const inputEl = useRef(null)
 
+  const handleChange = e => onSearch(e.target.value)
+
   const handleFocus = () => inputEl.current.focus()
-
-  const handleSearch = e => {
-    const newQuery = e.target.value
-    const queryObj = { ...router.query }
-
-    if (newQuery) {
-      queryObj.q = newQuery
-    } else {
-      delete queryObj.q
-    }
-
-    router.replace({ pathname: router.pathname, query: queryObj })
-  }
 
   return (
     <div className={styles.root}>
       <input
         ref={inputEl}
-        onKeyUp={handleSearch}
+        onChange={handleChange}
         placeholder="Search store..."
         className={styles.input}
         aria-label="Search input"

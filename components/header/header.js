@@ -4,7 +4,7 @@ import SearchBar from './search-bar'
 import { Arrow, Logo } from '../icons'
 import styles from './header.module.css'
 
-export default () => {
+export default ({ onSearch }) => {
   const [mobileNavShown, setMobileNavShown] = useState(false)
 
   const toggle = () => setMobileNavShown(!mobileNavShown)
@@ -25,7 +25,7 @@ export default () => {
         </nav>
 
         <div className={styles.rightNav}>
-          <SearchBar />
+          <SearchBar onSearch={onSearch} />
           <Link className={styles.zeit} href="https://zeit.co">
             △
           </Link>
@@ -45,7 +45,7 @@ export default () => {
           Submit
         </Link>
         <Link href="/blog">Blog</Link>
-        <SearchBar />
+        <SearchBar onSearch={onSearch} />
       </nav>
     </>
   )

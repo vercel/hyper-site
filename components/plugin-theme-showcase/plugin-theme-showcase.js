@@ -20,7 +20,11 @@ export default ({ variant }) => {
 
   const handleFilterChange = newFilter => {
     setFilter(newFilter)
-    router.push({ pathname: router.pathname, query: { filter: newFilter } })
+    if (newFilter === 'newest') {
+      router.push({ pathname: router.pathname, query: { filter: 'newest' } })
+    } else {
+      router.push(router.pathname)
+    }
   }
 
   return (
