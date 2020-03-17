@@ -14,27 +14,27 @@ export default () => {
   const router = useRouter()
   const pluginId = router.query.name
   const plugin = plugins.find(p => p.name === pluginId)
-  const { data: pluginContents } = useSWR(() => {
+  const { data: pluginMeta } = useSWR(() => {
     if (!pluginId) {
-      throw new Error("no plugin id")
+      throw new Error('no plugin id')
     }
     return `https://unpkg.com/${pluginId}@latest/?meta`
   })
   const [activeFile, setActiveFile] = useState(null)
-  const [fileContents, setFileContents] = useState(null)
+  const [cache, setCache] = useState(null)
 
+  // figuring out the initial activeFile from the url
+  // or falling back to the first file of the plugin
   useEffect(() => {
-    if (pluginContents && router.asPath) {
-      const path = router.asPath.split('?')[1]
-      const requestedFile = path && path.replace('=', '')
-      setActiveFile(
-        requestedFile
-          ? `/${requestedFile}`
-          : pluginContents.files.find(file => file.type === 'file').path
-      )
-    }
-  }, [pluginContents, router.asPath])
+    const filenameInQuery = router.asPath.split('?')[1]
+    setActiveFile(
+      filenameInQuery
+        ? `/${filenameInQuery}`
+        : pluginMeta?.files.find(file => file.type === 'file').path ?? null
+    )
+  }, [pluginMeta, router])
 
+  // fetching file's content and caching it
   useEffect(() => {
     if (activeFile) {
       fetch(`https://unpkg.com/${pluginId}@latest${activeFile}`)
@@ -44,7 +44,7 @@ export default () => {
           }
           return r.text()
         })
-        .then(d => setFileContents({ ...fileContents, [activeFile]: d }))
+        .then(d => setCache({ ...cache, [activeFile]: d }))
         .catch(e => console.log(e))
     }
   }, [activeFile])
@@ -102,8 +102,9 @@ export default () => {
     </div>
   )
 
+  // pluginId is first present on rehydration as it comes from the query
   if (!pluginId) {
-    return <Page />
+    return null
   }
 
   return (
@@ -115,12 +116,12 @@ export default () => {
         <h1>{plugin.name}</h1>
       </header>
       <div className={styles.container}>
-        {fileContents ? (
+        {pluginMeta && cache ? (
           <>
-            {renderFileTree(pluginContents.files)}
+            {renderFileTree(pluginMeta.files)}
             <div className={styles.content}>
-              {fileContents && fileContents[activeFile] ? (
-                <pre>{fileContents[activeFile]}</pre>
+              {cache[activeFile] ? (
+                <pre>{cache[activeFile]}</pre>
               ) : (
                 <span className={styles.fileLoading}>Contents loading...</span>
               )}
