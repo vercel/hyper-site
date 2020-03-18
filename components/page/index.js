@@ -4,7 +4,7 @@ import Header from '../header'
 import SearchList from '../search-list'
 import { pageView as gTagPageView } from '../../lib/gtag'
 
-export default ({ children }) => {
+export default ({ children, className = '' }) => {
   const router = useRouter()
   const [search, setSearch] = useState('')
 
@@ -20,7 +20,11 @@ export default ({ children }) => {
   return (
     <>
       <Header onSearch={handleSearch} />
-      {search ? <SearchList query={search} /> : children}
+      {search ? (
+        <SearchList query={search} />
+      ) : (
+        <main className={className}>{children}</main>
+      )}
     </>
   )
 }

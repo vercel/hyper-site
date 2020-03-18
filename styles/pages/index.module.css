@@ -1,0 +1,117 @@
+.root {
+  color: #ccc;
+}
+
+.hero {
+  height: calc(100vh - 72px);
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  max-width: 100%;
+}
+
+.heroLogo {
+  margin-top: 48px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heroContent {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+.heroDownload {
+  position: relative;
+  bottom: 75px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.heroDownload > :global(*:first-child) {
+  margin-bottom: 16px;
+}
+
+.heroArrowWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+}
+
+.heroArrow {
+  color: white;
+}
+
+.heroVideoWrapper {
+  height: 50vh;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  position: absolute;
+}
+
+.heroVideo {
+  height: 100%;
+  width: 100%;
+}
+
+.heroVideoLoading {
+  content: 'Loading...';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+  right: 0;
+  color: #666;
+  opacity: 0;
+  animation-name: appear;
+  animation-delay: 2s;
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.heroOtherDownloads {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease all;
+  border-bottom: 1px solid transparent;
+}
+
+.heroOtherDownloads:hover {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .heroVideoWrapper {
+    top: 48px;
+    transform: translateY(0);
+  }
+
+  .heroLogo {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .heroArrowWrapper {
+    display: none;
+  }
+}
