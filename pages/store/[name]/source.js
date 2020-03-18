@@ -14,12 +14,9 @@ export default () => {
   const router = useRouter()
   const pluginId = router.query.name
   const plugin = plugins.find(p => p.name === pluginId)
-  const { data: pluginMeta } = useSWR(() => {
-    if (!pluginId) {
-      throw new Error('no plugin id')
-    }
-    return `https://unpkg.com/${pluginId}@latest/?meta`
-  })
+  const { data: pluginMeta } = useSWR(
+    pluginId ? `https://unpkg.com/${pluginId}@latest/?meta` : null
+  )
   const [activeFile, setActiveFile] = useState(null)
   const [cache, setCache] = useState(null)
 
