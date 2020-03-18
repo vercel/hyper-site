@@ -62,7 +62,7 @@
   width: 100%;
 }
 
-.heroVideoLoading {
+.heroVideoLoading::before {
   content: 'Loading...';
   position: absolute;
   display: block;
