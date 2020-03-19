@@ -109,12 +109,12 @@ export default meta => ({ children }) => (
 
         .content > :global(img) {
           max-width: 100%;
+          height: auto;
           margin: 16px auto 0;
         }
 
         .content :global(.oversize) {
-          max-width: unset;
-          width: 150%;
+          max-width: 150%;
           margin-left: -28%;
         }
 
