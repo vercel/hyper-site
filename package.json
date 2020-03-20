@@ -33,7 +33,7 @@
     "swr": "^0.1.18"
   },
   "devDependencies": {
-    "husky": "^1.2.0",
+    "husky": "^4.2.3",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3"
   },
