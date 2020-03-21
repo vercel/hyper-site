@@ -27,7 +27,7 @@
     "@next/mdx": "^9.3.1",
     "next": "^9.3.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.0",
+    "react-dom": "^16.13.1",
     "react-gravatar": "^2.6.3",
     "react-highlighter": "^0.4.3",
     "swr": "^0.1.18"
