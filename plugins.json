@@ -597,6 +597,24 @@
     "dateAdded": "1558342235115"
   },
   {
+    "name": "hyper-rose-pine",
+    "type": "theme",
+    "description": "All natural pine, faux fur and a bit of soho vibes for the classy minimalist.",
+    "preview": "https://github.com/fvrests/hyper-rose-pine/raw/master/assets/preview.png",
+    "colors": [
+      "#191724",
+      "#706e86",
+      "#e0def4",
+      "#eb6f92",
+      "#f6c177",
+      "#ebbcba",
+      "#31748f",
+      "#9ccfd8",
+      "#c4a7e7"
+    ],
+    "dateAdded": "1582919913142"
+  },
+  {
     "name": "hyper-witchhazel",
     "description": "A dark & feminine color scheme.",
     "type": "theme",
@@ -610,5 +628,12 @@
       "#1BC5E0"
     ],
     "dateAdded": "1576608213667"
+  },
+  {
+    "name": "hyper-tabs-autohide",
+    "description": "Autohide all tabs.",
+    "type": "plugin",
+    "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
+    "dateAdded": "1583633829078"
   }
 ]
