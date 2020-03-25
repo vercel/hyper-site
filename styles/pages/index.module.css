@@ -1,4 +1,4 @@
-.root {
+.page {
   color: #ccc;
 }
 
@@ -10,7 +10,7 @@
   max-width: 100%;
 }
 
-.heroLogo {
+.hero .logo {
   margin-top: 48px;
   position: absolute;
   top: 0;
@@ -18,7 +18,7 @@
   transform: translateX(-50%);
 }
 
-.heroContent {
+.hero .content {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -26,30 +26,27 @@
   opacity: 1;
 }
 
-.heroDownload {
+.hero .download {
   position: relative;
   bottom: 75px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
 }
 
-.heroDownload > :global(*:first-child) {
+.hero .download > :global(*:first-child) {
   margin-bottom: 16px;
 }
 
-.heroArrowWrapper {
+.hero .arrowWrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
 }
 
-.heroArrow {
+.hero .arrow {
   color: white;
 }
 
-.heroVideoWrapper {
+.hero .videoWrapper {
   height: 50vh;
   top: 50%;
   transform: translateY(-50%);
@@ -57,12 +54,12 @@
   position: absolute;
 }
 
-.heroVideo {
+.hero .video {
   height: 100%;
   width: 100%;
 }
 
-.heroVideoLoading::before {
+.hero > .videoSkeleton::before {
   content: 'Loading...';
   position: absolute;
   display: block;
@@ -78,14 +75,14 @@
   animation-fill-mode: forwards;
 }
 
-.heroOtherDownloads {
+.hero .otherDownloads {
   color: #fff;
   text-decoration: none;
   transition: 0.2s ease all;
   border-bottom: 1px solid transparent;
 }
 
-.heroOtherDownloads:hover {
+.hero .otherDownloads:hover {
   color: #fff;
   border-bottom: 1px solid #fff;
 }
@@ -100,18 +97,18 @@
 }
 
 @media screen and (max-height: 650px) {
-  .heroVideoWrapper {
+  .hero .videoWrapper {
     top: 48px;
     transform: translateY(0);
   }
 
-  .heroLogo {
+  .hero .logo {
     margin-top: 0;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .heroArrowWrapper {
+  .hero .arrowWrapper {
     display: none;
   }
 }

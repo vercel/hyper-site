@@ -66,7 +66,7 @@ export default () => {
   }, [])
 
   return (
-    <Page className={styles.root}>
+    <Page className={styles.page}>
       <Head>
         <title>Hyper™</title>
         <meta property="twitter:card" content="summary_large_image" />
@@ -82,9 +82,12 @@ export default () => {
         <meta property="og:image" content="https://hyper.is/hyper.png" />
       </Head>
 
+      {/**
+       * Hero
+       */}
       <div className={styles.hero}>
-        <div className={styles.heroVideoLoading} />
-        <div className={styles.heroLogo}>
+        <div className={styles.videoSkeleton} />
+        <div className={styles.logo}>
           <svg width="63" height="60" fill="none">
             <mask id="a" fill="#fff">
               <path d="M62.22 40.97v2.18L62.19 45a26.32 26.32 0 0 1-.36 3.99 12.77 12.77 0 0 1-6.92 9.38 13.71 13.71 0 0 1-3.83 1.26c-1.34.23-2.7.31-4.04.35-2.6.03-3.33.03-4.07.03H19.25c-2.82 0-3.44-.01-4.06-.03-1.35-.04-2.71-.12-4.04-.35a13.71 13.71 0 0 1-3.85-1.26A12.9 12.9 0 0 1 .4 48.98a26.33 26.33 0 0 1-.36-4 81.1 81.1 0 0 1-.02-1.83L0 40.97V19.03v-2.18l.03-1.84c.04-1.33.12-2.67.36-4A12.76 12.76 0 0 1 7.3 1.64 13.71 13.71 0 0 1 11.14.39c1.33-.23 2.69-.31 4.04-.35C17.78 0 18.52 0 19.25 0H42.37h-8.95 9.55c2.83 0 3.45.01 4.07.03 1.34.04 2.7.12 4.04.35 1.35.24 2.61.64 3.84 1.26a12.89 12.89 0 0 1 6.91 9.38c.24 1.32.32 2.66.36 4 .02.6.02 1.22.03 1.83v24.12z" />
@@ -119,34 +122,32 @@ export default () => {
           </svg>
         </div>
 
-        <div className={styles.heroVideoWrapper}>
-          <video
-            className={styles.heroVideo}
-            src="/hyperapp.mp4"
-            autoPlay
-            muted
-          />
+        <div className={styles.videoWrapper}>
+          <video className={styles.video} src="/hyperapp.mp4" autoPlay muted />
         </div>
 
-        <div className={styles.heroContent}>
-          <div className={styles.heroDownload}>
+        <div className={styles.content}>
+          <div className={styles.download}>
             <DownloadButton os={os} />
-            <a className={styles.heroOtherDownloads} href="#installation">
+            <a className={styles.otherDownloads} href="#installation">
               Other platforms
             </a>
           </div>
-          <div className={styles.heroArrowWrapper}>
+          <div className={styles.arrowWrapper}>
             <a href="#installation">
-              <Arrow className={styles.heroArrow} height={14} width={26} />
+              <Arrow className={styles.arrow} height={14} width={26} />
             </a>
           </div>
         </div>
       </div>
 
+      {/**
+       * Content
+       */}
       <div id="content">
-        {/*
-                Installation
-            */}
+        {/**
+         * Installation
+         */}
         <h2 id="installation">
           <a href="#installation">
             Installation <br />
@@ -269,9 +270,9 @@ export default () => {
           </table>
         </div>
 
-        {/*
-              Project Goals
-            */}
+        {/**
+         * Project goals
+         */}
         <h2 id="hashtag-goals">
           <a href="#hashtag-goals">Project Goals</a>
         </h2>
@@ -288,9 +289,9 @@ export default () => {
           powerful and well-tested interface for productivity.
         </p>
 
-        {/*
-              Extensions
-            */}
+        {/**
+         * Extensions
+         */}
         <h2 id="extensions">
           <a href="#extensions">Extensions</a>
         </h2>
@@ -328,9 +329,9 @@ export default () => {
           .
         </p>
 
-        {/*
-              Keymaps
-            */}
+        {/**
+         * Keymaps
+         */}
         <h2 id="keymaps">
           <a href="#keymaps">Keymaps</a>
         </h2>
@@ -386,9 +387,9 @@ export default () => {
           </table>
         </div>
 
-        {/*
-              Configuration
-            */}
+        {/**
+         * Configuration
+         */}
         <h2 id="cfg">
           <a href="#cfg">Configuration</a>
         </h2>
@@ -698,9 +699,9 @@ export default () => {
           </table>
         </div>
 
-        {/*
-              Extensions API
-            */}
+        {/**
+         * Extensions API
+         */}
         <h2 id="extensions-api">
           <a href="#extensions-api">Extensions API</a>
         </h2>
