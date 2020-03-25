@@ -1,8 +1,7 @@
 .header {
   composes: container from global;
   position: relative;
-  padding-top: 32px;
-  margin-bottom: 24px;
+  height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
