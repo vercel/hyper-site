@@ -16,6 +16,7 @@
 
 .input:focus {
   width: 136px;
+  outline: 0;
 }
 
 .input::placeholder {
@@ -33,7 +34,6 @@
 .icon {
   opacity: 0.5;
   transition: opacity 0.2s ease;
-  -webkit-backface-visibility: hidden;
   cursor: pointer;
 }
 
@@ -46,14 +46,14 @@
     height: 48px;
     width: 100%;
     border-bottom: 1px solid #333;
-    font-size: 1.6rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     color: white;
   }
 
   .input {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 
   .input,

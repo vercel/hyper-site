@@ -1,3 +1,12 @@
 .root {
-    color: #ccc;
-  }
+  color: #ccc;
+  max-width: 700px;
+  margin: auto;
+  font-size: 14px;
+}
+
+.root img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}

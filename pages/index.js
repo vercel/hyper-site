@@ -67,7 +67,10 @@ export default () => {
   }, [])
 
   return (
-    <Page className={styles.page}>
+    <Page className={styles.root}>
+      {/**
+       * Meta
+       */}
       <Head>
         <title>Hyper™</title>
         <meta property="twitter:card" content="summary_large_image" />
@@ -1988,28 +1991,18 @@ export default () => {
             max-width: 100%;
           }
 
-          #content {
-            max-width: 700px;
-            margin: auto;
-          }
-
-          #content a,
-          .other-downloads a {
+          #content a {
             color: #fff;
             text-decoration: none;
             transition: 0.2s ease all;
             border-bottom: 1px solid transparent;
           }
 
-          #content a:hover,
-          .other-downloads a:hover {
+          #content a:hover {
             border-bottom: 1px solid #fff;
           }
 
           #content h2 {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-              'Helvetica Neue', sans-serif;
             font-size: 36px;
             color: #fff;
             margin: 100px 0 30px 0;
@@ -2017,9 +2010,6 @@ export default () => {
           }
 
           #content h3 {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-              'Helvetica Neue', sans-serif;
             font-size: 26px;
             color: #fff;
             margin: 48px 0 20px 0;
@@ -2036,9 +2026,6 @@ export default () => {
             font-size: 14px;
             line-height: 24px;
             margin: 0 0 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-              'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-              'Helvetica Neue', sans-serif;
           }
 
           #content p code,
@@ -2080,7 +2067,7 @@ export default () => {
           }
 
           #content table p:not(:last-child) {
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
           }
 
           #content table table.params {
@@ -2094,7 +2081,7 @@ export default () => {
           }
 
           #content table table.params tr:not(:last-child) {
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
           }
 
           #content table table.params tbody td {
@@ -2337,15 +2324,6 @@ export default () => {
               display: block;
               color: #999;
             }
-
-            #content img {
-              max-width: 100%;
-              height: auto;
-            }
-          }
-
-          .is-hidden {
-            display: none;
           }
         `}</style>
     </Page>

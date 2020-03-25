@@ -6,10 +6,10 @@
     max-width: 980px;
     width: 100%;
     background: black;
-    height: 6.4rem;
+    height: 64px;
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 12px;
     padding: 0 40px;
 }
 
@@ -18,7 +18,7 @@
     border-radius: 2px;
     background: white;
     color: black;
-    padding: 0 16px;
+    padding: 0 1rem;
     margin-left: auto;
     opacity: 1;
     transition: opacity 0.2s ease;
@@ -30,12 +30,12 @@
 }
 
 .install.loaded {
-    margin-left: 16px;
+    margin-left: 1rem;
 }
 
 .link {
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 10px;
 }
 
 .version {
@@ -93,7 +93,7 @@
 
     .github {
         margin-right: 0;
-        margin-top: 16px;
+        margin-top: 1rem;
         flex: 1 0 auto;
         order: 5;
     }
@@ -105,7 +105,7 @@
     }
 
     .link {
-        margin: 16px 0 28px;
+        margin: 1rem 0 28px;
         order: 6;
         font-weight: 600;
     }
@@ -116,7 +116,7 @@
 
     .version {
         margin-left: 0;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         order: 4;
     }
 
@@ -124,12 +124,12 @@
         margin-right: 0;
         padding-right: 0;
         border-right: none;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
     }
 
     .install {
         margin-left: 0;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         padding: 8px 28px;
         order: 3;
     }

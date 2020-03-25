@@ -1,15 +1,14 @@
 .header {
   composes: container from global;
   display: flex;
-  margin-bottom: 16px;
-  margin-top: 40px;
+  margin-bottom: 1rem;
   width: 100%;
   justify-content: center;
   position: relative;
 }
 
 .header h1 {
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 400;
   margin: 0;
 }
@@ -22,7 +21,7 @@
 }
 
 .content {
-  font-size: 1.2rem;
+  font-size: 12px;
   padding: 0 20px;
   overflow-x: auto;
 }
@@ -44,7 +43,7 @@
 
 .file {
   color: #999999;
-  font-size: 1.2rem;
+  font-size: 12px;
   display: flex;
   align-items: center;
   transition: color 0.2s ease;

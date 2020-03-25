@@ -40,15 +40,15 @@
 }
 
 .content p {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
+    font-size: 14px;
+    line-height: 2;
 }
 
 .content pre {
     border: 1px solid #eaeaea;
     color: #bd10e0;
     padding: 12px 0;
-    font-size: 1.2rem;
+    font-size: 12px;
     white-space: pre-wrap;
 }
 
@@ -60,6 +60,6 @@
 .security {
     composes: dark from global;
     margin-top: 24px;
-    font-size: 1.4rem;
+    font-size: 14px;
     display: inline-block;
 }

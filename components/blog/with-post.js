@@ -4,7 +4,7 @@ import Page from '../page'
 import InlineCode from './inline-code'
 import Author from './author'
 
-export default meta => ({ children }) => (
+export default (meta) => ({ children }) => (
   <Page>
     <Head>
       <title>Hyper Blog</title>
@@ -56,6 +56,7 @@ export default meta => ({ children }) => (
           position: relative;
           overflow: hidden;
           padding-bottom: 160px;
+          max-width: unset;
         }
 
         .content {
@@ -76,13 +77,11 @@ export default meta => ({ children }) => (
         }
 
         .content :global(p:not(.caption)) {
-          font-size: 16px;
           line-height: 32px;
           margin: 0 0 20px;
         }
 
         .content :global(li) {
-          font-size: 16px;
           line-height: 2em;
         }
 
@@ -110,7 +109,7 @@ export default meta => ({ children }) => (
         .content > :global(img) {
           max-width: 100%;
           height: auto;
-          margin: 16px auto 0;
+          margin: 1rem auto 0;
         }
 
         .content :global(.oversize) {
@@ -140,7 +139,6 @@ export default meta => ({ children }) => (
 
         .content :global(.caption) {
           color: #999;
-          font-size: 16px;
           text-align: center;
           margin: 0 0 32px;
         }

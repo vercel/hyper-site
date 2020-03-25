@@ -5,7 +5,7 @@
     height: 48px;
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 0 1rem;
     text-decoration: none;
     transition: background 0.12s ease-in-out;
     line-height: 1;

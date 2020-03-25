@@ -13,20 +13,20 @@
 }
 
 .root > h1 {
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 400;
     text-align: center;
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     margin-top: 40px;
 }
 
 .root > p {
     color: #999999;
     text-align: center;
-    max-width: 40rem;
+    max-width: 400px;
     margin: 0 auto 32px;
-    font-size: 1.2rem;
+    font-size: 12px;
     font-weight: 400;
 }
 
