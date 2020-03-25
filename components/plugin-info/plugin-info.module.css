@@ -63,11 +63,11 @@
 .github {
     display: flex;
     margin-right: 24px;
-    color: #999;
+    color: var(--gray);
 }
 
 .github:hover {
-    color: white;
+    color: var(--fg);
 }
 
 @media (max-width: 716px) {

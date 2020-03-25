@@ -25,7 +25,7 @@
 .featuredContent p {
     margin-bottom: 0;
     font-size: 12px;
-    color: #999999;
+    color: var(--gray);
 }
 
 .colors {
@@ -71,7 +71,7 @@
 
 .listDescription {
     font-size: 12px;
-    color: #999999;
+    color: var(--gray);
     max-width: 60ch;
 }
 

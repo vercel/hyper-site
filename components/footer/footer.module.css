@@ -20,11 +20,11 @@
 
 .left a,
 .left span {
-  color: #999;
+  color: var(--gray);
 }
 
 .left a:hover {
-  color: white;
+  color: var(--fg);
 }
 
 .left > *:not(:first-child) {

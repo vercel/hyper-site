@@ -120,7 +120,7 @@ export default (meta) => ({ children }) => (
         .content :global(time) {
           width: 100%;
           text-align: center;
-          color: #999;
+          color: var(--gray);
           font-size: 12px;
         }
 
@@ -138,7 +138,7 @@ export default (meta) => ({ children }) => (
         }
 
         .content :global(.caption) {
-          color: #999;
+          color: var(--gray);
           text-align: center;
           margin: 0 0 32px;
         }

@@ -20,15 +20,7 @@
 }
 
 .input::placeholder {
-  color: #999999;
-}
-
-.input::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.input::-ms-input-placeholder {
-  color: #999999;
+  color: var(--gray);
 }
 
 .icon {

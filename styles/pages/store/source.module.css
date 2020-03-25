@@ -34,7 +34,7 @@
 
 .pluginLoading,
 .fileLoading {
-  color: #999999;
+  color: var(--gray);
 }
 
 .files {
@@ -42,7 +42,7 @@
 }
 
 .file {
-  color: #999999;
+  color: var(--gray);
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -59,7 +59,7 @@
 
 .icon {
   margin-right: 12px;
-  color: #999;
+  color: var(--gray);
   transition: fill 0.2s ease;
 }
 

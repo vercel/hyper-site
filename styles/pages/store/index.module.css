@@ -22,7 +22,7 @@
 }
 
 .root > p {
-    color: #999999;
+    color: var(--gray);
     text-align: center;
     max-width: 400px;
     margin: 0 auto 32px;

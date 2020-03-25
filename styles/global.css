@@ -1,7 +1,8 @@
 :root {
-  --bg: black;
-  --fg: white;
+  --bg: #000;
+  --fg: #fff;
   --pink: #f81ce5;
+  --gray: #999;
   --font-sans: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
     Arial, sans-serif;
   --font-mono: 'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif';
@@ -49,7 +50,7 @@ a:hover {
 }
 
 a.dark {
-  color: #999999;
+  color: var(--gray);
   text-decoration: underline;
 }
 

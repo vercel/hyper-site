@@ -1,10 +1,10 @@
 .link {
     font-size: 14px;
-    color: #999999;
+    color: var(--gray);
     transition: color 0.2s ease;
 }
 
 .link.active,
 .link:hover {
-    color: white;
+    color: var(--fg);
 }

@@ -2050,7 +2050,7 @@ export default () => {
           }
 
           #content table thead td {
-            color: #999;
+            color: var(--gray);
             font-size: 12px;
             text-transform: uppercase;
           }
@@ -2088,7 +2088,7 @@ export default () => {
             width: 100%;
             border-color: transparent;
             padding: 0;
-            color: #999;
+            color: var(--gray);
           }
 
           #content table td > * + table.params {
@@ -2218,21 +2218,21 @@ export default () => {
           #content table.config td:nth-child(1),
           #content table.api td:nth-child(1) {
             width: 30%;
-            color: #999;
+            color: var(--gray);
           }
 
           #content table.config td:nth-child(2),
           #content table.api td:nth-child(2) {
             width: 23%;
-            color: #999;
+            color: var(--gray);
           }
 
           #content table.config tbody td:first-child {
-            color: #fff;
+            color: var(--fg);
           }
 
           #content table.api tbody td:first-child {
-            color: #fff;
+            color: var(--fg);
           }
 
           #content table.api > tbody > tr > td:nth-child(2) {
@@ -2256,7 +2256,7 @@ export default () => {
 
           #content ul li:before {
             content: '-';
-            color: #999;
+            color: var(--gray);
             position: absolute;
             margin-left: -20px;
           }
@@ -2322,7 +2322,7 @@ export default () => {
               margin: 15px 0;
               content: 'Please note: the complete table information is available in bigger resolutions!';
               display: block;
-              color: #999;
+              color: var(--gray);
             }
           }
         `}</style>
