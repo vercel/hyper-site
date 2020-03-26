@@ -8,12 +8,12 @@ import { File, Directory } from '../../../components/icons'
 import useSWR from 'swr'
 import styles from '../../../styles/pages/store/source.module.css'
 
-const formatFileName = path => path.replace(/^\/+|\/+$/g, '')
+const formatFileName = (path) => path.replace(/^\/+|\/+$/g, '')
 
 export default () => {
   const router = useRouter()
   const pluginId = router.query.name
-  const plugin = plugins.find(p => p.name === pluginId)
+  const plugin = plugins.find((p) => p.name === pluginId)
   const { data: pluginMeta } = useSWR(
     pluginId ? `https://unpkg.com/${pluginId}@latest/?meta` : null
   )
@@ -27,7 +27,7 @@ export default () => {
     setActiveFile(
       filenameInQuery
         ? `/${filenameInQuery}`
-        : pluginMeta?.files.find(file => file.type === 'file').path ?? null
+        : pluginMeta?.files.find((file) => file.type === 'file').path ?? null
     )
   }, [pluginMeta, router])
 
@@ -35,24 +35,24 @@ export default () => {
   useEffect(() => {
     if (activeFile) {
       fetch(`https://unpkg.com/${pluginId}@latest${activeFile}`)
-        .then(r => {
+        .then((r) => {
           if (!r.ok) {
             throw new Error('error fetching file')
           }
           return r.text()
         })
-        .then(d => setCache({ ...cache, [activeFile]: d }))
-        .catch(e => console.log(e))
+        .then((d) => setCache({ ...cache, [activeFile]: d }))
+        .catch((e) => console.log(e))
     }
   }, [activeFile])
 
-  const handleClickOnFile = path =>
+  const handleClickOnFile = (path) =>
     router.push(
       '/store/[name]/source',
       `/store/${pluginId}/source?${formatFileName(path)}`
     )
 
-  const renderFileTree = root => (
+  const renderFileTree = (root) => (
     <div className={styles.files}>
       {root.map((file, i) => (
         <div key={i}>
@@ -109,9 +109,8 @@ export default () => {
       <Head>
         <title>Hyper Store - Source of {plugin.name}</title>
       </Head>
-      <header className={styles.header}>
-        <h1>{plugin.name}</h1>
-      </header>
+
+      <h1 className={styles.name}>{plugin.name}</h1>
       <div className={styles.container}>
         {pluginMeta && cache ? (
           <>

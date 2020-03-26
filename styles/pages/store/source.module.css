@@ -1,16 +1,5 @@
-.header {
-  composes: container from global;
-  display: flex;
-  margin-bottom: 1rem;
-  width: 100%;
-  justify-content: center;
-  position: relative;
-}
-
-.header h1 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0;
+.name {
+  composes: name from './index.module.css'
 }
 
 .container {
