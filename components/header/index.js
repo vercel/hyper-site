@@ -27,7 +27,7 @@ export default ({ onSearch }) => {
         <div className={styles.rightNav}>
           <SearchBar onSearch={onSearch} />
           <Link className={styles.zeit} href="https://zeit.co">
-            △
+            ▲
           </Link>
         </div>
 
