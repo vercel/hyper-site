@@ -8,7 +8,7 @@
   --font-mono: 'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif';
 }
 
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -21,7 +21,14 @@ body {
 }
 
 a {
+  color: #50e3c2;
+  cursor: pointer;
+  transition: color 0.2s ease;
   text-decoration: none;
+}
+
+a:hover {
+  color: #3afacf;
 }
 
 ::selection {
