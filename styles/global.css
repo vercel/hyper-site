@@ -3,9 +3,11 @@
   --fg: #fff;
   --pink: #f81ce5;
   --gray: #999;
-  --font-sans: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif;
-  --font-mono: 'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif';
+  --font-sans: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 * {
@@ -18,6 +20,9 @@ body {
   background: var(--bg);
   color: var(--fg);
   font: 16px/1.5 var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
