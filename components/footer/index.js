@@ -26,7 +26,7 @@ export default () => (
       </div>
 
       <Link className={styles.logo} href="https://zeit.co">
-        △
+        ▲
       </Link>
     </nav>
   </footer>
