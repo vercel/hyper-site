@@ -2,39 +2,24 @@ import Link from 'next/link'
 import Plugin from '../plugin'
 import styles from './plugin-list.module.css'
 
-export default ({ query, plugins, filteredBy }) => {
-  const sortedPlugins =
-    filteredBy === 'newest'
-      ? [...plugins].sort((objA, objB) => {
-          if (objA.dateAdded < objB.dateAdded) return 1
-          if (objA.dateAdded > objB.dateAdded) return -1
-          return 0
-        })
-      : filteredBy === 'featured'
-      ? plugins.filter(plugin => plugin.featured === true)
-      : plugins
-
-  if (filteredBy === 'featured') {
-    return (
-      <div className={styles.featuredWrapper}>
-        {sortedPlugins.map(plugin => (
-          <Link
-            key={plugin.name}
-            href="/store/[name]"
-            as={`/store/${plugin.name}`}
-          >
-            <a className={styles.featuredElemContent}>
-              <Plugin {...plugin} query={query} featured={true} />
-            </a>
-          </Link>
-        ))}
-      </div>
-    )
-  }
-
-  return (
+export default ({ query, plugins, filteredBy }) =>
+  filteredBy === 'featured' ? (
+    <div className={styles.featuredWrapper}>
+      {plugins.map((plugin) => (
+        <Link
+          key={plugin.name}
+          href="/store/[name]"
+          as={`/store/${plugin.name}`}
+        >
+          <a className={styles.featuredElemContent}>
+            <Plugin {...plugin} query={query} featured={true} />
+          </a>
+        </Link>
+      ))}
+    </div>
+  ) : (
     <div className={styles.listWrapper}>
-      {sortedPlugins.map(plugin => (
+      {plugins.map((plugin) => (
         <Link
           key={plugin.name}
           href="/store/[name]"
@@ -49,4 +34,3 @@ export default ({ query, plugins, filteredBy }) => {
       ))}
     </div>
   )
-}
