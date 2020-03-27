@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Link from '../link'
+import Link from 'next/link'
 import Page from '../page'
 import PluginsList from '../plugin-list'
 import styles from './plugin-theme-showcase.module.css'
@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 export default ({ variant }) => {
   const router = useRouter()
-  const plugins = allPlugins.filter(e => e.type === variant)
+  const plugins = allPlugins.filter((e) => e.type === variant)
   const [filter, setFilter] = useState('featured')
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default ({ variant }) => {
     }
   }, [router.query.filter])
 
-  const handleFilterChange = newFilter => {
+  const handleFilterChange = (newFilter) => {
     setFilter(newFilter)
     if (newFilter === 'newest') {
       router.push({ pathname: router.pathname, query: { filter: 'newest' } })
@@ -49,11 +49,10 @@ export default ({ variant }) => {
             Newest
           </a>
         </div>
-        <Link
-          className={styles.submitButton}
-          href="https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
-        >
-          {`Submit a ${variant === 'theme' ? 'theme' : 'plugin'}`}
+        <Link href="https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store">
+          <a className={styles.submitButton}>
+            {`Submit a ${variant === 'theme' ? 'theme' : 'plugin'}`}
+          </a>
         </Link>
       </nav>
       <PluginsList plugins={plugins} filteredBy={filter} />

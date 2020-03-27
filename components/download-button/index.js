@@ -1,64 +1,78 @@
 import { Apple, Linux, Windows, Download } from '../icons'
-import Link from '../link'
 import styles from './download-button.module.css'
 
 export default ({ os }) => {
   if (os === 'mac') {
     return (
-      <Link
+      <a
         className={styles.root}
         href="https://releases.hyper.is/download/mac"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Apple size={16} />
         <strong>Download Hyper for macOS</strong>
-      </Link>
+      </a>
     )
   } else if (os === 'windows') {
     return (
-      <Link
+      <a
         className={styles.root}
         href="https://releases.hyper.is/download/win"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Windows size={16} />
         <strong>Download Hyper for Windows</strong>
-      </Link>
+      </a>
     )
   } else if (os === 'fedora') {
     return (
-      <Link
+      <a
         className={styles.root}
         href="https://releases.hyper.is/download/rpm"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Linux size={16} />
         <strong>Download Hyper for Fedora</strong>
-      </Link>
+      </a>
     )
   } else if (os === 'ubuntu') {
     return (
-      <Link
+      <a
         className={styles.root}
         href="https://releases.hyper.is/download/deb"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Linux />
         <strong>Download Hyper for Ubuntu</strong>
-      </Link>
+      </a>
     )
   } else if (os === 'linux') {
     return (
-      <Link
+      <a
         className={styles.root}
         href="https://releases.hyper.is/download/AppImage"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Linux />
         <strong>Download Hyper for Linux</strong>
-      </Link>
+      </a>
     )
   } else {
     return (
-      <Link href="/#installation" className={styles.root}>
+      <a
+        href="/#installation"
+        className={styles.root}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Download height={12} width={16} />
         <strong>Download Hyper</strong>
-      </Link>
+      </a>
     )
   }
 }
