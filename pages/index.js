@@ -9,31 +9,18 @@ import heroStyles from '../styles/pages/home/hero.module.css'
 import contentStyles from '../styles/pages/home/content.module.css'
 import installationStyles from '../styles/pages/home/installation.module.css'
 
-const literal = '`'
-
 const Path = ({ os, path }) => (
-  <>
-    <code>
-      {(() => {
-        switch (os) {
-          case 'mac':
-            return '~/Library/Application Support/Hyper/'
-          case 'windows':
-            return '$Env:AppData/Hyper/'
-          case 'linux':
-            return '~/.config/Hyper/'
-          default:
-            return ''
-        }
-      })() + path}
-    </code>
-    <style jsx>{`
-      code:before,
-      code:after {
-        content: '${literal}';
-      }
-    `}</style>
-  </>
+  <code>
+    {`${
+      os === 'mac'
+        ? '~/Library/Application Support/Hyper/'
+        : os === 'windows'
+        ? '$Env:AppData/Hyper/'
+        : os === 'linux'
+        ? '~/.config/Hyper/'
+        : ''
+    }${path}`}
+  </code>
 )
 
 const PathLink = ({ os, path, type }) => (
@@ -177,9 +164,7 @@ export default () => {
                 <tr>
                   <td>{renderText()}</td>
                   <td
-                    className={`${
-                      os === _os ? installationStyles.highlighted : ''
-                    } linkTd`}
+                    className={os === _os ? installationStyles.highlighted : ''}
                   >
                     <a href={`https://releases.hyper.is/download/${path}`}>
                       <Download
@@ -2047,28 +2032,6 @@ export default () => {
           margin-top: 0;
         }
 
-        #content ul {
-          margin: 20px 10px;
-        }
-
-        #content ul li {
-          list-style-type: none;
-          line-height: 18px;
-          margin: 5px 0;
-          padding-left: 20px;
-        }
-
-        #content ul li:before {
-          content: '-';
-          color: var(--gray);
-          position: absolute;
-          margin-left: -20px;
-        }
-
-        #content p b {
-          color: #fff;
-        }
-
         @media screen and (max-width: 900px) {
           .table.large {
             width: 100%;
@@ -2082,22 +2045,9 @@ export default () => {
             margin-left: 0;
             margin-right: 0;
           }
-          #download-for {
-            display: none !important;
-          }
-          #header {
-            width: 300px;
-            margin: 0 auto;
-          }
         }
 
         @media screen and (max-width: 700px) {
-          #header {
-            text-align: center;
-            padding: 20px 0;
-            position: static;
-          }
-
           #content {
             padding: 20px;
           }

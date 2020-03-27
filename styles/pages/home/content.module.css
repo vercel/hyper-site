@@ -73,3 +73,25 @@
 .root li code::after {
   content: '`';
 }
+
+.root ul {
+  margin: 20px 10px;
+}
+
+.root ul li {
+  list-style-type: none;
+  line-height: 18px;
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.root ul li:before {
+  content: '-';
+  color: var(--gray);
+  position: absolute;
+  margin-left: -20px;
+}
+
+.root p b {
+  color: var(--fg);
+}
