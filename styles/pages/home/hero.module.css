@@ -1,7 +1,7 @@
 .root {
   height: calc(100vh - 85px);
   display: grid;
-  grid: 0.5fr 2fr 1fr / auto-flow;
+  grid: 0.5fr 50vh 1fr / auto-flow;
   font-size: 14px;
 }
 
