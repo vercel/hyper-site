@@ -26,13 +26,17 @@ body {
 }
 
 a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+a:not([class]) {
   color: #50e3c2;
-  cursor: pointer;
   transition: color 0.2s ease;
   text-decoration: none;
 }
 
-a:hover {
+a:not([class]):hover {
   color: #3afacf;
 }
 

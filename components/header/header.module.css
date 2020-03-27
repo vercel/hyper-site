@@ -1,22 +1,29 @@
 .header {
   composes: container from global;
-  position: relative;
   height: 85px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 2000;
+  display: grid;
+  grid: auto-flow / repeat(3, 1fr);
 }
 
 .logo {
   display: flex;
   color: white;
+  margin: auto auto auto 0;
 }
 
 .desktopNav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: auto;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--gray);
+  transition: color 0.2s ease;
+}
+
+.link.active,
+.link:hover {
+  color: var(--fg);
 }
 
 .desktopNav > a:not(:last-child) {
@@ -24,18 +31,14 @@
 }
 
 .rightNav {
-  display: flex;
-  align-items: center;
-}
-
-.rightNav > a:last-child {
-  margin-left: 24px;
+  margin: auto 0 auto auto;
 }
 
 .zeit {
   font-size: 18px;
   color: white;
   font-weight: bold;
+  margin-left: 24px;
 }
 
 .mobileNav {
@@ -48,6 +51,10 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    grid: auto-flow / repeat(2, 1fr);
+  }
+
   .desktopNav,
   .rightNav {
     display: none;
@@ -56,6 +63,7 @@
   .toggle {
     display: block;
     color: white;
+    margin: auto 0 auto auto;
   }
 
   .mobileNav.active {

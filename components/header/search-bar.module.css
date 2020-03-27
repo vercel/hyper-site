@@ -1,5 +1,5 @@
 .root {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
@@ -10,12 +10,12 @@
   color: white;
   font-size: 14px;
   padding: 0 8px 0 0;
-  width: 120px;
+  width: 6rem;
   transition: width 0.2s ease;
 }
 
 .input:focus {
-  width: 136px;
+  width: 7rem;
   outline: 0;
 }
 

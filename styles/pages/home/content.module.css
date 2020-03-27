@@ -1,3 +1,16 @@
+.root {
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.root img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
 .root a {
   color: var(--fg);
   text-decoration: none;

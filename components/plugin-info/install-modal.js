@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import selectText from '../../lib/select-text'
-import Link from '../link'
 import styles from './install-modal.module.css'
 
 export default ({ pluginName, open, onClose }) => {
@@ -29,12 +28,14 @@ export default ({ pluginName, open, onClose }) => {
           install {pluginName} by entering the following into Hyper:
         </p>
         <pre ref={preEl}>hyper i {pluginName}</pre>
-        <Link
+        <a
           href="https://github.com/zeit/hyper-plugins/wiki/Security-and-Hyper-plugins"
           className={styles.security}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Security Notice
-        </Link>
+        </a>
       </div>
     </div>
   )

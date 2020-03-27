@@ -1,8 +1,21 @@
 import { useState } from 'react'
-import Link from './header-link'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 import SearchBar from './search-bar'
 import { Arrow, Logo } from '../icons'
 import styles from './header.module.css'
+
+const ActiveLink = ({ href, children }) => {
+  const { pathname } = useRouter()
+
+  return (
+    <Link href={href}>
+      <a className={`${styles.link} ${pathname === href ? styles.active : ''}`}>
+        {children}
+      </a>
+    </Link>
+  )
+}
 
 export default ({ onSearch }) => {
   const [mobileNavShown, setMobileNavShown] = useState(false)
@@ -12,23 +25,37 @@ export default ({ onSearch }) => {
   return (
     <>
       <header className={styles.header}>
-        <Link className={styles.logo} href="/">
-          <Logo width={31} height={23} />
+        <Link href="/">
+          <a className={styles.logo}>
+            <Logo width={31} height={23} />
+          </a>
         </Link>
 
         <nav className={styles.desktopNav}>
-          <Link href="/plugins">Plugins</Link>
-          <Link href="/themes">Themes</Link>
-          <Link href="https://github.com/zeit/hyper">GitHub</Link>
-          <Link href="/#installation">Download</Link>
-          <Link href="/blog">Blog</Link>
+          <ActiveLink href="/plugins">Plugins</ActiveLink>
+          <ActiveLink href="/themes">Themes</ActiveLink>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/zeit/hyper"
+            className={styles.link}
+          >
+            GitHub
+          </a>
+          <ActiveLink href="/#installation">Download</ActiveLink>
+          <ActiveLink href="/blog">Blog</ActiveLink>
         </nav>
 
         <div className={styles.rightNav}>
           <SearchBar onSearch={onSearch} />
-          <Link className={styles.zeit} href="https://zeit.co">
+          <a
+            href="https://zeit.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.zeit}
+          >
             ▲
-          </Link>
+          </a>
         </div>
 
         <span className={styles.toggle} onClick={toggle}>
@@ -39,12 +66,18 @@ export default ({ onSearch }) => {
       <nav
         className={`${styles.mobileNav} ${mobileNavShown ? styles.active : ''}`}
       >
-        <Link href="/plugins">Plugins</Link>
-        <Link href="/themes">Themes</Link>
-        <Link href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store">
-          Submit
+        <Link href="/plugins">
+          <a>Plugins</a>
         </Link>
-        <Link href="/blog">Blog</Link>
+        <Link href="/themes">
+          <a>Themes</a>
+        </Link>
+        <Link href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store">
+          <a>Submit</a>
+        </Link>
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
         <SearchBar onSearch={onSearch} />
       </nav>
     </>

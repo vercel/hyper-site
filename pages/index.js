@@ -5,7 +5,6 @@ import Footer from '../components/footer'
 import DownloadButton from '../components/download-button'
 import { Download } from '../components/icons'
 import useSWR from 'swr'
-import styles from '../styles/pages/home/index.module.css'
 import heroStyles from '../styles/pages/home/hero.module.css'
 import contentStyles from '../styles/pages/home/content.module.css'
 import installationStyles from '../styles/pages/home/installation.module.css'
@@ -69,7 +68,7 @@ export default () => {
   }, [])
 
   return (
-    <Page className={styles.root}>
+    <Page>
       {/**
        * Meta
        */}

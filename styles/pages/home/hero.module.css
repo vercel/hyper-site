@@ -1,7 +1,8 @@
 .root {
-  min-height: calc(100vh - 85px);
+  height: calc(100vh - 85px);
   display: grid;
   grid: 0.5fr 2fr 1fr / auto-flow;
+  font-size: 14px;
 }
 
 .logo {

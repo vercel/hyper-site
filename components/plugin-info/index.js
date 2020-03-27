@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import { event as gTagEvent } from '../../lib/gtag'
 import { GitHub } from '../icons'
 import Gravatar from 'react-gravatar'
-import Link from '../link'
+import Link from 'next/link'
 
 export default ({ pluginName, variant }) => {
   const { data: plugin, error } = useSWR(
@@ -18,7 +18,7 @@ export default ({ pluginName, variant }) => {
       action: 'Opened install modal',
       category: 'plugin',
       label: 'open_install_modal',
-      value: pluginName
+      value: pluginName,
     })
     setModalOpen(true)
   }
@@ -54,30 +54,24 @@ export default ({ pluginName, variant }) => {
                 <>Brand new!</>
               )}
             </span>
-            <Link
-              className={styles.github}
+            <a
               href={plugin.collected.metadata.links.repository}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.github}
             >
               <GitHub size={14} />
-            </Link>
+            </a>
           </>
         )}
         &nbsp;
         {variant === 'description' ? (
-          <Link
-            href="/store/[name]/source"
-            as={`/store/${pluginName}/source`}
-            className={styles.link}
-          >
-            view source code
+          <Link href="/store/[name]/source" as={`/store/${pluginName}/source`}>
+            <a className={styles.link}>view source code</a>
           </Link>
         ) : (
-          <Link
-            href="/store/[name]"
-            as={`/store/${pluginName}`}
-            className={styles.link}
-          >
-            view description
+          <Link href="/store/[name]" as={`/store/${pluginName}`}>
+            <a className={styles.link}>view description</a>
           </Link>
         )}
         {plugin && (
