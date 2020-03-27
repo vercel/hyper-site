@@ -63,6 +63,14 @@ export default (meta) => ({ children }) => (
           max-width: 750px;
         }
 
+        .content :global(a) {
+          color: var(--green);
+        }
+
+        .content :global(a:hover) {
+          color: var(--bright-green);
+        }
+
         .content :global(h1) {
           font-weight: 600;
           font-size: 36px;
@@ -150,6 +158,11 @@ export default (meta) => ({ children }) => (
         .content :global(.button) {
           display: flex;
           justify-content: center;
+          font-size: 14px;
+        }
+
+        .content :global(.button a) {
+          color: var(--bg);
         }
 
         @media (max-width: 768px) {

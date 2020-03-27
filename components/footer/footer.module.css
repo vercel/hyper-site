@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.link:hover {
+.root a:hover {
   color: var(--fg);
 }
 

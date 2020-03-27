@@ -9,7 +9,6 @@ export default () => (
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/zeit/hyper/releases"
-          className={styles.link}
         >
           Changelog
         </a>
@@ -17,7 +16,6 @@ export default () => (
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/zeit/hyper"
-          className={styles.link}
         >
           GitHub
         </a>
@@ -26,13 +24,13 @@ export default () => (
         </span>
         <span className={styles.download}>
           Download for:
-          <a href="/#installation" className={styles.link}>
+          <a href="/#installation">
             <Apple size={16} />
           </a>
-          <a href="/#installation" className={styles.link}>
+          <a href="/#installation">
             <Windows size={16} />
           </a>
-          <a href="/#installation" className={styles.link}>
+          <a href="/#installation">
             <Linux size={16} />
           </a>
         </span>

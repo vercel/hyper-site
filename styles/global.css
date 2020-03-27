@@ -2,6 +2,8 @@
   --bg: #000;
   --fg: #fff;
   --pink: #f81ce5;
+  --green: #50e3c2;
+  --bright-green: #3afacf;
   --gray: #999;
   --font-sans: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -28,16 +30,8 @@ body {
 a {
   text-decoration: none;
   color: currentColor;
-}
+  transition: color 200ms ease-in-out;
 
-a:not([class]) {
-  color: #50e3c2;
-  transition: color 0.2s ease;
-  text-decoration: none;
-}
-
-a:not([class]):hover {
-  color: #3afacf;
 }
 
 ::selection {
