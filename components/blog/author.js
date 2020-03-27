@@ -1,5 +1,4 @@
 import styles from './author.module.css'
-import Link from 'next/link'
 
 export default ({ name, twitter, thumbnail }) => (
   <div className={styles.root}>
@@ -10,9 +9,13 @@ export default ({ name, twitter, thumbnail }) => (
     />
     <div className={styles.content}>
       <span className={styles.name}>{name}</span>
-      <Link href={`https://twitter.com/${twitter}`}>
-        <a>@{twitter}</a>
-      </Link>
+      <a
+        href={`https://twitter.com/${twitter}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @{twitter}
+      </a>
     </div>
   </div>
 )

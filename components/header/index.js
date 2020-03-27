@@ -10,7 +10,11 @@ const ActiveLink = ({ href, children }) => {
 
   return (
     <Link href={href}>
-      <a className={`${styles.link} ${pathname === href ? styles.active : ''}`}>
+      <a
+        className={`${styles.link} ${
+          pathname.split('/')[1] === href.split('/')[1] ? styles.active : ''
+        }`}
+      >
         {children}
       </a>
     </Link>
