@@ -10,12 +10,12 @@
   color: white;
   font-size: 14px;
   padding: 0 8px 0 0;
-  width: 6rem;
+  width: 7rem;
   transition: width 0.2s ease;
 }
 
 .input:focus {
-  width: 7rem;
+  width: 8rem;
   outline: 0;
 }
 
