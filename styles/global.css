@@ -31,7 +31,6 @@ a {
   text-decoration: none;
   color: currentColor;
   transition: color 200ms ease-in-out;
-
 }
 
 ::selection {
@@ -50,4 +49,18 @@ a {
     padding-left: 40px;
     padding-right: 40px;
   }
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
 }
