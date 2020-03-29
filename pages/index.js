@@ -161,7 +161,7 @@ export default () => {
                 <td>64-bit</td>
               </tr>
               {installationTableData.map(({ os: _os, renderText, path }) => (
-                <tr>
+                <tr key={_os}>
                   <td>{renderText()}</td>
                   <td
                     className={os === _os ? installationStyles.highlighted : ''}
