@@ -21,7 +21,7 @@ const ActiveLink = ({ href, children }) => {
   )
 }
 
-export default ({ onSearch }) => {
+export default () => {
   const [mobileNavShown, setMobileNavShown] = useState(false)
 
   const toggle = () => setMobileNavShown(!mobileNavShown)
@@ -51,7 +51,7 @@ export default ({ onSearch }) => {
         </nav>
 
         <div className={styles.rightNav}>
-          <SearchBar onSearch={onSearch} />
+          <SearchBar />
           <a
             href="https://zeit.co"
             target="_blank"
@@ -76,13 +76,17 @@ export default ({ onSearch }) => {
         <Link href="/themes">
           <a>Themes</a>
         </Link>
-        <Link href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store">
-          <a>Submit</a>
-        </Link>
+        <a
+          href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Submit
+        </a>
         <Link href="/blog">
           <a>Blog</a>
         </Link>
-        <SearchBar onSearch={onSearch} />
+        <SearchBar />
       </nav>
     </>
   )

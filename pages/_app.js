@@ -1,29 +1,44 @@
 import '../styles/global.css'
+import { useState, useEffect } from 'react'
 import { SWRConfig } from 'swr'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import { pageView as gTagPageView } from '../lib/gtag'
+import { SearchContext } from '../lib/search-context'
 
 let timeout
 
-const start = (url) => {
-  timeout = setTimeout(NProgress.start, 200)
-  gTagPageView(url)
-}
-
-const done = () => {
-  clearTimeout(timeout)
-  NProgress.done()
-}
-
-Router.events.on('routeChangeStart', start)
-Router.events.on('routeChangeComplete', done)
-Router.events.on('routeChangeError', done)
-
 export default ({ Component, pageProps }) => {
+  const [search, setSearch] = useState('')
+
+  const start = (url) => {
+    timeout = setTimeout(NProgress.start, 200)
+    gTagPageView(url)
+  }
+
+  const done = () => {
+    clearTimeout(timeout)
+    setSearch('')
+    NProgress.done()
+  }
+
+  useEffect(() => {
+    Router.events.on('routeChangeStart', start)
+    Router.events.on('routeChangeComplete', done)
+    Router.events.on('routeChangeError', done)
+
+    return () => {
+      Router.events.off('routeChangeStart', start)
+      Router.events.off('routeChangeComplete', done)
+      Router.events.off('routeChangeError', done)
+    }
+  }, [])
+
   return (
     <SWRConfig value={{ fetcher: (url) => fetch(url).then((r) => r.json()) }}>
-      <Component {...pageProps} />
+      <SearchContext.Provider value={{ search, setSearch }}>
+        <Component {...pageProps} />
+      </SearchContext.Provider>
     </SWRConfig>
   )
 }

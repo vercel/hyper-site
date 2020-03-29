@@ -2,8 +2,10 @@ import Head from 'next/head'
 import PluginsList from '../plugin-list'
 import styles from './search-list.module.css'
 import allPlugins from '../../plugins'
+import { useSearch } from '../../lib/search-context'
 
-export default ({ query }) => {
+export default () => {
+  const { search: query } = useSearch()
   const plugins = allPlugins.filter(
     ({ name, description }) =>
       name.includes(query) || description.includes(query)
