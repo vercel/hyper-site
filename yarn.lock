@@ -1063,10 +1063,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.5.8.tgz#cbadda0378af899c17ce1aa69c677015cab28448"
   integrity sha512-a7Gjjw8bfBSertA/pTWBA/9WKEhgaSxvQE2NTSUzaknrzGFOhs4alZSHh3RHmSFdSWv5pUuzAgsWseMLhWEVkQ==
 
-"@next/mdx@^9.3.2":
-  version "9.3.2"
-  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.3.2.tgz#f732aa95a2349f994f2e1928546fc9a8b4e0e090"
-  integrity sha512-nsXWEYh+m2g/c/rYRLlgnANFz4JYXx8SI9V+pJdToVZSAzcaAI74uOi+/YiAMh7pvg+mb1gszbqpz4jRl1xleg==
+"@next/mdx@^9.3.4":
+  version "9.3.4"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.3.4.tgz#2d6a7c6c98a2d0b0e65dada4687d7ab10b232f22"
+  integrity sha512-FUDkumSQYGq6p2DiKe51RMwQnDYCvee+fkyCwUfBfvLAhk2+V8feXGIrJAcdthVeQPh22joInfrfLePGF3oyLA==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
