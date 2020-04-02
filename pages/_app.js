@@ -12,7 +12,7 @@ export default ({ Component, pageProps }) => {
   const [search, setSearch] = useState('')
 
   const start = (url) => {
-    timeout = setTimeout(NProgress.start, 200)
+    timeout = setTimeout(NProgress.start, 500)
     gTagPageView(url)
   }
 

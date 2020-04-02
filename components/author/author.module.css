@@ -25,9 +25,3 @@
 .name {
     line-height: 1;
 }
-
-@media (max-width: 768px) {
-    .root {
-        margin-bottom: 20px;
-    }
-}
