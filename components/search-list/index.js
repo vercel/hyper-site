@@ -28,11 +28,9 @@ export default () => {
         <title>{`Hyper Store - No results for "${query}"`}</title>
       </Head>
       <div className={styles.searchError}>
-        <p>
-          Your search for "<b>{query}</b>" did not match any plugins or themes
-          😱 <br />
-          Make sure the search term is spelled correctly.
-        </p>
+        Your search for "<b>{query}</b>" did not match any plugins or themes 😱{' '}
+        <br />
+        Make sure the search term is spelled correctly.
       </div>
     </>
   )

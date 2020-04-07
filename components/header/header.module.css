@@ -66,6 +66,11 @@
     margin: auto 0 auto auto;
   }
 
+  .mobileNav {
+    z-index: 2;
+    background: var(--bg);
+  }
+
   .mobileNav.active {
     display: flex;
     width: 100%;
