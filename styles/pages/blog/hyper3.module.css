@@ -19,8 +19,12 @@
   padding: 6rem 0;
 }
 
-.authors {
+.authors, .content {
   composes: container from global;
+  max-width: 750px !important;
+}
+
+.authors {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -28,7 +32,6 @@
 }
 
 .content {
-  composes: container from global;
   max-width: 750px !important;
   padding-bottom: 10rem;
 }
