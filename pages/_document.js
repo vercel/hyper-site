@@ -11,6 +11,20 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+        <link
+            rel="preload"
+            href="/fonts/Inter-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Inter-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <link

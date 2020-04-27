@@ -19,7 +19,7 @@
     margin-top: 0;
     margin-bottom: 4px;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: normal;
 }
 
 .featuredContent p {
@@ -65,7 +65,7 @@
 
 .listName {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: normal;
     margin: 0 0 4px;
 }
 

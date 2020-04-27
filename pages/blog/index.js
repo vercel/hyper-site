@@ -176,7 +176,7 @@ export default () => (
         <p>
           <strong>
             Node's IPC, unfortunately, comes with a non-trivial amount of
-            overhead.
+            overhead.&nbsp;
           </strong>
           Messages are sent back and forth as <strong>JSON strings</strong>,
           which must be encoded on one side and decoded on the other. Also,

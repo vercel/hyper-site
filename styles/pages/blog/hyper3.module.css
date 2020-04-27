@@ -14,7 +14,7 @@
 
 .header h1 {
   text-align: center;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 2.5rem;
   padding: 6rem 0;
 }
@@ -50,7 +50,7 @@
 
 .content p,
 .content li {
-  line-height: 2;
+  line-height: 1.5;
 }
 
 .content ul {

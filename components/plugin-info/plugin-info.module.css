@@ -114,7 +114,7 @@
   .link {
     margin: 1rem 0 28px;
     order: 6;
-    font-weight: 600;
+    font-weight: bold;
   }
 
   .install.loaded {

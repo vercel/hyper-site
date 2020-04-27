@@ -14,7 +14,7 @@
 
 .name {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: normal;
   text-align: center;
   display: block;
   margin-bottom: 1rem;
@@ -27,7 +27,7 @@
   max-width: 400px;
   margin: 0 auto 32px;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 .root > img {
