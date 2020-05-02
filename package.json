@@ -11,6 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "copee": "^1.0.6",
     "next": "^9.3.6",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
