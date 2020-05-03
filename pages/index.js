@@ -159,7 +159,7 @@ export default class Index extends React.Component {
               </div>
               <div id="arrow">
                 <a href="#installation">
-                  <img src="static/arrow.svg" width={18} />
+                  <img src="static/arrow.svg" width={18} alt="arrow" />
                 </a>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default class Index extends React.Component {
                       className={this.state.os === 'mac' ? 'highlighted' : ''}
                     >
                       <a href="https://releases.hyper.is/download/mac">
-                        <img src="static/download-icon.svg" />
+                        <img src="static/download-icon.svg" alt="download" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -214,7 +214,7 @@ export default class Index extends React.Component {
                       }
                     >
                       <a href="https://releases.hyper.is/download/win">
-                        <img src="static/download-icon.svg" />
+                        <img src="static/download-icon.svg" alt="download" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -232,7 +232,7 @@ export default class Index extends React.Component {
                       }
                     >
                       <a href="https://releases.hyper.is/download/deb">
-                        <img src="static/download-icon.svg" />
+                        <img src="static/download-icon.svg" alt="download" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -250,7 +250,7 @@ export default class Index extends React.Component {
                       }
                     >
                       <a href="https://releases.hyper.is/download/rpm">
-                        <img src="static/download-icon.svg" />
+                        <img src="static/download-icon.svg" alt="download" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -266,7 +266,7 @@ export default class Index extends React.Component {
                       className={this.state.os === 'linux' ? 'highlighted' : ''}
                     >
                       <a href="https://releases.hyper.is/download/AppImage">
-                        <img src="static/download-icon.svg" />
+                        <img src="static/download-icon.svg" alt="download" />
                         <span className="latest-version">
                           {stable.tag_name}
                         </span>
@@ -1795,7 +1795,12 @@ export default class Index extends React.Component {
               .
             </p>
             <p style={{ textAlign: 'center' }}>
-              <img src="static/hyperyellow.gif" width={446} height={333} />
+              <img
+                src="static/hyperyellow.gif"
+                width={446}
+                height={333}
+                alt="hyperyellow_example"
+              />
             </p>
             <p>
               Themes are simply plugins! Only one hook,{' '}
@@ -1868,6 +1873,7 @@ export default class Index extends React.Component {
                 src="https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif"
                 width={457}
                 height={340}
+                alt="hyperpower_example"
               />
             </p>
             <p>
