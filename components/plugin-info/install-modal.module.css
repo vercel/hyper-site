@@ -33,6 +33,7 @@
   max-width: 100%;
   width: 480px;
   text-align: center;
+  border-radius: 2px;
 }
 
 .content h3 {
