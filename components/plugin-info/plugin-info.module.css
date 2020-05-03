@@ -59,6 +59,9 @@
   width: 28px;
   height: 28px;
   margin-right: 8px;
+  background: black;
+  border: 1px solid #333;
+  display: block;
 }
 
 .borderFollowed {

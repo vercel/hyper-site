@@ -34,7 +34,10 @@ export default ({ pluginName, variant }) => {
         {error ? (
           <span>We can't currently find information for this extension 😰</span>
         ) : !plugin ? (
-          <span>Loading plugin information...</span>
+          <div className={styles.author}>
+            <span className={styles.avatar} />
+            <span>Loading plugin information...</span>
+          </div>
         ) : (
           <>
             <div className={`${styles.author} ${styles.borderFollowed}`}>
