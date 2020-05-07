@@ -11,9 +11,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-        <link
+          <link
             rel="preload"
-            href="/inter.woff2"
+            href="https://assets.vercel.com/raw/upload/v1587415301/fonts/2/inter-var-latin.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
@@ -82,7 +82,7 @@ class MyDocument extends Document {
                 gtag('js', new Date());
 
                 gtag('config', '${GA_TRACKING_ID}');
-              `
+              `,
             }}
           />
         </body>

@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-weight: 100 900;
   font-display: block;
-  src: url("/inter.woff2") format("woff2");
+  src: url('https://assets.vercel.com/raw/upload/v1587415301/fonts/2/inter-var-latin.woff2')
+    format('woff2');
 }
 
 :root {
@@ -12,7 +13,7 @@
   --green: #50e3c2;
   --bright-green: #3afacf;
   --gray: #999;
-  --font-sans: "Inter", sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
