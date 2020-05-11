@@ -524,5 +524,13 @@
     "preview": "https://raw.githubusercontent.com/davoscript/hyper-robot-theme/master/preview.gif",
     "colors": ["#ff008e", "#50f0fb", "#EB07EE", "#FFEB3B"],
     "dateAdded": "1588635078433"
+  },
+  {
+    "name": "hyper-robot-theme  ",
+    "description": "Vibrant retroristic cyberpunky theme for Hyper Terminal",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/davoscript/hyper-robot-theme/master/preview.gif",
+    "colors": ["#ff008e", "#50f0fb", "#EB07EE", "#FFEB3B"],
+    "dateAdded": "1588635078433"
   }
 ]
