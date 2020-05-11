@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import plugins from '../../../plugins.json'
-import Page from '../../../components/page'
-import PluginInfo from '../../../components/plugin-info'
-import { File, Directory } from '../../../components/icons'
+import plugins from 'plugins.json'
+import Page from 'components/page'
+import PluginInfo from 'components/plugin-info'
+import { File, Directory } from 'components/icons'
 import useSWR from 'swr'
-import styles from '../../../styles/pages/store/source.module.css'
+import styles from 'styles/pages/store/source.module.css'
 
 const formatFileName = (path) => path.replace(/^\/+|\/+$/g, '')
 

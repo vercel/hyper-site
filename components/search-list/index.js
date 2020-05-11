@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import PluginsList from '../plugin-list'
 import styles from './search-list.module.css'
-import allPlugins from '../../plugins'
-import { useSearch } from '../../lib/search-context'
+import allPlugins from 'plugins'
+import { useSearch } from 'lib/search-context'
 
 export default () => {
   const { search: query } = useSearch()

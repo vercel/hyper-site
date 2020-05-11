@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import DownloadButton from '../../components/download-button'
-import Page from '../../components/page'
-import Author from '../../components/author'
-import styles from '../../styles/pages/blog/hyper3.module.css'
+import DownloadButton from 'components/download-button'
+import Page from 'components/page'
+import Author from 'components/author'
+import styles from 'styles/pages/blog/hyper3.module.css'
 
 const authors = [
   {

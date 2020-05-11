@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Page from '../components/page'
-import Footer from '../components/footer'
-import DownloadButton from '../components/download-button'
-import { Download, LogoBig } from '../components/icons'
+import Page from 'components/page'
+import Footer from 'components/footer'
+import DownloadButton from 'components/download-button'
+import { Download, LogoBig } from 'components/icons'
 import useSWR from 'swr'
-import heroStyles from '../styles/pages/home/hero.module.css'
-import contentStyles from '../styles/pages/home/content.module.css'
-import installationStyles from '../styles/pages/home/installation.module.css'
+import heroStyles from 'styles/pages/home/hero.module.css'
+import contentStyles from 'styles/pages/home/content.module.css'
+import installationStyles from 'styles/pages/home/installation.module.css'
 
 const Path = ({ os, path }) => (
   <code>

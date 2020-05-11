@@ -1,5 +1,5 @@
-import PluginThemeShowcase from '../../components/plugin-theme-showcase'
-import allPlugins from '../../plugins'
+import PluginThemeShowcase from 'components/plugin-theme-showcase'
+import allPlugins from 'plugins'
 
 export default () => {
   const plugins = allPlugins

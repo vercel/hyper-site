@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Search } from '../icons'
 import styles from './search-bar.module.css'
-import { useSearch } from '../../lib/search-context'
+import { useSearch } from 'lib/search-context'
 
 export default () => {
   const { search, setSearch } = useSearch()

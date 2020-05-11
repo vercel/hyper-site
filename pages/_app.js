@@ -1,10 +1,10 @@
-import '../styles/global.css'
+import 'styles/global.css'
 import { useState, useEffect } from 'react'
 import { SWRConfig } from 'swr'
 import NProgress from 'nprogress'
 import Router from 'next/router'
-import { pageView as gTagPageView } from '../lib/gtag'
-import { SearchContext } from '../lib/search-context'
+import { pageView as gTagPageView } from 'lib/gtag'
+import { SearchContext } from 'lib/search-context'
 
 let timeout
 

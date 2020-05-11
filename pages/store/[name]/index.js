@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Page from '../../../components/page'
-import PluginInfo from '../../../components/plugin-info'
-import plugins from '../../../plugins'
-import styles from '../../../styles/pages/store/index.module.css'
+import Page from 'components/page'
+import PluginInfo from 'components/plugin-info'
+import plugins from 'plugins'
+import styles from 'styles/pages/store/index.module.css'
 
 export default ({ plugin }) => (
   <Page>
