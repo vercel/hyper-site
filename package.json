@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "copee": "^1.0.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
     "next": "^9.4.0",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
@@ -21,10 +23,21 @@
     "swr": "^0.2.0"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "shell-quote": "^1.7.2"
   },
   "prettier": {
     "singleQuote": true,
     "semi": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css}": [
+      "prettier --write"
+    ]
   }
 }
