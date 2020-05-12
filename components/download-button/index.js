@@ -1,23 +1,26 @@
 import { Apple, Linux, Windows, Download } from '../icons'
 import styles from './download-button.module.css'
 
-export default ({ os }) => {
+export default ({ os, fixedWidth }) => {
+  const cn = `${styles.root} ${fixedWidth ? styles.fixedWidth : ''}`
   if (os === 'mac') {
     return (
-      <a
-        className={styles.root}
-        href="https://releases.hyper.is/download/mac"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Apple size={16} />
-        <strong>Download Hyper for macOS</strong>
-      </a>
+      <>
+        <a
+          className={cn}
+          href="https://releases.hyper.is/download/mac"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Apple size={16} />
+          <strong>Download Hyper for macOS</strong>
+        </a>
+      </>
     )
   } else if (os === 'windows') {
     return (
       <a
-        className={styles.root}
+        className={cn}
         href="https://releases.hyper.is/download/win"
         target="_blank"
         rel="noopener noreferrer"
@@ -29,7 +32,7 @@ export default ({ os }) => {
   } else if (os === 'fedora') {
     return (
       <a
-        className={styles.root}
+        className={cn}
         href="https://releases.hyper.is/download/rpm"
         target="_blank"
         rel="noopener noreferrer"
@@ -41,19 +44,19 @@ export default ({ os }) => {
   } else if (os === 'ubuntu') {
     return (
       <a
-        className={styles.root}
+        className={cn}
         href="https://releases.hyper.is/download/deb"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Linux />
+        <Linux size={16} />
         <strong>Download Hyper for Ubuntu</strong>
       </a>
     )
   } else if (os === 'linux') {
     return (
       <a
-        className={styles.root}
+        className={cn}
         href="https://releases.hyper.is/download/AppImage"
         target="_blank"
         rel="noopener noreferrer"
@@ -64,12 +67,7 @@ export default ({ os }) => {
     )
   } else {
     return (
-      <a
-        href="/#installation"
-        className={styles.root}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="/#installation" className={cn}>
         <Download height={12} width={16} />
         <strong>Download Hyper</strong>
       </a>

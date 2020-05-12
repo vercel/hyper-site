@@ -79,7 +79,7 @@ const installationTableData = [
 ]
 
 export default () => {
-  const [os, setOs] = useState('mac')
+  const [os, setOs] = useState('')
   const { data: latestRelease } = useSWR(
     'https://api.github.com/repos/zeit/hyper/releases/latest'
   )
@@ -135,7 +135,7 @@ export default () => {
           muted
         />
         <div className={heroStyles.download}>
-          <DownloadButton os={os} />
+          <DownloadButton fixedWidth os={os} />
           <a className={heroStyles.other} href="#installation">
             Other platforms
           </a>
