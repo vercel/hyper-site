@@ -1,0 +1,51 @@
+/* TODO remove this selector once the styled-jsx globals are fixed, along with every !important */
+.table td {
+  padding: 0 !important;
+}
+
+.title {
+  margin-bottom: 0 !important;
+  line-height: 1;
+}
+
+.table {
+  color: var(--fg);
+}
+
+.table td:nth-child(odd), .table tr:first-child td:nth-child(2) {
+  padding: 10px !important;
+}
+
+.table td:not(:first-child) {
+  text-align: center;
+}
+
+.table td.highlighted {
+  position: relative;
+  border: 1px double #50e3c2 !important;
+}
+
+.table td.highlighted a {
+  color: #50e3c2;
+}
+
+.table td.invisibleTopLeft {
+  border-top: 0 !important;
+  border-left: 0 !important;
+}
+
+.table a {
+  border-bottom: none;
+  display: block;
+  transition: color 0.3s ease;
+  padding: 10px;
+}
+
+.table a:hover {
+  background: none;
+  color: #50e3c2;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}

@@ -3,8 +3,8 @@ import allPlugins from 'plugins'
 
 export default () => {
   const plugins = allPlugins.filter(
-    (p) => p.type === 'plugin' && p.featured === true
+    (p) => p.type === 'theme' && p.featured === true
   )
 
-  return <PluginThemeShowcase plugins={plugins} variant="plugin" />
+  return <PluginThemeShowcase plugins={plugins} variant="theme" />
 }

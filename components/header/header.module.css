@@ -1,0 +1,92 @@
+.header {
+  composes: container from global;
+  height: 85px;
+  display: grid;
+  grid: auto-flow / repeat(3, 1fr);
+}
+
+.logo {
+  display: flex;
+  color: white;
+  margin: auto auto auto 0;
+}
+
+.desktopNav {
+  margin: auto;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--gray);
+  transition: color 0.2s ease;
+}
+
+.link.active,
+.link:hover {
+  color: var(--fg);
+}
+
+.desktopNav > a:not(:last-child) {
+  margin-right: 24px;
+}
+
+.rightNav {
+  margin: auto 0 auto auto;
+}
+
+.zeit {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  margin-left: 24px;
+}
+
+.mobileNav {
+  composes: container from global;
+}
+
+.toggle,
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    grid: auto-flow / repeat(2, 1fr);
+  }
+
+  .desktopNav,
+  .rightNav {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    color: white;
+    margin: auto 0 auto auto;
+  }
+
+  .mobileNav {
+    z-index: 2;
+    background: var(--bg);
+  }
+
+  .mobileNav.active {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  .mobileNav > a {
+    height: 48px;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+}
