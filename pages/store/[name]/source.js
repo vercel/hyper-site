@@ -10,15 +10,9 @@ import styles from 'styles/pages/store/source.module.css'
 
 const formatFileName = (path) => path.replace(/^\/+|\/+$/g, '')
 
-export default () => {
+export default ({ plugin, npmData, pluginMeta, cache }) => {
   const router = useRouter()
-  const pluginId = router.query.name
-  const plugin = plugins.find((p) => p.name === pluginId)
-  const { data: pluginMeta } = useSWR(
-    pluginId ? `https://unpkg.com/${pluginId}@latest/?meta` : null
-  )
   const [activeFile, setActiveFile] = useState(null)
-  const [cache, setCache] = useState(null)
 
   // figuring out the initial activeFile from the url
   // or falling back to the first file of the plugin
@@ -27,29 +21,14 @@ export default () => {
     setActiveFile(
       filenameInQuery
         ? `/${filenameInQuery}`
-        : pluginMeta?.files.find((file) => file.type === 'file').path ?? null
+        : pluginMeta.files.find((file) => file.type === 'file').path ?? null
     )
-  }, [pluginMeta, router])
-
-  // fetching file's content and caching it
-  useEffect(() => {
-    if (activeFile) {
-      fetch(`https://unpkg.com/${pluginId}@latest${activeFile}`)
-        .then((r) => {
-          if (!r.ok) {
-            throw new Error('error fetching file')
-          }
-          return r.text()
-        })
-        .then((d) => setCache({ ...cache, [activeFile]: d }))
-        .catch((e) => console.log(e))
-    }
-  }, [activeFile])
+  }, [router])
 
   const handleClickOnFile = (path) =>
     router.push(
       '/store/[name]/source',
-      `/store/${pluginId}/source?${formatFileName(path)}`
+      `/store/${plugin.name}/source?${formatFileName(path)}`
     )
 
   const renderFileTree = (root) => (
@@ -99,11 +78,6 @@ export default () => {
     </div>
   )
 
-  // pluginId is first present on rehydration as it comes from the query
-  if (!pluginId) {
-    return null
-  }
-
   return (
     <Page>
       <Head>
@@ -112,23 +86,68 @@ export default () => {
 
       <h1 className={styles.name}>{plugin.name}</h1>
       <div className={styles.container}>
-        {pluginMeta && cache ? (
-          <>
-            {renderFileTree(pluginMeta.files)}
-            <div className={styles.content}>
-              {cache[activeFile] ? (
-                <pre>{cache[activeFile]}</pre>
-              ) : (
-                <span className={styles.fileLoading}>Contents loading...</span>
-              )}
-            </div>
-          </>
-        ) : (
-          <span className={styles.pluginLoading}>Loading source code...</span>
-        )}
+        <>
+          {renderFileTree(pluginMeta.files)}
+          <div className={styles.content}>
+            <pre>{cache[activeFile]}</pre>
+          </div>
+        </>
       </div>
 
-      <PluginInfo variant="source" pluginName={plugin.name} />
+      <PluginInfo variant="source" npmData={npmData} />
     </Page>
   )
 }
+
+const getFilePaths = (obj) => {
+  if (obj.type === 'directory') {
+    return getFilePaths(obj.files)
+  }
+
+  return obj.files.filter((f) => f.type === 'file').map((e) => e.path)
+}
+
+export const getStaticProps = async ({ params }) => {
+  const res = await fetch(`https://api.npms.io/v2/package/${params.name}`)
+  const npmData = await res.json()
+
+  const res2 = await fetch(`https://unpkg.com/${params.name}@latest/?meta`)
+  const pluginMeta = await res2.json()
+
+  const cache = {}
+  const filePaths = []
+
+  const getFilePaths = (root) => {
+    root.files.forEach((file) => {
+      if (file.type === 'directory') {
+        getFilePaths(file)
+      } else if (file.type === 'file') {
+        filePaths.push(file.path)
+      }
+    })
+  }
+
+  getFilePaths(pluginMeta)
+
+  await Promise.all(
+    filePaths.map(async (path) => {
+      const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
+      cache[path] = await res.text()
+      await new Promise((resolve, reject) => setTimeout(resolve, 100))
+    })
+  )
+
+  return {
+    props: {
+      plugin: plugins.find((e) => e.name === params.name),
+      npmData,
+      pluginMeta,
+      cache,
+    },
+  }
+}
+
+export const getStaticPaths = () => ({
+  paths: plugins.map(({ name }) => ({ params: { name } })),
+  fallback: false,
+})
