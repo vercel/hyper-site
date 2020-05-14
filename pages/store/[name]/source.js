@@ -133,6 +133,10 @@ export const getStaticProps = async ({ params }) => {
     filePaths.map(async (path) => {
       const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
       cache[path] = await res.text()
+
+      // This promise ensures that unpkg does not rate limit us.
+      // If you happen to get rate limited or unpkg releases some information
+      // about the exact rate limits feel free to change it.
       await new Promise((resolve, reject) => setTimeout(resolve, 100))
     })
   )
