@@ -99,6 +99,14 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
   )
 }
 
+const getFilePaths = (obj) => {
+  if (obj.type === 'directory') {
+    return getFilePaths(obj.files)
+  }
+
+  return obj.files.filter((f) => f.type === 'file').map((e) => e.path)
+}
+
 export const getStaticProps = async ({ params }) => {
   const res = await fetch(`https://api.npms.io/v2/package/${params.name}`)
   const npmData = await res.json()
@@ -108,15 +116,25 @@ export const getStaticProps = async ({ params }) => {
 
   const cache = {}
 
+  let filePaths = []
+
+  const getFilePaths = (root) => {
+    root.files.forEach((file) => {
+      if (file.type === 'directory') {
+        filePaths = getFilePaths(file)
+      } else if (file.type === 'file') {
+        filePaths = [...filePaths, file.path]
+      }
+    })
+
+    return filePaths
+  }
+
   await Promise.all(
-    pluginMeta.files
-      .filter((f) => f.type === 'file')
-      .map(async ({ path }) => {
-        const res = await fetch(
-          `https://unpkg.com/${params.name}@latest${path}`
-        )
-        cache[path] = await res.text()
-      })
+    getFilePaths(pluginMeta).map(async ({ path }) => {
+      const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
+      cache[path] = await res.text()
+    })
   )
 
   return {
