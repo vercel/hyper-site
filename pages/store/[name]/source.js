@@ -115,15 +115,14 @@ export const getStaticProps = async ({ params }) => {
   const pluginMeta = await res2.json()
 
   const cache = {}
-
-  let filePaths = []
+  const filePaths = []
 
   const getFilePaths = (root) => {
     root.files.forEach((file) => {
       if (file.type === 'directory') {
-        filePaths = getFilePaths(file)
+        getFilePaths(file)
       } else if (file.type === 'file') {
-        filePaths = [...filePaths, file.path]
+        filePaths.push(file.path)
       }
     })
   }
@@ -131,9 +130,10 @@ export const getStaticProps = async ({ params }) => {
   getFilePaths(pluginMeta)
 
   await Promise.all(
-    filePaths.map(async ({ path }) => {
+    filePaths.map(async (path) => {
       const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
       cache[path] = await res.text()
+      await new Promise((resolve, reject) => setTimeout(resolve, 100))
     })
   )
 
@@ -148,6 +148,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = () => ({
-  paths: plugins.map(({ name }) => ({ params: { name } })).slice(0, 1),
+  paths: plugins.map(({ name }) => ({ params: { name } })),
   fallback: false,
 })
