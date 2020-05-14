@@ -126,12 +126,12 @@ export const getStaticProps = async ({ params }) => {
         filePaths = [...filePaths, file.path]
       }
     })
-
-    return filePaths
   }
 
+  getFilePaths(pluginMeta)
+
   await Promise.all(
-    getFilePaths(pluginMeta).map(async ({ path }) => {
+    filePaths.map(async ({ path }) => {
       const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
       cache[path] = await res.text()
     })
@@ -148,6 +148,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = () => ({
-  paths: plugins.map(({ name }) => ({ params: { name } })),
+  paths: plugins.map(({ name }) => ({ params: { name } })).slice(0, 1),
   fallback: false,
 })
