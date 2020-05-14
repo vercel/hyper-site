@@ -1,0 +1,83 @@
+.root {
+  composes: container from global;
+  height: 100px;
+  z-index: 10000;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.root a:hover {
+  color: var(--fg);
+}
+
+.left > *:not(:first-child) {
+  margin-left: 12px;
+}
+
+.download {
+  display: flex;
+  align-items: center;
+}
+
+.download > a {
+  display: inline-flex;
+}
+
+.download > a:first-child {
+  margin-left: 6px;
+}
+
+.download > a + a {
+  margin-left: 10px;
+}
+
+.logo {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.logo:hover {
+  color: white;
+}
+
+@media (max-width: 496px) {
+  .root {
+    margin-top: 64px;
+  }
+
+  .content {
+    padding-bottom: 64px;
+  }
+
+  .content,
+  .left {
+    flex-direction: column;
+  }
+
+  .left {
+    margin-bottom: 24px;
+  }
+
+  .left > *:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .left > *:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
