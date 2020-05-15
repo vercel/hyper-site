@@ -1,6 +1,5 @@
 import 'styles/global.css'
 import { useState, useEffect } from 'react'
-import { SWRConfig } from 'swr'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import { pageView as gTagPageView } from 'lib/gtag'
@@ -35,10 +34,8 @@ export default ({ Component, pageProps }) => {
   }, [])
 
   return (
-    <SWRConfig value={{ fetcher: (url) => fetch(url).then((r) => r.json()) }}>
-      <SearchContext.Provider value={{ search, setSearch }}>
-        <Component {...pageProps} />
-      </SearchContext.Provider>
-    </SWRConfig>
+    <SearchContext.Provider value={{ search, setSearch }}>
+      <Component {...pageProps} />
+    </SearchContext.Provider>
   )
 }

@@ -34,6 +34,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: { plugin: plugins.find((e) => e.name === params.name), npmData },
+    unstable_revalidate: 60 * 60 * 24,
   }
 }
 
