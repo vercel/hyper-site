@@ -5,7 +5,6 @@ import plugins from 'plugins.json'
 import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
 import { File, Directory } from 'components/icons'
-import useSWR from 'swr'
 import styles from 'styles/pages/store/source.module.css'
 
 const formatFileName = (path) => path.replace(/^\/+|\/+$/g, '')
@@ -133,11 +132,6 @@ export const getStaticProps = async ({ params }) => {
     filePaths.map(async (path) => {
       const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
       cache[path] = await res.text()
-
-      // This promise ensures that unpkg does not rate limit us.
-      // If you happen to get rate limited or unpkg releases some information
-      // about the exact rate limits feel free to change it.
-      await new Promise((resolve, reject) => setTimeout(resolve, 100))
     })
   )
 
@@ -148,6 +142,7 @@ export const getStaticProps = async ({ params }) => {
       pluginMeta,
       cache,
     },
+    unstable_revalidate: 60 * 60 * 24,
   }
 }
 
