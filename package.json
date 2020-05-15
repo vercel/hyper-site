@@ -19,8 +19,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-gravatar": "^2.6.3",
-    "react-highlighter": "^0.4.3",
-    "swr": "^0.2.0"
+    "react-highlighter": "^0.4.3"
   },
   "devDependencies": {
     "prettier": "^2.0.5",
