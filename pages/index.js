@@ -4,7 +4,6 @@ import Page from 'components/page'
 import Footer from 'components/footer'
 import DownloadButton from 'components/download-button'
 import { Download, LogoBig } from 'components/icons'
-import useSWR from 'swr'
 import heroStyles from 'styles/pages/home/hero.module.css'
 import contentStyles from 'styles/pages/home/content.module.css'
 import installationStyles from 'styles/pages/home/installation.module.css'
@@ -55,7 +54,7 @@ const installationTableData = [
         <b>Debian</b> (.deb)
       </>
     ),
-    path: 'dev',
+    path: 'deb',
   },
   {
     os: 'fedora',
@@ -78,11 +77,22 @@ const installationTableData = [
   },
 ]
 
-export default () => {
-  const [os, setOs] = useState('')
-  const { data: latestRelease } = useSWR(
+export const getStaticProps = async () => {
+  const res = await fetch(
     'https://api.github.com/repos/zeit/hyper/releases/latest'
   )
+  const latestRelease = await res.json()
+
+  return {
+    props: {
+      latestRelease,
+    },
+    unstable_revalidate: 60 * 60 * 24,
+  }
+}
+
+export default ({ latestRelease }) => {
+  const [os, setOs] = useState('')
 
   useEffect(() => {
     const { userAgent } = navigator
@@ -128,12 +138,7 @@ export default () => {
        */}
       <div className={heroStyles.root}>
         <LogoBig className={heroStyles.logo} />
-        <video
-          className={heroStyles.video}
-          src="/hyperapp.mp4"
-          autoPlay
-          muted
-        />
+        <video className={heroStyles.video} src="/hero.mp4" autoPlay muted />
         <div className={heroStyles.download}>
           <DownloadButton fixedWidth os={os} />
           <a className={heroStyles.other} href="#installation">
@@ -152,7 +157,7 @@ export default () => {
         <h2 className={installationStyles.title} id="installation">
           <a href="#installation">Installation</a>
         </h2>
-        <span>latest version: {latestRelease?.tag_name}</span>
+        <span>latest version: {latestRelease.tag_name}</span>
         <div className="table">
           <table className={installationStyles.table}>
             <tbody>
@@ -172,7 +177,7 @@ export default () => {
                         width={16}
                         className={installationStyles.icon}
                       />
-                      {latestRelease?.tag_name}
+                      {latestRelease.tag_name}
                     </a>
                   </td>
                 </tr>
