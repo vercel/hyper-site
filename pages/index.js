@@ -130,7 +130,7 @@ export default ({ latestRelease }) => {
         <div className={heroStyles.download}>
           <DownloadButton fixedWidth os={os} />
           <a className={heroStyles.other} href="#installation">
-            Other platforms
+            View other platforms
           </a>
         </div>
       </div>
