@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Page from 'components/page'
 import Footer from 'components/footer'
@@ -7,6 +6,7 @@ import { Download, LogoBig } from 'components/icons'
 import heroStyles from 'styles/pages/home/hero.module.css'
 import contentStyles from 'styles/pages/home/content.module.css'
 import installationStyles from 'styles/pages/home/installation.module.css'
+import useOs from 'lib/use-os'
 
 const Path = ({ os, path }) => (
   <code>
@@ -69,7 +69,6 @@ const installationTableData = [
     os: 'linux',
     renderText: () => (
       <>
-        {' '}
         <b>Other Linux distros</b> (.AppImage)
       </>
     ),
@@ -92,26 +91,7 @@ export const getStaticProps = async () => {
 }
 
 export default ({ latestRelease }) => {
-  const [os, setOs] = useState('')
-
-  useEffect(() => {
-    const { userAgent } = navigator
-    if (
-      /Mac/.test(userAgent) &&
-      !/iPhone/.test(userAgent) &&
-      !/iPad/.test(userAgent)
-    ) {
-      setOs('mac')
-    } else if (/Windows/.test(userAgent)) {
-      setOs('windows')
-    } else if (/Fedora/.test(userAgent)) {
-      setOs('fedora')
-    } else if (/Ubuntu/.test(userAgent)) {
-      setOs('ubuntu')
-    } else if (/Linux/.test(userAgent)) {
-      setOs('linux')
-    }
-  }, [])
+  const os = useOs()
 
   return (
     <Page>
@@ -138,7 +118,15 @@ export default ({ latestRelease }) => {
        */}
       <div className={heroStyles.root}>
         <LogoBig className={heroStyles.logo} />
-        <video className={heroStyles.video} src="/hero.mp4" autoPlay muted />
+        <video
+          className={heroStyles.video}
+          src="/hero.mp4"
+          autoPlay
+          muted
+          playsInline
+          width={1200}
+          height={790}
+        />
         <div className={heroStyles.download}>
           <DownloadButton fixedWidth os={os} />
           <a className={heroStyles.other} href="#installation">
@@ -1678,11 +1666,14 @@ export default ({ latestRelease }) => {
           .
         </p>
         <p style={{ textAlign: 'center' }}>
-          <img
-            src="/hyperyellow.gif"
-            alt="hyperyellow theme"
+          <video
+            src="/hyperyellow.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
             width={446}
-            height={333}
+            height={332}
           />
         </p>
         <p>
@@ -1750,9 +1741,13 @@ export default ({ latestRelease }) => {
         </h3>
         <p>The following extension renders particles as the caret moves:</p>
         <p style={{ textAlign: 'center' }}>
-          <img
-            src="https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif"
-            width={457}
+          <video
+            src="/hyperpower.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+            width={456}
             height={340}
           />
         </p>

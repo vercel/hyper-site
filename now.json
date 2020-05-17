@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "alias": ["hyper.is"],
   "routes": [
     { "src": "/(.*)/$", "status": 301, "headers": { "Location": "/$1" } }
   ]
