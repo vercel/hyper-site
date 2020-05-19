@@ -1674,6 +1674,7 @@ export default ({ latestRelease }) => {
             loop
             width={446}
             height={332}
+            alt="hyperyellow_example"
           />
         </p>
         <p>
@@ -1749,6 +1750,7 @@ export default ({ latestRelease }) => {
             loop
             width={456}
             height={340}
+            alt="hyperpower_example"
           />
         </p>
         <p>
