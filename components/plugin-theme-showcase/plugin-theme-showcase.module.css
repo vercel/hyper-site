@@ -1,0 +1,76 @@
+.nav {
+    composes: container from global;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: '. filters submit';
+    height: 24px;
+    line-height: 1;
+}
+
+.filters {
+    grid-area: filters;
+    display: flex;
+}
+
+.filters a {
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: var(--gray);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: inline-flex;
+    align-items: center;
+}
+
+.filters a:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-left: 1px solid #333;
+}
+
+.filters a:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right: 1px solid #333;
+}
+
+.filters a:not(:first-child) {
+    border-left: 1px solid #333;
+    margin-left: -1px;
+}
+
+.filters a:hover,
+.filters a.active {
+    color: white;
+    text-decoration: none;
+}
+
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    grid-area: submit;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 2px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    border: 1px solid #333;
+    padding: 0 1rem;
+    transition: all 200ms ease;
+}
+
+.submitButton:hover {
+    border-color: #50e3c2;
+    background: #50e3c2;
+    color: black;
+}
+
+@media (max-width: 568px) {
+    .submitButton {
+        display: none;
+    }
+}
