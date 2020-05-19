@@ -10,6 +10,7 @@
   text-decoration: none;
   transition: background 200ms ease-in-out;
   line-height: 1;
+  min-width: 200px;
 }
 
 .root:hover {
@@ -19,8 +20,4 @@
 
 .root svg {
   margin-right: 12px;
-}
-
-.root.fixedWidth {
-  min-width: 280px;
 }
