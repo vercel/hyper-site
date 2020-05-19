@@ -1683,6 +1683,7 @@ export default ({ latestRelease }) => {
             alt="hyperyellow theme"
             width={446}
             height={333}
+            alt="hyperyellow_example"
           />
         </p>
         <p>
@@ -1754,6 +1755,7 @@ export default ({ latestRelease }) => {
             src="https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif"
             width={457}
             height={340}
+            alt="hyperpower_example"
           />
         </p>
         <p>
