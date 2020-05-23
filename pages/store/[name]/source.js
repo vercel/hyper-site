@@ -80,7 +80,18 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
   return (
     <Page>
       <Head>
-        <title>Hyper Store - Source of {plugin.name}</title>
+        <title>Hyper™ Store - Source of {plugin.name}</title>
+        <meta
+          property="og:title"
+          content={`Hyper™ Store - Source of ${plugin.name}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://hyper.is/store/${plugin.name}/source`}
+        />
+        <meta property="og:image" content={plugin.preview} />
+        <meta property="og:description" content={plugin.description} />
       </Head>
 
       <h1 className={styles.name}>{plugin.name}</h1>

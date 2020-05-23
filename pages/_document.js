@@ -11,6 +11,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* Inter */}
           <link
             rel="preload"
             href="https://assets.vercel.com/raw/upload/v1587415301/fonts/2/inter-var-latin.woff2"
@@ -18,8 +19,12 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
+
+          {/* Basic */}
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
+
+          {/* Favicon */}
           <link
             rel="apple-touch-icon-precomposed"
             sizes="57x57"
@@ -62,7 +67,6 @@ class MyDocument extends Document {
             href="/favicon-16x16.png"
             sizes="16x16"
           />
-          <meta name="application-name" content="Hyper Store" />
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
           <meta name="theme-color" content="#000000" />

@@ -7,7 +7,7 @@ import styles from './plugin-theme-showcase.module.css'
 export default ({ plugins, variant, filter = 'featured' }) => (
   <Page>
     <Head>
-      <title>{`Hyper Store - ${
+      <title>{`Hyper™ Store - ${
         variant === 'theme' ? 'Themes' : 'Plugins'
       }`}</title>
     </Head>

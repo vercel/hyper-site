@@ -7,8 +7,8 @@ import styles from 'styles/pages/store/index.module.css'
 export default ({ plugin, npmData }) => (
   <Page>
     <Head>
-      <title>Hyper Store - {plugin.name}</title>
-      <meta property="og:title" content={`Hyper Store - ${plugin.name}`} />
+      <title>Hyper™ Store - {plugin.name}</title>
+      <meta property="og:title" content={`Hyper™ Store - ${plugin.name}`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
@@ -16,7 +16,6 @@ export default ({ plugin, npmData }) => (
       />
       <meta property="og:image" content={plugin.preview} />
       <meta property="og:description" content={plugin.description} />
-      <meta property="og:site_name" content="Hyper Store" />
     </Head>
 
     <div className={styles.root}>
