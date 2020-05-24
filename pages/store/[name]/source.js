@@ -109,42 +109,34 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
   )
 }
 
-const getFilePaths = (obj) => {
-  if (obj.type === 'directory') {
-    return getFilePaths(obj.files)
-  }
-
-  return obj.files.filter((f) => f.type === 'file').map((e) => e.path)
-}
-
 export const getStaticProps = async ({ params }) => {
-  const res = await fetch(`https://api.npms.io/v2/package/${params.name}`)
-  const npmData = await res.json()
+  const npmData = await (
+    await fetch(`https://api.npms.io/v2/package/${params.name}`)
+  ).json()
 
-  const res2 = await fetch(`https://unpkg.com/${params.name}@latest/?meta`)
-  const pluginMeta = await res2.json()
+  const pluginMeta = await (
+    await fetch(`https://unpkg.com/${params.name}@latest/?meta`)
+  ).json()
 
-  const cache = {}
   const filePaths = []
 
-  const getFilePaths = (root) => {
-    root.files.forEach((file) => {
+  ;(function getFilePaths(root) {
+    for (const file of root.files) {
       if (file.type === 'directory') {
         getFilePaths(file)
-      } else if (file.type === 'file') {
+      }
+      if (file.type === 'file') {
         filePaths.push(file.path)
       }
-    })
+    }
+  })(pluginMeta)
+
+  const cache = {}
+
+  for (const path of filePaths) {
+    const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
+    cache[path] = await res.text()
   }
-
-  getFilePaths(pluginMeta)
-
-  await Promise.all(
-    filePaths.map(async (path) => {
-      const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
-      cache[path] = await res.text()
-    })
-  )
 
   return {
     props: {

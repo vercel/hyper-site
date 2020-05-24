@@ -99,7 +99,7 @@ export default ({ latestRelease }) => {
        * Meta
        */}
       <Head>
-        <title>Hyper</title>
+        <title>Hyper™</title>
         <meta
           name="description"
           content="A terminal built on web technologies"

@@ -25,7 +25,7 @@ const authors = [
 export default () => (
   <Page>
     <Head>
-      <title>Hyper Blog</title>
+      <title>Hyper™ Blog</title>
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:site" content="@zeithq" />
       <meta property="og:title" content="Hyper™" />

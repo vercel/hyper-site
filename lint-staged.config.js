@@ -6,10 +6,6 @@ module.exports = {
       .map((filename) => `"${escape([filename])}"`)
       .join(' ')
 
-    return [
-      `eslint --max-warnings 0 ${filenames.join(' ')}`,
-      `prettier --write ${escapedFileNames}`,
-      `git add ${escapedFileNames}`,
-    ]
+    return [`prettier --write ${escapedFileNames}`]
   },
 }
