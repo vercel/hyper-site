@@ -39,6 +39,10 @@ a {
   transition: color 200ms ease-in-out;
 }
 
+button {
+  font-family: inherit;
+}
+
 ::selection {
   background-color: var(--pink);
   color: var(--fg);

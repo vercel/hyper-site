@@ -30,7 +30,7 @@ export default ({ pluginName, open, onClose }) => {
     <div className={styles.root}>
       <div className={styles.backdrop} onClick={onClose} />
       <div className={styles.content}>
-        <h3>Install {pluginName}</h3>
+        <h2>Install {pluginName}</h2>
         <p>Run the following command in Hyper:</p>
         <pre>hyper i {pluginName}</pre>
         <span className={styles.buttons}>
