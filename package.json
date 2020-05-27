@@ -11,6 +11,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.4",
+    "@mdx-js/react": "^1.6.4",
+    "@next/mdx": "^9.4.2",
     "copee": "^1.0.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.3",
