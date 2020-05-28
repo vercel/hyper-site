@@ -10,12 +10,10 @@ export default ({ children, title, description }) => {
     <>
       <NextHead>
         <title>{title ?? 'Hyper™'}</title>
-        {description && (
-          <meta
-            name="description"
-            content={description ?? 'A terminal built on web technologies'}
-          />
-        )}
+        <meta
+          name="description"
+          content={description ?? 'A terminal built on web technologies'}
+        />
       </NextHead>
       <Header />
       {search ? <SearchList /> : <main>{children}</main>}
