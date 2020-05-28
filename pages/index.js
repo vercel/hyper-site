@@ -99,27 +99,17 @@ export default ({ latestRelease }) => {
        * Meta
        */}
       <Head>
-        <title>Hyper</title>
-        <meta
-          name="description"
-          content="A terminal built on web technologies"
-        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vercel" />
         <meta
           name="twitter:image"
-          content="https://assets.vercel.com/image/upload/v1590169843/hyper/og-image-2.png"
-        />
-        <meta property="og:title" content="Hyper™" />
-        <meta
-          property="og:description"
-          content="A terminal built on web technologies"
+          content="https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hyper.is" />
         <meta
           property="og:image"
-          content="https://assets.vercel.com/image/upload/v1590169843/hyper/og-image-2.png"
+          content="https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png"
         />
       </Head>
 
@@ -640,8 +630,9 @@ export default ({ latestRelease }) => {
         <p>
           You can find additional details about plugin development{' '}
           <a href="https://github.com/zeit/hyper/blob/master/PLUGINS.md">
-            here
+            in the Hyper repository
           </a>
+          .
         </p>
         <p>Your module has to expose at least one of these methods:</p>
         <div className="table large">
@@ -1055,6 +1046,7 @@ export default ({ latestRelease }) => {
                     <a
                       href="https://github.com/zeit/hyper/tree/master/lib/containers"
                       target="_blank"
+                      rel="noopener"
                     >
                       container components
                     </a>{' '}
@@ -1472,6 +1464,7 @@ export default ({ latestRelease }) => {
           <a
             href="https://github.com/zeit/hyper/tree/master/lib/actions"
             target="_blank"
+            rel="noopener"
           >
             Redux actions
           </a>{' '}
@@ -1537,7 +1530,11 @@ export default ({ latestRelease }) => {
         <p>
           <code>Hyper</code> achieves a lot of its speed and functionality
           thanks to the power of{' '}
-          <a target="_blank" href="https://github.com/xtermjs/xterm.js/">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/xtermjs/xterm.js/"
+          >
             xterm.js
           </a>
         </p>
@@ -1669,6 +1666,7 @@ export default ({ latestRelease }) => {
           colors! Here's the{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
           >
             code
@@ -1767,6 +1765,7 @@ export default ({ latestRelease }) => {
           Let's walk through{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyperpower/blob/master/index.js"
           >
             its code
@@ -1774,12 +1773,13 @@ export default ({ latestRelease }) => {
           .
           <br />
           First, we intercept the Redux action <code>SESSION_ADD_DATA</code>.
-          See the whole list of them{' '}
+          You can find the full list of actions{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyper/tree/master/lib/actions"
           >
-            here
+            in the repository
           </a>
           .
         </p>
@@ -1869,6 +1869,7 @@ export default ({ latestRelease }) => {
           <a
             href="https://github.com/zeit/hyperpower/blob/master/index.js#L51"
             target="_blank"
+            rel="noopener"
           >
             returns
           </a>{' '}

@@ -24,13 +24,13 @@ export default () => (
         </span>
         <span className={styles.download}>
           Download for:
-          <a href="/#installation">
+          <a href="/#installation" aria-label="Apple">
             <Apple size={16} />
           </a>
-          <a href="/#installation">
+          <a href="/#installation" aria-label="Windows">
             <Windows size={16} />
           </a>
-          <a href="/#installation">
+          <a href="/#installation" aria-label="Linux">
             <Linux size={16} />
           </a>
         </span>

@@ -30,7 +30,7 @@ export default () => {
     <>
       <header className={styles.header}>
         <Link href="/">
-          <a className={styles.logo}>
+          <a className={styles.logo} aria-label="Hyper logo">
             <Logo width={31} height={23} />
           </a>
         </Link>
@@ -76,13 +76,9 @@ export default () => {
         <Link href="/themes">
           <a>Themes</a>
         </Link>
-        <a
-          href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Submit
-        </a>
+        <Link href="/store/submit">
+          <a>Submit</a>
+        </Link>
         <Link href="/blog">
           <a>Blog</a>
         </Link>
