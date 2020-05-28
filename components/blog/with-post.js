@@ -18,9 +18,9 @@ const Video = ({ src, caption, oversize }) => (
   </figure>
 )
 
-const Image = ({ src, caption, oversize }) => (
+const Image = ({ src, caption, oversize, ...props }) => (
   <figure>
-    <img src={src} className={oversize ? styles.oversize : null} />
+    <img src={src} className={oversize ? styles.oversize : null} {...props} />
     {caption && <figcaption>{caption}</figcaption>}
   </figure>
 )
