@@ -23,8 +23,9 @@
   color: var(--fg);
 }
 
-.left > *:not(:first-child) {
-  margin-left: 12px;
+.left > *,
+.download > a {
+  padding: 0 6px;
 }
 
 .download {
@@ -34,14 +35,6 @@
 
 .download > a {
   display: inline-flex;
-}
-
-.download > a:first-child {
-  margin-left: 6px;
-}
-
-.download > a + a {
-  margin-left: 10px;
 }
 
 .logo {
