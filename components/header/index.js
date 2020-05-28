@@ -76,13 +76,9 @@ export default () => {
         <Link href="/themes">
           <a>Themes</a>
         </Link>
-        <a
-          href="https://github.com/zeit/hyper-plugins/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Submit
-        </a>
+        <Link href="/store/submit">
+          <a>Submit</a>
+        </Link>
         <Link href="/blog">
           <a>Blog</a>
         </Link>

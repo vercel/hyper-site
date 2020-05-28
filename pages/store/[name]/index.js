@@ -5,17 +5,17 @@ import plugins from 'plugins'
 import styles from 'styles/pages/store/index.module.css'
 
 export default ({ plugin, npmData }) => (
-  <Page>
+  <Page
+    title={`Hyper™ Store - ${plugin.name}`}
+    description={plugin.description}
+  >
     <Head>
-      <title>Hyper™ Store - {plugin.name}</title>
-      <meta property="og:title" content={`Hyper™ Store - ${plugin.name}`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
         content={`https://hyper.is/store/${plugin.name}`}
       />
       <meta property="og:image" content={plugin.preview} />
-      <meta property="og:description" content={plugin.description} />
     </Head>
 
     <div className={styles.root}>
