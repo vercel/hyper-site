@@ -30,7 +30,7 @@ export default () => {
     <>
       <header className={styles.header}>
         <Link href="/">
-          <a className={styles.logo}>
+          <a className={styles.logo} aria-label="Hyper logo">
             <Logo width={31} height={23} />
           </a>
         </Link>
