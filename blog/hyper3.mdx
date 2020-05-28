@@ -2,6 +2,8 @@ import withPost from 'components/blog/with-post'
 
 export const meta = {
   title: 'Hyper 3',
+  metaTitle: 'Hyper™ Blog',
+  metaDescription: 'Hyper 3: A cross-platform HTML/JS/CSS terminal',
   authors: [
     {
       name: 'Juan Campa',
@@ -83,18 +85,11 @@ Digging within the CPU profile, we noticed that the "renderer" process
 was spending most of its time handling an overwhelming amount of
 messages coming in from the main process.
 
-<Image src="/blog/hyper2.png" caption="Hyper 2" oversize />
-<Image
-  src="/blog/hyper3.png"
-  caption={
-    <>
-      Hyper 3 <br /> It is easy to see the difference between Hyper v2 and v3.{' '}
-      <br /> The pink segments represent the time spent in processing IPC,
-      instead of parsing or rendering.
-    </>
-  }
-  oversize
-/>
+<Image src="/blog/hyper2.png" caption="Hyper v2" oversize />
+<Image src="/blog/hyper3.png" caption="Hyper v3" oversize />
+
+It is easy to see the difference between Hyper v2 and v3.
+The pink segments represent the time spent in processing IPC, instead of parsing or rendering.
 
 Electron uses a multi-process architecture where each window runs on
 its own separate "renderer" process. Additionally, there's one

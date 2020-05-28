@@ -1,9 +1,9 @@
 .root {
-  padding-bottom: 10rem;
+  padding-bottom: 6rem;
 }
 
 .header {
-  padding-bottom: 4rem;
+  padding: 4rem 0;
   margin-bottom: 4rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -12,7 +12,6 @@
   text-align: center;
   font-weight: 600;
   font-size: 2.5rem;
-  padding: 4rem 0;
   letter-spacing: -1px;
 }
 
@@ -24,7 +23,7 @@
   width: 700px;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 4rem 1rem 0;
 }
 
 .authors a {
@@ -103,9 +102,19 @@
   margin-left: calc(-1 * (700px / 8));
 }
 
+.post pre {
+  overflow: auto;
+}
+
+.post pre code::before,
+.post pre code::after {
+  content: unset;
+}
+
 .post code {
-  color: #ff0080;
+  color: var(--green);
   font-family: var(--font-mono);
+  font-size: 0.875rem;
 }
 
 .post code::before,

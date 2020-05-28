@@ -99,21 +99,11 @@ export default ({ latestRelease }) => {
        * Meta
        */}
       <Head>
-        <title>Hyper™</title>
-        <meta
-          name="description"
-          content="A terminal built on web technologies"
-        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vercel" />
         <meta
           name="twitter:image"
           content="https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png"
-        />
-        <meta property="og:title" content="Hyper™" />
-        <meta
-          property="og:description"
-          content="A terminal built on web technologies"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hyper.is" />

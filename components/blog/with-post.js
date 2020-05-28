@@ -54,15 +54,17 @@ const components = {
 }
 
 export default (meta) => ({ children }) => (
-  <Page>
+  <Page title={meta?.metaTitle} description={meta?.metaDescription}>
     <div className={styles.root}>
       <div className={styles.header}>
         <h1>{meta.title}</h1>
-        <div className={styles.authors}>
-          {meta.authors.map((author, i) => (
-            <Author key={i} {...author} />
-          ))}
-        </div>
+        {meta.authors && (
+          <div className={styles.authors}>
+            {meta.authors.map((author, i) => (
+              <Author key={i} {...author} />
+            ))}
+          </div>
+        )}
       </div>
 
       <MDXProvider components={components}>
