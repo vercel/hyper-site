@@ -5,6 +5,7 @@ import plugins from 'plugins'
 import styles from 'styles/pages/store/index.module.css'
 import fs from 'fs'
 import { join } from 'path'
+import { CLOUDINARY_PREFIX } from 'lib/constants'
 
 export default ({ plugin, npmData }) => (
   <Page
@@ -17,7 +18,7 @@ export default ({ plugin, npmData }) => (
         property="og:url"
         content={`https://hyper.is/store/${plugin.name}`}
       />
-      <meta property="og:image" content={`https://hyper.is${plugin.preview}`} />
+      <meta property="og:image" content={`${plugin.preview}`} />
     </Head>
 
     <div className={styles.root}>
@@ -40,7 +41,7 @@ export const getStaticProps = async ({ params }) => {
     .find((f) => f.includes(params.name))
 
   // full relative path to the image, this now can be used as an img's src
-  const preview = `/store/${previewImageSrc}`
+  const preview = `${CLOUDINARY_PREFIX}${previewImageSrc}`
 
   const plugin = { ...plugins.find((e) => e.name === params.name), preview }
 
