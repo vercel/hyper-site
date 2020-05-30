@@ -620,5 +620,21 @@
     "type": "plugin",
     "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
     "dateAdded": "1583633829078"
+  },
+  {
+    "name": "hyper-bright-blue",
+    "type": "theme",
+    "description": "An interpretation of the Night Blue version of the classic Night Theme.",
+    "colors": [
+      "#000000",
+      "#ff9da4",
+      "#d1f1a9",
+      "#f1fa8c",
+      "#bbdaff",
+      "#ebbbff",
+      "#99ffff",
+      "#bfbfbf"
+    ],
+    "dateAdded": "1590852115094"
   }
 ]
