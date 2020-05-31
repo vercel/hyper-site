@@ -27,7 +27,9 @@
 body {
   background: var(--bg);
   color: var(--fg);
-  font: 16px/1.5 var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,6 +39,10 @@ a {
   text-decoration: none;
   color: currentColor;
   transition: color 200ms ease-in-out;
+}
+
+button {
+  font-family: inherit;
 }
 
 ::selection {

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Page from 'components/page'
 import Footer from 'components/footer'
@@ -7,6 +6,7 @@ import { Download, LogoBig } from 'components/icons'
 import heroStyles from 'styles/pages/home/hero.module.css'
 import contentStyles from 'styles/pages/home/content.module.css'
 import installationStyles from 'styles/pages/home/installation.module.css'
+import useOs from 'lib/use-os'
 
 const Path = ({ os, path }) => (
   <code>
@@ -69,7 +69,6 @@ const installationTableData = [
     os: 'linux',
     renderText: () => (
       <>
-        {' '}
         <b>Other Linux distros</b> (.AppImage)
       </>
     ),
@@ -92,26 +91,7 @@ export const getStaticProps = async () => {
 }
 
 export default ({ latestRelease }) => {
-  const [os, setOs] = useState('')
-
-  useEffect(() => {
-    const { userAgent } = navigator
-    if (
-      /Mac/.test(userAgent) &&
-      !/iPhone/.test(userAgent) &&
-      !/iPad/.test(userAgent)
-    ) {
-      setOs('mac')
-    } else if (/Windows/.test(userAgent)) {
-      setOs('windows')
-    } else if (/Fedora/.test(userAgent)) {
-      setOs('fedora')
-    } else if (/Ubuntu/.test(userAgent)) {
-      setOs('ubuntu')
-    } else if (/Linux/.test(userAgent)) {
-      setOs('linux')
-    }
-  }, [])
+  const os = useOs()
 
   return (
     <Page>
@@ -119,18 +99,18 @@ export default ({ latestRelease }) => {
        * Meta
        */}
       <Head>
-        <title>Hyper™</title>
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="@zeithq" />
-        <meta property="og:title" content="Hyper™" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@vercel" />
+        <meta
+          name="twitter:image"
+          content="https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hyper.is" />
-        <meta property="description" content="Hyper™: HTML/JS/CSS terminal" />
         <meta
-          property="og:description"
-          content="Hyper™: HTML/JS/CSS terminal"
+          property="og:image"
+          content="https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png"
         />
-        <meta property="og:image" content="https://hyper.is/hyper.png" />
       </Head>
 
       {/**
@@ -138,11 +118,19 @@ export default ({ latestRelease }) => {
        */}
       <div className={heroStyles.root}>
         <LogoBig className={heroStyles.logo} />
-        <video className={heroStyles.video} src="/hero.mp4" autoPlay muted />
+        <video
+          className={heroStyles.video}
+          src="/hero.mp4"
+          autoPlay
+          muted
+          playsInline
+          width={1200}
+          height={790}
+        />
         <div className={heroStyles.download}>
           <DownloadButton fixedWidth os={os} />
           <a className={heroStyles.other} href="#installation">
-            Other platforms
+            View other platforms
           </a>
         </div>
       </div>
@@ -642,8 +630,9 @@ export default ({ latestRelease }) => {
         <p>
           You can find additional details about plugin development{' '}
           <a href="https://github.com/zeit/hyper/blob/master/PLUGINS.md">
-            here
+            in the Hyper repository
           </a>
+          .
         </p>
         <p>Your module has to expose at least one of these methods:</p>
         <div className="table large">
@@ -1057,6 +1046,7 @@ export default ({ latestRelease }) => {
                     <a
                       href="https://github.com/zeit/hyper/tree/master/lib/containers"
                       target="_blank"
+                      rel="noopener"
                     >
                       container components
                     </a>{' '}
@@ -1474,6 +1464,7 @@ export default ({ latestRelease }) => {
           <a
             href="https://github.com/zeit/hyper/tree/master/lib/actions"
             target="_blank"
+            rel="noopener"
           >
             Redux actions
           </a>{' '}
@@ -1539,7 +1530,11 @@ export default ({ latestRelease }) => {
         <p>
           <code>Hyper</code> achieves a lot of its speed and functionality
           thanks to the power of{' '}
-          <a target="_blank" href="https://github.com/xtermjs/xterm.js/">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/xtermjs/xterm.js/"
+          >
             xterm.js
           </a>
         </p>
@@ -1671,6 +1666,7 @@ export default ({ latestRelease }) => {
           colors! Here's the{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
           >
             code
@@ -1678,11 +1674,15 @@ export default ({ latestRelease }) => {
           .
         </p>
         <p style={{ textAlign: 'center' }}>
-          <img
-            src="/hyperyellow.gif"
-            alt="hyperyellow theme"
+          <video
+            src="/hyperyellow.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
             width={446}
-            height={333}
+            height={332}
+            alt="hyperyellow_example"
           />
         </p>
         <p>
@@ -1750,16 +1750,22 @@ export default ({ latestRelease }) => {
         </h3>
         <p>The following extension renders particles as the caret moves:</p>
         <p style={{ textAlign: 'center' }}>
-          <img
-            src="https://cloud.githubusercontent.com/assets/13041/16820268/13c9bfe6-4905-11e6-8fe4-baf8fc8d9293.gif"
-            width={457}
+          <video
+            src="/hyperpower.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+            width={456}
             height={340}
+            alt="hyperpower_example"
           />
         </p>
         <p>
           Let's walk through{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyperpower/blob/master/index.js"
           >
             its code
@@ -1767,12 +1773,13 @@ export default ({ latestRelease }) => {
           .
           <br />
           First, we intercept the Redux action <code>SESSION_ADD_DATA</code>.
-          See the whole list of them{' '}
+          You can find the full list of actions{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyper/tree/master/lib/actions"
           >
-            here
+            in the repository
           </a>
           .
         </p>
@@ -1862,6 +1869,7 @@ export default ({ latestRelease }) => {
           <a
             href="https://github.com/zeit/hyperpower/blob/master/index.js#L51"
             target="_blank"
+            rel="noopener"
           >
             returns
           </a>{' '}

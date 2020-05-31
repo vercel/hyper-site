@@ -21,25 +21,22 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .content {
   background: white;
   color: black;
-  padding: 40px;
   position: relative;
   z-index: 1200;
   max-width: 100%;
-  width: 480px;
+  width: 400px;
   text-align: center;
   border-radius: 2px;
 }
 
-.content h3 {
-  margin-top: 0;
-  font-weight: normal;
-  margin-bottom: 1rem;
+.content h2 {
+  margin: 2rem 2rem 0.5rem;
 }
 
 .content pre {
@@ -47,7 +44,7 @@
   color: #bd10e0;
   padding: 12px 0;
   white-space: pre-wrap;
-  margin: 1rem 0 2rem;
+  margin: 1rem 2rem 2rem;
   border-radius: 2px;
 }
 
@@ -63,43 +60,48 @@
 
 .buttons {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  border-top: 1px solid #eaeaea;
 }
 
-.buttons button {
-  display: inline-flex;
-  align-items: center;
-  grid-area: submit;
-  cursor: pointer;
-  border-radius: 2px;
-  background: transparent;
-  color: #bd10e0;
-  border: 1px solid #bd10e0;
-  padding: 0.25rem 1rem;
-  transition: all 200ms ease;
+.buttons > * {
+  color: #666;
+  flex: 1;
+  padding: 1rem 0;
   font-size: inherit;
+  cursor: pointer;
+  transition: all 200ms ease;
 }
 
-.buttons button:hover,
-.buttons button:disabled {
-  color: white;
-  background: #bd10e0;
+.buttons *:disabled,
+.buttons *:hover {
+  background: #fafafa;
 }
 
-.buttons button:disabled {
-  filter: brightness(85%);
+.buttons *:hover:not(:disabled) {
+  color: #000;
+}
+
+.buttons *:disabled {
   cursor: not-allowed;
 }
 
-.buttons button:focus {
+.buttons *:focus {
   outline: 0;
 }
 
-.security {
-  composes: dark from global;
+.buttons > *:not(:first-child) {
+  border-left: 1px solid #eaeaea;
 }
 
-.security:hover {
-  text-decoration: underline;
+.buttons > *:first-child {
+  border-bottom-left-radius: 2px;
+}
+
+.buttons > *:last-child {
+  border-bottom-right-radius: 2px;
+}
+
+.buttons button {
+  border: 0;
+  background: transparent;
 }
