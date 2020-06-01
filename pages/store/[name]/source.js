@@ -16,12 +16,14 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
   // figuring out the initial activeFile from the url
   // or falling back to the first file of the plugin
   useEffect(() => {
-    const filenameInQuery = router.asPath.split('?')[1]
-    setActiveFile(
-      filenameInQuery
-        ? `/${filenameInQuery}`
-        : pluginMeta.files.find((file) => file.type === 'file').path ?? null
-    )
+    if (!router.isFallback) {
+      const filenameInQuery = router.asPath.split('?')[1]
+      setActiveFile(
+        filenameInQuery
+          ? `/${filenameInQuery}`
+          : pluginMeta.files.find((file) => file.type === 'file').path ?? null
+      )
+    }
   }, [router])
 
   const handleClickOnFile = (path) =>
@@ -76,6 +78,14 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
       ))}
     </div>
   )
+
+  if (router.isFallback) {
+    return (
+      <Page>
+        <h1 className={styles.name}>Loading...</h1>
+      </Page>
+    )
+  }
 
   return (
     <Page
@@ -146,7 +156,10 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-export const getStaticPaths = () => ({
-  paths: plugins.map(({ name }) => ({ params: { name } })),
-  fallback: false,
-})
+export const getStaticPaths = () =>
+  process.env.SKIP_STORE_SSG
+    ? { paths: [], fallback: true }
+    : {
+        paths: plugins.map(({ name }) => ({ params: { name } })),
+        fallback: false,
+      }
