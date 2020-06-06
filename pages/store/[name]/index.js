@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
 import plugins from 'plugins'
@@ -11,16 +10,8 @@ export default ({ plugin, npmData }) => (
   <Page
     title={`Hyper™ Store - ${plugin.name}`}
     description={plugin.description}
+    image={plugin.preview}
   >
-    <Head>
-      <meta property="og:type" content="website" />
-      <meta
-        property="og:url"
-        content={`https://hyper.is/store/${plugin.name}`}
-      />
-      <meta property="og:image" content={`${plugin.preview}`} />
-    </Head>
-
     <div className={styles.root}>
       <h1 className={styles.name}>{plugin.name}</h1>
       <p>{plugin.description}</p>
