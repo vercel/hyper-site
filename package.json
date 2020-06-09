@@ -22,8 +22,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-gravatar": "^2.6.3",
-    "react-highlighter": "^0.4.3",
-    "react-keyframes": "^1.0.0-canary.3"
+    "react-highlighter": "^0.4.3"
   },
   "devDependencies": {
     "prettier": "^2.0.5",

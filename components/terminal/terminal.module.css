@@ -19,10 +19,23 @@
   word-break: break-all;
 }
 
+.inner.yellow {
+  border-color: yellow;
+}
+
+.inner.yellow .caret {
+  background: yellow;
+}
+
+.green {
+  color: #1dc121;
+}
+
 .header {
   height: 34px;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .body {
