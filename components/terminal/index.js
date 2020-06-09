@@ -68,7 +68,7 @@ const Terminal = () => {
           {lineCount >= 1 && renderLine('# Built on HTML/CSS/JS')}
           {lineCount >= 2 && renderLine('# Fully extensible')}
           {lineCount >= 3 &&
-            renderLine("# For example, let's install a fresh theme")}
+            renderLine("# Install themes and plugins from the command line")}
           {lineCount >= 4 && renderLine('hyper i hyperyellow')}
           {lineCount >= 5 && (
             <>
