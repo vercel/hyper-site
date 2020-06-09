@@ -1,6 +1,6 @@
 .root {
   height: 300px;
-  width: 450px;
+  width: 500px;
 }
 
 .inner {
@@ -83,6 +83,10 @@
     width: 300px;
   }
 
+  .header {
+    height: 28px;
+  }
+
   .inner {
     font-size: 12px;
   }
@@ -94,11 +98,5 @@
 
   .body {
     padding: 0 12px;
-  }
-}
-
-@media (max-width: 320px) {
-  .root {
-    width: 280px;
   }
 }
