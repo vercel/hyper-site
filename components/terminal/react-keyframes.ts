@@ -60,7 +60,7 @@ export class Keyframes extends React.Component<Props, State> {
       return null
     }
 
-    const { component = 'span', children, ...rest } = this.props
+    const { component = 'span', children, onEnd, ...rest } = this.props
 
     return React.cloneElement(frame, { component, ...rest, ...frame.props })
   }

@@ -21,7 +21,7 @@ const Terminal = () => {
 
     // starting frame
     frames.push(
-      <Frame duration={sleepDuration}>
+      <Frame duration={sleepDuration} key={`${text}-first`}>
         <Line />
       </Frame>
     )
@@ -31,7 +31,7 @@ const Terminal = () => {
       const isLastLetter = i === text.length - 1
       const duration = isLastLetter ? sleepDuration : getTypingDuration()
       frames.push(
-        <Frame duration={duration}>
+        <Frame duration={duration} key={`${text}-${i}`}>
           <Line text={text.slice(0, i + 1)} />
         </Frame>
       )
@@ -39,7 +39,7 @@ const Terminal = () => {
 
     // ending frame
     frames.push(
-      <Frame>
+      <Frame key={`${text}-last`}>
         <Line text={text} noCaret />
       </Frame>
     )
@@ -68,7 +68,7 @@ const Terminal = () => {
           {lineCount >= 1 && renderLine('# Built on HTML/CSS/JS')}
           {lineCount >= 2 && renderLine('# Fully extensible')}
           {lineCount >= 3 &&
-            renderLine("# Install themes and plugins from the command line")}
+            renderLine('# Install themes and plugins from the command line')}
           {lineCount >= 4 && renderLine('hyper i hyperyellow')}
           {lineCount >= 5 && (
             <>
