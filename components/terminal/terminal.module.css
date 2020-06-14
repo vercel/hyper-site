@@ -19,12 +19,14 @@
   word-break: break-all;
 }
 
-.inner.yellow {
-  border-color: yellow;
+.inner.rose {
+  background: #191724;
+  color: #e0def4;
+  border-color: #000;
 }
 
-.inner.yellow .caret {
-  background: yellow;
+.inner.rose .caret {
+  background: #e0def4;
 }
 
 .green {
@@ -79,8 +81,8 @@
 
 @media (max-width: 600px) {
   .root {
-    height: 200px;
-    width: 300px;
+    height: 230px;
+    width: 345px;
   }
 
   .header {
@@ -98,5 +100,16 @@
 
   .body {
     padding: 0 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .inner {
+    font-size: 11px;
+  }
+
+  .root {
+    height: 200px;
+    width: 300px;
   }
 }

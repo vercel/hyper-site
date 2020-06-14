@@ -54,9 +54,7 @@ const Terminal = () => {
   return (
     <div className={styles.root}>
       <div
-        className={`${styles.inner}${
-          lineCount >= 5 ? ' ' + styles.yellow : ''
-        }`}
+        className={`${styles.inner}${lineCount >= 5 ? ' ' + styles.rose : ''}`}
       >
         <div className={styles.header}>
           <span className={styles.icon} />
@@ -69,12 +67,12 @@ const Terminal = () => {
           {lineCount >= 2 && renderLine('# Fully extensible')}
           {lineCount >= 3 &&
             renderLine('# Install themes and plugins from the command line')}
-          {lineCount >= 4 && renderLine('hyper i hyperyellow')}
+          {lineCount >= 4 && renderLine('hyper i hyper-rose-pine')}
           {lineCount >= 5 && (
             <>
               <p className={styles.green}>
                 <Line
-                  text="hyperyellow installed successfully!"
+                  text="hyper-rose-pine installed successfully!"
                   noPrompt
                   noCaret
                 />
