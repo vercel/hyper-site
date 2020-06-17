@@ -54,7 +54,11 @@ const components = {
 }
 
 export default (meta) => ({ children }) => (
-  <Page title={meta?.metaTitle} description={meta?.metaDescription}>
+  <Page
+    title={meta?.metaTitle}
+    description={meta?.metaDescription}
+    image={meta?.metaImage}
+  >
     <div className={styles.root}>
       <div className={styles.header}>
         <h1>{meta.title}</h1>

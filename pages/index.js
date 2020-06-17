@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Page from 'components/page'
 import Footer from 'components/footer'
 import DownloadButton from 'components/download-button'
@@ -7,6 +6,7 @@ import heroStyles from 'styles/pages/home/hero.module.css'
 import contentStyles from 'styles/pages/home/content.module.css'
 import installationStyles from 'styles/pages/home/installation.module.css'
 import useOs from 'lib/use-os'
+import Terminal from 'components/terminal'
 
 const Path = ({ os, path }) => (
   <code>
@@ -96,37 +96,13 @@ export default ({ latestRelease }) => {
   return (
     <Page>
       {/**
-       * Meta
-       */}
-      <Head>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@vercel" />
-        <meta
-          name="twitter:image"
-          content="https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hyper.is" />
-        <meta
-          property="og:image"
-          content="https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png"
-        />
-      </Head>
-
-      {/**
        * Hero
        */}
       <div className={heroStyles.root}>
         <LogoBig className={heroStyles.logo} />
-        <video
-          className={heroStyles.video}
-          src="/hero.mp4"
-          autoPlay
-          muted
-          playsInline
-          width={1200}
-          height={790}
-        />
+        <div className={heroStyles.terminal}>
+          <Terminal />
+        </div>
         <div className={heroStyles.download}>
           <DownloadButton fixedWidth os={os} />
           <a className={heroStyles.other} href="#installation">

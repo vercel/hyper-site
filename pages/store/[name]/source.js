@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Head from 'next/head'
 import { useRouter } from 'next/router'
 import plugins from 'plugins.json'
 import Page from 'components/page'
@@ -91,16 +90,8 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
     <Page
       title={`Hyper™ Store - Source of ${plugin.name}`}
       description={plugin.description}
+      image={plugin.preview}
     >
-      <Head>
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`https://hyper.is/store/${plugin.name}/source`}
-        />
-        <meta property="og:image" content={plugin.preview} />
-      </Head>
-
       <h1 className={styles.name}>{plugin.name}</h1>
       <div className={styles.container}>
         <>
