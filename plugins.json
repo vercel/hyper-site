@@ -602,5 +602,30 @@
     "type": "plugin",
     "preview": "https://user-images.githubusercontent.com/17779386/74082722-2ab5c600-4aa0-11ea-9eda-af10eca31e14.gif",
     "dateAdded": "1581172026738"
+  },
+  {
+    "name": "hyper-rose-pine",
+    "type": "theme",
+    "description": "All natural pine, faux fur and a bit of soho vibes for the classy minimalist.",
+    "preview": "https://github.com/fvrests/hyper-rose-pine/raw/master/assets/preview.png",
+    "colors": [
+      "#191724",
+      "#706e86",
+      "#e0def4",
+      "#eb6f92",
+      "#f6c177",
+      "#ebbcba",
+      "#31748f",
+      "#9ccfd8",
+      "#c4a7e7"
+    ],
+    "dateAdded": "1582919913142"
+  },
+  {
+    "name": "hyper-tabs-autohide",
+    "description": "Autohide all tabs.",
+    "type": "plugin",
+    "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
+    "dateAdded": "1583633829078"
   }
 ]

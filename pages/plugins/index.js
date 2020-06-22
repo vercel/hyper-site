@@ -1,35 +1,33 @@
-import React from 'react'
-import Head from 'next/head'
-import Layout from '../../components/Layout'
-import PluginsList from '../../components/PluginsList'
-import Filter from '../../components/Filter'
-import SubmitButton from '../../components/SubmitButton'
-import { usePlugins, useFilter } from '../../lib/plugins'
+import PluginThemeShowcase from 'components/plugin-theme-showcase'
+import allPlugins from 'plugins'
+import fs from 'fs'
+import { join } from 'path'
+import { CLOUDINARY_PREFIX } from 'lib/constants'
 
-const Plugins = () => {
-  const plugins = usePlugins({ type: 'plugin' })
-  const [filter, setFilter] = useFilter('featured')
+export default ({ plugins }) => (
+  <PluginThemeShowcase plugins={plugins} variant="plugin" />
+)
 
-  return (
-    <Layout>
-      <Head>
-        <title>Hyper Store - Plugins</title>
-      </Head>
-      <div className="plugins-heading container">
-        <Filter handleFilterChange={setFilter} currentFilter={filter} />
-        <SubmitButton href="https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store">
-          Submit a Plugin
-        </SubmitButton>
-      </div>
-      <PluginsList plugins={plugins} filteredBy={filter} />
+export const getStaticProps = () => {
+  // get all featured plugins then get the preview image's relative src
+  const plugins = allPlugins
+    .filter((p) => p.type === 'plugin' && p.featured === true)
+    .map((p) => {
+      const previewImageSrc = fs
+        .readdirSync(join(process.cwd(), 'public', 'store'))
+        .find((f) => f.includes(p.name))
 
-      <style jsx>{`
-        .plugins-heading {
-          position: relative;
-        }
-      `}</style>
-    </Layout>
-  )
+      const preview = `${CLOUDINARY_PREFIX}${previewImageSrc}`
+
+      return {
+        ...p,
+        preview,
+      }
+    })
+
+  return {
+    props: {
+      plugins,
+    },
+  }
 }
-
-export default Plugins
