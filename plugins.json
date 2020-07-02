@@ -620,5 +620,41 @@
     "type": "plugin",
     "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
     "dateAdded": "1583633829078"
-  }
+  },
+  {
+ 		"name": "hyper-sonoran-gothic",
+		"type": "theme",
+	 	"description": "Dark, desert tones highlighted by pastel shades of mesa and pine forests.",
+		"preview": "https://raw.githubusercontent.com/d-mckee/hyper-sonoran-gothic/master/images/preview.png",
+		"colors": [
+			"#241f17",
+			"#867f6e",
+			"#eaf4de",
+			"#eb6f6f",
+			"#f2d696",
+			"#e18f62",
+			"#227b4d",
+			"#669c50",
+			"#a5abda"
+		],
+		"dateAdded": "1593673790048"	
+  },
+  {
+  	"name": "hyper-sonoran-sunrise",
+	"type": "theme",
+	"description": "Light, sandier shades punctuated by punchier sun-bleached accent colors.",  
+	"preview": "https://raw.githubusercontent.com/d-mckee/hyper-sonoran-sunrise/master/images/preview.png",
+	"colors": [
+		"#F9FAE3",
+		"#61543E",
+		"#665E4B",
+	       	"#227b4d",
+		"#e07941",
+		"#669c50",
+		"#7189d9",
+		"#eb6f6f",
+		"#f2c55c"
+	],
+	"dateAdded": "1593725580917"
+   }
 ]
