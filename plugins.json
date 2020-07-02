@@ -638,5 +638,23 @@
 			"#a5abda"
 		],
 		"dateAdded": "1593673790048"	
-  }
+  },
+  {
+  	"name": "hyper-sonoran-sunrise",
+	"type": "theme",
+	"description": "Light, sandier shades punctuated by punchier sun-bleached accent colors.",  
+	"preview": "https://raw.githubusercontent.com/d-mckee/hyper-sonoran-sunrise/master/images/preview.png",
+	"colors": [
+		"#F9FAE3",
+		"#61543E",
+		"#665E4B",
+	       	"#227b4d",
+		"#e07941",
+		"#669c50",
+		"#7189d9",
+		"#eb6f6f",
+		"#f2c55c"
+	],
+	"dateAdded": "1593725580917"
+   }
 ]
