@@ -1,0 +1,80 @@
+.name {
+  composes: name from './index.module.css'
+}
+
+.container {
+  composes: container from global;
+  display: flex;
+  overflow-x: hidden;
+  padding-bottom: 64px;
+}
+
+.content {
+  font-size: 12px;
+  padding: 0 20px;
+  overflow-x: auto;
+}
+
+.pluginLoading {
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+}
+
+.pluginLoading,
+.fileLoading {
+  color: var(--gray);
+}
+
+.files {
+  padding-right: 20px;
+}
+
+.file {
+  color: var(--gray);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.file.active,
+.file:hover,
+.file.active .icon,
+.file:hover .icon {
+  color: white;
+}
+
+.icon {
+  margin-right: 12px;
+  color: var(--gray);
+  transition: fill 0.2s ease;
+}
+
+.directoryList {
+  padding-left: 12px;
+  display: none;
+}
+
+.directoryToggle {
+  display: none;
+}
+
+.directoryToggle:checked + .directoryList {
+  display: block;
+}
+
+.content,
+.files {
+  animation: appear 150ms ease-out;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,146 @@
+.root {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 980px;
+  width: 100%;
+  background: black;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 0 40px;
+}
+
+.install {
+  cursor: pointer;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  padding: 0 1rem;
+  margin-left: auto;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.install:hover {
+  opacity: 0.9;
+  color: black;
+}
+
+.install.loaded {
+  margin-left: 1rem;
+}
+
+.link {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #50e3c2;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #3afacf;
+}
+
+.version {
+  margin-left: auto;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  background: black;
+  border: 1px solid #333;
+  display: block;
+}
+
+.borderFollowed {
+  margin-right: 8px;
+  padding-right: 8px;
+  border-right: 1px solid #333333;
+}
+
+.github {
+  display: flex;
+  margin-right: 24px;
+  color: var(--gray);
+}
+
+.github:hover {
+  color: var(--fg);
+}
+
+@media (max-width: 716px) {
+  .root {
+    position: relative;
+    transform: translateX(0);
+    left: auto;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-bottom: 64px;
+  }
+
+  .author {
+    margin-bottom: 24px;
+    flex: 1 0 auto;
+    order: 1;
+  }
+
+  .downloads {
+    order: 2;
+  }
+
+  .github {
+    margin-right: 0;
+    margin-top: 1rem;
+    flex: 1 0 auto;
+    order: 5;
+  }
+
+  .github > svg {
+    height: 24px;
+    width: 24px;
+    fill: white;
+  }
+
+  .link {
+    margin: 1rem 0 28px;
+    order: 6;
+    font-weight: bold;
+  }
+
+  .install.loaded {
+    margin-left: unset;
+  }
+
+  .version {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    order: 4;
+  }
+
+  .borderFollowed {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    margin-bottom: 1rem;
+  }
+
+  .install {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    padding: 8px 28px;
+    order: 3;
+  }
+}

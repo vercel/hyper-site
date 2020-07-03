@@ -1,0 +1,37 @@
+.notFound {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.root {
+  padding-bottom: 64px;
+  max-width: 764px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 40px;
+}
+
+.root > p {
+  color: var(--gray);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto 32px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.root > img {
+  max-width: 100%;
+  width: 600px;
+  margin-bottom: 40px;
+}

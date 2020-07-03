@@ -584,12 +584,48 @@
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
   },
-	
   {
     "name": "hyper-orama",
     "description": "Record and share your Hyper terminal sesson",
    "type": "plugin",
     "preview": "https://github.com/cwlowder/hyper-orama/blob/master/demo-out.gif?raw=true",
     "dateAdded": "1550950521288"
+  },
+  {
+    "name": "hyper-hypest",
+    "description": "A beautiful and minimal macOS theme with vibrancy",
+    "type": "theme",
+    "preview": "https://github.com/dizzyup/hyper-hypest/raw/master/assets/preview.jpg?raw=true",
+    "colors": [
+      "#ffffff",
+      "#222222",
+      "#0095FF"
+    ],
+    "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-rose-pine",
+    "type": "theme",
+    "description": "All natural pine, faux fur and a bit of soho vibes for the classy minimalist.",
+    "preview": "https://github.com/fvrests/hyper-rose-pine/raw/master/assets/preview.png",
+    "colors": [
+      "#191724",
+      "#706e86",
+      "#e0def4",
+      "#eb6f92",
+      "#f6c177",
+      "#ebbcba",
+      "#31748f",
+      "#9ccfd8",
+      "#c4a7e7"
+    ],
+    "dateAdded": "1582919913142"
+  },
+  {
+    "name": "hyper-tabs-autohide",
+    "description": "Autohide all tabs.",
+    "type": "plugin",
+    "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
+    "dateAdded": "1583633829078"
   }
 ]

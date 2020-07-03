@@ -1,0 +1,76 @@
+.root {
+  composes: container from global;
+  height: 100px;
+  z-index: 10000;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.root a:hover {
+  color: var(--fg);
+}
+
+.left > *,
+.download > a {
+  padding: 0 0.5rem;
+}
+
+.download {
+  display: flex;
+  align-items: center;
+}
+
+.download > a {
+  display: inline-flex;
+}
+
+.logo {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.logo:hover {
+  color: white;
+}
+
+@media (max-width: 496px) {
+  .root {
+    margin-top: 4rem;
+  }
+
+  .content {
+    padding-bottom: 4rem;
+  }
+
+  .content,
+  .left {
+    flex-direction: column;
+  }
+
+  .left {
+    margin-bottom: 1.5rem;
+  }
+
+  .left > *:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .left > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}

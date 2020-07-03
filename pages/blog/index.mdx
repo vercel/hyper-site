@@ -1,0 +1,216 @@
+import withPost from 'components/blog/with-post'
+
+export const meta = {
+  title: 'Hyper 3',
+  metaTitle: 'Hyper™ Blog',
+  metaDescription: 'Hyper 3: A cross-platform HTML/JS/CSS terminal',
+  metaImage: 'https://hyper.is/blog/hyper-3-twitter-card.png',
+  authors: [
+    {
+      name: 'Juan Campa',
+      twitter: 'juancampa',
+      thumbnail: 'https://zeit.co/api/www/avatar/?u=juan&s=160',
+    },
+    {
+      name: 'Julien Déléan',
+      twitter: 'CHaBou69',
+      thumbnail: 'https://zeit.co/api/www/avatar/?u=chabou&s=160',
+    },
+    {
+      name: 'Daniel Imms',
+      twitter: 'tyriar',
+      thumbnail: 'https://zeit.co/api/www/avatar/?u=tyriar&s=160',
+    },
+  ],
+}
+
+export default withPost(meta)
+
+**Hyper 3 is finally out!** The primary focus for this
+release is **performance**.
+
+The latest version includes several enhancements that make Hyper
+_really_ fast. For those of us who spend a significant amount
+of time on the command line, this release is a total game changer.
+
+[Download Hyper 3](/#installation) to try it out, and read on to learn more about
+what's new.
+
+<Video src="/blog/comparison.mp4" oversize />
+
+## Getting There
+
+Looking back on this release, a pleasant surprise has been how little
+time it took from _"let's make this thing faster"_ to
+_"Holy shell! That's fast!"_
+
+Below, we visit some of the important changes that were shipped as
+part of this release:
+
+## WebGL Renderer
+
+The renderer is the piece of code that draws actual pixels on the
+screen based on the state of the terminal. The original Hyper renderer
+was based on the DOM. While that was a flexible approach thanks to
+CSS, it was also very slow.
+
+Hyper 2 improved upon this by switching from `hterm` to
+`xterm.js` and using its canvas-based renderer. While that
+made Hyper 2 faster, for Hyper 3 we knew it was possible to deliver
+even faster performance by completely rewriting the renderer with [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API). By fortunate coincidence, as we were still figuring things out, [Daniel Imms](https://github.com/tyriar) (from
+`xterm.js` and `VSCode` fame),
+[just returned from a "vacation"](https://twitter.com/Tyriar/status/1064932797016489984)
+where he happened to be write a shiny new WebGL renderer.
+
+Isn't the open source community just amazing? We immediately merged
+Daniel's branch onto a test fork, and well, it ran circles around
+Hyper 2. Thanks [Daniel](https://twitter.com/Tyriar)!
+
+We are aware of a few minor limitations with using this renderer (e.g
+selection is always black-and-white, and you can't have more than 16
+terminals visible simultaneously) but the performance benefits
+outweigh them. The new renderer is still work-in-progress, so you can
+expect further improvements in the near future.
+
+## IPC Batching
+
+We also discovered that commands that were very verbose would cause
+Hyper to temporarily choke for a few seconds. For example, running
+`find ~` would cause Hyper to:
+
+- Run painfully slow for ~5 seconds (at ~1 frame-per-second)
+- Suddenly get faster (at ~15 frames-per-second) and finish printing
+  everything in ~10 seconds.
+
+Digging within the CPU profile, we noticed that the "renderer" process
+was spending most of its time handling an overwhelming amount of
+messages coming in from the main process.
+
+<Image
+  src="/blog/hyper2.png"
+  caption="Hyper v2"
+  oversize
+  alt="Hyper v2's CPU profile"
+/>
+<Image
+  src="/blog/hyper3.png"
+  caption="Hyper v3"
+  oversize
+  alt="Hyper v3's CPU profile"
+/>
+
+It is easy to see the difference between Hyper v2 and v3.
+The pink segments represent the time spent in processing IPC, instead of parsing or rendering.
+
+Electron uses a multi-process architecture where each window runs on
+its own separate "renderer" process. Additionally, there's one
+Node.js-based "main" process that communicates directly with the
+underlying OS. In order for terminal data to be rendered by Hyper, it
+must be passed from the main process to the renderer process using IPC
+(Inter-Process Communication).
+
+**Node's IPC, unfortunately, comes with a non-trivial amount of
+overhead.**
+Messages are sent back and forth as **JSON strings**,
+which must be encoded on one side and decoded on the other. Also,
+receiving data through IPC is an async operation, and thus queued in
+V8's event loop. Yielding back to the event loop each time after
+processing small messages makes matters further worse. This repeated
+IPC caused thrashing when processing bursts of text (like running
+`cat` on a large file).
+
+To mitigate this problem, we came up with a simple solution:
+**batch data into larger chunks before sending them to the renderer
+process**. IPC batching reduces the number of messages for verbose commands
+significantly and allows the renderer to focus on, well, rendering.
+
+One important consideration was to
+**batch as much data as possible to reduce the IPC overhead, but not
+so much that we introduce perceivable latency**. With this approach, the renderer process now spends most of its time
+doing terminal emulation and rendering instead of processing IPC
+messages. The outcome is a much smoother, and faster terminal.
+
+On a similar vein, we are also testing a new approach to
+[decide how much data is parsed](https://github.com/zeit/xterm.js/pull/4/files)
+before yielding to the renderer. The idea is to prevent skipped frames
+for a more responsive terminal.
+
+## Electron V3
+
+Hyper 3 bumps the underlying Electron from V1 to V3. We also tested
+V4, but a [regression in the Canvas API](https://bugs.chromium.org/p/chromium/issues/detail?id=683994#c35)
+forced us to stay on V3. The upgrade brings in newer versions of V8
+and Node.js, and their corresponding bug fixes.
+
+## Faster Startup Time
+
+Hyper 3 improves startup time by creating the first
+_pseudoterminal (pty)_ as soon as possible. A pty is a facility
+provided by operating systems to allow programs such as Hyper to
+emulate terminals.
+
+In previous versions, Hyper would wait for the Chromium window to
+open, send an "I'm ready" message, and _only then_ create the
+pty. Those two activities take a substantial amount of time, but could
+be done in parallel.
+
+Hyper 3 starts initializing both at the same time. By the time the
+window says "I'm ready", the pty is already warmed-up and ready to be
+consumed. This gives Hyper 3 a decent boost in launch time (about
+150ms on Linux, potentially better on other platforms).
+
+## Emoji Support
+
+If you're on MacOS, you can now press
+`Command + Control + Space` to get an emoji popup and [jazz up those commit messages](https://gitmoji.carloscuesta.me/).
+
+<Image
+  src="/blog/supports-emoji.png"
+  caption="With the new emoji support, introducing emoji within Git commits (or
+elsewhere) is easier than ever."
+  alt="Emoji popup"
+/>
+
+## More Themes on Hyper Store
+
+Since Hyper 2, we have added many new themes into the [Hyper Store](https://hyper.is/themes?newest). This means
+it's now even easier to customise your Hyper experience to your
+personality.
+
+We have a detailed contribution page that explains how you can go
+about [enlisting your extension](https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store). We encourage all contribution and look forward to adding more themes
+and plugins from the community!
+
+<Image
+  src="/blog/themes.png"
+  caption="Hyper supports themes, allowing you to customise your development
+experience."
+  alt="A collection of hyper themes"
+/>
+
+## The Road Ahead
+
+Terminals have existed since the 60s, and have been a powerful tool in
+our workflows. Their flexibility guarantees that they will remain
+relevant for years to come. [We're in for the long haul](https://twitter.com/rauchg/status/1074381303506587650).
+
+Hyper is a new kind of terminal, built on top of web technology, with
+a focus on extensibility. This opens new possibilities that can make
+the CLI experience [more productive](https://github.com/chabou/hyper-pane) (and [fun](https://github.com/Aaronius/hyper-cat))!
+
+We're excited to keep improving Hyper, both in terms of performance
+and capabilities — there's a lot to do. Hyper is completely open
+source, and we welcome your [involvement and contribution](https://github.com/zeit/hyper).
+
+## Acknowledgments
+
+We're genuinely thankful to the open source community. We're not
+saying this only because we are building on top of an incredible set
+of open source libraries, but also because we find the helpful ethos
+of the community very touching.
+
+As soon as the [`xterm.js`](https://github.com/xtermjs/xterm.js/)
+team heard we were working on performance, they jumped right in and
+helped us with feedback and several initiatives they had on their
+side. We would like to extend huge thanks to [Daniel Imms](https://github.com/tyriar), [@Jerch](https://github.com/jerch) and [Benjamin Staneck](https://github.com/stanzilla) for their
+contribution and feedback.
