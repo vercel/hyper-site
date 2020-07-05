@@ -508,7 +508,7 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
     "dateAdded": "1541659140469"
-  },  
+  },
   {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
@@ -583,6 +583,18 @@
     ],
     "preview": "https://github.com/manniefesto/hyper-cyberpunk/raw/2ae9b73949441f2526279b1acd213377aceb4d7e/cyberpunk.gif?raw=true",
     "dateAdded": "1547219532507"
+  },
+  {
+    "name": "hyper-mancer",
+    "description": "A glitchy, cyberpunk theme for your terminal, inspired by Neuromancer.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/zcaceres/hypermancer/HEAD/hypermancer.png",
+    "colors": [
+      "#ea202d",
+      "#2cf5f4",
+      "#da5bcd"
+    ],
+    "dateAdded": "1566123212332"
   },
   {
     "name": "hyper-hypest",
