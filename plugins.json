@@ -585,6 +585,13 @@
     "dateAdded": "1547219532507"
   },
   {
+    "name": "hyper-shorcut",
+    "description": "Basic shorcut in your Hyper terminal",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/MickaelBlet/hyper-shorcut/master/hyper-shorcut.gif",
+    "dateAdded": "1560475755195"
+  },
+  {
     "name": "hyper-hypest",
     "description": "A beautiful and minimal macOS theme with vibrancy",
     "type": "theme",
