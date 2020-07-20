@@ -2,7 +2,7 @@
   composes: container from global;
   height: 100px;
   z-index: 10000;
-  font-size: 12px;
+  font-size: 0.875rem;
   display: flex;
   align-items: center;
   color: var(--gray);
@@ -23,8 +23,9 @@
   color: var(--fg);
 }
 
-.left > *:not(:first-child) {
-  margin-left: 12px;
+.left > *,
+.download > a {
+  padding: 0 0.5rem;
 }
 
 .download {
@@ -34,14 +35,6 @@
 
 .download > a {
   display: inline-flex;
-}
-
-.download > a:first-child {
-  margin-left: 6px;
-}
-
-.download > a + a {
-  margin-left: 10px;
 }
 
 .logo {
@@ -57,11 +50,11 @@
 
 @media (max-width: 496px) {
   .root {
-    margin-top: 64px;
+    margin-top: 4rem;
   }
 
   .content {
-    padding-bottom: 64px;
+    padding-bottom: 4rem;
   }
 
   .content,
@@ -70,7 +63,7 @@
   }
 
   .left {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
 
   .left > *:not(:first-child) {
@@ -78,6 +71,6 @@
   }
 
   .left > *:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 1.5rem;
   }
 }

@@ -11,6 +11,7 @@
   transition: background 200ms ease-in-out;
   line-height: 1;
   min-width: 200px;
+  font-size: 0.875rem;
 }
 
 .root:hover {

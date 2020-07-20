@@ -1,0 +1,27 @@
+.root {
+    display: grid;
+    grid-template-areas: 'thumbnail data';
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.img {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    grid-area: thumbnail;
+    align-self: center;
+    margin: auto;
+}
+
+.content {
+    grid-area: data;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.name {
+    line-height: 1;
+}

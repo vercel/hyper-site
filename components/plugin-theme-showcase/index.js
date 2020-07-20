@@ -1,16 +1,10 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Page from '../page'
 import PluginsList from '../plugin-list'
 import styles from './plugin-theme-showcase.module.css'
 
 export default ({ plugins, variant, filter = 'featured' }) => (
-  <Page>
-    <Head>
-      <title>{`Hyper Store - ${
-        variant === 'theme' ? 'Themes' : 'Plugins'
-      }`}</title>
-    </Head>
+  <Page title={`Hyper™ Store - ${variant === 'theme' ? 'Themes' : 'Plugins'}`}>
     <nav className={styles.nav}>
       <div className={styles.filters}>
         <Link href={variant === 'plugin' ? '/plugins' : '/themes'}>
@@ -22,12 +16,11 @@ export default ({ plugins, variant, filter = 'featured' }) => (
           <a className={filter === 'newest' ? styles.active : ''}>Newest</a>
         </Link>
       </div>
-      <a
-        className={styles.submitButton}
-        href="https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store"
-      >
-        {`Submit a ${variant === 'theme' ? 'theme' : 'plugin'}`}
-      </a>
+      <Link href="/store/submit">
+        <a className={styles.submitButton}>
+          {`Submit a ${variant === 'theme' ? 'theme' : 'plugin'}`}
+        </a>
+      </Link>
     </nav>
     <PluginsList plugins={plugins} filteredBy={filter} />
   </Page>
