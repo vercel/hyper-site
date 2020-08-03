@@ -585,6 +585,18 @@
     "dateAdded": "1547219532507"
   },
   {
+    "name": "hyperterm-ultrasweet",
+    "description": "A dark theme with nebula hues for Hyper",
+    "type": "theme",
+    "colors": [
+      "#161219",
+      "#f984ef",
+      "#f288a9"
+    ],
+    "preview": "https://raw.githubusercontent.com/amandaflagg/hyperterm-ultrasweet/master/hyperterm-ultrasweet.png",
+    "dateAdded": "1566514263975"
+  },
+  {
     "name": "hyper-hypest",
     "description": "A beautiful and minimal macOS theme with vibrancy",
     "type": "theme",
