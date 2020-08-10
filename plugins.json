@@ -620,5 +620,11 @@
     "type": "plugin",
     "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
     "dateAdded": "1583633829078"
+  },
+  {
+    "name": "hyper-confirm",
+    "description": "Show a confirmation dialog before quitting Hyper",
+    "type": "plugin",
+    "dateAdded": "1597071506858"
   }
 ]
