@@ -620,5 +620,12 @@
     "type": "plugin",
     "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
     "dateAdded": "1583633829078"
+  },
+  {
+    "name": "hyper-colorcycler",
+    "description": "Picks a random background color for every new window.",
+    "type": "plugin",
+    "preview": "https://github.com/selkkie/hyper-colorcycler/raw/master/hyper-cycle.gif",
+    "dateAdded": "1597441847464"
   }
 ]
