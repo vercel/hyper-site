@@ -620,5 +620,21 @@
     "type": "plugin",
     "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
     "dateAdded": "1583633829078"
+  },
+  {
+    "name": "hyper-aura-theme",
+    "type": "theme",
+    "description": "A beautiful dark theme for Hyper terminal.",
+    "preview": "https://github.com/daltonmenezes/assets/raw/master/images/aura-theme/aura-hyper-preview-retina.png",
+    "colors": [
+      "#1c1b22",
+      "#4d4d4d",
+      "#dbdbdb",
+      "#d46a6a",
+      "#d7c466",
+      "#63d1a9",
+      "#9272dc"
+    ],
+    "dateAdded": "1597807892019"
   }
 ]
