@@ -625,7 +625,6 @@
     "name": "hyper-aura-theme",
     "type": "theme",
     "description": "A beautiful dark theme for Hyper terminal.",
-    "preview": "https://github.com/daltonmenezes/assets/raw/master/images/aura-theme/aura-hyper-preview-retina.png",
     "colors": [
       "#1c1b22",
       "#4d4d4d",
