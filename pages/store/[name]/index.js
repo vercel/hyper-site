@@ -6,20 +6,22 @@ import fs from 'fs'
 import { join } from 'path'
 import { CLOUDINARY_PREFIX } from 'lib/constants'
 
-export default ({ plugin, npmData }) => (
-  <Page
-    title={`Hyper™ Store - ${plugin.name}`}
-    description={plugin.description}
-    image={plugin.preview}
-  >
-    <div className={styles.root}>
-      <h1 className={styles.name}>{plugin.name}</h1>
-      <p>{plugin.description}</p>
-      <img src={plugin.preview} alt={`${plugin.name}'s preview image`} />
-      <PluginInfo variant="description" npmData={npmData} />
-    </div>
-  </Page>
-)
+export default function StoreIndexPage({ plugin, npmData }) {
+  return (
+    <Page
+      title={`Hyper™ Store - ${plugin.name}`}
+      description={plugin.description}
+      image={plugin.preview}
+    >
+      <div className={styles.root}>
+        <h1 className={styles.name}>{plugin.name}</h1>
+        <p>{plugin.description}</p>
+        <img src={plugin.preview} alt={`${plugin.name}'s preview image`} />
+        <PluginInfo variant="description" npmData={npmData} />
+      </div>
+    </Page>
+  )
+}
 
 export const getStaticProps = async ({ params }) => {
   const npmData = await (
@@ -41,7 +43,7 @@ export const getStaticProps = async ({ params }) => {
       plugin,
       npmData,
     },
-    unstable_revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60 * 24,
   }
 }
 
