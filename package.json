@@ -17,7 +17,7 @@
     "copee": "^1.0.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.3",
-    "next": "^9.4.2",
+    "next": "9.5.4-canary.15",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

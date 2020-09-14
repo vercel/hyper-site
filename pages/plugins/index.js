@@ -4,11 +4,11 @@ import fs from 'fs'
 import { join } from 'path'
 import { CLOUDINARY_PREFIX } from 'lib/constants'
 
-export default ({ plugins }) => (
-  <PluginThemeShowcase plugins={plugins} variant="plugin" />
-)
+export default function PluginIndexPage({ plugins }) {
+  return <PluginThemeShowcase plugins={plugins} variant="plugin" />
+}
 
-export const getStaticProps = () => {
+export function getStaticProps() {
   // get all featured plugins then get the preview image's relative src
   const plugins = allPlugins
     .filter((p) => p.type === 'plugin' && p.featured === true)

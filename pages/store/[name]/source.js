@@ -8,21 +8,25 @@ import styles from 'styles/pages/store/source.module.css'
 
 const formatFileName = (path) => path.replace(/^\/+|\/+$/g, '')
 
-export default ({ plugin, npmData, pluginMeta, cache }) => {
+export default function StoreSourcePage({
+  plugin,
+  npmData,
+  pluginMeta,
+  cache,
+}) {
   const router = useRouter()
   const [activeFile, setActiveFile] = useState(null)
 
   // figuring out the initial activeFile from the url
   // or falling back to the first file of the plugin
   useEffect(() => {
-    if (!router.isFallback) {
-      const filenameInQuery = router.asPath.split('?')[1]
-      setActiveFile(
-        filenameInQuery
-          ? `/${filenameInQuery}`
-          : pluginMeta.files.find((file) => file.type === 'file').path ?? null
-      )
-    }
+    const filenameInQuery = router.asPath.split('?')[1]
+
+    setActiveFile(
+      filenameInQuery
+        ? `/${filenameInQuery}`
+        : pluginMeta.files.find((file) => file.type === 'file').path
+    )
   }, [router])
 
   const handleClickOnFile = (path) =>
@@ -78,14 +82,6 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
     </div>
   )
 
-  if (router.isFallback) {
-    return (
-      <Page>
-        <h1 className={styles.name}>Loading...</h1>
-      </Page>
-    )
-  }
-
   return (
     <Page
       title={`Hyper™ Store - Source of ${plugin.name}`}
@@ -107,13 +103,24 @@ export default ({ plugin, npmData, pluginMeta, cache }) => {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }) {
+  const plugin = plugins.find((e) => e.name === params.name)
+
+  if (!plugin) {
+    return {
+      unstable_redirect: {
+        permanent: false,
+        destination: '/404',
+      },
+    }
+  }
+
   const npmData = await (
-    await fetch(`https://api.npms.io/v2/package/${params.name}`)
+    await fetch(`https://api.npms.io/v2/package/${plugin.name}`)
   ).json()
 
   const pluginMeta = await (
-    await fetch(`https://unpkg.com/${params.name}@latest/?meta`)
+    await fetch(`https://unpkg.com/${plugin.name}@latest/?meta`)
   ).json()
 
   const filePaths = []
@@ -132,25 +139,24 @@ export const getStaticProps = async ({ params }) => {
   const cache = {}
 
   for (const path of filePaths) {
-    const res = await fetch(`https://unpkg.com/${params.name}@latest${path}`)
+    const res = await fetch(`https://unpkg.com/${plugin.name}@latest${path}`)
     cache[path] = await res.text()
   }
 
   return {
     props: {
-      plugin: plugins.find((e) => e.name === params.name),
+      plugin,
       npmData,
       pluginMeta,
       cache,
     },
-    unstable_revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60 * 24,
   }
 }
 
-export const getStaticPaths = () =>
-  process.env.SKIP_STORE_SSG
-    ? { paths: [], fallback: true }
-    : {
-        paths: plugins.map(({ name }) => ({ params: { name } })),
-        fallback: false,
-      }
+export function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'unstable_blocking',
+  }
+}

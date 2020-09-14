@@ -4,13 +4,13 @@ import fs from 'fs'
 import { join } from 'path'
 import { CLOUDINARY_PREFIX } from 'lib/constants'
 
-export default ({ plugins }) => (
-  <PluginThemeShowcase plugins={plugins} variant="theme" />
-)
+export default function ThemeIndexPage({ themes }) {
+  return <PluginThemeShowcase plugins={themes} variant="theme" />
+}
 
-export const getStaticProps = () => {
+export function getStaticProps() {
   // get all featured themes then get the preview image's relative src
-  const plugins = allPlugins
+  const themes = allPlugins
     .filter((p) => p.type === 'theme' && p.featured === true)
     .map((p) => {
       const previewImageSrc = fs
@@ -27,7 +27,7 @@ export const getStaticProps = () => {
 
   return {
     props: {
-      plugins,
+      themes,
     },
   }
 }
