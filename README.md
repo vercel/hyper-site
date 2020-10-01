@@ -4,7 +4,7 @@ The official website for the Hyper terminal
 
 ## Contribution
 
-Want to submit a plugin or theme to the Hyper Store? Follow [the guide on the website](https://hyper.is/store/submit).
+Want to submit a plugin or theme to the Hyper Store? Must follow [the guide on the website](https://hyper.is/store/submit).
 
 To submit a feature, bug fix, or enhancement to the Hyper website proceed as follows:
 
