@@ -12,7 +12,8 @@ To submit a feature, bug fix, or enhancement to the Hyper website proceed as fol
 2. Within your terminal, run `yarn` to install the dependencies
 3. Once the dependencies are installed, run `yarn dev` to start the dev server on `localhost:3000`
 
-We really appreciate any contribution
+We really appreciate any type of contribution.
+HyperTerminal is our terminal emulation software for Windows. It was originally developed as a 'lite' version of our HyperACCESS program, and was licensed by Microsoft to include with Windows 95 up through Windows XP. This was discontinued when Microsoft released Windows Vista.
 
 ## Related Repositories
 
