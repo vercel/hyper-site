@@ -1,5 +1,5 @@
 # hyper-site
-
+amazing project
 The official website for the Hyper terminal
 
 ## Contribution
