@@ -14,6 +14,11 @@ To submit a feature, bug fix, or enhancement to the Hyper website proceed as fol
 
 We really appreciate any contribution
 
+## what is hyper-terminal
+To enhance the working experince on terminal we provide so many user friendly effects for command-line interface, there is 100s of effect which enhance your experience
+
+
+
 ## Related Repositories
 
 - [Hyper](https://github.com/zeit/hyper)
