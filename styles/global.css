@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Inter';
+  font-family: 'breef serif';
   font-weight: 100 900;
   font-display: block;
   src: url('https://assets.vercel.com/raw/upload/v1587415301/fonts/2/inter-var-latin.woff2')
@@ -20,8 +20,8 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
