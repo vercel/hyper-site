@@ -1,5 +1,5 @@
 # hyper-site
-
+Good For you
 The official website for the Hyper terminal
 
 ## Contribution
