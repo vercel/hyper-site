@@ -1086,6 +1086,10 @@
   resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.4.2.tgz#860e5628d372c4e72e617aa62d34fdb66933591e"
   integrity sha512-yI5nS0XxccVfMc3WpspZsL6Y22EKIsv+/uJRfPb8uVfLlG4Oz9IHaBXR9KRlQKjvJ8mSm+R3GSg0j+WP4TGADQ==
 
+"@next/plugin-featurepeek@featurepeek/next-plugin-featurepeek":
+  version "0.1.5"
+  resolved "https://codeload.github.com/featurepeek/next-plugin-featurepeek/tar.gz/8fabebe250cfd3ebd13e18ded767b3143c3c9e71"
+
 "@next/react-dev-overlay@9.4.2":
   version "9.4.2"
   resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.4.2.tgz#b8d816ae1bbf89cd6f3e509fa1fd8e4dfed7f8fd"

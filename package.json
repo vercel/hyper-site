@@ -25,6 +25,7 @@
     "react-highlighter": "^0.4.3"
   },
   "devDependencies": {
+    "@next/plugin-featurepeek": "featurepeek/next-plugin-featurepeek",
     "prettier": "^2.0.5",
     "shell-quote": "^1.7.2"
   },
