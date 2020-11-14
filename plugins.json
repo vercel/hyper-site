@@ -597,6 +597,23 @@
     "dateAdded": "1558342235115"
   },
   {
+    "name": "hyper-seoul256",
+    "description": "A port of the seoul256.vim theme for Hyper.",
+    "type": "theme",
+    "colors": [
+       "#4e4e4e",
+       "#d68787",
+       "#d8af5f",
+       "#5f865f",
+       "#85add4",
+       "#d7afaf",
+       "#87afaf",
+       "#d0d0d0"
+    ],
+    "preview": "https://raw.githubusercontent.com/waigx/hyper-seoul256/master/screenshot.png",
+    "dateAdded": "1557291980906"
+  },
+  {
     "name": "hyper-rose-pine",
     "type": "theme",
     "description": "All natural pine, faux fur and a bit of soho vibes for the classy minimalist.",
