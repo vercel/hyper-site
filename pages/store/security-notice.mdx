@@ -1,0 +1,31 @@
+import withPost from 'components/blog/with-post'
+
+export const meta = {
+  title: 'Security notice',
+}
+
+export default withPost(meta)
+
+Currently, the plugins and themes that we list on the Hyper Store have a security model similar to npm.
+We offer for users visiting the Hyper Store to install plugins or themes that have been created by individuals not always related to Vercel.
+These plugins and themes are submitted to this repo but the content comes from the npm registry.
+Due to the fact that the plugins and themes we list are not directly hosted by Vercel, we can not guarantee that the underlying code of said plugins and themes will always be safe.
+
+## How can I keep safe?
+
+Though we can not guarantee safety from content not directly hosted by Vercel, we are aware that npm has extensive security measures to prevent malicious activity.
+Other than this, if you prefer, you can read the source code of each plugin/theme directly from the Hyper Store and evaluate its intent yourself.
+If you then determine that the current version of that plugin/theme is safe for usage, you can pin the plugin/theme to that version within your `.hyper.js` config file.
+Here's an example of doing that:
+
+```
+plugins: [
+  "hyperpower#0.2.2",
+  // ...
+]
+```
+
+## What can I do to report malicious content listed on the Hyper Store?
+
+The best thing to do would be to submit an issue on [this repository](https://github.com/vercel/hyper-site/).
+Include which plugin or theme contains malicious content, we will review it and take the necessary action.

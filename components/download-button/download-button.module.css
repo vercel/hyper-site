@@ -1,0 +1,24 @@
+.root {
+  background: #fff;
+  border-radius: 5px;
+  color: #000;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  text-decoration: none;
+  transition: background 200ms ease-in-out;
+  line-height: 1;
+  min-width: 200px;
+  font-size: 0.875rem;
+}
+
+.root:hover {
+  background: #e5e5e5;
+  color: black;
+}
+
+.root svg {
+  margin-right: 12px;
+}

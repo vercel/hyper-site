@@ -1,0 +1,107 @@
+.root {
+  width: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.content {
+  background: white;
+  color: black;
+  position: relative;
+  z-index: 1200;
+  max-width: 100%;
+  width: 400px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.content h2 {
+  margin: 2rem 2rem 0.5rem;
+}
+
+.content pre {
+  border: 1px solid #eaeaea;
+  color: #bd10e0;
+  padding: 12px 0;
+  white-space: pre-wrap;
+  margin: 1rem 2rem 2rem;
+  border-radius: 2px;
+}
+
+.content pre::before {
+  content: '$';
+  margin-right: 12px;
+}
+
+.content code::before,
+.content code::after {
+  content: '`';
+}
+
+.buttons {
+  display: flex;
+  border-top: 1px solid #eaeaea;
+}
+
+.buttons > * {
+  color: #666;
+  flex: 1;
+  padding: 1rem 0;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.buttons *:disabled,
+.buttons *:hover {
+  background: #fafafa;
+}
+
+.buttons *:hover:not(:disabled) {
+  color: #000;
+}
+
+.buttons *:disabled {
+  cursor: not-allowed;
+}
+
+.buttons *:focus {
+  outline: 0;
+}
+
+.buttons > *:not(:first-child) {
+  border-left: 1px solid #eaeaea;
+}
+
+.buttons > *:first-child {
+  border-bottom-left-radius: 2px;
+}
+
+.buttons > *:last-child {
+  border-bottom-right-radius: 2px;
+}
+
+.buttons button {
+  border: 0;
+  background: transparent;
+}

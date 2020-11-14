@@ -1,0 +1,54 @@
+import withPost from 'components/blog/with-post'
+
+export const meta = {
+  title: 'Submitting a new plugin or theme',
+}
+
+export default withPost(meta)
+
+We'd love to have your Hyper plugin or theme listed in the Hyper Store!
+If you want to add your plugin or theme to the Hyper Store list, follow the instructions that follow.
+
+## Create your plugin or theme
+
+You can find instructions and details about the process of creating a new plugin or theme in the [Hyper repository](https://github.com/vercel/hyper/blob/canary/PLUGINS.md).
+
+## Publish your plugin or theme to npm
+
+For users to easily install your package, we use npm as the underlying service, therefore your plugin or theme needs to be published to npm.
+We suggest that your plugin is named with the prefix `hyper-` (for example `hyper-native`) and has either `hyper-plugin` or `hyper-theme` as a keyword depending on the type of your package.
+This will help users easily identify your package as a Hyper plugin or theme.
+
+Along with the previous suggestion, it'd be really helpful if your plugin is open-sourced so that the security conscious user will be able to review your code easily. To provide a repository in your `package.json` please refer to
+[npm's documentation](https://docs.npmjs.com/files/package.json#repository).
+
+## Submit your plugin or theme to Hyper Store
+
+Create a pull request in [the hyper-site repository](https://github.com/vercel/hyper-site), in which you should edit the `plugins.json` file and add the following information:
+
+```
+{
+  // The example is written in the desired format. You do not need to include these comments.
+  // Your name must match the name which you published your package under on npm
+  "name": "hyper-snazzy",
+  // Describe your theme or plugin! If you have a description in your package.json, this is optional
+  "description": "Elegant Hyper theme with bright colors",
+  // List if your package is a "plugin" or "theme" so we can properly sort it
+  "type": "theme",
+  // If your package is a theme, you can provide an array of colors that your theme uses!
+  // This'll help catch the users eye
+  "colors": [
+    "#eff0eb",
+    "#282a36"
+  ],
+  // The timestamp of the date in which you added your plugin or theme to this repo.
+  // (Use npx to run `npx date-now-cli` in your terminal or use `Date.now()` in your browser's console to get the current timestamp)
+  "dateAdded": "1521644449784"
+}
+```
+
+Also add a preview image of your plugin or theme to the `public/store` folder. Can be a gif, png, jpeg, etc. Recommended dimensions are 600x400 pixels but it'd be perfect if you could make the density 2x for retina screens (1200x800)
+
+After you've edited the `plugins.json` file and uploaded the preview image, you can submit a pull-request to [the repository](https://github.com/vercel/hyper-site) with your changes. Once you've done that, we'll review it and if it's all good, we'll accept!
+
+That's it, we're looking forward to seeing all of your plugins and themes added!
