@@ -17,9 +17,9 @@
     "copee": "^1.0.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.3",
-    "next": "9.5.4-canary.15",
+    "next": "^10.0.3",
     "nprogress": "^0.2.0",
-    "react": "^16.13.1",
+    "react": "^17.0.1",
     "react-dom": "^16.13.1",
     "react-gravatar": "^2.6.3",
     "react-highlighter": "^0.4.3"
