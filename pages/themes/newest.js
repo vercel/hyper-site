@@ -8,7 +8,6 @@ export default function ThemeNewestPage({ themes }) {
 }
 
 export function getStaticProps() {
-  // get all featured plugins then get the preview image's relative src
   const themes = allPlugins
     .filter((p) => p.type === 'theme')
     .sort((a, b) =>
