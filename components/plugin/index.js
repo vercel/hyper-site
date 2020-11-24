@@ -1,14 +1,13 @@
 import Highlighter from 'react-highlighter'
 import styles from './plugin.module.css'
+import Image from 'next/image'
 
 const MAX_COLORS = 4
 
 export default ({ featured, name, description, colors, preview, query }) =>
   featured ? (
-    <div
-      className={styles.featured}
-      style={{ backgroundImage: `url(${preview})` }}
-    >
+    <div className={styles.featured}>
+      <Image className={styles.featuredImage} src={preview.src} layout="fill" />
       <div className={styles.featuredContent}>
         <h4>{name}</h4>
         <p>{description}</p>

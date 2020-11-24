@@ -30,8 +30,8 @@
   font-weight: normal;
 }
 
-.root > img {
+.image {
   max-width: 100%;
   width: 600px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
 }

@@ -2,9 +2,8 @@ import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
 import plugins from 'plugins'
 import styles from 'styles/pages/store/index.module.css'
-import fs from 'fs'
-import { join } from 'path'
-import { CLOUDINARY_PREFIX } from 'lib/constants'
+import { getPluginPreviewImage } from 'lib/plugin'
+import Image from 'next/image'
 
 export default function StoreIndexPage({ plugin, npmData }) {
   return (
@@ -16,7 +15,15 @@ export default function StoreIndexPage({ plugin, npmData }) {
       <div className={styles.root}>
         <h1 className={styles.name}>{plugin.name}</h1>
         <p>{plugin.description}</p>
-        <img src={plugin.preview} alt={`${plugin.name}'s preview image`} />
+        <div className={styles.image}>
+          <Image
+            width={plugin.preview.width}
+            height={plugin.preview.height}
+            src={plugin.preview.src}
+            alt={`${plugin.name}'s preview image`}
+            layout="responsive"
+          />
+        </div>
         <PluginInfo variant="description" npmData={npmData} />
       </div>
     </Page>
@@ -28,15 +35,10 @@ export const getStaticProps = async ({ params }) => {
     await fetch(`https://api.npms.io/v2/package/${params.name}`)
   ).json()
 
-  // get preview image name, e.g.: 'hyperpower.gif'
-  const previewImageSrc = fs
-    .readdirSync(join(process.cwd(), 'public', 'store'))
-    .find((f) => f.includes(params.name))
-
-  // full relative path to the image, this now can be used as an img's src
-  const preview = `${CLOUDINARY_PREFIX}${previewImageSrc}`
-
-  const plugin = { ...plugins.find((e) => e.name === params.name), preview }
+  const plugin = {
+    ...plugins.find((e) => e.name === params.name),
+    preview: getPluginPreviewImage(params.name),
+  }
 
   return {
     props: {

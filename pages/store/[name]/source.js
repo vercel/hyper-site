@@ -108,10 +108,7 @@ export async function getStaticProps({ params }) {
 
   if (!plugin) {
     return {
-      unstable_redirect: {
-        permanent: false,
-        destination: '/404',
-      },
+      notFound: true,
     }
   }
 
@@ -157,6 +154,6 @@ export async function getStaticProps({ params }) {
 export function getStaticPaths() {
   return {
     paths: [],
-    fallback: 'unstable_blocking',
+    fallback: 'blocking',
   }
 }
