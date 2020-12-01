@@ -3,11 +3,6 @@
   height: 200px;
 }
 
-.featuredImage {
-  object-fit: cover;
-  object-position: center top;
-}
-
 .featuredContent {
   position: absolute;
   bottom: 0;
