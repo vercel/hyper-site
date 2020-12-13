@@ -1,12 +1,10 @@
 # hyper-site
 
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/zeit/hyper)
-
 The official website for the Hyper terminal
 
 ## Contribution
 
-Want to submit a plugin or theme to the Hyper Store? Follow [this wiki guide](https://github.com/zeit/hyper-site/wiki/Submitting-a-new-plugin-or-theme-to-Hyper-Store).
+Want to submit a plugin or theme to the Hyper Store? Follow [the guide on the website](https://hyper.is/store/submit).
 
 To submit a feature, bug fix, or enhancement to the Hyper website proceed as follows:
 
@@ -21,4 +19,3 @@ We really appreciate any contribution
 - [Hyper](https://github.com/zeit/hyper)
 - [Sample Plugin](https://github.com/zeit/hyperpower)
 - [Sample Theme](https://github.com/zeit/hyperyellow)
-

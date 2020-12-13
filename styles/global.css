@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: block;
+  src: url('https://assets.vercel.com/raw/upload/v1587415301/fonts/2/inter-var-latin.woff2')
+    format('woff2');
+}
+
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --pink: #f81ce5;
+  --green: #50e3c2;
+  --bright-green: #3afacf;
+  --gray: #999;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  transition: color 200ms ease-in-out;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background-color: var(--pink);
+  color: var(--fg);
+}
+
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--fg);
+}

@@ -1,0 +1,97 @@
+.root {
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.root video {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.root a {
+  color: var(--fg);
+  text-decoration: none;
+  transition: border 200ms ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+
+.root a:hover {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
+.root * > a {
+  border: 0;
+}
+
+.root h2 {
+  font-size: 36px;
+  margin: 100px 0 30px 0;
+  padding-top: 30px;
+}
+
+.root h3 {
+  font-size: 26px;
+  margin: 48px 0 20px 0;
+  padding-top: 20px;
+}
+
+.root h4 {
+  margin: 1rem 0;
+}
+
+.root p {
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 20px;
+}
+
+.root pre,
+.root code {
+  color: #50e3c2;
+}
+
+.root pre {
+  line-height: 18px;
+  margin: 30px;
+}
+
+.root p code,
+.root li code,
+.root td code {
+  color: var(--fg);
+}
+
+.root p code::before,
+.root p code::after,
+.root td code::before,
+.root td code::after,
+.root li code::before,
+.root li code::after {
+  content: '`';
+}
+
+.root ul {
+  margin: 20px 10px;
+}
+
+.root ul li {
+  list-style-type: none;
+  line-height: 18px;
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.root ul li:before {
+  content: '-';
+  color: var(--gray);
+  position: absolute;
+  margin-left: -20px;
+}
+
+.root p b {
+  color: var(--fg);
+}

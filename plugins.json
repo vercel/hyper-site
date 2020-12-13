@@ -590,5 +590,42 @@
     "type": "plugin",
     "preview": "https://user-images.githubusercontent.com/184220/55085247-a5ebd480-50a6-11e9-8590-5064eb58debf.gif",
     "dateAdded": "1553785551718"
+  },
+  {
+    "name": "hyper-hypest",
+    "description": "A beautiful and minimal macOS theme with vibrancy",
+    "type": "theme",
+    "preview": "https://github.com/dizzyup/hyper-hypest/raw/master/assets/preview.jpg?raw=true",
+    "colors": [
+      "#ffffff",
+      "#222222",
+      "#0095FF"
+    ],
+    "dateAdded": "1558342235115"
+  },
+  {
+    "name": "hyper-rose-pine",
+    "type": "theme",
+    "description": "All natural pine, faux fur and a bit of soho vibes for the classy minimalist.",
+    "preview": "https://github.com/fvrests/hyper-rose-pine/raw/master/assets/preview.png",
+    "colors": [
+      "#191724",
+      "#706e86",
+      "#e0def4",
+      "#eb6f92",
+      "#f6c177",
+      "#ebbcba",
+      "#31748f",
+      "#9ccfd8",
+      "#c4a7e7"
+    ],
+    "dateAdded": "1582919913142"
+  },
+  {
+    "name": "hyper-tabs-autohide",
+    "description": "Autohide all tabs.",
+    "type": "plugin",
+    "preview": "https://github.com/jZhangTk/hyper-tabs-autohide/raw/master/hyper-tabs-autohide.gif",
+    "dateAdded": "1583633829078"
   }
 ]

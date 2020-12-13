@@ -1,0 +1,55 @@
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 0 8px 0 0;
+  width: 7rem;
+  transition: width 0.2s ease;
+}
+
+.input:focus {
+  width: 8rem;
+  outline: 0;
+}
+
+.input::placeholder {
+  color: var(--gray);
+}
+
+.icon {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.input:focus + .icon, .icon:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .root {
+    height: 48px;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .input {
+    font-size: 1rem;
+  }
+
+  .input,
+  .input:focus {
+    width: 100%;
+  }
+}

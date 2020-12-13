@@ -1,3 +1,7 @@
-module.exports = {
-  target: 'serverless'
-}
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+})
+
+module.exports = withMDX({
+  pageExtensions: ['js', 'mdx'],
+})

@@ -1,0 +1,42 @@
+.root {
+  margin: 3rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.logo {
+  margin: auto;
+}
+
+.terminal {
+  margin: 3rem auto;
+}
+
+.download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download > .other {
+  margin-top: 1rem;
+  color: white;
+  transition: border 200ms ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+
+.download > .other:hover {
+  color: white;
+  border-color: white;
+}
+
+@media (max-width: 600px) {
+  .root {
+    margin: 1rem 0 4rem;
+  }
+
+  .terminal {
+    margin: 2rem auto;
+  }
+}
