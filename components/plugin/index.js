@@ -7,13 +7,24 @@ const MAX_COLORS = 4
 export default ({ featured, name, description, colors, preview, query }) =>
   featured ? (
     <div className={styles.featured}>
-      <Image
-        src={preview.src}
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center top"
-        unoptimized
-      />
+      {preview.isGIF ? (
+        <img
+          src={preview.src}
+          alt={`${name}'s preview image`}
+          className={styles.image}
+        />
+      ) : (
+        <Image
+          src={preview.src}
+          alt={`${name}'s preview image`}
+          objectFit="cover"
+          layout="responsive"
+          objectPosition="center top"
+          width={preview.width}
+          height={preview.height}
+        />
+      )}
+
       <div className={styles.featuredContent}>
         <h4>{name}</h4>
         <p>{description}</p>

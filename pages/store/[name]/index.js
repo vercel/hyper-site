@@ -15,15 +15,27 @@ export default function StoreIndexPage({ plugin, npmData }) {
       <div className={styles.root}>
         <h1 className={styles.name}>{plugin.name}</h1>
         <p>{plugin.description}</p>
-        <div className={styles.image}>
+        <div className={styles.imageContainer}>
           {plugin.preview && (
-            <Image
-              width={plugin.preview.width}
-              height={plugin.preview.height}
-              src={plugin.preview.src}
-              alt={`${plugin.name}'s preview image`}
-              layout="responsive"
-            />
+            <>
+              {plugin.preview.isGIF ? (
+                <img
+                  src={plugin.preview.src}
+                  alt={`${plugin.name}'s preview image`}
+                  width={plugin.preview.width}
+                  height={plugin.preview.height}
+                  className={styles.image}
+                />
+              ) : (
+                <Image
+                  width={plugin.preview.width}
+                  height={plugin.preview.height}
+                  src={plugin.preview.src}
+                  alt={`${plugin.name}'s preview image`}
+                  layout="responsive"
+                />
+              )}
+            </>
           )}
         </div>
         <PluginInfo variant="description" npmData={npmData} />

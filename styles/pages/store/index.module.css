@@ -30,8 +30,13 @@
   font-weight: normal;
 }
 
-.image {
+.imageContainer {
   max-width: 100%;
   width: 600px;
   margin: 0 auto 40px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
 }
