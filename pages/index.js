@@ -8,25 +8,29 @@ import installationStyles from 'styles/pages/home/installation.module.css'
 import useOs from 'lib/use-os'
 import Terminal from 'components/terminal'
 
-const Path = ({ os, path }) => (
-  <code>
-    {`${
-      os === 'mac'
-        ? '~/Library/Application Support/Hyper/'
-        : os === 'windows'
-        ? '$Env:AppData/Hyper/'
-        : os === 'linux'
-        ? '~/.config/Hyper/'
-        : ''
-    }${path}`}
-  </code>
-)
+function Path({ os, path }) {
+  return (
+    <code>
+      {`${
+        os === 'mac'
+          ? '~/Library/Application Support/Hyper/'
+          : os === 'windows'
+          ? '$Env:AppData/Hyper/'
+          : os === 'linux'
+          ? '~/.config/Hyper/'
+          : ''
+      }${path}`}
+    </code>
+  )
+}
 
-const PathLink = ({ os, path, type }) => (
-  <a href={`#${type}-location`}>
-    <Path os={os} path={path} />
-  </a>
-)
+function PathLink({ os, path, type }) {
+  return (
+    <a href={`#${type}-location`}>
+      <Path os={os} path={path} />
+    </a>
+  )
+}
 
 const installationTableData = [
   {
@@ -76,7 +80,7 @@ const installationTableData = [
   },
 ]
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const res = await fetch(
     'https://api.github.com/repos/zeit/hyper/releases/latest'
   )
@@ -86,11 +90,11 @@ export const getStaticProps = async () => {
     props: {
       latestRelease,
     },
-    unstable_revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60 * 24,
   }
 }
 
-export default ({ latestRelease }) => {
+export default function HomePage({ latestRelease }) {
   const os = useOs()
 
   return (
