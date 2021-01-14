@@ -8,14 +8,14 @@ export default () => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/zeit/hyper/releases"
+          href="https://github.com/vercel/hyper/releases"
         >
           Changelog
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/zeit/hyper"
+          href="https://github.com/vercel/hyper"
         >
           GitHub
         </a>
