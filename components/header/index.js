@@ -53,7 +53,7 @@ export default () => {
         <div className={styles.rightNav}>
           <SearchBar />
           <a
-            href="https://zeit.co"
+            href="https://vercel.com"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.zeit}
