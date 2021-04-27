@@ -16,6 +16,6 @@ We really appreciate any contribution
 
 ## Related Repositories
 
-- [Hyper](https://github.com/zeit/hyper)
-- [Sample Plugin](https://github.com/zeit/hyperpower)
-- [Sample Theme](https://github.com/zeit/hyperyellow)
+- [Hyper](https://github.com/vercel/hyper)
+- [Sample Plugin](https://github.com/vercel/hyperpower)
+- [Sample Theme](https://github.com/vercel/hyperyellow)
