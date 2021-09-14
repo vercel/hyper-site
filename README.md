@@ -9,8 +9,8 @@ Want to submit a plugin or theme to the Hyper Store? Follow [the guide on the we
 To submit a feature, bug fix, or enhancement to the Hyper website proceed as follows:
 
 1. Clone this repo
-2. Within your terminal, run `yarn` to install the dependencies
-3. Once the dependencies are installed, run `yarn dev` to start the dev server on `localhost:3000`
+2. Within your terminal, run `npm install` to install the dependencies
+3. Once the dependencies are installed, run `npm run dev` to start the dev server on `localhost:3000`
 
 We really appreciate any contribution
 
