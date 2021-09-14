@@ -76,7 +76,7 @@ const installationTableData = [
     os: 'linux',
     renderText: () => (
       <>
-        <b>Other Linux distros</b> (.AppImage)
+        <b>More Linux distros</b> (.AppImage)
       </>
     ),
     path: 'AppImage',
@@ -135,18 +135,22 @@ export default function HomePage({ latestRelease }) {
             <tbody>
               <tr>
                 <td className={installationStyles.invisibleTopLeft} />
-                <td>64-bit</td>
-                <td>arm64</td>
+                <td className={installationStyles.withSpacing}>64-bit</td>
+                <td className={installationStyles.withSpacing}>arm64</td>
               </tr>
               {installationTableData.map(
                 ({ os: _os, renderText, path, arm64Path }) => (
                   <tr key={_os}>
-                    <td>{renderText()}</td>
+                    <td className={installationStyles.withSpacing}>
+                      {renderText()}
+                    </td>
                     {[path, arm64Path].map((archPath) => (
                       <td
                         key={archPath}
                         className={
-                          os === _os ? installationStyles.highlighted : ''
+                          os === _os
+                            ? installationStyles.highlighted
+                            : archPath || installationStyles.withSpacing
                         }
                       >
                         {archPath ? (
@@ -2048,6 +2052,10 @@ export default function HomePage({ latestRelease }) {
             width: 100%;
             max-width: 100%;
             margin-left: 0;
+          }
+
+          .table tr td:nth-child(2) {
+            display: none;
           }
         }
 
