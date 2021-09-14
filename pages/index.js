@@ -41,6 +41,7 @@ const installationTableData = [
       </>
     ),
     path: 'mac',
+    arm64Path: 'mac_arm64',
   },
   {
     os: 'windows',
@@ -59,6 +60,7 @@ const installationTableData = [
       </>
     ),
     path: 'deb',
+    arm64Path: 'deb_arm64',
   },
   {
     os: 'fedora',
@@ -68,6 +70,7 @@ const installationTableData = [
       </>
     ),
     path: 'rpm',
+    arm64Path: 'rpm_arm64',
   },
   {
     os: 'linux',
@@ -77,6 +80,7 @@ const installationTableData = [
       </>
     ),
     path: 'AppImage',
+    arm64Path: 'AppImage_arm64',
   },
 ]
 
@@ -132,24 +136,38 @@ export default function HomePage({ latestRelease }) {
               <tr>
                 <td className={installationStyles.invisibleTopLeft} />
                 <td>64-bit</td>
+                <td>arm64</td>
               </tr>
-              {installationTableData.map(({ os: _os, renderText, path }) => (
-                <tr key={_os}>
-                  <td>{renderText()}</td>
-                  <td
-                    className={os === _os ? installationStyles.highlighted : ''}
-                  >
-                    <a href={`https://releases.hyper.is/download/${path}`}>
-                      <Download
-                        height={12}
-                        width={16}
-                        className={installationStyles.icon}
-                      />
-                      {latestRelease.tag_name}
-                    </a>
-                  </td>
-                </tr>
-              ))}
+              {installationTableData.map(
+                ({ os: _os, renderText, path, arm64Path }) => (
+                  <tr key={_os}>
+                    <td>{renderText()}</td>
+                    {[path, arm64Path].map((archPath) => (
+                      <td
+                        key={archPath}
+                        className={
+                          os === _os ? installationStyles.highlighted : ''
+                        }
+                      >
+                        {archPath ? (
+                          <a
+                            href={`https://releases.hyper.is/download/${archPath}`}
+                          >
+                            <Download
+                              height={12}
+                              width={16}
+                              className={installationStyles.icon}
+                            />
+                            {latestRelease.tag_name}
+                          </a>
+                        ) : (
+                          'N/A'
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>
