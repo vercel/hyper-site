@@ -22,3 +22,17 @@
 .root svg {
   margin-right: 12px;
 }
+
+.doubleWrap {
+  display: flex;
+}
+
+.doubleWrap a:nth-child(2) {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .doubleWrap a:nth-child(1) {
+    display: none;
+  }
+}
