@@ -635,5 +635,16 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
-  }
+  },
+  {
+  "name": "hyper-rmaki-theme",
+  "description": "Simple dark theme for Hyper terminal",
+  "type": "theme",
+  "preview": "https://github.com/luke-rmaki/hyper-rmaki-theme/blob/main/screenshot.png",
+  "colors": [
+    "#87e8ce",
+    "#111113"
+  ],
+  "dateAdded": "1632046576997"
+}
 ]
