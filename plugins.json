@@ -635,5 +635,22 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-omni-customized",
+    "description": "Personal Omni Customized theme for Hyper",
+    "type": "theme",
+    "colors": [
+      "#191919",
+      "#E1E1E6",
+      "#3f3f3f",
+      "#ff5555",
+      "#50fa7b",
+      "#effa78",
+      "#bd93f9",
+      "#ff79c6",
+      "#ff6e67"
+    ],
+    "dateAdded": "1632185474728"
   }
 ]
