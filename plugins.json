@@ -635,5 +635,23 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
-  }
+  },
+  {
+    "name": "hyper-rose-pine-next",
+    "type": "theme",
+    "description": "A dynamic theme that respects your System Preferences.",
+    "preview": "https://github.com/ng-hai/hyper-rose-pine-next/raw/main/assets/demo.gif",
+    "colors": [
+      "#191724",
+      "#706e86",
+      "#e0def4",
+      "#eb6f92",
+      "#f6c177",
+      "#ebbcba",
+      "#31748f",
+      "#9ccfd8",
+      "#c4a7e7"
+    ],
+    "dateAdded": "1632375314276"
+  },
 ]
