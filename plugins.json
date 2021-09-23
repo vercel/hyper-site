@@ -639,7 +639,7 @@
   {
     "name": "hyper-rose-pine-next",
     "type": "theme",
-    "description": "A dynamic theme that respects your System Preferences.",
+    "description": "The first theme support Dark mode.",
     "preview": "https://github.com/ng-hai/hyper-rose-pine-next/raw/main/assets/demo.gif",
     "colors": [
       "#191724",
