@@ -635,5 +635,13 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
-  }
+  },
+  {
+    "name": "hyper-shellect2",
+    "description": "A shell and SSH selection menu. Fork from hyper-shellect.",
+    "type": "plugin",
+    "preview": "https://github.com/paulomanrique/hyper-shellect2/raw/master/hyper-shellect.gif",
+    "dateAdded": "1634080902906"
+  },
+
 ]
