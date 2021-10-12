@@ -640,8 +640,6 @@
     "name": "hyper-shellect2",
     "description": "A shell and SSH selection menu. Fork from hyper-shellect.",
     "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/paulomanrique/hyper-shellect2/master/hyper-shellect.gif",
     "dateAdded": "1634080902906"
-  },
-
+  }
 ]
