@@ -1,5 +1,20 @@
 [
   {
+    "name": "hyper-horizon-dark-theme",
+    "description": "My favorite theme for vscode right now on Hyper terminal.",
+    "type": "theme",
+    "colors": [
+      "#1C1E26",
+      "#26BBD9",
+      "#EE64AC",
+      "#E95678",
+      "#6C6F9380",
+      "#FAB795"
+    ],
+    "dateAdded": "1636257285099",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-horizon-dark-theme.png"
+  },
+  {
     "name": "hypercwd",
     "description": "Opens new tabs with the same directory as the current tab in Hyper for OS X, Linux, and Windows.",
     "type": "plugin",
