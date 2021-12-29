@@ -635,5 +635,20 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-smooth-theme",
+    "description": "Smooth theme for Hyper.",
+    "type": "theme",
+    "colors": [
+      "#070707",
+      "#909090",
+      "#E6E6E6",
+      "#fAA483",
+      "#34f9AE",
+      "#6087ED",
+      "#ff6E67"
+    ],
+    "dateAdded": "1640804593902"
   }
 ]
