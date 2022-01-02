@@ -635,5 +635,12 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "cutiepower",
+    "description": "Extension for Hyper, based on the cool hyperpower extension, that turns on cute heart mode, with bonus wow heart mode.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/sassacosta/cutiepower/master/cutiepower.gif",
+    "dateAdded": "1641130015566"
   }
 ]
