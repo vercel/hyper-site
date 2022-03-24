@@ -635,5 +635,22 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-darkforest",
+    "type": "theme",
+    "description": "A minimalistic dark Everforest theme for Hyper.",
+    "colors": [
+      "#2B3339",
+      "#4C555B",
+      "#E67E80",
+      "#A7C080",
+      "#DBBC7F",
+      "#7FBBB3",
+      "#D699B6",
+      "#83C092",
+      "#D3C6AA"
+    ],
+    "dateAdded": "1648142165228"
   }
 ]
