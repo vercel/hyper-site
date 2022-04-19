@@ -44,6 +44,18 @@
     "featured": true
   },
   {
+    "name": "hypurr",
+    "description": "A colorful and pastel catpuccin theme for Hyper.",
+    "type": "theme",
+    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-hypurr.png",
+    "colors": [
+      "#F28FAD",
+      "#96CDFB",
+      "#F5C2E7"
+    ],
+    "dateAdded": "1650373485545"
+  },
+  {
     "name": "hyper-snazzy",
     "description": "Elegant Hyper theme with bright colors",
     "type": "theme",
