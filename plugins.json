@@ -49,9 +49,13 @@
     "type": "theme",
     "preview": "https://hyper-plugin-screenshots.now.sh/hyper-hypurr.png",
     "colors": [
+      "#1E1D2E",
+      "#C9CBFF",
       "#F28FAD",
       "#96CDFB",
-      "#F5C2E7"
+      "#F5C2E7",
+      "#ABE9B3",
+      "#FAE3B0"
     ],
     "dateAdded": "1650373485545"
   },
