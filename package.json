@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.3.0",
   "description": "The official website for the Hyper terminal",
-  "repository": "zeit/hyper-site",
+  "repository": "vercel/hyper-site",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

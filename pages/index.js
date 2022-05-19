@@ -41,6 +41,7 @@ const installationTableData = [
       </>
     ),
     path: 'mac',
+    arm64Path: 'mac_arm64',
   },
   {
     os: 'windows',
@@ -59,6 +60,7 @@ const installationTableData = [
       </>
     ),
     path: 'deb',
+    arm64Path: 'deb_arm64',
   },
   {
     os: 'fedora',
@@ -68,21 +70,23 @@ const installationTableData = [
       </>
     ),
     path: 'rpm',
+    arm64Path: 'rpm_arm64',
   },
   {
     os: 'linux',
     renderText: () => (
       <>
-        <b>Other Linux distros</b> (.AppImage)
+        <b>More Linux distros</b> (.AppImage)
       </>
     ),
     path: 'AppImage',
+    arm64Path: 'AppImage_arm64',
   },
 ]
 
 export async function getStaticProps() {
   const res = await fetch(
-    'https://api.github.com/repos/zeit/hyper/releases/latest'
+    'https://api.github.com/repos/vercel/hyper/releases/latest'
   )
   const latestRelease = await res.json()
 
@@ -131,25 +135,43 @@ export default function HomePage({ latestRelease }) {
             <tbody>
               <tr>
                 <td className={installationStyles.invisibleTopLeft} />
-                <td>64-bit</td>
+                <td className={installationStyles.withSpacing}>64-bit</td>
+                <td className={installationStyles.withSpacing}>arm64</td>
               </tr>
-              {installationTableData.map(({ os: _os, renderText, path }) => (
-                <tr key={_os}>
-                  <td>{renderText()}</td>
-                  <td
-                    className={os === _os ? installationStyles.highlighted : ''}
-                  >
-                    <a href={`https://releases.hyper.is/download/${path}`}>
-                      <Download
-                        height={12}
-                        width={16}
-                        className={installationStyles.icon}
-                      />
-                      {latestRelease.tag_name}
-                    </a>
-                  </td>
-                </tr>
-              ))}
+              {installationTableData.map(
+                ({ os: _os, renderText, path, arm64Path }) => (
+                  <tr key={_os}>
+                    <td className={installationStyles.withSpacing}>
+                      {renderText()}
+                    </td>
+                    {[path, arm64Path].map((archPath) => (
+                      <td
+                        key={archPath}
+                        className={
+                          os === _os
+                            ? installationStyles.highlighted
+                            : archPath || installationStyles.withSpacing
+                        }
+                      >
+                        {archPath ? (
+                          <a
+                            href={`https://releases.hyper.is/download/${archPath}`}
+                          >
+                            <Download
+                              height={12}
+                              width={16}
+                              className={installationStyles.icon}
+                            />
+                            {latestRelease.tag_name}
+                          </a>
+                        ) : (
+                          'N/A'
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>
@@ -252,17 +274,17 @@ export default function HomePage({ latestRelease }) {
             <tbody>
               <tr>
                 <td>
-                  <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/win32.json">
+                  <a href="https://github.com/vercel/hyper/blob/master/app/keymaps/win32.json">
                     Windows
                   </a>
                 </td>
                 <td>
-                  <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/linux.json">
+                  <a href="https://github.com/vercel/hyper/blob/master/app/keymaps/linux.json">
                     Linux
                   </a>
                 </td>
                 <td>
-                  <a href="https://github.com/zeit/hyper/blob/master/app/keymaps/darwin.json">
+                  <a href="https://github.com/vercel/hyper/blob/master/app/keymaps/darwin.json">
                     macOS
                   </a>
                 </td>
@@ -463,7 +485,7 @@ export default function HomePage({ latestRelease }) {
                 <td>
                   A list of overrides for the color palette. The names of the
                   keys represent the "ANSI 16", which can all be seen{' '}
-                  <a href="https://github.com/zeit/hyper/blob/master/app/utils/colors.js">
+                  <a href="https://github.com/vercel/hyper/blob/master/app/utils/colors.js">
                     in the default config
                   </a>
                   .
@@ -609,7 +631,7 @@ export default function HomePage({ latestRelease }) {
         </p>
         <p>
           You can find additional details about plugin development{' '}
-          <a href="https://github.com/zeit/hyper/blob/master/PLUGINS.md">
+          <a href="https://github.com/vercel/hyper/blob/master/PLUGINS.md">
             in the Hyper repository
           </a>
           .
@@ -1024,7 +1046,7 @@ export default function HomePage({ latestRelease }) {
                   <p>
                     A custom mapper for the state properties that{' '}
                     <a
-                      href="https://github.com/zeit/hyper/tree/master/lib/containers"
+                      href="https://github.com/vercel/hyper/tree/master/lib/containers"
                       target="_blank"
                       rel="noopener"
                     >
@@ -1442,7 +1464,7 @@ export default function HomePage({ latestRelease }) {
         <p>
           All the{' '}
           <a
-            href="https://github.com/zeit/hyper/tree/master/lib/actions"
+            href="https://github.com/vercel/hyper/tree/master/lib/actions"
             target="_blank"
             rel="noopener"
           >
@@ -1647,7 +1669,7 @@ export default function HomePage({ latestRelease }) {
           <a
             target="_blank"
             rel="noopener"
-            href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
+            href="https://github.com/vercel/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
           >
             code
           </a>
@@ -1746,7 +1768,7 @@ export default function HomePage({ latestRelease }) {
           <a
             target="_blank"
             rel="noopener"
-            href="https://github.com/zeit/hyperpower/blob/master/index.js"
+            href="https://github.com/vercel/hyperpower/blob/master/index.js"
           >
             its code
           </a>
@@ -1757,7 +1779,7 @@ export default function HomePage({ latestRelease }) {
           <a
             target="_blank"
             rel="noopener"
-            href="https://github.com/zeit/hyper/tree/master/lib/actions"
+            href="https://github.com/vercel/hyper/tree/master/lib/actions"
           >
             in the repository
           </a>
@@ -1847,7 +1869,7 @@ export default function HomePage({ latestRelease }) {
         <p>
           The extension then{' '}
           <a
-            href="https://github.com/zeit/hyperpower/blob/master/index.js#L51"
+            href="https://github.com/vercel/hyperpower/blob/master/index.js#L51"
             target="_blank"
             rel="noopener"
           >
@@ -2030,6 +2052,10 @@ export default function HomePage({ latestRelease }) {
             width: 100%;
             max-width: 100%;
             margin-left: 0;
+          }
+
+          .table tr td:nth-child(2) {
+            display: none;
           }
         }
 
