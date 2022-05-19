@@ -3,7 +3,7 @@
   "name": "hyper-neon-dreams",
   "description": "A synthwave/neon theme for hyper.",
   "type": "theme",
-  "preview": "https://gitlab.com/dylanbstorey/hyper-neon-dreams/-/raw/main/screenshot.png",
+  "preview": "https://hyper-plugin-screenshots.now.sh/hyper-neon-dreams.png",
   "colors": [
       "#fa1999",
       "#61e2fe",
