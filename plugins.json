@@ -635,5 +635,19 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "drops-of-gold-hyper",
+    "description": "Hyper™ Terminal theme with some lovely Gold accents.",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/thijswmoens/drops-of-gold-hyper/master/.github/images/drops-of-gold-hyper.png",
+    "colors": [
+      "#a08f68",
+      "#73684b",
+      "#675d43",
+      "#3d3d3d",
+      "#2d2d2d"
+    ],
+    "dateAdded": "1656355560212"
   }
 ]
