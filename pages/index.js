@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Page from 'components/page'
 import Footer from 'components/footer'
 import DownloadButton from 'components/download-button'
@@ -7,6 +6,7 @@ import heroStyles from 'styles/pages/home/hero.module.css'
 import contentStyles from 'styles/pages/home/content.module.css'
 import installationStyles from 'styles/pages/home/installation.module.css'
 import useOs from 'lib/use-os'
+import Terminal from 'components/terminal'
 
 const Path = ({ os, path }) => (
   <code>
@@ -96,37 +96,13 @@ export default ({ latestRelease }) => {
   return (
     <Page>
       {/**
-       * Meta
-       */}
-      <Head>
-        <title>Hyper™</title>
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="@zeithq" />
-        <meta property="og:title" content="Hyper™" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hyper.is" />
-        <meta property="description" content="Hyper™: HTML/JS/CSS terminal" />
-        <meta
-          property="og:description"
-          content="Hyper™: HTML/JS/CSS terminal"
-        />
-        <meta property="og:image" content="https://hyper.is/hyper.png" />
-      </Head>
-
-      {/**
        * Hero
        */}
       <div className={heroStyles.root}>
         <LogoBig className={heroStyles.logo} />
-        <video
-          className={heroStyles.video}
-          src="/hero.mp4"
-          autoPlay
-          muted
-          playsInline
-          width={1200}
-          height={790}
-        />
+        <div className={heroStyles.terminal}>
+          <Terminal />
+        </div>
         <div className={heroStyles.download}>
           <DownloadButton fixedWidth os={os} />
           <a className={heroStyles.other} href="#installation">
@@ -630,8 +606,9 @@ export default ({ latestRelease }) => {
         <p>
           You can find additional details about plugin development{' '}
           <a href="https://github.com/zeit/hyper/blob/master/PLUGINS.md">
-            here
+            in the Hyper repository
           </a>
+          .
         </p>
         <p>Your module has to expose at least one of these methods:</p>
         <div className="table large">
@@ -1045,6 +1022,7 @@ export default ({ latestRelease }) => {
                     <a
                       href="https://github.com/zeit/hyper/tree/master/lib/containers"
                       target="_blank"
+                      rel="noopener"
                     >
                       container components
                     </a>{' '}
@@ -1462,6 +1440,7 @@ export default ({ latestRelease }) => {
           <a
             href="https://github.com/zeit/hyper/tree/master/lib/actions"
             target="_blank"
+            rel="noopener"
           >
             Redux actions
           </a>{' '}
@@ -1527,7 +1506,11 @@ export default ({ latestRelease }) => {
         <p>
           <code>Hyper</code> achieves a lot of its speed and functionality
           thanks to the power of{' '}
-          <a target="_blank" href="https://github.com/xtermjs/xterm.js/">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/xtermjs/xterm.js/"
+          >
             xterm.js
           </a>
         </p>
@@ -1659,6 +1642,7 @@ export default ({ latestRelease }) => {
           colors! Here's the{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
           >
             code
@@ -1757,6 +1741,7 @@ export default ({ latestRelease }) => {
           Let's walk through{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyperpower/blob/master/index.js"
           >
             its code
@@ -1764,12 +1749,13 @@ export default ({ latestRelease }) => {
           .
           <br />
           First, we intercept the Redux action <code>SESSION_ADD_DATA</code>.
-          See the whole list of them{' '}
+          You can find the full list of actions{' '}
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/zeit/hyper/tree/master/lib/actions"
           >
-            here
+            in the repository
           </a>
           .
         </p>
@@ -1859,6 +1845,7 @@ export default ({ latestRelease }) => {
           <a
             href="https://github.com/zeit/hyperpower/blob/master/index.js#L51"
             target="_blank"
+            rel="noopener"
           >
             returns
           </a>{' '}
