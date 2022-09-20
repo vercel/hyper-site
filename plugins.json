@@ -635,5 +635,23 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+      "name": "hyper-paper",
+      "type": "theme",
+      "description": "The extremely legible light theme inspired by notebooks.",
+      "preview": "https://github.com/s6muel/paper-theme/raw/main/screenshots/hyper-eg.png",
+      "colors": [
+         "#000000",
+         "#CC3E28",
+         "#216609",
+         "#B58900",
+         "#1E6FCC",
+         "#5C21A5",
+         "#158C86",
+         "#AAAAAA",
+         "#555555"
+      ],
+      "dateAdded": "1663664925086"
   }
 ]
