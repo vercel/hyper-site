@@ -640,7 +640,6 @@
       "name": "hyper-paper",
       "type": "theme",
       "description": "The extremely legible light theme inspired by notebooks.",
-      "preview": "https://github.com/s6muel/paper-theme/raw/main/screenshots/hyper-eg.png",
       "colors": [
          "#000000",
          "#CC3E28",
