@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "turbo run turbobuild --single-package",
+    "prebuild": "turbo --version && which turbo",
+    "build": "turbo run turbobuild",
     "turbobuild": "next build",
     "start": "next start"
   },
@@ -28,8 +29,7 @@
   },
   "devDependencies": {
     "prettier": "^2.0.5",
-    "shell-quote": "^1.7.2",
-    "turbo": "^1.6.0-canary.4"
+    "shell-quote": "^1.7.2"
   },
   "prettier": {
     "singleQuote": true,
