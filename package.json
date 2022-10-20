@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "turbo run turbobuild --single-package",
+    "turbobuild": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -27,7 +28,8 @@
   },
   "devDependencies": {
     "prettier": "^2.0.5",
-    "shell-quote": "^1.7.2"
+    "shell-quote": "^1.7.2",
+    "turbo": "^1.5.6"
   },
   "prettier": {
     "singleQuote": true,

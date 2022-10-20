@@ -1,0 +1,8 @@
+{
+  "pipeline": {
+    "turbobuild": {
+      "inputs": ["lib/**", "components/**", "pages/**", "styles/**"],
+      "outputs": [".next/**"]
+    }
+  }
+}
