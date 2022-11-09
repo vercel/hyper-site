@@ -12,7 +12,7 @@
       "#FAB795"
     ],
     "dateAdded": "1636257285099",
-    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-horizon-dark-theme.png"
+    "preview": "https://raw.githubusercontent.com/patrickfv/hyper-site/main/public/store/hyper-horizon-dark-theme.png"
   },
   {
     "name": "hyper-horizon-light-theme",
@@ -27,8 +27,7 @@
       "#FAB795"
     ],
     "dateAdded": "1636457511430",
-    "preview": "https://hyper-plugin-screenshots.now.sh/hyper-horizon-light-theme.png",
-    "featured": true
+    "preview": "https://raw.githubusercontent.com/patrickfv/hyper-site/main/public/store/hyper-horizon-light-theme.png"
   },
   {
     "name": "hypercwd",
