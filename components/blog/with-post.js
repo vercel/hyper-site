@@ -30,10 +30,10 @@ const Link = ({ href, children }) => {
 
   if (IS_INTERNAL)
     return (
-      <NextLink href={href}>
-        <a className={styles.link}>{children}</a>
+      <NextLink href={href} className={styles.link}>
+        {children}
       </NextLink>
-    )
+    );
 
   return (
     <a
