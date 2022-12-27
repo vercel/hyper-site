@@ -1,5 +1,18 @@
 [
   {
+  "name": "hyper-neon-dreams",
+  "description": "A synthwave/neon theme for hyper.",
+  "type": "theme",
+  "preview": "https://hyper-plugin-screenshots.now.sh/hyper-neon-dreams.png",
+  "colors": [
+      "#fa1999",
+      "#61e2fe",
+      "#fecb00",
+      "#200933"
+  ],
+  "dateAdded":"1652998557894"
+  },
+  {
     "name": "hypercwd",
     "description": "Opens new tabs with the same directory as the current tab in Hyper for OS X, Linux, and Windows.",
     "type": "plugin",
