@@ -626,13 +626,13 @@
     "type": "theme",
     "description": "A beautiful dark theme for Hyper terminal.",
     "colors": [
-      "#1c1b22",
-      "#4d4d4d",
-      "#dbdbdb",
-      "#d46a6a",
-      "#d7c466",
-      "#63d1a9",
-      "#9272dc"
+      "#a277ff",
+      "#61ffca",
+      "#ffca85",
+      "#15141b",
+      "#6d6d6d",
+      "#edecee",
+      "#ff6767"
     ],
     "dateAdded": "1597807892019"
   }
