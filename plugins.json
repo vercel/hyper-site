@@ -635,5 +635,26 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-monokai-remastered",
+    "type": "theme",
+    "description": "A remaster of the Monokai theme for Hyper",
+    "colors": [
+      "#1A1A1A",
+      "#0C0C0C",
+      "#625E4C",
+      "#C4C5B5",
+      "#D9D9D9",
+      "#F6F6EF",
+      "#E0D561",
+      "#FC971F",
+      "#F4005F",
+      "#98E024",
+      "#58D1EB",
+      "#9D65FF"
+    ],
+    "preview": "https://raw.githubusercontent.com/PunGrumpy/hyper-monokai-remastered/main/image/screenshot-example-theme.png",
+    "dateAdded": "1673111557698"
   }
 ]
