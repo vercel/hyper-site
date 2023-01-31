@@ -113,9 +113,22 @@ export async function getStaticProps({ params }) {
     }
   }
 
-  const npmData = await (
-    await fetch(`${WEBSITE_URL}/api/getPackageMetadata?name=${params.name}`)
-  ).json()
+  // const npmData = await (
+  //   await fetch(`${WEBSITE_URL}/api/getPackageMetadata?name=${params.name}`)
+  // ).json()
+  const npmData = {
+    name: 'hyper-gh-dark-default',
+    publisher: {
+      email: 'milovan.gudelj@gmail.com',
+      username: 'i.like.martians',
+    },
+    downloads: '17',
+    links: {
+      homepage: 'https://hyper.milovangudelj.com',
+      repository: 'https://github.com/milovangudelj/hyper-gh-dark-default',
+    },
+    version: '0.1.4',
+  }
 
   const pluginMeta = await (
     await fetch(`https://unpkg.com/${plugin.name}@latest/?meta`)
