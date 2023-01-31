@@ -19,8 +19,9 @@ export default async function handler(req, res) {
     },
     downloads,
     links: {
-      homepage: packument.homepage,
-      repository: packument.repository.url,
+      homepage: packument?.homepage ?? `https://npmjs.com/package/${name}`,
+      repository:
+        packument?.repository?.url ?? `https://npmjs.com/package/${name}`,
     },
     version,
   }
