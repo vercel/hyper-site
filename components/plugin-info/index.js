@@ -14,14 +14,14 @@ export default ({ npmData: plugin, variant }) => {
       action: 'Opened install modal',
       category: 'plugin',
       label: 'open_install_modal',
-      value: plugin.collected.metadata.name,
+      value: plugin.name,
     })
     setModalOpen(true)
   }
 
   return <>
     <InstallModal
-      pluginName={plugin.collected.metadata.name}
+      pluginName={plugin.name}
       open={modalOpen}
       onClose={() => setModalOpen(false)}
     />
@@ -30,14 +30,14 @@ export default ({ npmData: plugin, variant }) => {
         <div className={`${styles.author} ${styles.borderFollowed}`}>
           <Gravatar
             className={styles.avatar}
-            email={plugin.collected.metadata.publisher.email}
+            email={plugin.publisher.email}
           />
-          <span>{plugin.collected.metadata.publisher.username}</span>
+          <span>{plugin.publisher.username}</span>
         </div>
         <span className={`${styles.downloads} ${styles.borderFollowed}`}>
-          {plugin.collected.npm.downloads[2].count > 0 ? (
+          {plugin.downloads > 0 ? (
             <>
-              {plugin.collected.npm.downloads[2].count.toLocaleString()}{' '}
+              {plugin.downloads.toLocaleString()}{' '}
               downloads in the last month
             </>
           ) : (
@@ -45,7 +45,7 @@ export default ({ npmData: plugin, variant }) => {
           )}
         </span>
         <a
-          href={plugin.collected.metadata.links.repository}
+          href={plugin.links.repository}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.github}
@@ -56,20 +56,20 @@ export default ({ npmData: plugin, variant }) => {
       {variant === 'description' ? (
         <Link
           href="/store/[name]/source"
-          as={`/store/${plugin.collected.metadata.name}/source`}
+          as={`/store/${plugin.name}/source`}
           className={styles.link}>
           view source code
         </Link>
       ) : (
         <Link
           href="/store/[name]"
-          as={`/store/${plugin.collected.metadata.name}`}
+          as={`/store/${plugin.name}`}
           className={styles.link}>
           view description
         </Link>
       )}
       <span className={styles.version}>
-        Version {plugin.collected.metadata.version}
+        Version {plugin.version}
       </span>
       <a
         className={`${styles.install} ${styles.loaded}`}

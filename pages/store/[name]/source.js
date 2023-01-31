@@ -5,6 +5,7 @@ import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
 import { File, Directory } from 'components/icons'
 import styles from 'styles/pages/store/source.module.css'
+import { WEBSITE_URL } from 'utils/constants'
 
 const formatFileName = (path) => path.replace(/^\/+|\/+$/g, '')
 
@@ -113,7 +114,7 @@ export async function getStaticProps({ params }) {
   }
 
   const npmData = await (
-    await fetch(`https://api.npms.io/v2/package/${plugin.name}`)
+    await fetch(`${WEBSITE_URL}/api/getPackageMetadata?name=${params.name}`)
   ).json()
 
   const pluginMeta = await (

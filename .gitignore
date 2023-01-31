@@ -3,3 +3,4 @@
 node_modules
 .vercel
 plugin-images-metadata.json
+.local.env
