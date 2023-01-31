@@ -4,6 +4,7 @@ import plugins from 'plugins'
 import styles from 'styles/pages/store/index.module.css'
 import { getPluginPreviewImage } from 'lib/plugin'
 import Image from 'next/image'
+import { WEBSITE_URL } from 'utils/constants'
 
 export default function StoreIndexPage({ plugin, npmData }) {
   return (
@@ -46,7 +47,7 @@ export default function StoreIndexPage({ plugin, npmData }) {
 
 export const getStaticProps = async ({ params }) => {
   const npmData = await (
-    await fetch(`https://api.npms.io/v2/package/${params.name}`)
+    await fetch(`${WEBSITE_URL}/api/getPackageMetadata?name=${params.name}`)
   ).json()
 
   const plugin = {
