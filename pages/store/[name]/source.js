@@ -114,7 +114,7 @@ export async function getStaticProps({ params }) {
   }
 
   const npmData = await (
-    await fetch(`${WEBSITE_URL}/api/getPackageMetadata?name=${params.name}`)
+    await fetch(`/api/getPackageMetadata?name=${params.name}`)
   ).json()
 
   const pluginMeta = await (

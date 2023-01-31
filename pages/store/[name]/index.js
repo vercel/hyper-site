@@ -47,7 +47,7 @@ export default function StoreIndexPage({ plugin, npmData }) {
 
 export const getStaticProps = async ({ params }) => {
   const npmData = await (
-    await fetch(`${WEBSITE_URL}/api/getPackageMetadata?name=${params.name}`)
+    await fetch(`/api/getPackageMetadata?name=${params.name}`)
   ).json()
 
   const plugin = {
