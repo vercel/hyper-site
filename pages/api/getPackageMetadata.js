@@ -11,19 +11,32 @@ export default async function handler(req, res) {
   const version = packument['dist-tags'].latest
   const npmUser = packument.versions[version]['_npmUser']
 
+  // const npmMetadata = {
+  //   name: packument.name,
+  //   publisher: {
+  //     email: npmUser.email,
+  //     username: npmUser.name,
+  //   },
+  //   downloads,
+  //   links: {
+  //     homepage: packument?.homepage ?? `https://npmjs.com/package/${name}`,
+  //     repository:
+  //       packument?.repository?.url ?? `https://npmjs.com/package/${name}`,
+  //   },
+  //   version,
+  // }
   const npmMetadata = {
-    name: packument.name,
+    name: 'dummy',
     publisher: {
-      email: npmUser.email,
-      username: npmUser.name,
+      email: 'dummy',
+      username: 'dummy',
     },
-    downloads,
+    downloads: 1,
     links: {
-      homepage: packument?.homepage ?? `https://npmjs.com/package/${name}`,
-      repository:
-        packument?.repository?.url ?? `https://npmjs.com/package/${name}`,
+      homepage: `https://npmjs.com/package/dummy`,
+      repository: `https://npmjs.com/package/dummy`,
     },
-    version,
+    version: '1.0.0',
   }
 
   res.status(200).json(npmMetadata)
