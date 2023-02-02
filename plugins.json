@@ -508,7 +508,7 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
     "dateAdded": "1541659140469"
-  },  
+  },
   {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
@@ -635,5 +635,20 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-monotropic-coffee",
+    "type": "theme",
+    "description": " A port of the monotropic of coffee color scheme for Hyper.app",
+    "colors": [
+      "#fffffa",
+      "#593e2c",
+      "#e2dcd8",
+      "#aa998e",
+      "#745b4b",
+      "#c6bab3",
+      "#8f796c"
+    ],
+    "dateAdded": "1664127877"
   }
 ]
