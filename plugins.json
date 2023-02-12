@@ -635,5 +635,17 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-ghost",
+    "type": "theme",
+    "description": "A dark theme based on cyberspace anime.",
+    "colors": [
+      "#00182b",
+      "#00ffff",
+      "#008fb3",
+      "#ff66cc"
+    ],
+    "dateAdded": "1676166979409"
   }
 ]
