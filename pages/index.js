@@ -15,11 +15,11 @@ function Path({ os, path }) {
         os === 'mac'
           ? '~/Library/Application Support/Hyper/'
           : os === 'windows'
-          ? '$Env:AppData/Hyper/'
+          ? '%AppData%/Hyper/'
           : os === 'linux'
           ? '~/.config/Hyper/'
           : ''
-      }${path}`}
+      }${path}`}  
     </code>
   )
 }
