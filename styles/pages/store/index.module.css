@@ -11,7 +11,38 @@
   margin: 0 auto;
   text-align: center;
 }
+.header {
+  text-align: left;
+  max-width: 764px;
+  margin: 40px auto;
+}
 
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    grid-area: submit;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 2px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    border: 1px solid #333;
+    padding: 0.1rem 1.3rem;
+    transition: all 200ms ease;
+}
+
+.backButton:hover {
+    border-color: #50e3c2;
+    background: #50e3c2;
+    color: black;
+}
+
+/* @media (max-width: 568px) { */
+/*     .backButton { */
+/*         display: none; */
+/*     } */
+/* } */
 .name {
   font-size: 1rem;
   font-weight: normal;

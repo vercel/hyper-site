@@ -4,14 +4,24 @@ import plugins from 'plugins'
 import styles from 'styles/pages/store/index.module.css'
 import { getPluginPreviewImage } from 'lib/plugin'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 export default function StoreIndexPage({ plugin, npmData }) {
+
+
+  const router = useRouter()
+
   return (
     <Page
       title={`Hyper™ Store - ${plugin.name}`}
       description={plugin.description}
       image={plugin.preview}
     >
+      <div className={styles.header}>
+        <button className={styles.backButton} onClick={() => router.back()}>
+          Back
+        </button>
+      </div>
       <div className={styles.root}>
         <h1 className={styles.name}>{plugin.name}</h1>
         <p>{plugin.description}</p>
