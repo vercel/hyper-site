@@ -635,5 +635,14 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
-  }
+  },
+  {
+  "name": "hyper-ubuntu",
+  "description": "A clean Ubuntu theme for Hyper terminal.",
+  "type": "theme",
+  "colors": [
+    "#190011"
+  ],
+  "dateAdded": "1682870057589"
+}
 ]
