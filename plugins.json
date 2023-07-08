@@ -635,5 +635,21 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-primer",
+    "type": "theme",
+    "description": "All GitHub's themes for Hyper",
+    "colors": [
+      "#0d1117",
+      "#ff7b72",
+      "#3fb950",
+      "#d29922",
+      "#58a6ff",
+      "#bc8cff",
+      "#39c5cf",
+      "#b1bac4"
+    ],
+    "dateAdded": "1688816700244"
   }
 ]
