@@ -640,7 +640,7 @@
     "name": "hyper-new-tab",
     "description": "Add a button + to easily open a new tab in your Hyper terminal.",
     "type": "plugin",
-    "preview": "https://raw.githubusercontent.com/gentslava/hyper-new-tab/main/demo/default.png",
+    "preview": "https://raw.githubusercontent.com/gentslava/hyper-new-tab/main/demo/no_theme.png",
     "dateAdded": "1695024281571"
   }
 ]
