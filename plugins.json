@@ -635,5 +635,12 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-heart",
+    "description": "Hyper-extension with a spiral heart breeze based on cursor movement.",
+    "type": "plugin",
+    "preview": "https://github.com/shwang0416/hyper-heart/raw/main/preview.gif?raw=true",
+    "dateAdded": "1695201628676"
   }
 ]
