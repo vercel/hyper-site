@@ -635,5 +635,17 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-jans-theme",
+    "type": "theme",
+    "description": "Just another colorful dark theme.",
+    "colors": [
+      "#5e2bff",
+      "#f1a208",
+      "#97e02a",
+      "#ff0d6e"
+    ],
+    "dateAdded": "1697585594922"
   }
 ]
