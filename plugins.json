@@ -508,7 +508,7 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
     "dateAdded": "1541659140469"
-  },  
+  },
   {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
@@ -635,5 +635,27 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-cool-theme",
+    "type": "theme",
+    "description": "A beautiful and minimal dark theme for Hyper.",
+    "colors": [
+      "#2e2532",
+      "#0f0f0f",
+      "#110f18",
+      "#dd403a",
+      "#cdc1ff",
+      "#ef8354",
+      "#5e4ae3",
+      "#edecee",
+      "#edf2f4",
+      "#4d4d4d",
+      "#ff7086",
+      "#fff07c",
+      "#ade8f4",
+      "#ededf4"
+    ],
+    "dateAdded": "1699468148848"
   }
 ]
