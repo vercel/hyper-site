@@ -635,5 +635,22 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-ilxanlar-theme",
+    "type": "theme",
+    "description": "ilxanlar's theme for hyper terminal",
+    "colors": [
+      "#57606f",
+      "#ff4757",
+      "#2ed573",
+      "#ffa502",
+      "#1e90ff",
+      "#f368e0",
+      "#0abde3",
+      "#dfe4ea"
+    ],
+    "preview": "/store/hyper-ilxanlar-theme.png",
+    "dateAdded": "1724796568953"
   }
 ]
