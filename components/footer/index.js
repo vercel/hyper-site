@@ -40,7 +40,7 @@ export default () => (
         target="_blank"
         rel="noopener noreferrer"
         className={styles.logo}
-        href="https://zeit.co"
+        href="https://vercel.com"
       >
         ▲
       </a>

@@ -12,10 +12,6 @@
   color: var(--fg);
 }
 
-.table td:nth-child(odd), .table tr:first-child td:nth-child(2) {
-  padding: 10px !important;
-}
-
 .table td:not(:first-child) {
   text-align: center;
 }
@@ -34,6 +30,10 @@
   border-left: 0 !important;
 }
 
+.table td.withSpacing {
+  padding: 10px !important;
+}
+
 .table a {
   border-bottom: none;
   display: block;
@@ -49,3 +49,4 @@
 .icon {
   margin-right: 0.5rem;
 }
+

@@ -39,8 +39,8 @@ export default ({ pluginName, open, onClose }) => {
         <p>Run the following command in Hyper:</p>
         <pre>hyper i {pluginName}</pre>
         <span className={styles.buttons}>
-          <Link href="/store/security-notice">
-            <a className={styles.security}>Security Notice</a>
+          <Link href="/store/security-notice" className={styles.security}>
+            Security Notice
           </Link>
           <button onClick={handleClick} disabled={copied}>
             {copied ? 'Copied' : 'Copy'}
@@ -48,5 +48,5 @@ export default ({ pluginName, open, onClose }) => {
         </span>
       </div>
     </div>
-  )
+  );
 }
