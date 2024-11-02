@@ -508,7 +508,7 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
     "dateAdded": "1541659140469"
-  },  
+  }, 
   {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
@@ -538,18 +538,18 @@
     "featured": false
   },
   {
-	  "name": "hyper-npm-theme",
-	  "description": "A smart hyper theme inspired by npm",
-	  "type": "theme",
-	  "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
-	  "colors": [
-		  "#f3f3f3",
+    "name": "hyper-npm-theme",
+    "description": "A smart hyper theme inspired by npm",
+    "type": "theme",
+    "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
+    "colors": [
+      "#f3f3f3",
       "#FFCD3A",
       "#CB3837",
       "#C836C3",
       "#28008A"
-	  ],
-	  "dateAdded": "1545314699015"
+    ],
+    "dateAdded": "1545314699015"
   },
   {
     "name": "hyper-letters",
@@ -635,5 +635,17 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-neon-theme",
+    "description": "neon-inspired color theme for Hyper",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/KK-a-tech/hyper-neon-theme/master/images/hyper-neon-theme_image.png",
+    "colors": [
+      "#FFD300",
+      "#FF1DCE",
+      "#3A0A65"
+    ],
+    "dateAdded": "1730587146365"
   }
 ]
