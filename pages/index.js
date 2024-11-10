@@ -13,7 +13,7 @@ function Path({ os, path }) {
     <code>
       {`${
         os === 'mac'
-          ? '~/Library/Application Support/Hyper/'
+          ? '~/Library/Application\ Support/Hyper/'
           : os === 'windows'
           ? '$Env:AppData/Hyper/'
           : os === 'linux'
