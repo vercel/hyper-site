@@ -1,7 +1,5 @@
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import withPost from 'components/blog/with-post'
-import Image from 'next/image'
-import Video from 'components/blog/video'
+import { MDXProvider } from '@mdx-js/react'
+import WithPostClient from 'components/blog/with-post-client'
 
 export const metadata = {
   title: 'Hyper 3',
@@ -46,7 +44,7 @@ const meta = {
 export default function BlogPage() {
   return (
     <div className="blog-post">
-      {withPost(meta)(
+      <WithPostClient meta={meta}>
         <>
           <p>
             <strong>Hyper 3 is finally out!</strong> The primary focus for this
@@ -61,7 +59,14 @@ export default function BlogPage() {
             <a href="/#installation">Download Hyper 3</a> to try it out, and read on to learn more about
             what's new.
           </p>
-          <Video src="/blog/comparison.mp4" oversize />
+          <video
+            src="/blog/comparison.mp4"
+            loop
+            muted
+            autoPlay
+            playsInline
+            className="oversize"
+          />
           <h2>Getting There</h2>
           <p>
             Looking back on this release, a pleasant surprise has been how little
@@ -126,7 +131,7 @@ export default function BlogPage() {
             contribution and feedback.
           </p>
         </>
-      )}
+      </WithPostClient>
     </div>
   )
 }
