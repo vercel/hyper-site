@@ -1,3 +1,5 @@
+'use client'
+
 import Highlighter from 'react-highlighter'
 import styles from './plugin.module.css'
 import Image from 'next/image'

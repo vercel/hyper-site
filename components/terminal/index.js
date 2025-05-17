@@ -1,3 +1,5 @@
+'use client'
+
 import { Keyframes, Frame } from './react-keyframes.ts'
 import styles from './terminal.module.css'
 import { useState } from 'react'

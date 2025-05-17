@@ -11,14 +11,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.4",
-    "@mdx-js/react": "^1.6.4",
-    "@next/mdx": "^9.4.2",
+    "@mdx-js/loader": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "@next/mdx": "^14.1.0",
     "copee": "^1.0.6",
-    "husky": "^4.2.5",
-    "image-size": "^0.9.3",
-    "lint-staged": "^10.2.3",
-    "next": "^13.0.5",
+    "husky": "^9.0.7",
+    "image-size": "^1.1.1",
+    "lint-staged": "^15.2.1",
+    "next": "^14.1.0",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,5 +37,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
 }
