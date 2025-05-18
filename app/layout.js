@@ -3,6 +3,10 @@ import { SearchContext } from 'lib/search-context'
 import Header from 'components/header'
 import SearchList from 'components/search-list'
 import SearchProvider from './search-provider'
+import { GoogleTagManager } from '@next/third-parties/google'
+import { ProgressBar } from 'components/progress-bar'
+import { GA_TRACKING_ID } from 'lib/gtag'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: {
@@ -34,10 +38,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body>
+        <Suspense fallback={null}>
+          <ProgressBar />
+        </Suspense>
         <SearchProvider>
           <Header />
           {children}
         </SearchProvider>
+        <GoogleTagManager gtmId={GA_TRACKING_ID} />
       </body>
     </html>
   )

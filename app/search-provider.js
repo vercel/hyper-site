@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { SearchContext } from 'lib/search-context'
 import SearchList from 'components/search-list'
 
@@ -10,7 +10,9 @@ export default function SearchProvider({ children }) {
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
       {search ? (
-        <SearchList />
+        <Suspense fallback={<div>Loading search results...</div>}>
+          <SearchList />
+        </Suspense>
       ) : (
         <main>{children}</main>
       )}
