@@ -1,21 +1,21 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@mdx-js/loader': ^1.6.4
-  '@mdx-js/react': ^1.6.4
-  '@next/mdx': ^9.4.2
+  '@mdx-js/loader': ^2.4.1
+  '@mdx-js/react': ^2.4.1
+  '@next/mdx': ^14.1.0
   copee: ^1.0.6
-  husky: ^4.2.5
-  image-size: ^0.9.3
-  lint-staged: ^10.2.3
-  next: ^13.0.5
+  husky: ^8.0.0
+  image-size: ^1.0.0
+  lint-staged: ^15.0.0
+  next: ^14.1.0
   nprogress: ^0.2.0
-  prettier: ^2.0.5
+  prettier: ^3.0.0
   react: ^18.2.0
   react-dom: ^18.2.0
   react-gravatar: ^2.6.3
   react-highlighter: ^0.4.3
-  shell-quote: ^1.7.2
+  shell-quote: ^1.8.0
 
 dependencies:
   '@mdx-js/loader': 1.6.22_react@18.2.0
