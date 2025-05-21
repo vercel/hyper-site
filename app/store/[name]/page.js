@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
 import plugins from 'plugins'
@@ -5,13 +6,27 @@ import styles from 'styles/pages/store/index.module.css'
 import { getPluginPreviewImage } from 'lib/plugin'
 import Image from 'next/image'
 
-export default function StoreIndexPage({ plugin, npmData }) {
+export const revalidate = 60 * 60 * 24
+
+export async function generateStaticParams() {
+  return plugins.map(({ name }) => ({ name }))
+}
+
+export default async function PageComponent({ params }) {
+  const npmData = await (
+    await fetch(`https://api.npms.io/v2/package/${params.name}`)
+  ).json()
+
+  const found = plugins.find((e) => e.name === params.name)
+  if (!found) notFound()
+
+  const plugin = {
+    ...found,
+    preview: getPluginPreviewImage(params.name),
+  }
+
   return (
-    <Page
-      title={`Hyper™ Store - ${plugin.name}`}
-      description={plugin.description}
-      image={plugin.preview}
-    >
+    <Page title={`Hyper™ Store - ${plugin.name}`} description={plugin.description} image={plugin.preview}>
       <div className={styles.root}>
         <h1 className={styles.name}>{plugin.name}</h1>
         <p>{plugin.description}</p>
@@ -43,27 +58,3 @@ export default function StoreIndexPage({ plugin, npmData }) {
     </Page>
   )
 }
-
-export const getStaticProps = async ({ params }) => {
-  const npmData = await (
-    await fetch(`https://api.npms.io/v2/package/${params.name}`)
-  ).json()
-
-  const plugin = {
-    ...plugins.find((e) => e.name === params.name),
-    preview: getPluginPreviewImage(params.name),
-  }
-
-  return {
-    props: {
-      plugin,
-      npmData,
-    },
-    revalidate: 60 * 60 * 24,
-  }
-}
-
-export const getStaticPaths = () => ({
-  paths: plugins.map(({ name }) => ({ params: { name } })),
-  fallback: false,
-})

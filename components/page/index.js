@@ -1,3 +1,5 @@
+'use client'
+
 import Header from '../header'
 import NextHead from 'next/head'
 import SearchList from '../search-list'

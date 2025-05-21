@@ -1,3 +1,5 @@
+'use client'
+
 import Page from 'components/page'
 import Footer from 'components/footer'
 import DownloadButton from 'components/download-button'
@@ -84,19 +86,6 @@ const installationTableData = [
   },
 ]
 
-export async function getStaticProps() {
-  const res = await fetch(
-    'https://api.github.com/repos/vercel/hyper/releases/latest'
-  )
-  const latestRelease = await res.json()
-
-  return {
-    props: {
-      latestRelease,
-    },
-    revalidate: 60 * 60 * 24,
-  }
-}
 
 export default function HomePage({ latestRelease }) {
   const os = useOs()

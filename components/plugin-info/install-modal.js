@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from 'react'
 import { toClipboard } from 'copee'
 import styles from './install-modal.module.css'
