@@ -1,3 +1,5 @@
+'use client' // Mark as Client Component
+
 import Page from 'components/page'
 import Footer from 'components/footer'
 import DownloadButton from 'components/download-button'
@@ -15,10 +17,10 @@ function Path({ os, path }) {
         os === 'mac'
           ? '~/Library/Application Support/Hyper/'
           : os === 'windows'
-          ? '$Env:AppData/Hyper/'
-          : os === 'linux'
-          ? '~/.config/Hyper/'
-          : ''
+            ? '$Env:AppData/Hyper/'
+            : os === 'linux'
+              ? '~/.config/Hyper/'
+              : ''
       }${path}`}
     </code>
   )
@@ -84,21 +86,12 @@ const installationTableData = [
   },
 ]
 
-export async function getStaticProps() {
-  const res = await fetch(
-    'https://api.github.com/repos/vercel/hyper/releases/latest'
-  )
-  const latestRelease = await res.json()
+// Removed getStaticProps - data fetching will be handled differently in App Router
 
-  return {
-    props: {
-      latestRelease,
-    },
-    revalidate: 60 * 60 * 24,
-  }
-}
-
-export default function HomePage({ latestRelease }) {
+export default function HomePage({
+  latestRelease = { tag_name: 'Loading...' },
+}) {
+  // Provide a default for latestRelease
   const os = useOs()
 
   return (
@@ -129,7 +122,8 @@ export default function HomePage({ latestRelease }) {
         <h2 className={installationStyles.title} id="installation">
           <a href="#installation">Installation</a>
         </h2>
-        <span>latest version: {latestRelease.tag_name}</span>
+        {/* Conditionally render or show placeholder if latestRelease is not fully loaded */}
+        <span>latest version: {latestRelease?.tag_name || 'N/A'}</span>
         <div className="table">
           <table className={installationStyles.table}>
             <tbody>
@@ -162,7 +156,7 @@ export default function HomePage({ latestRelease }) {
                               width={16}
                               className={installationStyles.icon}
                             />
-                            {latestRelease.tag_name}
+                            {latestRelease?.tag_name || 'N/A'}
                           </a>
                         ) : (
                           'N/A'
@@ -170,7 +164,7 @@ export default function HomePage({ latestRelease }) {
                       </td>
                     ))}
                   </tr>
-                )
+                ),
               )}
             </tbody>
           </table>

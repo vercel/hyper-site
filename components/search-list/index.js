@@ -1,3 +1,5 @@
+'use client'
+
 import Head from 'next/head'
 import PluginsList from '../plugin-list'
 import styles from './search-list.module.css'
@@ -8,7 +10,7 @@ export default () => {
   const { search: query } = useSearch()
   const plugins = allPlugins.filter(
     ({ name, description }) =>
-      name.includes(query) || description.includes(query)
+      name.includes(query) || description.includes(query),
   )
 
   if (plugins.length > 0) {

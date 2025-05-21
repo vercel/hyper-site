@@ -1,10 +1,9 @@
-import { MDXProvider } from '@mdx-js/react'
 import NextLink from 'next/link'
 import styles from './with-post.module.css'
 import Page from 'components/page'
 import Author from './author'
 
-const Video = ({ src, caption, oversize }) => (
+export const Video = ({ src, caption, oversize }) => (
   <figure>
     <video
       src={src}
@@ -18,13 +17,14 @@ const Video = ({ src, caption, oversize }) => (
   </figure>
 )
 
-const Image = ({ src, caption, oversize, ...props }) => (
+export const Image = ({ src, caption, oversize, ...props }) => (
   <figure>
     <img src={src} className={oversize ? styles.oversize : null} {...props} />
     {caption && <figcaption>{caption}</figcaption>}
   </figure>
 )
 
+// Keep Link for now, though it won't be auto-applied to <a> via MDXProvider
 const Link = ({ href, children }) => {
   const IS_INTERNAL = /^\/(?!\/)/.test(href)
 
@@ -33,7 +33,7 @@ const Link = ({ href, children }) => {
       <NextLink href={href} className={styles.link}>
         {children}
       </NextLink>
-    );
+    )
 
   return (
     <a
@@ -47,33 +47,27 @@ const Link = ({ href, children }) => {
   )
 }
 
-const components = {
-  Image,
-  Video,
-  a: Link,
-}
+export default (meta) =>
+  ({ children }) => (
+    <Page
+      title={meta?.metaTitle}
+      description={meta?.metaDescription}
+      image={meta?.metaImage}
+    >
+      <div className={styles.root}>
+        <div className={styles.header}>
+          <h1>{meta.title}</h1>
+          {meta.authors && (
+            <div className={styles.authors}>
+              {meta.authors.map((author, i) => (
+                <Author key={i} {...author} />
+              ))}
+            </div>
+          )}
+        </div>
 
-export default (meta) => ({ children }) => (
-  <Page
-    title={meta?.metaTitle}
-    description={meta?.metaDescription}
-    image={meta?.metaImage}
-  >
-    <div className={styles.root}>
-      <div className={styles.header}>
-        <h1>{meta.title}</h1>
-        {meta.authors && (
-          <div className={styles.authors}>
-            {meta.authors.map((author, i) => (
-              <Author key={i} {...author} />
-            ))}
-          </div>
-        )}
-      </div>
-
-      <MDXProvider components={components}>
+        {/* MDXProvider removed, content is rendered directly */}
         <div className={styles.post}>{children}</div>
-      </MDXProvider>
-    </div>
-  </Page>
-)
+      </div>
+    </Page>
+  )
