@@ -424,11 +424,9 @@
   },
   {
     "name": "hyper-night-owl",
-    "description":
-      "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
+    "description": "A beautiful theme for the Hyper terminal based on the Night Owl VS Code dark theme, which is optimized for working at night, accessibility, and colorblindness.",
     "type": "theme",
-    "preview":
-      "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
+    "preview": "https://raw.githubusercontent.com/pbomb/hyper-night-owl/master/other/terminal.png",
     "colors": [
       "#011627",
       "#EF5350",
@@ -508,7 +506,7 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
     "dateAdded": "1541659140469"
-  },  
+  },
   {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
@@ -538,18 +536,18 @@
     "featured": false
   },
   {
-	  "name": "hyper-npm-theme",
-	  "description": "A smart hyper theme inspired by npm",
-	  "type": "theme",
-	  "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
-	  "colors": [
-		  "#f3f3f3",
+    "name": "hyper-npm-theme",
+    "description": "A smart hyper theme inspired by npm",
+    "type": "theme",
+    "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
+    "colors": [
+      "#f3f3f3",
       "#FFCD3A",
       "#CB3837",
       "#C836C3",
       "#28008A"
-	  ],
-	  "dateAdded": "1545314699015"
+    ],
+    "dateAdded": "1545314699015"
   },
   {
     "name": "hyper-letters",
@@ -635,5 +633,12 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-system-theme",
+    "description": "Switch between light and dark themes based on your OS settings",
+    "preview": "https://raw.githubusercontent.com/acovaci/hyper-system-theme-plugin/main/public/hyper-system-theme.webp",
+    "type": "plugin",
+    "dateAdded": "1717576227965"
   }
 ]
