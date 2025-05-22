@@ -1,4 +1,4 @@
-import Highlighter from 'react-highlighter'
+import Highlighter from 'react-highlight-words'
 import styles from './plugin.module.css'
 import Image from 'next/image'
 
@@ -42,18 +42,24 @@ export default ({ featured, name, description, colors, preview, query }) =>
       <div>
         <h4 className={styles.listName}>
           {query ? (
-            <Highlighter matchClass={styles.highlight} search={query}>
-              {name}
-            </Highlighter>
+            <Highlighter
+              highlightClassName={styles.highlight}
+              searchWords={[query]}
+              autoEscape={true}
+              textToHighlight={name}
+            />
           ) : (
             name
           )}
         </h4>
         <p className={styles.listDescription}>
           {query ? (
-            <Highlighter matchClass={styles.highlight} search={query}>
-              {description}
-            </Highlighter>
+            <Highlighter
+              highlightClassName={styles.highlight}
+              searchWords={[query]}
+              autoEscape={true}
+              textToHighlight={description}
+            />
           ) : (
             description
           )}

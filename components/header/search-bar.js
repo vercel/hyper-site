@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef } from 'react'
 import { Search } from '../icons'
 import styles from './search-bar.module.css'

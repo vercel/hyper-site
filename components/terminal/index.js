@@ -1,3 +1,5 @@
+'use client'
+
 import { Keyframes, Frame } from './react-keyframes.ts'
 import styles from './terminal.module.css'
 import { useState } from 'react'
@@ -23,7 +25,7 @@ const Terminal = () => {
     frames.push(
       <Frame duration={sleepDuration} key={`${text}-first`}>
         <Line />
-      </Frame>
+      </Frame>,
     )
 
     // typing out the line
@@ -33,7 +35,7 @@ const Terminal = () => {
       frames.push(
         <Frame duration={duration} key={`${text}-${i}`}>
           <Line text={text.slice(0, i + 1)} />
-        </Frame>
+        </Frame>,
       )
     }
 
@@ -41,7 +43,7 @@ const Terminal = () => {
     frames.push(
       <Frame key={`${text}-last`}>
         <Line text={text} noCaret />
-      </Frame>
+      </Frame>,
     )
 
     return (

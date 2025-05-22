@@ -8,34 +8,30 @@
   "scripts": {
     "dev": "next dev",
     "build": "node generate-plugin-images-metadata.js && next build",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.4",
-    "@mdx-js/react": "^1.6.4",
-    "@next/mdx": "^9.4.2",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^14.2.3",
     "copee": "^1.0.6",
-    "husky": "^4.2.5",
+    "husky": "^9.1.7",
     "image-size": "^0.9.3",
-    "lint-staged": "^10.2.3",
-    "next": "^13.0.5",
+    "lint-staged": "^16.0.0",
+    "next": "^14.2.3",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-gravatar": "^2.6.3",
-    "react-highlighter": "^0.4.3"
+    "react-highlight-words": "^0.21.0"
   },
   "devDependencies": {
-    "prettier": "^2.0.5",
+    "prettier": "^3.5.3",
     "shell-quote": "^1.7.2"
   },
   "prettier": {
     "singleQuote": true,
     "semi": false
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
