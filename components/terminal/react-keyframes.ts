@@ -1,3 +1,5 @@
+'use client'
+
 // basically react-keyframes v1.0.0-canary.3
 // with an added onEnd prop for the Keyframes component
 import React from 'react'

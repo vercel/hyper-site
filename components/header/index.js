@@ -1,23 +1,24 @@
+'use client'
+
 import { useState } from 'react'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import SearchBar from './search-bar'
 import { Arrow, Logo } from '../icons'
 import styles from './header.module.css'
 
 const ActiveLink = ({ href, children }) => {
-  const { pathname } = useRouter()
+  const pathname = usePathname()
 
   return (
-    (<Link
+    <Link
       href={href}
       className={`${styles.link} ${
         pathname.split('/')[1] === href.split('/')[1] ? styles.active : ''
-      }`}>
-
+      }`}
+    >
       {children}
-
-    </Link>)
+    </Link>
   );
 }
 
@@ -29,9 +30,7 @@ export default () => {
   return <>
     <header className={styles.header}>
       <Link href="/" className={styles.logo} aria-label="Hyper logo">
-
         <Logo width={31} height={23} />
-
       </Link>
 
       <nav className={styles.desktopNav}>
@@ -69,18 +68,10 @@ export default () => {
     <nav
       className={`${styles.mobileNav} ${mobileNavShown ? styles.active : ''}`}
     >
-      <Link href="/plugins">
-        Plugins
-      </Link>
-      <Link href="/themes">
-        Themes
-      </Link>
-      <Link href="/store/submit">
-        Submit
-      </Link>
-      <Link href="/blog">
-        Blog
-      </Link>
+      <Link href="/plugins">Plugins</Link>
+      <Link href="/themes">Themes</Link>
+      <Link href="/store/submit">Submit</Link>
+      <Link href="/blog">Blog</Link>
       <SearchBar />
     </nav>
   </>;
