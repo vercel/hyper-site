@@ -1,12 +1,13 @@
+'use client'
 import { useState } from 'react'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import SearchBar from './search-bar'
 import { Arrow, Logo } from '../icons'
 import styles from './header.module.css'
 
 const ActiveLink = ({ href, children }) => {
-  const { pathname } = useRouter()
+  const pathname = usePathname()
 
   return (
     (<Link

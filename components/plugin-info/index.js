@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 import InstallModal from './install-modal'
 import styles from './plugin-info.module.css'
