@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useSearchParams } from 'next/navigation'
 import plugins from 'plugins.json'
 import Page from 'components/page'
 import PluginInfo from 'components/plugin-info'
@@ -8,32 +10,73 @@ import styles from 'styles/pages/store/source.module.css'
 
 const formatFileName = (path) => path.replace(/^\/+|\/+$/g, '')
 
-export default function StoreSourcePage({
-  plugin,
-  npmData,
-  pluginMeta,
-  cache,
-}) {
-  const router = useRouter()
+async function getPluginData(name) {
+  const plugin = plugins.find((e) => e.name === name)
+  
+  if (!plugin) {
+    throw new Error('Plugin not found')
+  }
+
+  const npmData = await (
+    await fetch(`https://api.npms.io/v2/package/${plugin.name}`)
+  ).json()
+
+  const pluginMeta = await (
+    await fetch(`https://unpkg.com/${plugin.name}@latest/?meta`)
+  ).json()
+
+  const filePaths = []
+
+  ;(function getFilePaths(root) {
+    for (const file of root.files) {
+      if (file.type === 'directory') {
+        getFilePaths(file)
+      }
+      if (file.type === 'file') {
+        filePaths.push(file.path)
+      }
+    }
+  })(pluginMeta)
+
+  const cache = {}
+
+  for (const path of filePaths) {
+    const res = await fetch(`https://unpkg.com/${plugin.name}@latest${path}`)
+    cache[path] = await res.text()
+  }
+
+  return { plugin, npmData, pluginMeta, cache }
+}
+
+export default function StoreSourcePage({ params }) {
+  const searchParams = useSearchParams()
+  const [pluginData, setPluginData] = useState(null)
   const [activeFile, setActiveFile] = useState(null)
+  
+  useEffect(() => {
+    getPluginData(params.name).then(setPluginData)
+  }, [params.name])
 
   // figuring out the initial activeFile from the url
   // or falling back to the first file of the plugin
   useEffect(() => {
-    const filenameInQuery = router.asPath.split('?')[1]
+    if (!pluginData) return
+    
+    const filenameInQuery = searchParams.get('file')
 
     setActiveFile(
       filenameInQuery
         ? `/${filenameInQuery}`
-        : pluginMeta.files.find((file) => file.type === 'file').path
+        : pluginData.pluginMeta.files.find((file) => file.type === 'file').path
     )
-  }, [router])
+  }, [searchParams, pluginData])
 
-  const handleClickOnFile = (path) =>
-    router.push(
-      '/store/[name]/source',
-      `/store/${plugin.name}/source?${formatFileName(path)}`
-    )
+  const handleClickOnFile = (path) => {
+    const newUrl = new URL(window.location)
+    newUrl.searchParams.set('file', formatFileName(path))
+    window.history.pushState({}, '', newUrl)
+    setActiveFile(path)
+  }
 
   const renderFileTree = (root) => (
     <div className={styles.files}>
@@ -82,6 +125,12 @@ export default function StoreSourcePage({
     </div>
   )
 
+  if (!pluginData) {
+    return <div>Loading...</div>
+  }
+
+  const { plugin, npmData, pluginMeta, cache } = pluginData
+
   return (
     <Page
       title={`Hyper™ Store - Source of ${plugin.name}`}
@@ -101,59 +150,4 @@ export default function StoreSourcePage({
       <PluginInfo variant="source" npmData={npmData} />
     </Page>
   )
-}
-
-export async function getStaticProps({ params }) {
-  const plugin = plugins.find((e) => e.name === params.name)
-
-  if (!plugin) {
-    return {
-      notFound: true,
-    }
-  }
-
-  const npmData = await (
-    await fetch(`https://api.npms.io/v2/package/${plugin.name}`)
-  ).json()
-
-  const pluginMeta = await (
-    await fetch(`https://unpkg.com/${plugin.name}@latest/?meta`)
-  ).json()
-
-  const filePaths = []
-
-  ;(function getFilePaths(root) {
-    for (const file of root.files) {
-      if (file.type === 'directory') {
-        getFilePaths(file)
-      }
-      if (file.type === 'file') {
-        filePaths.push(file.path)
-      }
-    }
-  })(pluginMeta)
-
-  const cache = {}
-
-  for (const path of filePaths) {
-    const res = await fetch(`https://unpkg.com/${plugin.name}@latest${path}`)
-    cache[path] = await res.text()
-  }
-
-  return {
-    props: {
-      plugin,
-      npmData,
-      pluginMeta,
-      cache,
-    },
-    revalidate: 60 * 60 * 24,
-  }
-}
-
-export function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: 'blocking',
-  }
 }

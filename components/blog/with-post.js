@@ -1,3 +1,5 @@
+'use client'
+
 import { MDXProvider } from '@mdx-js/react'
 import NextLink from 'next/link'
 import styles from './with-post.module.css'

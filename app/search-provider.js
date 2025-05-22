@@ -1,14 +1,16 @@
-import 'styles/global.css'
+'use client'
+
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import NProgress from 'nprogress'
-import Router from 'next/router'
 import { pageView as gTagPageView } from 'lib/gtag'
 import { SearchContext } from 'lib/search-context'
 
 let timeout
 
-export default ({ Component, pageProps }) => {
+export function SearchProvider({ children }) {
   const [search, setSearch] = useState('')
+  const pathname = usePathname()
 
   const start = (url) => {
     timeout = setTimeout(NProgress.start, 500)
@@ -22,20 +24,17 @@ export default ({ Component, pageProps }) => {
   }
 
   useEffect(() => {
-    Router.events.on('routeChangeStart', start)
-    Router.events.on('routeChangeComplete', done)
-    Router.events.on('routeChangeError', done)
-
+    // Handle initial page load
+    done()
+    
     return () => {
-      Router.events.off('routeChangeStart', start)
-      Router.events.off('routeChangeComplete', done)
-      Router.events.off('routeChangeError', done)
+      clearTimeout(timeout)
     }
-  }, [])
+  }, [pathname])
 
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
-      <Component {...pageProps} />
+      {children}
     </SearchContext.Provider>
   )
 }

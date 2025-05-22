@@ -5,7 +5,26 @@ import styles from 'styles/pages/store/index.module.css'
 import { getPluginPreviewImage } from 'lib/plugin'
 import Image from 'next/image'
 
-export default function StoreIndexPage({ plugin, npmData }) {
+async function getPlugin(name) {
+  const npmData = await (
+    await fetch(`https://api.npms.io/v2/package/${name}`)
+  ).json()
+
+  const plugin = {
+    ...plugins.find((e) => e.name === name),
+    preview: getPluginPreviewImage(name),
+  }
+
+  return { plugin, npmData }
+}
+
+export async function generateStaticParams() {
+  return plugins.map(({ name }) => ({ name }))
+}
+
+export default async function StoreIndexPage({ params }) {
+  const { plugin, npmData } = await getPlugin(params.name)
+  
   return (
     <Page
       title={`Hyper™ Store - ${plugin.name}`}
@@ -32,7 +51,6 @@ export default function StoreIndexPage({ plugin, npmData }) {
                   height={plugin.preview.height}
                   src={plugin.preview.src}
                   alt={`${plugin.name}'s preview image`}
-                  layout="responsive"
                 />
               )}
             </>
@@ -43,27 +61,3 @@ export default function StoreIndexPage({ plugin, npmData }) {
     </Page>
   )
 }
-
-export const getStaticProps = async ({ params }) => {
-  const npmData = await (
-    await fetch(`https://api.npms.io/v2/package/${params.name}`)
-  ).json()
-
-  const plugin = {
-    ...plugins.find((e) => e.name === params.name),
-    preview: getPluginPreviewImage(params.name),
-  }
-
-  return {
-    props: {
-      plugin,
-      npmData,
-    },
-    revalidate: 60 * 60 * 24,
-  }
-}
-
-export const getStaticPaths = () => ({
-  paths: plugins.map(({ name }) => ({ params: { name } })),
-  fallback: false,
-})
