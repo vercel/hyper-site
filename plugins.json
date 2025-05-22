@@ -635,5 +635,21 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "monotropic-coffee-hyper",
+    "description": "monochrome theme with coffee-based colors",
+    "type": "theme",
+    "preview": "https://raw.githubusercontent.com/avelino/monotropic-coffee-hyper/main/assets/screenshot.png",
+    "colors": [
+      "#593e2c",
+      "#745b4b",
+      "#8f796c",
+      "#aa998e",
+      "#c6bab3",
+      "#e2dcd8",
+      "#fcfaf0"
+    ],
+    "dateAdded": "1682612210000"
   }
 ]
