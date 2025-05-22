@@ -635,5 +635,12 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-backspace",
+    "description": "Animate deleted characters to fall off your terminal.",
+    "type": "plugin",
+    "preview": "https://user-images.githubusercontent.com/184220/55085247-a5ebd480-50a6-11e9-8590-5064eb58debf.gif",
+    "dateAdded": "1677328274701"
   }
 ]
