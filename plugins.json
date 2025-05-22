@@ -32,6 +32,20 @@
     "featured": true
   },
   {
+    "name": "hyper-neon-theme",
+    "description": "A smart hyper theme inspired by neon",
+    "type": "theme",
+    "preview": "https://github.com/B3nnyL/hyper-npm-theme/raw/master/screenshot-1.png",
+    "colors": [
+      "#f3f3f3",
+      "#FFCD3A",
+      "#CB3837",
+      "#C836C3",
+      "#28008A"
+    ],
+    "dateAdded": "1545314699015"
+  },
+  {
     "name": "hyper-native",
     "description": "Make Hyper adapt to the macOS UI",
     "type": "theme",
