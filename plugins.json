@@ -508,7 +508,7 @@
     "type": "plugin",
     "preview": "https://raw.githubusercontent.com/daltonmenezes/hyper-init/master/img/hyper-init.gif",
     "dateAdded": "1541659140469"
-  },  
+  },
   {
     "name": "hyper-launch-menu",
     "description": "Launch more than one kind of shell from the menu",
@@ -635,5 +635,12 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-new-tab",
+    "description": "Add a button + to easily open a new tab in your Hyper terminal.",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/vercel/hyper-site/f0cf1212e63c7c536d0183127c902d3e45a434c6/public/store/hyper-new-tab.png",
+    "dateAdded": "1695024281571"
   }
 ]
