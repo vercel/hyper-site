@@ -1,5 +1,13 @@
 [
   {
+    "name": "hyper-decoratetabs",
+    "description": "Decorate your hyper terminal tabs with color, image or emoji",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/acemtp/hyper-decoratetabs/master/media/screen-shot.jpg",
+    "dateAdded": "1717320168237",
+    "featured": true
+  },
+  {
     "name": "hypercwd",
     "description": "Opens new tabs with the same directory as the current tab in Hyper for OS X, Linux, and Windows.",
     "type": "plugin",
