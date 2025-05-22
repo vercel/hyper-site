@@ -2,11 +2,7 @@ import PluginThemeShowcase from 'components/plugin-theme-showcase'
 import allPlugins from 'plugins'
 import { getPluginPreviewImage } from 'lib/plugin'
 
-export default function PluginIndexPage({ plugins }) {
-  return <PluginThemeShowcase plugins={plugins} variant="plugin" />
-}
-
-export function getStaticProps() {
+async function getPlugins() {
   const plugins = allPlugins
     .filter((p) => p.type === 'plugin' && p.featured === true)
     .map((p) => ({
@@ -14,9 +10,11 @@ export function getStaticProps() {
       preview: getPluginPreviewImage(p.name),
     }))
 
-  return {
-    props: {
-      plugins,
-    },
-  }
+  return plugins
+}
+
+export default async function PluginIndexPage() {
+  const plugins = await getPlugins()
+  
+  return <PluginThemeShowcase plugins={plugins} variant="plugin" />
 }

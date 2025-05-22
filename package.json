@@ -11,23 +11,23 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.4",
-    "@mdx-js/react": "^1.6.4",
-    "@next/mdx": "^9.4.2",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^14.2.18",
     "copee": "^1.0.6",
-    "husky": "^4.2.5",
-    "image-size": "^0.9.3",
-    "lint-staged": "^10.2.3",
-    "next": "^13.0.5",
+    "image-size": "^1.1.1",
+    "next": "^14.2.18",
     "nprogress": "^0.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-gravatar": "^2.6.3",
     "react-highlighter": "^0.4.3"
   },
   "devDependencies": {
-    "prettier": "^2.0.5",
-    "shell-quote": "^1.7.2"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.4.2",
+    "shell-quote": "^1.8.2"
   },
   "prettier": {
     "singleQuote": true,
