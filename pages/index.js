@@ -399,6 +399,13 @@ export default function HomePage({ latestRelease }) {
               </tr>
               <tr>
                 <td>
+                  <code>lineHeight</code>
+                </td>
+                <td>1</td>
+                <td>The default value for text line-height</td>
+              </tr>
+              <tr>
+                <td>
                   <code>cursorColor</code>
                 </td>
                 <td>"rgba(248,28,229,0.8)"</td>
