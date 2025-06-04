@@ -635,5 +635,13 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-copy-as-html",
+    "type": "plugin",
+    "description": "Brings \"Copy as HTML\" feature to the HYper terminal.",
+    "preview": "https://raw.githubusercontent.com/nardoor/hyper-copy-as-html/master/doc/demo.gif",
+    "dateAdded": "1648964354809"
   }
+
 ]
