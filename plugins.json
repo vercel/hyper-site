@@ -635,5 +635,20 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-hadar-theme",
+    "description": "Con Hadar Theme, tu terminal lucirá tan profesional como tu código, con colores vibrantes que facilitan la lectura y reducen la fatiga visual durante largas sesiones de trabajo.",
+    "type": "theme",
+    "colors": [
+      "#00030F",
+      "#F0F0F0",
+      "#F92672",
+      "#A6E22E",
+      "#E6DB74",
+      "#66D9EF",
+      "#AE81FF"
+    ],
+    "dateAdded": "1744666813656"
   }
 ]
