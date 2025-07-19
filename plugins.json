@@ -635,5 +635,12 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-tips",
+    "description": "Your transparent cheat-sheet with favourite commands or notes",
+    "type": "plugin",
+    "preview": "https://raw.githubusercontent.com/rightjelkin/hyper-tips/refs/heads/main/screenshot.png",
+    "dateAdded": "1752908153583"
   }
 ]
