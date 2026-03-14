@@ -1,4 +1,4 @@
-# hyper-site
+# hyper-sites
 
 The official website for the Hyper terminal
 
