@@ -635,5 +635,18 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
-  }
+  },
+  {
+  "name": "hyper-minimal-aqua",
+  "description": "A modern, JavaScript-configured UI theme targeting the Hyper Terminal ecosystem. Designed for digital animators and motion graphic designers.",
+  "author": "Robiul Islam",
+  "colors": [
+    "#12161A",
+    "#1A1F26",
+    "#00E5FF",
+    "#00B0FF",
+    "#39FF14"
+  ],
+  "dateAdded": "1771344000000"
+}
 ]
