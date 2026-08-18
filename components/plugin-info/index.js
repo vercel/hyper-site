@@ -9,6 +9,8 @@ import Link from 'next/link'
 export default ({ npmData: plugin, variant }) => {
   const [modalOpen, setModalOpen] = useState(false)
 
+  if (!plugin?.collected?.metadata) return null
+
   const handleOpenModal = () => {
     gTagEvent({
       action: 'Opened install modal',

@@ -635,5 +635,11 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-neon-future",
+    "description": "Reactive command-aware neon glow with animated running, success, and failure states.",
+    "type": "plugin",
+    "dateAdded": "1786942666803"
   }
 ]
