@@ -635,5 +635,17 @@
       "#9272dc"
     ],
     "dateAdded": "1597807892019"
+  },
+  {
+    "name": "hyper-termibug",
+    "description": "Bugs invade your terminal! Click or press space 5x to squash them before they eat your text.",
+    "type": "plugin",
+    "preview": {
+      "src": "/store/hyper-termibug.png",
+      "isGIF": false,
+      "width": 1200,
+      "height": 800
+    },
+    "dateAdded": "1788888716046"
   }
 ]
